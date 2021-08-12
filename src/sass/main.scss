@@ -3,5 +3,48 @@
  * Все паршалы подключаются сюда.
  */
 
-// Стили для файла с примером HTML-фрагмента
-@import './example';
+// // Стили для файла с примером HTML-фрагмента
+// @import './example';
+
+// утилиты
+@import './utils/variables';
+@import './utils/mixins';
+
+@import './base/common';
+@import './base/container';
+
+// компоненты
+@import './components/logo';
+@import './components/order-button';
+
+// хедер и футер
+@import './layout/header';
+@import './layout/footer';
+
+// страница main
+@import './layout/main/hero';
+@import './layout/main/gallery';
+@import './layout/main/more-photo';
+
+// страница 3d-modeling
+@import './layout/modeling-page/hero';
+@import './layout/modeling-page/methods-of-creation';
+@import './layout/modeling-page/we-create-model';
+
+// страница 3d-scanning
+@import './layout/scanning-page/hero';
+@import './layout/scanning-page/scan-process';
+
+//  страница 3d-printing
+@import './layout/printing-page/model-examples';
+@import './layout/printing-page/process-description';
+
+// страница take-order
+@import './layout/take-order-page/hero';
+@import './layout/take-order-page/order-form';
+@import './layout/take-order-page/contacts';
+
+// страница contacts
+@import './layout/contacts-page/hero';
+@import './layout//contacts-page/contants';
+@import './layout/contacts-page/contact-form';
