@@ -3,12 +3,10 @@
  * Все паршалы подключаются сюда.
  */
 
-// // Стили для файла с примером HTML-фрагмента
-// @import './example';
-
 // утилиты
 @import './utils/variables';
 @import './utils/mixins';
+@import './utils/titles';
 
 @import './base/fonts';
 @import './base/common';
@@ -16,7 +14,7 @@
 
 // компоненты
 @import './components/logo';
-@import './components/order-button';
+@import './components/button';
 
 // хедер и футер
 @import './layout/header';

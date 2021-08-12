@@ -1,0 +1,21 @@
+.button {
+  padding: 16px 33px;
+  display: inline-block;
+
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-color);
+
+  background-color: var(--secondary-color);
+  box-shadow: -10px -10px 20px #ffffff, 10px 10px 20px rgba(72, 121, 150, 0.1),
+    5px 5px 10px rgba(72, 121, 150, 0.25), -5px -5px 10px #ffffff;
+  border: none;
+  border-radius: 30.5px;
+
+  cursor: pointer;
+}

@@ -1,0 +1,45 @@
+.title-v1 {
+  text-align: center;
+  @include font(24px, 700, 1.25);
+  text-transform: uppercase;
+  color: var(--accent-color);
+
+  @media screen and (min-width: $second-bp) {
+    font-size: 36px;
+  }
+
+  @media screen and (min-width: $third-bp) {
+    font-size: 48px;
+  }
+}
+
+.title-v2 {
+  @include font(18px, 700, 1.25);
+  text-transform: uppercase;
+  color: var(--accent-color);
+
+  @media screen and (min-width: $second-bp) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: $third-bp) {
+    font-size: 36px;
+  }
+}
+
+// на странице 3D-modeling один заголовок который на мобильной версии меньше чем остальные
+// а начиная с планшетной такой же как и остальные
+//МИ СТВОРЮЄМО ФОТОРЕАЛІСТИЧНІ ЗОБРАЖЕННЯ МОДЕЛЕЙ
+.title-v3 {
+  @include font(16px, 700, 1.25);
+  text-transform: uppercase;
+  color: var(--accent-color);
+
+  @media screen and (min-width: $second-bp) {
+    font-size: 24px;
+  }
+
+  @media screen and (min-width: $third-bp) {
+    font-size: 36px;
+  }
+}
