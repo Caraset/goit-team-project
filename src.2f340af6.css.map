@@ -1,1 +1,0 @@
-{"version":3,"sources":["sass/layout/main/_hero.scss"],"names":[],"mappings":"AAAA,GACE,UAAA,CACA,WAAA,CACA","file":"src.2f340af6.css","sourceRoot":"../src","sourcesContent":[".a {\n  width: 50px;\n  height: 50px;\n  background-color: red;\n}\n"]}
