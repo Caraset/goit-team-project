@@ -26,6 +26,13 @@
     display: flex;
     justify-content: space-between;
   }
+
+  @media screen and (min-width: 1444px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+  }
 }
 
 .contact__wrap {
@@ -43,6 +50,9 @@
 
   @media screen and (min-width: 1444px) {
     margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 76px;
+    }
   }
 }
 
@@ -82,8 +92,8 @@
 .contact {
   &__gallery-wrap {
     display: none;
-    width: 598px;
-    height: 455px;
+    width: 438px;
+    height: 294px;
 
     @media screen and (min-width: 1444px) {
       display: block;

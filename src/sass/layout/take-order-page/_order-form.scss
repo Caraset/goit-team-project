@@ -1,10 +1,18 @@
+.of-contact__container {
+  @media screen and (min-width: 1444px) {
+    display: flex;
+    padding-bottom: 100px;
+    justify-content: space-between;
+  }
+}
+
 .of__section {
   padding-bottom: 52px;
   @media screen and (min-width: 768px) {
     padding-bottom: 76px;
   }
   @media screen and (min-width: 1444px) {
-    padding-bottom: 100px;
+    padding-bottom: 0px;
   }
 }
 
