@@ -1,0 +1,44 @@
+.scan-process {
+    padding-bottom: 55px;
+}
+
+.scan-process__title {
+text-transform: uppercase;
+font-family: Cera Pro;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 23px;
+text-transform: uppercase;
+margin-bottom: 16px;
+color: #487996;
+}
+
+.scan-process__desc {
+    font-family: Cera Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 18px;
+text-align: center;
+margin-top: 115px;
+color: #487996;
+}
+.scan-process__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.scan-process__item {
+width: 133px;
+height: 182.55px;
+background: #FFFFFF;
+opacity: 0.8;
+box-shadow: inset 1px 1px 16px rgba(203, 203, 203, 0.8), inset -1px -1px 16px #FFFFFF;
+border-radius: 50px 0px;
+}
+
+.scan-process__item {
+    &:nth-child(2n+1) {
+      margin-right: 14.76px;
+  }
+}
