@@ -1,0 +1,142 @@
+/* ------------------------------------------------------ */
+/* || --------------- START 'ПЕРЕМЕННЫЕ' ---------------- */
+/* ------------------------------------------------------ */
+$base-fz: 16px;
+$base-fz-body: 16px;
+$precision: (10 * 3);
+
+:root {
+  /* TODO Team Lead Valerii - split task to download fonts till EBD 2021-08-14: change fonts based on mockup */
+  /* || --------------- START 'ТИПОГРАФИЯ' ---------------- */
+  --body-sans-serif: 'Cera Pro', sans-serif;
+  --main-sans-serif: 'Caviar Dreams', sans-serif;
+
+  /* || ---------------- END 'ТИПОГРАФИЯ' ----------------- */
+
+  /* TODO Update 'ПАЛИТРА' Kostiantyn Ochenash till EBD 2021-08-14: change colors based on mockup */
+  /* || ----------------- START 'ПАЛИТРА' ----------------- */
+  /*   --color-text-primary: #212121;
+  --color-text-secondary: #757575;
+  --color-accent: #2196f3;
+  --color-bg-hero: #2f303a;
+  --color-bg-hero-btn: #188ce8;
+  --color-bg-btn-secondary: #f5f4fa;
+  --color-bg-project-card: #eeeeee;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-icon: #afb1b8;
+ */
+  /* || ------------------ END 'ПАЛИТРА' ------------------ */
+
+  /* || ----------------- START 'ОТСТУПЫ' ----------------- */
+  --gap: 32px;
+  /* || ------------------ END 'ОТСТУПЫ' ------------------ */
+
+  /* || ---------------- START 'АНИМАЦИЯ' ----------------- */
+  --time: 250ms;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  /* || ----------------- END 'АНИМАЦИЯ' ------------------ */
+}
+/* ------------------------------------------------------ */
+/* || ---------------- END 'ПЕРЕМЕННЫЕ' ----------------- */
+/* ------------------------------------------------------ */
+
+/* || --------------- START 'SASS COLORS' --------------- */
+$colors: (
+  'text-primary': var(--color-text-primary),
+  'text-secondary': var(--color-text-secondary),
+  'accent': var(--color-accent),
+  'bg-hero': var(--color-bg-hero),
+  'bg-hero-btn': var(--color-bg-hero-btn),
+  'bg-btn-secondary': var(--color-bg-btn-secondary),
+  'bg-project-card': var(--color-bg-project-card),
+  'white': var(--color-white),
+  'black': var(--color-black),
+  'icon': var(--color-icon),
+  'shadow-middle': var(--shadow-middle),
+  'shadow-hero-btn': var(--shadow-hero-btn),
+  'shadow-mobile-overlay': var(--shadow-mobile-overlay),
+  'dev-tools': #202124,
+);
+
+@function color($key: null, $map: $colors) {
+  @if ($key != null) {
+    @return map-get($map, $key);
+  }
+}
+
+$theme-dark: (
+  'logo-last-part': color('white'),
+  'nav__link-color': color('white'),
+  'nav__link-bg': color('black'),
+  'body-color': color('bg-project-card'),
+  'body-bg': color('dev-tools'),
+  'feature-card__svg-color': color('accent'),
+  'feature-card__svg-fill': color('bg-btn-secondary'),
+  'feature-card__svg-wrapper-bg': color('bg-hero'),
+  'section-title': color('icon'),
+  'section-bg-nth-child': color('text-primary'),
+  'portfolio-filter-color': color('bg-project-card'),
+  'portfolio-filter-bg': color('bg-hero'),
+  'portfolio-card-bg': color('bg-hero'),
+  'btn-mobile-close-color': color('icon'),
+  'btn-mobile-close-bg': color('icon'),
+  'social-card-color': color('bg-project-card'),
+  'social-card-bg': color('bg-hero'),
+  'dev-tools': color('dev-tools'),
+);
+
+$colorsValues: map-values($colors);
+@function getColorValue($key: null) {
+  @return nth($colorsValues, $key);
+}
+
+/* map-get($colors, $key) */
+
+/* || ---------------- END 'SASS COLORS' ---------------- */
+
+/* examples for z-index */
+/* $z-index: (
+  'skip-btn',
+  'portfolio-card__thumb::before',
+  'portfolio-card__desc',
+  'nav__link::after, .nav__link.nav__link--current::after',
+  'backdrop',
+  'mobile-overlay'
+); */
+
+$z-index: (
+  'put-here__any-selector::after',
+  'without-first-leading-dot, .empty',
+  'empty',
+  'empty, .empty',
+  'empty',
+  'empty'
+);
+
+@mixin zi($i: 3) {
+  $z-step: $i;
+  @each $index in $z-index {
+    $z-step: $z-step + $i;
+
+    .#{$index} {
+      z-index: $z-step;
+    }
+  }
+}
+
+@include zi;
+
+$tr: (
+  'hidden': 'width, height, margin, flex, visibility, opacity, transform, background-color',
+  'link': 'color, background-color',
+  'btn': 'color, background-color, box-shadow',
+  'card': 'width, height, flex',
+  'text': 'font-size, line-height',
+  'both': 'width, height, flex, font-size, line-height',
+  'anime': 'transform',
+  't': var(--time),
+  'tt': calc(var(--time) * 2),
+  'time': calc(var(--time) * 4),
+  'cubic': var(--cubic),
+);
