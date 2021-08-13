@@ -1,0 +1,179 @@
+.to {
+  &__section {
+    padding-top: 11px;
+    padding-bottom: 52px;
+
+    @media screen and (min-width: 1444px) {
+      padding-bottom: 100px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__wrap {
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__hero {
+    height: 171px;
+    background-color: rgb(42, 42, 87);
+    margin-bottom: 16px;
+
+    background-image: url('../../src/images/take-order/hero/hero-mobile.jpg');
+    border-radius: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../../src/images/take-order/hero/hero-mobile@2x.jpg');
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 247px;
+      height: 116px;
+      margin-bottom: 0;
+      margin-right: 20px;
+      flex-shrink: 0;
+      background-image: url('../../src/images/take-order/hero/hero-tablet.jpg');
+
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url('../../src/images/take-order/hero/hero-tablet@2x.jpg');
+      }
+    }
+
+    @media screen and (min-width: 1444px) {
+      width: 515px;
+      height: 315px;
+      margin-right: 32px;
+      background-image: url('../../src/images/take-order/hero/hero-desktop.jpg');
+
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url('../../src/images/take-order/hero/hero-desktop@2x.jpg');
+      }
+    }
+  }
+
+  &__content {
+    @media screen and (min-width: 1444px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__text-container {
+    @media screen and (min-width: 1444px) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 1444px) {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  /// img
+  &__img-container {
+    display: none;
+
+    @media screen and (min-width: 1444px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+.to__for-img {
+  width: 144px;
+  height: 144px;
+  box-shadow: (20px 20px 80px rgba(0, 0, 0, 0.25));
+
+  &_left {
+    background-image: url('../../src/images/take-order/hero/car.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 72px 0px 0px 72px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../../src/images/take-order/hero/car@2x.jpg');
+    }
+  }
+  &_center {
+    background-image: url('../../src/images/take-order/hero/cube.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 72px 0px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../../src/images/take-order/hero/cube@2x.jpg');
+    }
+  }
+  &_right {
+    background-image: url('../../src/images/take-order/hero/lamp.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px 0px 72px 0px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../../src/images/take-order/hero/lamp@2x.jpg');
+    }
+  }
+}
+
+//del after add .title///////////////
+.title {
+  font-family: Cera Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #487996;
+
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  @media screen and (min-width: 1444px) {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+
+//delete after add style to body
+.to__text {
+  font-family: Cera Pro;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #2b2b2b;
+  @media screen and (min-width: 1444px) {
+    font-size: 18px;
+    line-height: 1.28;
+  }
+}
