@@ -78,18 +78,21 @@
   }
 }
 
-.contact__gallery-wrap {
-  display: none;
-  width: 598px;
-  height: 455px;
+//photo
+.contact {
+  &__gallery-wrap {
+    display: none;
+    width: 598px;
+    height: 455px;
 
-  @media screen and (min-width: 1444px) {
-    display: block;
+    @media screen and (min-width: 1444px) {
+      display: block;
+    }
   }
-}
-.contact__img {
-  width: 100%;
-  height: auto;
+  &__img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 // delete after add in base files

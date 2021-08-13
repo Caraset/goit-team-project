@@ -2,47 +2,47 @@
   <div class="container">
     <h2 class="title of__title">ЗВ’ЯЖІТЬСЯ З НАМИ</h2>
     <form action="" class="of__form">
-      <div class="of__wrap">
+      <div class="of__wrap-input">
         <input type="name" id="user_name" class="of__input" />
-        <label for="user_name" class="of__label">Ім’я</label>
+        <label for="user_name" class="of__label-input">Ім’я</label>
       </div>
 
-      <div class="of__wrap">
+      <div class="of__wrap-input">
         <input type="email" id="user_email" class="of__input" />
-        <label for="user_emeil" class="of__label">Email</label>
+        <label for="user_emeil" class="of__label-input">Email</label>
       </div>
 
-      <div class="of__wrap">
+      <div class="of__wrap-select">
         <select name="user_type-plastic" id="type-plastic" class="of__input">
-          <option value="PETE">ПЕТ</option>
-          <option value="HDPE">ПНТ</option>
-          <option value="PVC">ПВХ</option>
-          <option value="other">інший</option>
+          <option value="PETE" class="of__select-option">ПЕТ</option>
+          <option value="HDPE" class="of__select-option">ПНТ</option>
+          <option value="PVC" class="of__select-option">ПВХ</option>
+          <option value="other" class="of__select-option">інший</option>
         </select>
-        <label for="type-plastic" class="of__label">Види пластика</label>
+        <label for="type-plastic" class="of__label-select">Види пластика</label>
       </div>
 
-      <div class="of__wrap">
-        <label for="print-quality" class="of__label">Якість друку</label>
+      <div class="of__wrap-select">
         <select name="user_print-quality" id="print-quality" class="of__input">
-          <option value="300">300 мікрон</option>
-          <option value="200">200 мікрон</option>
-          <option value="100">100 мікрон</option>
-          <option value="help">Труднощі у виборі - ми допоможемо</option>
+          <option value="300" class="of__select-option">300 мікрон</option>
+          <option value="200" class="of__select-option">200 мікрон</option>
+          <option value="100" class="of__select-option">100 мікрон</option>
+          <option value="help" class="of__select-option">Труднощі у виборі - ми допоможемо</option>
         </select>
+        <label for="print-quality" class="of__label-select">Якість друку</label>
       </div>
 
-      <div class="of__wrap">
-        <label for="select-color" class="of__label">Колір</label>
+      <div class="of__wrap-select">
         <select name="user_select-color" id="select-color" class="of__input">
-          <option value="whith">білий</option>
-          <option value="black">чорний</option>
-          <option value="blue">синій</option>
-          <option value="other">інший</option>
+          <option value="whith" class="of__select-option">білий</option>
+          <option value="black" class="of__select-option">чорний</option>
+          <option value="blue" class="of__select-option">синій</option>
+          <option value="other" class="of__select-option">інший</option>
         </select>
+        <label for="select-color" class="of__label-select">Колір</label>
       </div>
 
-      <div class="of__wrap">
+      <div class="of__wrap-comment">
         <label for="user_comment" class="of__label-comment">Повідомлення</label>
         <textarea
           name="user_comment"
@@ -58,14 +58,3 @@
     </form>
   </div>
 </section>
-
-<!-- exmp -->
-<div class="of__wrap-d">
-  <select name="user_select-color" id="select-color" class="of__input-d">
-    <option class="of__select-option" value="whith">білий</option>
-    <option class="of__select-option" value="black">чорний</option>
-    <option class="of__select-option" value="blue">синій</option>
-    <option class="of__select-option" value="other">інший</option>
-  </select>
-  <label for="select-color" class="of__label-d">Колір</label>
-</div>
