@@ -1,0 +1,10 @@
+/* ------------------------- START "FUNCTIONS" ------------------------- */
+/* vw(30px, 768px) */
+@function vw($var, $vw) {
+  @if ($vw and map_has_key($breakpoints, $vw)) {
+    $vwValue: map-get($breakpoints, $vw);
+    $result: ((($var * $precision / ($vwValue)) / $precision) * 100 * 1vw);
+    @return $result;
+  }
+}
+/* -------------------------- END "FUNCTIONS" -------------------------- */
