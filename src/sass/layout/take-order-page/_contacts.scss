@@ -1,0 +1,101 @@
+.contact__section {
+  padding-bottom: 76px;
+}
+
+.contact__title {
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  @media screen and (min-width: 1444px) {
+    margin-bottom: 18px;
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  &_firstleter {
+    text-transform: capitalize;
+  }
+}
+
+.contact__info {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.contact__wrap {
+  margin-bottom: 24px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+  @media screen and (min-width: 1444px) {
+    margin-bottom: 30px;
+  }
+}
+
+.contact__link {
+  font-size: 16px;
+  line-height: 20px;
+  color: #2b2b2b;
+
+  // delete after add main style
+  @media screen and (min-width: 1444px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+}
+
+.contact__item {
+  margin-bottom: 8px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contact__graphic-time {
+  display: block;
+  margin-bottom: 8px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1444px) {
+    display: inline;
+  }
+}
+
+.contact__gallery-wrap {
+  display: none;
+
+  @media screen and (min-width: 1444px) {
+    display: flex;
+  }
+}
+
+// delete after add in base files
+
+// .list {
+//   list-style: none;
+// }
+
+.contact__info {
+  font-family: Cera Pro;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2b2b2b;
+}
