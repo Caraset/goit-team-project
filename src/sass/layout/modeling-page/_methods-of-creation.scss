@@ -11,3 +11,6 @@
 .item-modeling:not(:last-child) {
     margin-bottom: 16px;
 }
+.item-modeling {
+    @extend %list;
+}
