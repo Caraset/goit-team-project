@@ -95,28 +95,9 @@
   }
 }
 
-.menu-connect {
-  display: none;
-  @media screen and (min-width: $second-bp) {
-    display: block;
-  }
-}
-.menu-connect__list:not(:last-child),
-.menu-connect__mobile-list:not(:last-child) {
-  margin-bottom: 10px;
-}
-.menu-connect__link {
-  display: flex;
-  align-items: center;
-}
-.menu-connect__icon {
-  fill: var(--second-accent-color);
-  margin-right: 4px;
-}
-
 // ===================BURGER  BUTTON======================//
 .burger-btn,
-.tel-btn {
+.connect-mobile__btn {
   border: none;
   background: none;
   padding: 0;
@@ -127,26 +108,75 @@
   @media screen and (min-width: $third-bp) {
     display: none;
   }
-}
-.burger-btn__icon {
-  fill: var(--accent-color);
-}
-// ===================PHONE  BUTTON======================//
-.tel-btn {
-  height: 24px;
-  // margin-right: 21px;
-}
-
-.tel-btn__icon {
-  fill: var(--second-accent-color);
-  padding: 0;
-}
-.navig {
-  @media screen and (min-width: $second-bp) {
-    display: none;
+  &__icon {
+    fill: var(--accent-color);
   }
 }
 
+// ===================PHONE  BUTTON======================//
+.connect-mobile {
+  @media screen and (min-width: $second-bp) {
+    display: none;
+  }
+
+  &__btn {
+    height: 24px;
+    position: relative;
+    // margin-right: 21px;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__icon {
+    fill: var(--second-accent-color);
+    padding: 0;
+  }
+
+  &__box {
+    position: absolute;
+  }
+  &__list {
+    width: 162px;
+    border-radius: 2px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 15px;
+    left: -58px;
+    background-color: #ecf2f5;
+    padding: 16px 4px;
+    @extend%list;
+  }
+
+  &__figure {
+    top: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #ecf1f3;
+
+    position: absolute;
+  }
+}
+
+// ===================PHONE NUMBER FOR TABLET AND DESKTOP======================//
+.menu-connect {
+  display: none;
+  @extend%list;
+  @media screen and (min-width: $second-bp) {
+    display: block;
+  }
+  &__list:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    fill: var(--second-accent-color);
+    margin-right: 4px;
+  }
+}
 // .navbar {
 //   overflow: hidden;
 //   background-color: #333;
@@ -217,74 +247,4 @@
 // }
 /* mark with differing style */
 
-.navig li {
-  float: left;
-  position: relative;
-}
-
-/* блоки ссылок */
-.navig li button {
-  display: block;
-}
 /* выпадающее меню */
-.sub-nav {
-  bottom: -92px;
-  border-radius: 2px;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  // border-top: 15px solid transparent;
-  left: -9999px;
-  background-color: #ffffff;
-  padding: 16px 4px;
-}
-/* make submenu reappear */
-.navig li:hover .sub-nav,
-.navig li:focus .sub-nav {
-  left: -60px;
-}
-/* triangle */
-.triangle {
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #ffffff;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-  position: absolute;
-
-  left: -9999px;
-}
-/* reappear */
-
-.tel-btn:hover .triangle,
-.tel-btn:focus .triangle {
-  left: 0px;
-}
-/* prevent multi line links */
-.sub-nav li {
-  white-space: nowrap;
-}
-/* закругленные края */
-.sub-nav > li:first-of-type {
-  border-radius: 5px 5px 0 0;
-}
-.sub-nav > li:last-of-type {
-  border-radius: 0 0 5px 5px;
-}
-/* верхний уровень при наведении */
-
-.nav > li:hover > .tel-btn,
-.nav > li:focus > .tel-btn {
-  background: #2c3e50;
-  transition: background ease 0.5s;
-}
-/* ссылки подменю */
-.sub-nav .tel-btn {
-  font-size: 90%;
-  margin: 3px;
-  transition: background ease 0.3s;
-}
-.sub-nav .tel-btn:hover,
-.sub-nav .tel-btn:focus {
-  background: #e74c3c;
-}

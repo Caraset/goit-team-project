@@ -6,8 +6,8 @@
           <source
             media="(min-width: $third-bp)"
             srcset="
-              ../images/logo/logo-webp/logo-192.webp     1x,
-              .../images/logo/logo-webp/logo-192@2x.webp 2x
+              ../images/logo/logo-webp/logo-192.webp    1x,
+              ../images/logo/logo-webp/logo-192@2x.webp 2x
             "
             type="image/webp"
           />
@@ -66,24 +66,25 @@
         <use href="../images/svg-sprite.svg#burger-menu"></use>
       </svg>
     </button>
-    <ul class="navig list">
-      <li>
-        <button class="tel-btn mark" type="button">
-          <svg width="24" height="24" class="tel-btn__icon">
-            <use href="../images/svg-sprite.svg#phone-icon"></use>
-          </svg>
-          <i class="triangle"></i>
-        </button>
-        <ul class="sub-nav list">
-          <li class="menu-connect__mobile-list">
-            <a class="menu-connect__mobile-link" href="tel:+380936432288"> +38 (093) 643 22 88</a>
+
+    <div class="connect-mobile">
+      <button class="connect-mobile__btn" type="button">
+        <svg width="24" height="24" class="connect-mobile__icon">
+          <use href="../images/svg-sprite.svg#phone-icon"></use>
+        </svg>
+      </button>
+      <div class="connect-mobile__box is-hidden">
+        <div class="connect-mobile__figure"></div>
+        <ul class="connect-mobile__list">
+          <li class="connect-mobile__item">
+            <a class="connect-mobile__link" href="tel:+380936432288"> +38 (093) 643 22 88</a>
           </li>
-          <li class="menu-connect__mobile-list">
-            <a class="menu-connect__mobile-link" href="tel:+380503454423"> +38 (050) 345 44 23</a>
+          <li class="connect-mobile__item">
+            <a class="connect-mobile__link" href="tel:+380503454423"> +38 (050) 345 44 23</a>
           </li>
         </ul>
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <select id="selectID" class="select-language">
       <option value="”ENG”">ENG</option>
@@ -93,7 +94,7 @@
       <option value="”UKR”">UKR</option>
     </select>
 
-    <ul class="list menu-connect">
+    <ul class="menu-connect">
       <li class="menu-connect__list">
         <a class="link menu-connect__link" href="tel:+380936432288">
           <svg width="14" height="14" class="menu-connect__icon transition">
@@ -128,6 +129,17 @@
     </div>
   </div> -->
 </header>
+<script>
+  const icon = document.querySelector('.connect-mobile__btn');
+  const telBlock = document.querySelector('.connect-mobile__box');
+  console.log(icon);
+  console.log(telBlock);
+  icon.addEventListener('click', onIconClick);
+  function onIconClick() {
+    telBlock.classList.toggle('is-hidden');
+  }
+</script>
+
 <script>
   /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
