@@ -36,7 +36,3 @@ body {
   font-family: var(--main-font), sans-serif;
   color: var(--third-color);
 }
-/* предлагаю использовать @extend %list; как у Репеты на видео, вместо .list ?*/
-.list {
-  list-style: none;
-}
