@@ -5,8 +5,12 @@
   letter-spacing: $ls;
 }
 /* ------------------------- START 'MIXINS' ------------------------- */
-// Media Query + Margins
-@mixin mq($start: null, $end: null, $mt: null, $mr: null, $mb: null, $ml: null) {
+/* Media Query + Margins */ /* prettier-ignore */
+@mixin mq(
+  $start: null, $end: null,
+  $mt: null, $mr: null, $mb: null, $ml: null,
+  $pt: null, $pr: null, $pb: null, $pl: null
+) {
   @if ($end and map_has_key($breakpoints, $end)) {
     $maxWidth: map_get($breakpoints, $end);
     $upToMaxWidth: $maxWidth - 1px;
@@ -15,12 +19,14 @@
       $minWidth: map_get($breakpoints, $start);
 
       @media screen and (min-width: $minWidth) and (max-width: $upToMaxWidth) {
+        @include paddings($pt, $pr, $pb, $pl);
         @include margins($mt, $mr, $mb, $ml);
 
         @content;
       }
     } @else {
       @media screen and (max-width: $upToMaxWidth) {
+        @include paddings($pt, $pr, $pb, $pl);
         @include margins($mt, $mr, $mb, $ml);
 
         @content;
@@ -30,18 +36,13 @@
     $minWidth: map_get($breakpoints, $start);
 
     @media screen and (min-width: $minWidth) {
+      @include paddings($pt, $pr, $pb, $pl);
       @include margins($mt, $mr, $mb, $ml);
 
       @content;
     }
   }
 }
-
-/* Margin converter */ /* prettier-ignore */
-@mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
-  $margins: ('top': $mt, 'right': $mr, 'bottom': $mb, 'left': $ml,);
-  @each $side, $direction in $margins { @if map-get($margins, $side) {
-      #{margin-#{$side}}: map-get($margins, $side); }}}
 
 /* Font-size */ /* prettier-ignore */
 @mixin fz($fz: null, $lh: null, $fw: null, $ls: null, $clr: null, $teo: null) {
@@ -78,6 +79,66 @@
 
     @content;
   }
+}
+
+/* Padding converter */
+@mixin paddings($pt: null, $pr: null, $pb: null, $pl: null) {
+  @if ($pt or $pr or $pb or $pl) {
+    @if (($pt == $pb) and ($pb == $pr) and ($pr == $pl)) {
+      padding: $pt;
+    } @else if (($pt == $pb) and ($pr == $pl)) {
+      padding: $pt $pr;
+    } @else if
+      (
+        ((($pt != $pb) and (($pt and $pb) != null)) and (($pr == $pl) and ($pr != null))) or
+          ((($pr != $pl) and (($pr and $pl) != null)) and (($pt == $pb) and ($pt != null)))
+      )
+    {
+      padding: $pt $pr $pb;
+    } @else if
+      ((($pt != $pb) and (($pt and $pb) != null)) and (($pr != $pl) and (($pr and $pl) != null)))
+    {
+      padding: $pt $pr $pb $pl;
+    } @else {
+      /* prettier-ignore */
+      $paddings: ('top': $pt, 'right': $pr, 'bottom': $pb, 'left': $pl,);
+      /* prettier-ignore */
+      @each $side, $direction in $paddings { @if map-get($paddings, $side) {
+        #{padding-#{$side}}: map-get($paddings, $side); }}
+    }
+  }
+
+  @content;
+}
+
+/* Margin converter */
+@mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
+  @if ($mt or $mr or $mb or $ml) {
+    @if (($mt == $mb) and ($mb == $mr) and ($mr == $ml)) {
+      margin: $mt;
+    } @else if (($mt == $mb) and ($mr == $ml)) {
+      margin: $mt $mr;
+    } @else if
+      (
+        ((($mt != $mb) and (($mt and $mb) != null)) and (($mr == $ml) and ($mr != null))) or
+          ((($mr != $ml) and (($mr and $ml) != null)) and (($mt == $mb) and ($mt != null)))
+      )
+    {
+      margin: $mt $mr $mb;
+    } @else if
+      ((($mt != $mb) and (($mt and $mb) != null)) and (($mr != $ml) and (($mr and $ml) != null)))
+    {
+      margin: $mt $mr $mb $ml;
+    } @else {
+      /* prettier-ignore */
+      $margins: ('top': $mt, 'right': $mr, 'bottom': $mb, 'left': $ml,);
+      /* prettier-ignore */
+      @each $side, $direction in $margins { @if map-get($margins, $side) {
+        #{margin-#{$side}}: map-get($margins, $side); }}
+    }
+  }
+
+  @content;
 }
 
 /* -------------------------- END 'MIXINS' -------------------------- */
