@@ -11,6 +11,7 @@
   --third-color: #2b2b2b;
 
   --gap: 32px;
+  --cards-per-line-3: 3;
   /* || ---------------- START 'АНИМАЦИЯ' ----------------- */
   --time: 250ms;
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
@@ -19,7 +20,7 @@
 
 $first-bp: 320px;
 $second-bp: 768px;
-$third-bp: 1444px;
+$third-bp: 1444px; /* Mockup: backdrop=1444px, page=1440px. */
 
 $base-fz: 16px;
 $base-fz-body: 16px;
@@ -116,6 +117,7 @@ $z-index: (
 
 $tr: (
   'hidden': 'width, height, margin, flex, visibility, opacity, transform, background-color',
+  'backdrop': 'opacity, visibility, pointer-events',
   'link': 'color, background-color',
   'btn': 'color, background-color, box-shadow',
   'card': 'width, height, flex',
