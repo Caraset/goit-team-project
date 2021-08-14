@@ -1,0 +1,147 @@
+<header>
+  <div class="container header-conteiner">
+    <nav class="header-nav">
+      <a class="header-nav__logo" href="#">
+        <picture>
+          <source
+            media="(min-width: $third-bp)"
+            srcset="
+              ../images/logo/logo-webp/logo-192.webp     1x,
+              .../images/logo/logo-webp/logo-192@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width: $third-bp)"
+            srcset="../images/logo/logo-192.jpg 1x, ../images/logo/logo-192@2x.jpg 2x"
+          />
+          <source
+            media="(min-width: $second-bp)"
+            srcset="
+              ../images/logo/logo-webp/logo-125.webp    1x,
+              ../images/logo/logo-webp/logo-125@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width: $second-bp)"
+            srcset="../images/logo/logo-125.jpg 1x, ../images/logo/logo-125@2x.jpg 2x"
+          />
+          <source
+            media="(min-width: 280px)"
+            srcset="
+              ../images/logo/logo-webp/logo-101.webp    1x,
+              ../images/logo/logo-webp/logo-101@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 280px)"
+            srcset="../images/logo/logo-101.jpg 1x, ../images/logo/logo-101@2x.jpg 2x"
+          />
+          <img src="../images/logo/logo-101.jpg" alt="logo" />
+        </picture>
+      </a>
+
+      <ul class="list header-nav__list">
+        <li class="header-nav__item"><a class="header-nav__link" href="">Головна</a></li>
+        <li class="header-nav__item">
+          <a class="header-nav__link" href=""
+            >Послуги
+            <!-- <ul class="list">
+              <li><a class="link" href="">3D Моделювання</a></li>
+              <li><a class="link" href="">3D Сканування</a></li>
+              <li><a class="link" href="">3D Друк</a></li>
+            </ul> -->
+          </a>
+        </li>
+        <li class="header-nav__item">
+          <a class="header-nav__link" href="#">Замовити</a>
+        </li>
+        <li class="header-nav__item"><a class="header-nav__link" href="">Контакти</a></li>
+      </ul>
+    </nav>
+    <button class="burger-btn" type="button">
+      <svg width="32" height="32" class="burger-btn__icon">
+        <use href="../images/svg-sprite.svg#burger-menu"></use>
+      </svg>
+    </button>
+    <ul class="navig list">
+      <li>
+        <button class="tel-btn mark" type="button">
+          <svg width="24" height="24" class="tel-btn__icon">
+            <use href="../images/svg-sprite.svg#phone-icon"></use>
+          </svg>
+          <i class="triangle"></i>
+        </button>
+        <ul class="sub-nav list">
+          <li class="menu-connect__mobile-list">
+            <a class="menu-connect__mobile-link" href="tel:+380936432288"> +38 (093) 643 22 88</a>
+          </li>
+          <li class="menu-connect__mobile-list">
+            <a class="menu-connect__mobile-link" href="tel:+380503454423"> +38 (050) 345 44 23</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <select id="selectID" class="select-language">
+      <option value="”ENG”">ENG</option>
+
+      <option value="”RUS”">RUS</option>
+
+      <option value="”UKR”">UKR</option>
+    </select>
+
+    <ul class="list menu-connect">
+      <li class="menu-connect__list">
+        <a class="link menu-connect__link" href="tel:+380936432288">
+          <svg width="14" height="14" class="menu-connect__icon transition">
+            <use href="../images/svg-sprite.svg#phone-icon"></use>
+          </svg>
+          +38 (093) 643 22 88</a
+        >
+      </li>
+      <li class="menu-connect__list">
+        <a class="link menu-connect__link" href="tel:+380503454423">
+          <svg width="14" height="14" class="menu-connect__icon transition">
+            <use href="../images/svg-sprite.svg#phone-icon"></use>
+          </svg>
+          +38 (050) 345 44 23</a
+        >
+      </li>
+    </ul>
+  </div>
+  <!-- <div class="navbar">
+    <a href="#home">Home</a>
+    <a href="#news">News</a>
+    <div class="dropdown">
+      <button class="dropbtn" onclick="myFunction()">
+        Dropdown
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+      </div>
+    </div>
+  </div> -->
+</header>
+<script>
+  /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById('myDropdown').classList.toggle('show');
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function (e) {
+    if (!e.target.matches('.dropbtn')) {
+      var myDropdown = document.getElementById('myDropdown');
+      if (myDropdown.classList.contains('show')) {
+        myDropdown.classList.remove('show');
+      }
+    }
+  };
+</script>

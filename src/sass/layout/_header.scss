@@ -1,37 +1,290 @@
 // ----- MENU FOR MOBILE/TABLET ----- //
 
 .menu-nav {
-    text-align: center;
-    padding-top: 30px;
-    margin-top: -24px;
+  text-align: center;
+  padding-top: 30px;
+  margin-top: -24px;
 }
 
 .menu-nav__item {
-    margin-top: 24px;
-    @include font (24px, 700, 30px);
-    color: var(--accent-color);
-    &-decoration {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 500;
-        margin-left: -12px;
-        &::before {
-            content: "";
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            background-color: var(--accent-color);
-            border-radius: 3px 0px;
-            margin-right: 12px;
-        } 
+  margin-top: 24px;
+  @include font(24px, 700, 30px);
+  color: var(--accent-color);
+  &-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-left: -12px;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-color);
+      border-radius: 3px 0px;
+      margin-right: 12px;
     }
+  }
 }
 
 .is-current {
-    color: white;
-    text-shadow: -1px -1px 0 var(--accent-color), 1px -1px 0 var(--accent-color), -1px 1px 0 var(--accent-color), 1px 1px 0 var(--accent-color);
+  color: white;
+  text-shadow: -1px -1px 0 var(--accent-color), 1px -1px 0 var(--accent-color),
+    -1px 1px 0 var(--accent-color), 1px 1px 0 var(--accent-color);
 }
 
+// ============HEADER====================
+.header-conteiner {
+  padding-top: 29px;
+  padding-bottom: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: $second-bp) {
+    padding: 20px 20px 10px 28px;
+  }
+  @media screen and (min-width: $third-bp) {
+    max-width: $third-bp;
+    padding: 40px 80px 24px 80px;
+  }
+}
 
+// ===================HEADER-NAVIGATION======================//
+.header-nav {
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: $third-bp) {
+    margin-right: 109px;
+  }
+  &__logo {
+    @media screen and (min-width: $third-bp) {
+      margin-right: 213px;
+    }
+  }
+  &__list {
+    @extend%list;
+    display: none;
+    @media screen and (min-width: $third-bp) {
+      display: flex;
+    }
+  }
+  &__item:not(:last-child) {
+    margin-right: 54px;
+  }
 
+  &__link {
+    @include font(18px, 400, 1.17, 0.01em);
+  }
+}
+
+// ===================END HEADER-NAVIGATION======================//
+
+// ===================lANGUAGE======================//
+.select-language {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  @include font($fs: 14px, $fw: bold, $lh: 1.29, $ls: 0.01em);
+  font-family: 'Caviar Dreams';
+  font-style: normal;
+  color: #bdbdbd;
+  @media screen and (min-width: $third-bp) {
+    margin-right: 94px;
+  }
+}
+
+.menu-connect {
+  display: none;
+  @media screen and (min-width: $second-bp) {
+    display: block;
+  }
+}
+.menu-connect__list:not(:last-child),
+.menu-connect__mobile-list:not(:last-child) {
+  margin-bottom: 10px;
+}
+.menu-connect__link {
+  display: flex;
+  align-items: center;
+}
+.menu-connect__icon {
+  fill: var(--second-accent-color);
+  margin-right: 4px;
+}
+
+// ===================BURGER  BUTTON======================//
+.burger-btn,
+.tel-btn {
+  border: none;
+  background: none;
+  padding: 0;
+}
+.burger-btn {
+  height: 32px;
+  // margin-right: 46px;
+  @media screen and (min-width: $third-bp) {
+    display: none;
+  }
+}
+.burger-btn__icon {
+  fill: var(--accent-color);
+}
+// ===================PHONE  BUTTON======================//
+.tel-btn {
+  height: 24px;
+  // margin-right: 21px;
+}
+
+.tel-btn__icon {
+  fill: var(--second-accent-color);
+  padding: 0;
+}
+.navig {
+  @media screen and (min-width: $second-bp) {
+    display: none;
+  }
+}
+
+// .navbar {
+//   overflow: hidden;
+//   background-color: #333;
+//   font-family: Arial, Helvetica, sans-serif;
+// }
+
+// .navbar a {
+//   float: left;
+//   font-size: 16px;
+//   color: white;
+//   text-align: center;
+//   padding: 14px 16px;
+//   text-decoration: none;
+// }
+
+// .dropdown {
+//   float: left;
+//   overflow: hidden;
+// }
+
+// .dropdown .dropbtn {
+//   cursor: pointer;
+//   font-size: 16px;
+//   border: none;
+//   outline: none;
+//   color: white;
+//   padding: 14px 16px;
+//   background-color: inherit;
+//   font-family: inherit;
+//   margin: 0;
+// }
+
+// .navbar a:hover,
+// .dropdown:hover .dropbtn,
+// .dropbtn:focus {
+//   background-color: red;
+// }
+
+// .dropdown-content {
+//   display: none;
+//   position: absolute;
+//   background-color: #f9f9f9;
+//   min-width: 160px;
+//   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+//   z-index: 1;
+// }
+
+// .dropdown-content a {
+//   float: none;
+//   color: black;
+//   padding: 12px 16px;
+//   text-decoration: none;
+//   display: block;
+//   text-align: left;
+// }
+
+// .dropdown-content a:hover {
+//   background-color: #ddd;
+// }
+
+// .show {
+//   display: block;
+// }
+
+// body {
+//   padding: 100px !important;
+//   font: 300 16px tahoma;
+// }
+/* mark with differing style */
+
+.navig li {
+  float: left;
+  position: relative;
+}
+
+/* блоки ссылок */
+.navig li button {
+  display: block;
+}
+/* выпадающее меню */
+.sub-nav {
+  bottom: -92px;
+  border-radius: 2px;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  // border-top: 15px solid transparent;
+  left: -9999px;
+  background-color: #ffffff;
+  padding: 16px 4px;
+}
+/* make submenu reappear */
+.navig li:hover .sub-nav,
+.navig li:focus .sub-nav {
+  left: -60px;
+}
+/* triangle */
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffffff;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+
+  left: -9999px;
+}
+/* reappear */
+
+.tel-btn:hover .triangle,
+.tel-btn:focus .triangle {
+  left: 0px;
+}
+/* prevent multi line links */
+.sub-nav li {
+  white-space: nowrap;
+}
+/* закругленные края */
+.sub-nav > li:first-of-type {
+  border-radius: 5px 5px 0 0;
+}
+.sub-nav > li:last-of-type {
+  border-radius: 0 0 5px 5px;
+}
+/* верхний уровень при наведении */
+
+.nav > li:hover > .tel-btn,
+.nav > li:focus > .tel-btn {
+  background: #2c3e50;
+  transition: background ease 0.5s;
+}
+/* ссылки подменю */
+.sub-nav .tel-btn {
+  font-size: 90%;
+  margin: 3px;
+  transition: background ease 0.3s;
+}
+.sub-nav .tel-btn:hover,
+.sub-nav .tel-btn:focus {
+  background: #e74c3c;
+}
