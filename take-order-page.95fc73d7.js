@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./../images/take-order/hero.jpg":[["hero.33b2e6c1.jpg","QYvS"],"QYvS"]}],"TSdG":[function(require,module,exports) {
 "use strict";require("../sass/main.scss");
 },{"../sass/main.scss":"clu1"}]},{},["TSdG"], null)
-//# sourceMappingURL=/goit-team-project/take-order-page.ba8756dd.js.map
+//# sourceMappingURL=/goit-team-project/take-order-page.95fc73d7.js.map
