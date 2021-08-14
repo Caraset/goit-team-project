@@ -4,16 +4,8 @@ $desktop: 'desktop';
 
 $breakpoints: (
   'mobile': 320px,
+  'tablet-container': 688px,
   'tablet': 768px,
+  'desktop-container': 1102px,
   'desktop': 1440px,
 );
-
-/*
-screen: block:                 container:
-1440w   body {mxw1440}          .container {p0 109; mxw1280; }
-768w    body {mxw768}           .container {p0  60;         }
-320w    body {mxw320}           .container {p0  20;         }
-
-1440w   header {mxw1280},       .container {p0  80; mxw1440; }
-1440w   more-photos {mxw1062;}  .container {p0 109; mxw1280; }
- */
