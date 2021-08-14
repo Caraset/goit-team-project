@@ -167,21 +167,25 @@
 // }
 
 .bg-shadow-button__link {
-  position: absolute;
-  top: 295px;
-  left: 118px;
+  display: none;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 295px;
+    left: 118px;
 
-  width: 71px;
-  height: 74px;
-  fill: var(--second-accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  background: #ffffff;
-  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
-  border-radius: 0px 0px 35px 0px;
+    width: 71px;
+    height: 74px;
+    fill: var(--second-accent-color);
+
+    background: #ffffff;
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 35px 0px;
+  }
 }
 
 .bg-shadow-button__icon {
