@@ -1,0 +1,22 @@
+/* START "Скрытый класс для скрин-ридеров"*/
+body .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+
+  clip-path: inset(100%);
+  clip: rect(1px 1px 1px 1px); /* Старая IE6, IE7, вырезает контент. Блок в потоке. */
+  clip: rect(1px, 1px, 1px, 1px); /* Старая, вырезает контент. Блок в потоке. */
+  line-height: 1px;
+
+  white-space: nowrap;
+  pointer-events: none; /* MUST HAVE */
+
+  border: 0;
+  outline: none;
+  opacity: 0;
+}
+/* END "Скрытый класс для скрин-ридеров" */

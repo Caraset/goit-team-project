@@ -4,13 +4,12 @@
  */
 
 // утилиты
-@import './utils/variables';
-@import './utils/mixins';
-@import './utils/titles';
+@import './utils/index';
 
-@import './base/fonts';
+// базовые стили
 @import './base/common';
 @import './base/container';
+@import './base/fonts';
 
 // компоненты
 @import './components/logo';

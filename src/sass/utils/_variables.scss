@@ -1,3 +1,6 @@
+/* ------------------------------------------------------ */
+/* || --------------- START 'ПЕРЕМЕННЫЕ' ---------------- */
+/* ------------------------------------------------------ */
 :root {
   --main-font: 'Cera Pro', sans-serif;
   --secondary-font: 'Caviar Dreams', sans-serif;
@@ -7,11 +10,44 @@
   --secondary-color: #f5f5fa;
   --third-color: #2b2b2b;
 
-  // --first-bp: 321px;
-  // --second-bp: 769px;
-  // --third-bp: 1444px;
+  --gap: 32px;
+  /* || ---------------- START 'АНИМАЦИЯ' ----------------- */
+  --time: 250ms;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  /* || ----------------- END 'АНИМАЦИЯ' ------------------ */
 }
 
 $first-bp: 320px;
 $second-bp: 768px;
-$third-bp: 1444px;
+$third-bp: 1444px; /* Mockup: backdrop=1444px, page=1440px. */
+
+$base-fz: 16px;
+$base-fz-body: 16px;
+$precision: (10 * 3);
+/* ------------------------------------------------------ */
+/* || ---------------- END 'ПЕРЕМЕННЫЕ' ----------------- */
+/* ------------------------------------------------------ */
+
+/* Добавляем в карту $z-index селекторы для наших абсолютно - позиционированных элементов,
+и для них @mixin zi сгенерит z-index с шагом в 3(можно менять) */
+$z-index: (
+  'put-here__your-selector',
+  'without-first-leading-dot, .empty::after',
+  'empty',
+  'empty, .empty',
+  'empty',
+  'empty'
+);
+
+@mixin zi($i: 3) {
+  $z-step: $i;
+  @each $index in $z-index {
+    $z-step: $z-step + $i;
+
+    .#{$index} {
+      z-index: $z-step;
+    }
+  }
+}
+
+@include zi;

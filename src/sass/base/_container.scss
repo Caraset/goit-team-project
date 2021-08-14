@@ -4,14 +4,18 @@
 
   padding-left: 20px;
   padding-right: 20px;
-
   max-width: 320px;
 
-  @media screen and (min-width: 320px) {
-    max-width: 688px;
+  @include mq($mobile) {
+    max-width: map-get($breakpoints, 'tablet-container');
   }
 
-  @media screen and (min-width: 768px) {
-    max-width: 1102px;
+  @include mq($tablet, $pr: 60px, $pl: 60px) {
+    max-width: map-get($breakpoints, 'desktop-container');
   }
 }
+
+// Экран                 Контейнер
+// [0..319px]      | сам контейнер = 320px  | ( 280px + 20px падинги с каждой стороны)
+// [320px..768px]  | сам контейнер = 688px  | ( 648px + 20px падинги с каждой стороны)
+// [768px..1440px] | сам контейнер = 1102px | (1062px + 20px падинги с каждой стороны)
