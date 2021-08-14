@@ -3,12 +3,13 @@
     padding-top: 11px;
     padding-bottom: 52px;
 
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       padding-bottom: 100px;
     }
   }
 
   &__title {
+    letter-spacing: 0em;
     margin-bottom: 16px;
 
     @media screen and (min-width: 768px) {
@@ -50,7 +51,7 @@
       }
     }
 
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       width: 515px;
       height: 315px;
       margin-right: 32px;
@@ -63,7 +64,7 @@
   }
 
   &__content {
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -71,7 +72,7 @@
   }
 
   &__text-container {
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       margin-bottom: 55px;
     }
   }
@@ -83,7 +84,7 @@
       margin-bottom: 0;
     }
 
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       margin-bottom: 24px;
 
       &:last-child {
@@ -96,7 +97,7 @@
   &__img-container {
     display: none;
 
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       display: flex;
       justify-content: space-between;
     }
@@ -143,27 +144,6 @@
   }
 }
 
-//del after add .title///////////////
-.title {
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: #487996;
-
-  @media screen and (min-width: 768px) {
-    font-size: 36px;
-    line-height: 45px;
-  }
-
-  @media screen and (min-width: 1444px) {
-    font-size: 48px;
-    line-height: 60px;
-  }
-}
-
 //delete after add style to body
 .to__text {
   font-family: Cera Pro;
@@ -172,7 +152,7 @@
   font-size: 16px;
   line-height: 1.25;
   color: #2b2b2b;
-  @media screen and (min-width: 1444px) {
+  @media screen and (min-width: 1440px) {
     font-size: 18px;
     line-height: 1.28;
   }
