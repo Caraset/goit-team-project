@@ -1,0 +1,33 @@
+.model-examples {
+  list-style: none;
+
+  margin-right: -10px;
+  margin-top: -16px;
+
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: left;
+}
+
+.model-examples__item {
+  margin-right: 10px;
+  margin-top: 16px;
+}
+
+.model-examples__img {
+  display: inline-block;
+}
+
+// .we-create-model__container {
+//   text-align: center;
+// }
+
+.we-create-model__title {
+  margin-bottom: 16px;
+  max-width: 70%;
+  text-align: left;
+}
+
+.content-wrraper {
+  margin-bottom: 52px;
+}
