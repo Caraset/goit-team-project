@@ -30,3 +30,19 @@
 .item-modeling {
     @extend %list;
 }
+
+.container-item {
+    height: 164px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom 0 left 0;
+    background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280.jpg);
+        @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-device-pixel-ratio: 2dppx) {
+        background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280@2x.jpg)
+        }
+            
+    
+
+}
+
