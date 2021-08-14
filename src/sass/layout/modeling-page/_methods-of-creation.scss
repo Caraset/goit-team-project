@@ -34,14 +34,34 @@
 .container-item {
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: bottom -50px right 0;
-    background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280.jpg);
+    background-position: bottom 0 right 0;
+    @media screen and (max-width: 320px) {
+        max-height: 164px;
+        max-width: 280px;
+        background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280.jpg);
         @media screen and (min-device-pixel-ratio: 2),
         screen and (min-device-pixel-ratio: 2dppx) {
-        background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280@2x.jpg)
+        background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280@2x.jpg);
         }
-            
-    
 
+    }
+     /* @media screen and (min-width: 321px) and (max-width: 768px) {
+        max-height: 164px;
+        max-width: 280px;
+        background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246.jpg);
+        @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-device-pixel-ratio: 2dppx) {
+        background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246@2x.jpg);
+        }
+    }
+    @media screen and (min-width: 769px) {
+        max-height: 164px;
+        max-width: 280px;
+        background-position: bottom 0 right 0;
+        background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246.jpg);
+        @media screen and (min-device-pixel-ratio: 2),
+        screen and (min-device-pixel-ratio: 2dppx) {
+        background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246@2x.jpg);
+        }
+    */ 
 }
-
