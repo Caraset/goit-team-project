@@ -45,7 +45,7 @@ align-items: start; */
   /* multiple track-size values */
 
   @extend %list;
-  @extend %anime;
+
   outline: 1px solid red;
   @include mq($mobile) {
     display: grid;
@@ -69,8 +69,6 @@ grid-auto-columns: minmax(100px, auto) minmax(max-content, 2fr) minmax(20%, 80vm
 .more-photos__item {
   outline: 1px solid gold;
   @include mq($end: $mobile, $mb: var(--gap));
-
-  @extend %anime;
 }
 
 .photos-card__image {
