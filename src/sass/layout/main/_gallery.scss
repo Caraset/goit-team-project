@@ -1,0 +1,36 @@
+.main-gallery {
+  padding-bottom: 52px;
+}
+.main-gallery__title {
+  @include font(24px, 700, 1.25, 0);
+  color: var(--accent-color);
+
+  margin-bottom: 16px;
+}
+
+.main-gallery__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.main-gallery__item {
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+}
+
+.main-gallery__img-wrapper {
+  max-width: 280px;
+
+  margin-bottom: 8px;
+}
+
+.main-gallery__text-wrapper {
+  max-width: 280px;
+}
+
+.main-gallery__text {
+  @include font(16px, 300, 1.25, 0);
+  color: var(--accent-color);
+}
