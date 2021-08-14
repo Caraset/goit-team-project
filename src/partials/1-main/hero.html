@@ -1,4 +1,4 @@
-<section class="hero hero__section">
+<section class="hero">
   <div class="container">
     <h1 class="hero__title">
       Інженерна, конструкторська <br />
@@ -96,4 +96,88 @@
     </ul>
     <h2 class="hero__subtitle">Ми втілюємо ідеї в реальність</h2>
   </div>
+
+  <!-- Изображения для фона -->
+
+  <div class="bg-shadow-1">
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          ./images/main-section/desktop/bg-img-1.jpg    1x,
+          ./images/main-section/desktop/bg-img-1@2x.jpg 2x
+        "
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./images/main-section/tablet/bg-img-1.jpg    1x,
+          ./images/main-section/tablet/bg-img-1@2x.jpg 2x
+        "
+      />
+      <img class="bg-shadow-img-1" src="./images/main-section/desktop/bg-img-1.jpg" alt="фигура" />
+    </picture>
+  </div>
+  <div class="bg-shadow-2">
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          ./images/main-section/desktop/bg-img-2.jpg    1x,
+          ./images/main-section/desktop/bg-img-2@2x.jpg 2x
+        "
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./images/main-section/tablet/bg-img-2.jpg    1x,
+          ./images/main-section/tablet/bg-img-2@2x.jpg 2x
+        "
+      />
+      <img class="bg-shadow-img-2" src="./images/main-section/desktop/bg-img-2.jpg" alt="фигура" />
+    </picture>
+  </div>
+  <div class="bg-shadow-3">
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          ./images/main-section/desktop/bg-img-3.jpg    1x,
+          ./images/main-section/desktop/bg-img-3@2x.jpg 2x
+        "
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./images/main-section/tablet/bg-img-3.jpg    1x,
+          ./images/main-section/tablet/bg-img-3@2x.jpg 2x
+        "
+      />
+      <img class="bg-shadow-img-3" src="./images/main-section/desktop/bg-img-3.jpg" alt="фигура" />
+    </picture>
+  </div>
+  <div class="bg-shadow-4">
+    <picture>
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          ./images/main-section/desktop/bg-img-4.jpg    1x,
+          ./images/main-section/desktop/bg-img-4@2x.jpg 2x
+        "
+      />
+      <source
+        media="(min-width: 768px)"
+        srcset="
+          ./images/main-section/tablet/bg-img-4.jpg    1x,
+          ./images/main-section/tablet/bg-img-4@2x.jpg 2x
+        "
+      />
+      <img class="bg-shadow-img-4" src="./images/main-section/desktop/bg-img-4.jpg" alt="фигура" />
+    </picture>
+  </div>
+  <a class="bg-shadow-button__link" href="#gallery">
+    <svg class="bg-shadow-button__icon">
+      <use href="./images/svg-sprite.svg#arrow-icon"></use>
+    </svg>
+  </a>
 </section>
