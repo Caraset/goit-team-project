@@ -22,11 +22,12 @@
             background: var(--accent-color);
             border-radius: 3px 0px;
         }
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }   
+        
 }
 
-.item-modeling:not(:last-child) {
-    margin-bottom: 16px;
-}
 .item-modeling {
     @extend %list;
 }
@@ -36,16 +37,37 @@
     background-size: contain;
     background-position: bottom 0 right 0;
     @media screen and (max-width: 320px) {
-        max-height: 164px;
-        max-width: 280px;
+        
         background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280.jpg);
-        @media screen and (min-device-pixel-ratio: 2),
-        screen and (min-device-pixel-ratio: 2dppx) {
-        background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280@2x.jpg);
-        }
-
+             @media screen and (min-device-pixel-ratio: 2),
+                    screen and (min-device-pixel-ratio: 2dppx) {
+                    background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280@2x.jpg);
+                    }
     }
-     /* @media screen and (min-width: 321px) and (max-width: 768px) {
+
+    @media screen and (min-width: 321px) and (max-width: 769px) {             
+         background-position: bottom 0 right 0px;
+         background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246.jpg);
+                @media screen and (min-device-pixel-ratio: 2),
+                       screen and (min-device-pixel-ratio: 2dppx) {
+                       background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246@2x.jpg);
+                }   
+    }
+
+    
+    /*.container-item {
+        @media screen and (min-width: 321px) and (max-width: 768px) {
+         max-height: 400px;
+         max-width: 280px;
+         background-position: bottom 0 right 0;
+         background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246.jpg);
+         @media screen and (min-device-pixel-ratio: 2),
+         screen and (min-device-pixel-ratio: 2dppx) {
+         background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246@2x.jpg);
+        }   
+            }
+        }
+      @media screen and (min-width: 321px) and (max-width: 768px) {
         max-height: 164px;
         max-width: 280px;
         background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246.jpg);
