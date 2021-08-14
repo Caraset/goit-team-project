@@ -28,11 +28,12 @@
   font-family: var(--secondary-font), sans-serif;
   @include font(18px, 400, 1.16, 0);
   text-align: center;
-  color: var(--third-color);
 
   margin-bottom: 32px;
 
   @media screen and (min-width: 768px) {
+    @include font(24px, 400, 1.16, 0);
+
     margin-bottom: 64px;
   }
 }
@@ -85,7 +86,10 @@
   font-family: var(--secondary-font), sans-serif;
   @include font(16px, 400, 1.18, 0);
   text-align: center;
-  color: var(--third-color);
+
+  @media screen and (min-width: 768px) {
+    @include font(18px, 400, 1.16, 0);
+  }
 }
 
 .bg-shadow-1 {
