@@ -79,7 +79,7 @@
   @if ($mt or $mr or $mb or $ml) {
     @if (($mt == $mb) and ($mb == $mr) and ($mr == $ml) and ($mt != null)) {
       margin: $mt;
-    } @else if (($mt == $mb) and ($mr == $ml) and ($pt != null)) {
+    } @else if (($mt == $mb) and ($mr == $ml) and ($mt != null)) {
       margin: $mt $mr;
     } @else if
       (
