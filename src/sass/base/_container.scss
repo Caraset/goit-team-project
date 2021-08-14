@@ -10,7 +10,7 @@
     max-width: map-get($breakpoints, 'tablet-container');
   }
 
-  @include mq($tablet) {
+  @include mq($tablet, $pr: 60px, $pl: 60px) {
     max-width: map-get($breakpoints, 'desktop-container');
   }
 }
