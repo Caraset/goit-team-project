@@ -4,8 +4,16 @@
 .text-modeling:not(:last-child) {
     margin-bottom: 16px;
 }
-.subtitle-modeling {
+.item-modeling {
     margin-bottom: 16px;
+        &::before{
+            display: inline-block;
+            content: "";
+            width: 7px;
+            height: 7px;
+            background: #487996;
+            border-radius: 3px 0px;
+        }
 }
 
 .item-modeling:not(:last-child) {
