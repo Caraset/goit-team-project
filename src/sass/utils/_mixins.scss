@@ -47,9 +47,9 @@
 /* Padding converter */
 @mixin paddings($pt: null, $pr: null, $pb: null, $pl: null) {
   @if ($pt or $pr or $pb or $pl) {
-    @if (($pt == $pb) and ($pb == $pr) and ($pr == $pl)) {
+    @if (($pt == $pb) and ($pb == $pr) and ($pr == $pl) and ($pt != null)) {
       padding: $pt;
-    } @else if (($pt == $pb) and ($pr == $pl)) {
+    } @else if (($pt == $pb) and ($pr == $pl) and ($pt != null)) {
       padding: $pt $pr;
     } @else if
       (
@@ -77,9 +77,9 @@
 /* Margin converter */
 @mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
   @if ($mt or $mr or $mb or $ml) {
-    @if (($mt == $mb) and ($mb == $mr) and ($mr == $ml)) {
+    @if (($mt == $mb) and ($mb == $mr) and ($mr == $ml) and ($mt != null)) {
       margin: $mt;
-    } @else if (($mt == $mb) and ($mr == $ml)) {
+    } @else if (($mt == $mb) and ($mr == $ml) and ($pt != null)) {
       margin: $mt $mr;
     } @else if
       (
