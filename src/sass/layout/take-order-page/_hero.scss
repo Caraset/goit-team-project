@@ -1,0 +1,138 @@
+.to {
+  &__section {
+    padding-top: 11px;
+    padding-bottom: 52px;
+
+    @media screen and (min-width: 1444px) {
+      padding-bottom: 100px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 16px;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__wrap {
+    @media screen and (min-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &__hero {
+    height: 171px;
+    background-color: blue;
+    margin-bottom: 16px;
+
+    background-image: url('../../src/images/take-order/hero.jpg');
+    border-radius: 15px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media screen and (min-width: 768px) {
+      width: 247px;
+      height: 116px;
+      margin-bottom: 0;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+
+    @media screen and (min-width: 1444px) {
+      width: 515px;
+      height: 315px;
+      margin-right: 32px;
+    }
+  }
+
+  &__content {
+    @media screen and (min-width: 1444px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__text-container {
+    @media screen and (min-width: 1444px) {
+      margin-bottom: 55px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 1444px) {
+      margin-bottom: 24px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  /// img
+  &__img-container {
+    display: none;
+
+    @media screen and (min-width: 1444px) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+//модифик фото
+.to__img_br {
+  border-bottom-right-radius: 50%;
+}
+.to__img_br-tl {
+  border-bottom-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
+.to__img_tr-br {
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+//del after add .title///////////////
+.title {
+  font-family: Cera Pro;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #487996;
+
+  @media screen and (min-width: 768px) {
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  @media screen and (min-width: 1444px) {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+
+//delete after add style to body
+.to__text {
+  font-family: Cera Pro;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #2b2b2b;
+  @media screen and (min-width: 1444px) {
+    font-size: 18px;
+    line-height: 1.28;
+  }
+}

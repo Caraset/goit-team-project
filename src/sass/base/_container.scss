@@ -1,18 +1,17 @@
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-}
 
-@media screen and (min-width: $second-bp) {
-  .container {
-    max-width: 628px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  max-width: 320px;
+
+  @media screen and (min-width: 320px) {
+    max-width: 688px;
   }
-}
 
-@media screen and (min-width: third-bp) {
-  .container {
-    max-width: 1280px;
+  @media screen and (min-width: 768px) {
+    max-width: 1102px;
   }
 }

@@ -1,22 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Заголовок страницы</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Заголовок страницы</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
-    integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+  <body>
+    <!-- хедер -->
+    <include src="./partials/components/header.html"></include>
 
-<body>
+    <ul>
+      <li><a href="./partials/contacts-page.html">contacts-page</a></li>
+      <li><a href="./partials/modeling-page.html">modeling-page</a></li>
+      <li><a href="./partials/printing-page.html">printing-page</a></li>
+      <li><a href="./partials/scanning-page.html">scanning-page</a></li>
+      <li><a href="./partials/take-order-page.html">take-order-page</a></li>
+    </ul>
 
-  <include src="./partials/main-page.html"></include>
+    <include src="./partials/1-main/hero.html"></include>
+    <include src="./partials/1-main/gallery.html"></include>
+    <include src="./partials/1-main/more-photo.html"></include>
 
+    <!-- футер -->
+    <include src="./partials/components/footer.html"></include>
 
-  <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
-  <script src="./index.js"></script>
-</body>
-
+    <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
+    <script src="./index.js"></script>
+  </body>
 </html>

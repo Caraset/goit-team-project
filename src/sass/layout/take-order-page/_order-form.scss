@@ -1,0 +1,49 @@
+.of__section {
+  padding-bottom: 52px;
+  @media screen and (min-width: 768px) {
+    padding-bottom: 76px;
+  }
+  @media screen and (min-width: 1444px) {
+    padding-bottom: 100px;
+  }
+}
+
+.of__title {
+  margin-bottom: 8px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 7px;
+    text-align: center;
+  }
+  @media screen and (min-width: 1444px) {
+    margin-bottom: 16px;
+    text-align: left;
+  }
+}
+
+.of__form {
+  @media screen and (min-width: 768px) {
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media screen and (min-width: 1444px) {
+    width: 515px;
+  }
+}
+
+.of__wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.of__input {
+  border: none;
+  border-bottom: 1px solid #487996;
+  width: 100%;
+}
+
+.of__button {
+  display: block;
+  margin-left: auto;
+}
