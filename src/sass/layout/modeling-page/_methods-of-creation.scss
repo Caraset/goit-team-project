@@ -1,0 +1,39 @@
+.title-modeling{
+    margin-bottom: 16px;
+}
+.text-modeling:not(:last-child) {
+margin-bottom: 16px;
+}
+.subtitle-modeling {
+    margin-bottom: 16px;
+    font-family: Cera Pro;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.28;
+    text-transform: uppercase;
+    color: #487996;
+}
+
+
+
+.item-modeling:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+
+
+.background-modeling{
+    width: 280px;
+    height: 164px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url(../../../../../../goit-team-project/src/images/main/more-photos/desktop/modeling-page/modeling-246.jpg);
+    @media  screen and (min-divice-pixel-ratio: 2),
+       screen and (min-resolution: 192dpi),
+       screen and (min-resolution: 2dppx) {
+       background-image: url(../../../../../../goit-team-project/src/images/main/more-photos/desktop/modeling-page/modeling-246@2x.jpg); 
+    }
+    
+}
