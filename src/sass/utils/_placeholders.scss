@@ -1,7 +1,3 @@
 %list {
   list-style: none;
 }
-
-%anime {
-  @include tr('anime', 't', $tr);
-}
