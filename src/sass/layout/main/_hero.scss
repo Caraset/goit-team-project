@@ -151,6 +151,11 @@
     top: 71px;
     left: 117px;
   }
+
+  @media screen and (min-width: 1440px) {
+    top: 146px;
+    left: 176px;
+  }
 }
 
 .bg-shadow-2 {
@@ -161,6 +166,11 @@
     position: absolute;
     top: 74px;
     right: 47px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    top: 151px;
+    right: 32px;
   }
 }
 
@@ -173,6 +183,11 @@
     top: 356px;
     left: 47px;
   }
+
+  @media screen and (min-width: 1440px) {
+    top: 704px;
+    left: 32px;
+  }
 }
 
 .bg-shadow-4 {
@@ -184,9 +199,14 @@
     top: 295px;
     right: 47px;
   }
+
+  @media screen and (min-width: 1440px) {
+    top: 583px;
+    right: 32px;
+  }
 }
 
-.bg-shadow-1 .bg-shadow-img-1 {
+.bg-shadow-img-1 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 72px;
 }
@@ -226,9 +246,22 @@
     box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
     border-radius: 0px 0px 35px 0px;
   }
+
+  @media screen and (min-width: 1440px) {
+    top: 583px;
+    left: 176px;
+
+    width: 144px;
+    height: 144px;
+  }
 }
 
 .bg-shadow-button__icon {
   width: 16px;
   height: 16px;
+
+  @media screen and (min-width: 1440px) {
+    width: 32px;
+    height: 32px;
+  }
 }
