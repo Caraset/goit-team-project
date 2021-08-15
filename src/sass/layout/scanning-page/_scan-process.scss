@@ -29,16 +29,70 @@ background: #FFFFFF;
 opacity: 0.8;
 box-shadow: inset 1px 1px 16px rgba(203, 203, 203, 0.8), inset -1px -1px 16px #FFFFFF;
 border-radius: 50px 0px;
-}
+<<<<<<< Updated upstream
+=======
 
-.scan-process__item {
-    &:nth-child(2n+1) {
-      margin-right: 15px;
-  }
-  &:nth-child(-n+2) {
-    margin-bottom: 15px;
+&--scan-process-1::before {
+    display: block;
+    content: "";
+    background-image: url(../images/scanning-page/scan-process/mobile/Scan_process_1.jpg);
+    
+    @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+    only screen and (-moz-min-device-pixel-ratio: 1.5),
+    only screen and (-o-min-device-pixel-ratio: 3/2),
+    only screen and (min-device-pixel-ratio: 1.5) {
+        &--scan-process-1::before {
+        background-image: url(../images/scanning-page/retina/mobile/Scan_process_mobile@2x.png); 
+        }
+    }
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 93px;
+    margin-top: 15px;
+    }
+
+    &--scan-process-2::before {
+    display: block;
+    content: "";
+    background-image: url(../images/scanning-page/scan-process/mobile/Scan_process_2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 93px;
+    margin-top: 15px;
+    }
+    
+    &--scan-process-3::before {
+    display: block;
+    content: "";
+    background-image: url(../images/scanning-page/scan-process/mobile/Scan_process_3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 93px;
+    margin-top: 15px;
+    }
+    
+    &--scan-process-4::before {
+    display: block;
+    content: "";
+    background-image: url(../images/scanning-page/scan-process/mobile/Scan_process_4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 93px;
+    margin-top: 15px;
+    }        
+>>>>>>> Stashed changes
 }
-}
+@media screen and (min-width: 320px) and (max-width: 767px) {
+    .scan-process__item {
+        &:nth-child(2n+1) {
+          margin-right: 15px;
+      }
+      &:nth-child(-n+2) {
+        margin-bottom: 15px;
+    }
+    }
+} 
+
 
 @media screen and (min-width: 768px) {
 .container {
