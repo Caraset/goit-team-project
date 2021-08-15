@@ -7,27 +7,73 @@
   display: flex;
   flex-wrap: wrap;
   // justify-content: left;
+
+  @media screen and (min-width: 465px) {
+    margin-right: -12px;
+  }
+
+  @include mq($desktop) {
+    margin-right: -20px;
+  }
 }
 
 .model-examples__item {
   margin-right: 10px;
   margin-top: 16px;
+
+  @media screen and (min-width: 465px) {
+    margin-right: 12px;
+  }
+
+  @include mq($desktop) {
+    margin-right: 20px;
+    width: 230px;
+  }
 }
 
 .model-examples__img {
   display: inline-block;
 }
 
-// .we-create-model__container {
-//   text-align: center;
-// }
+.we-create-model__container {
+  text-align: center;
+}
 
 .we-create-model__title {
   margin-bottom: 16px;
-  max-width: 70%;
+  max-width: 71%;
   text-align: left;
+
+  @include mq($tablet) {
+    margin-bottom: 24px;
+  }
+
+  @include mq($desktop) {
+    margin-bottom: 52px;
+  }
 }
 
 .content-wrraper {
   margin-bottom: 52px;
+  margin-left: auto;
+  margin-right: auto;
+
+  max-width: 280px;
+
+  @media screen and (min-width: 465px) {
+    max-width: 318px;
+  }
+
+  @media screen and (min-width: 636px) {
+    max-width: 483px;
+  }
+
+  @media screen and (min-width: 688px) {
+    max-width: 648px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    max-width: 980px;
+    margin-bottom: 100px;
+  }
 }
