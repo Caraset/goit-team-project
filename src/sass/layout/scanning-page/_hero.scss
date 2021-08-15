@@ -1,17 +1,11 @@
-.container {
-    width: 320px;
-    padding: 0 15px;
-    margin: 0 auto;
-  }
+
 .scanning-page {
     padding-top: 11px;
-    padding-bottom: 23px;
+    padding-bottom: 247px;
+    background-image: url(../images/scanning-page/scanning_photo_mobile.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
-
-
-// .scanning-page__item:not(:last-child) {
-//     margin-bottom: 24px;
-// }
 
 .scanning-page__desc {
 font-family: Cera Pro;
@@ -20,7 +14,9 @@ margin-bottom: 16px;
 color: #2B2B2B;
 width: 280px;
 }
-
+.last-desc {
+    margin-bottom: 0px;
+}
 
 .scanning-page__title {
     font-family: Cera Pro;
@@ -30,7 +26,7 @@ color: #487996;
 text-transform: uppercase;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1443px) {
     .scanning-page__desc {
         width: 515px;
        &:not(:last-child) {
@@ -40,7 +36,25 @@ text-transform: uppercase;
     .scanning-page__title {
         font-size: 36px;
         }
-        
+    .first-desc {
+        width: 514px;
+        height: 100px;
+    }    
+    .second-desc {
+        width: 515px;
+        height: 120px;
+    }
+    .last-desc {
+        width: 515px;
+        height: 60px;
+        margin-bottom: 0px;
+    }    
+        .scanning-page {
+            padding-top: 23px;
+            padding-bottom: 52px;
+            background-image: url(../images/scanning-page/scanning_photo_tablet.jpg);
+            background-position: right bottom 77px;
+        }    
 }
 
 @media screen and (min-width: 1444px) {
@@ -59,4 +73,10 @@ text-transform: uppercase;
     font-size: 48px;
     margin-bottom: 24px;
 }
+.scanning-page {
+    padding-top: 24px;
+    // padding-bottom: 52px;
+    background-image: url(../images/scanning-page/scanning_photo_desktop.jpg);
+    background-position: right bottom;
+}    
 }
