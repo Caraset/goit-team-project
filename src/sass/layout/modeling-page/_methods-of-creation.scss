@@ -48,6 +48,7 @@
 }
 
 .container-item {
+    background-size: 164px 268px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom 0 right 0;
@@ -60,8 +61,9 @@
                     }
     }
 
-    @media screen and (min-width: 321px) and (max-width: 768px) {             
-         background-position: bottom 0 right 0px;
+    @media screen and (min-width: 321px) and (max-width: 767px) {             
+         background-position: bottom 55px right 55px;
+         background-size: 246px 144px;
          background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246.jpg);
                 @media screen and (min-device-pixel-ratio: 2),
                        screen and (min-device-pixel-ratio: 2dppx) {
@@ -69,13 +71,20 @@
                 }   
     }
 
-    @media screen and (min-width: 769px) {
-        background-position: bottom 0 right 0;
+    @media screen and (min-width: 768px) {
+        background-position: bottom 0 right 178px;
+        background-size: 515px 300px;
         background-image: url(../images/main/more-photos/desktop/modeling-pages/modeling-515.jpg);
                 @media screen and (min-device-pixel-ratio: 2),
                         screen and (min-device-pixel-ratio: 2dppx) {
                         background-image: url(../images/main/more-photos/desktop/modeling-pages/modeling-515@2x.jpg);
         }
+    }
+    .container-background {
+        @media screen and (max-width: 320px) {
+            padding-bottom: 200px;
+        }
+        
     }
     /*.container-item {
         @media screen and (min-width: 321px) and (max-width: 768px) {
