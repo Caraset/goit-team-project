@@ -3,12 +3,13 @@
     padding-top: 11px;
     padding-bottom: 52px;
 
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       padding-bottom: 100px;
     }
   }
 
   &__title {
+    letter-spacing: 0em;
     margin-bottom: 16px;
 
     @media screen and (min-width: 768px) {
@@ -24,14 +25,18 @@
 
   &__hero {
     height: 171px;
-    background-color: blue;
+    background-color: rgb(42, 42, 87);
     margin-bottom: 16px;
 
-    background-image: url('../../src/images/take-order/hero.jpg');
+    background-image: url('../../src/images/take-order/hero/hero-mobile.jpg');
     border-radius: 15px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../../src/images/take-order/hero/hero-mobile@2x.jpg');
+    }
 
     @media screen and (min-width: 768px) {
       width: 247px;
@@ -39,17 +44,27 @@
       margin-bottom: 0;
       margin-right: 20px;
       flex-shrink: 0;
+      background-image: url('../../src/images/take-order/hero/hero-tablet.jpg');
+
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url('../../src/images/take-order/hero/hero-tablet@2x.jpg');
+      }
     }
 
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       width: 515px;
       height: 315px;
       margin-right: 32px;
+      background-image: url('../../src/images/take-order/hero/hero-desktop.jpg');
+
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url('../../src/images/take-order/hero/hero-desktop@2x.jpg');
+      }
     }
   }
 
   &__content {
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -57,7 +72,7 @@
   }
 
   &__text-container {
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       margin-bottom: 55px;
     }
   }
@@ -69,7 +84,7 @@
       margin-bottom: 0;
     }
 
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       margin-bottom: 24px;
 
       &:last-child {
@@ -82,44 +97,50 @@
   &__img-container {
     display: none;
 
-    @media screen and (min-width: 1444px) {
+    @media screen and (min-width: 1440px) {
       display: flex;
       justify-content: space-between;
     }
   }
 }
 
-//модифик фото
-.to__img_br {
-  border-bottom-right-radius: 50%;
-}
-.to__img_br-tl {
-  border-bottom-right-radius: 50%;
-  border-top-left-radius: 50%;
-}
-.to__img_tr-br {
-  border-bottom-right-radius: 50%;
-  border-top-right-radius: 50%;
-}
+.to__for-img {
+  width: 144px;
+  height: 144px;
+  box-shadow: (20px 20px 80px rgba(0, 0, 0, 0.25));
 
-//del after add .title///////////////
-.title {
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 30px;
-  text-transform: uppercase;
-  color: #487996;
+  &_left {
+    background-image: url('../../src/images/take-order/hero/car.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 72px 0px 0px 72px;
 
-  @media screen and (min-width: 768px) {
-    font-size: 36px;
-    line-height: 45px;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../../src/images/take-order/hero/car@2x.jpg');
+    }
   }
+  &_center {
+    background-image: url('../../src/images/take-order/hero/cube.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 72px 0px;
 
-  @media screen and (min-width: 1444px) {
-    font-size: 48px;
-    line-height: 60px;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../../src/images/take-order/hero/cube@2x.jpg');
+    }
+  }
+  &_right {
+    background-image: url('../../src/images/take-order/hero/lamp.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0px 0px 72px 0px;
+
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../../src/images/take-order/hero/lamp@2x.jpg');
+    }
   }
 }
 
@@ -131,7 +152,7 @@
   font-size: 16px;
   line-height: 1.25;
   color: #2b2b2b;
-  @media screen and (min-width: 1444px) {
+  @media screen and (min-width: 1440px) {
     font-size: 18px;
     line-height: 1.28;
   }
