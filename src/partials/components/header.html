@@ -1,10 +1,10 @@
 <header>
   <div class="container header-conteiner">
     <nav class="header-nav">
-      <a class="header-nav__logo" href="#">
+      <a class="header-nav__logo" href="../index.html">
         <picture>
           <source
-            media="(min-width: $third-bp)"
+            media="(min-width: 1444px)"
             srcset="
               ../images/logo/logo-webp/logo-192.webp    1x,
               ../images/logo/logo-webp/logo-192@2x.webp 2x
@@ -12,11 +12,11 @@
             type="image/webp"
           />
           <source
-            media="(min-width: $third-bp)"
+            media="(min-width: 1444px)"
             srcset="../images/logo/logo-192.jpg 1x, ../images/logo/logo-192@2x.jpg 2x"
           />
           <source
-            media="(min-width: $second-bp)"
+            media="(min-width: 768px)"
             srcset="
               ../images/logo/logo-webp/logo-125.webp    1x,
               ../images/logo/logo-webp/logo-125@2x.webp 2x
@@ -24,7 +24,7 @@
             type="image/webp"
           />
           <source
-            media="(min-width: $second-bp)"
+            media="(min-width: 768px)"
             srcset="../images/logo/logo-125.jpg 1x, ../images/logo/logo-125@2x.jpg 2x"
           />
           <source
@@ -44,21 +44,25 @@
       </a>
 
       <ul class="list header-nav__list">
-        <li class="header-nav__item"><a class="header-nav__link" href="">Головна</a></li>
         <li class="header-nav__item">
-          <a class="header-nav__link" href=""
+          <a class="header-nav__link" href="../index.html">Головна</a>
+        </li>
+        <li class="header-nav__item">
+          <a class="header-nav__link" href="#"
             >Послуги
             <!-- <ul class="list">
-              <li><a class="link" href="">3D Моделювання</a></li>
-              <li><a class="link" href="">3D Сканування</a></li>
-              <li><a class="link" href="">3D Друк</a></li>
-            </ul> -->
+                  <li><a class="link" href="./modeling-page.html">3D Моделювання</a></li>
+                  <li><a class="link" href="./scanning-page.html">3D Сканування</a></li>
+                  <li><a class="link" href="./printing-page.html">3D Друк</a></li>
+                </ul> -->
           </a>
         </li>
         <li class="header-nav__item">
-          <a class="header-nav__link" href="#">Замовити</a>
+          <a class="header-nav__link" href="./take-order-page.html">Замовити</a>
         </li>
-        <li class="header-nav__item"><a class="header-nav__link" href="">Контакти</a></li>
+        <li class="header-nav__item">
+          <a class="header-nav__link" href="./contacts-page.html">Контакти</a>
+        </li>
       </ul>
     </nav>
     <button class="burger-btn" type="button">
@@ -114,6 +118,7 @@
     </ul>
   </div>
 </header>
+
 <script>
   const icon = document.querySelector('.connect-mobile__btn');
   const telBlock = document.querySelector('.connect-mobile__box');
