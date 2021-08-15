@@ -1,45 +1,60 @@
 /* html structure reference
 <section class="more-photos section">
   <div class="more-photos__container">
-    <div class="more-photos__wrapper">
+    <div class="container more-photos__wrapper">
       <h2 class="title-v1">БІЛЬШЕ ФОТО</h2>
 
       <ul class="grid-wrapper more-photos-list more-photos__list">
         <li class="more-photos__item">
           <div class="photos-card">
             <a class="photos-card__link links"
+              <div class="photos-card__thumb">
+                <picture class="photos__picture">
+                 <img class="photos-card__image image transition"/>
 */
 
-/* container size reference
-.container {
-  @media screen and (min-width: 320px) { width: 320px; }
-  @media screen and (min-width: 768px) { width: 688px; }
-  @media screen and (min-width: 1444px){ width: 1102px;}
-} */
-
-/* .more-photos__container { } */
+.more-photos__container {
+  padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
+  @include mq($tablet, $pb: 26px); // 26px =  tablet  mb52 - section pb26
+  @include mq($desktop, $pb: 74px); // 74px = desktop mb100 - section pb26
+}
 
 // .more-photos-wrapper { }
-
 .more-photos__title {
   margin-bottom: 16px;
   @include mq($tablet, $mb: 32px);
   @include mq($desktop, $mb: 52px);
 }
 
-// .more-photos-gallery { }
-// .more-photos__list { }
+.more-photos__list {
+  margin-bottom: 32px;
+  @include mq($desktop, $mb: 56px);
+}
 
-/* more-photos sizes: desktop
-406x260 378x260 214x260
-214x271 378x271 406x271
-406x203 405x203	187x203
-214x250 378x260 406x260 */
+/*  more-photos sizes: desktop
+    406x260 378x260 214x260
+    214x271 378x271 406x271
+    406x203 405x203	187x203
+    214x250 378x260 406x260 */
 
-/*
-grid-auto-columns: minmax(60px, auto)
-grid-template-columns: repeat(3, minmax(0,1fr));
-align-items: start; */
+/*  more-photos sizes: tablet
+247.73x158.64 230.64x158.64 130.58x158.64
+130.58x165.36 230.64x165.36 247.73x165.36
+247.73x123.86 247.12x123.86 114.10x123.86
+130.58x158.64 230.64x158.64 247.73x158.64
+
+0.3822993827	0.2171751412	0.2015123457
+0.2015123457	0.2171751412	0.3822993827
+0.3822993827	0.2326930320  0.1760802469
+0.2015123457	0.2171751412	0.3822993827
+
+*/
+
+/*  more-photos sizes: mobile
+    mobile sizes
+    280x179
+    280x193
+    280x340 */
 
 .more-photos-list {
   /* multiple track-size values */
@@ -47,34 +62,59 @@ align-items: start; */
   @extend %list;
 
   outline: 1px solid red;
-  @include mq($mobile) {
+  @include mq($tablet) {
     display: grid;
     gap: var(--gap);
 
-    grid-auto-columns: auto auto auto;
     grid-template-columns: auto auto auto;
-
-    /*
-    grid-auto-columns: auto auto auto;
-grid-auto-columns: 100px 150px 390px;
-grid-auto-columns: 10% 33.3%;
-grid-auto-columns: 0.5fr 3fr 1fr;
-grid-auto-columns: minmax(100px, auto) minmax(max-content, 2fr) minmax(20%, 80vmax);
-
- */
+    grid-auto-flow: row;
   }
 }
 
 /* photos */
 .more-photos__item {
   outline: 1px solid gold;
-  @include mq($end: $mobile, $mb: var(--gap));
+
+  &:not(:last-child) {
+    @include mq($end: $tablet, $mb: var(--gap));
+  }
+}
+
+.photos-card__thumb {
+  width: 100%;
+}
+
+.photos-card__image:not([src]):not([srcset]) {
+  visibility: hidden;
 }
 
 .photos-card__image {
-  display: block;
-  max-width: 100%;
-  height: auto;
   object-fit: cover;
+  margin: 0 auto;
   border-radius: 5px;
+  opacity: 0;
+  transition-property: transform, opacity;
+  transform: translateX(50%) scaleX(0);
+}
+
+.fade {
+  @extend .transition;
+  opacity: 1;
+  transition-property: transform, opacity;
+  transform: translateX(0) scaleX(1);
+}
+
+.more-photos__svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.system-uicons-loader {
+  transition-timing-function: var(--cubic);
+
+  &:hover,
+  &:focus {
+    transform: rotateZ(360deg);
+    transition-duration: calc(var(--time) * 4);
+  }
 }

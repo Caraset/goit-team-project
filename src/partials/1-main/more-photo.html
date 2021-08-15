@@ -1,3 +1,5 @@
+<script defer src="./js/more-photos.js"></script>
+
 <!-- More photos -->
 <section class="more-photos section">
   <div class="container more-photos__container">
@@ -19,7 +21,7 @@
                   -->
 
                   <!-- 1102px - 406x260 -->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -31,24 +33,11 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                    sizes="(min-width: 1440px) 406px, 100vw"
-                  />
-
-                  <!--
-                    768px
-                  <source
-                    media="(min-width: 768px)"
-                    srcset="
-                      ./images/squooshed/portfolio/tablet/project-1-tablet-354x294.webp    1x,
-                      ./images/squooshed/portfolio/tablet/project-1-tablet-708x588@2x.webp 2x,
-                      ./images/squooshed/portfolio/tablet/project-1-tablet-354x294.jpg     1x,
-                      ./images/squooshed/portfolio/tablet/project-1-tablet-708x588@2x.jpg  2x
-                    "
-                  />
-                  -->
+                    sizes="(min-width: 1440px) 406px, 33vw"
+                  /> -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.webp      280w,
@@ -60,40 +49,35 @@
                       ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.jpg    840w,
                       ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg  1120w
                     "
-                    sizes="(min-width: 768px) 280px, 100vw"
-                  />
+                    sizes="(min-width: 768px) 280px, 33vw"
+                  /> -->
 
-                  <!-- 320px
-                    <source
-                      media="(max-width: 320px)"
-                      srcset="
-                        ./images/squooshed/portfolio/mobile/project-1-mobile-450x294.webp    1x,
-                        ./images/squooshed/portfolio/mobile/project-1-mobile-900x588@2x.webp 2x,
-                        ./images/squooshed/portfolio/mobile/project-1-mobile-450x294.jpg     1x,
-                        ./images/squooshed/portfolio/mobile/project-1-mobile-900x588@2x.jpg  2x
-                      "
-                    />
+                  <!-- mobile sizes
+                    280x179
+                    280x193
+                    280x340
                   -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
-                      ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
-                      ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
-                      ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.webp 1218w,
-                      ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.webp 1624w,
-                      ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.jpg       406w,
-                      ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.jpg    812w,
-                      ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
-                      ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
+                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.webp      280w,
+                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.webp   560w,
+                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.webp   840w,
+                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.webp 1120w,
+                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg       280w,
+                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.jpg    560w,
+                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.jpg    840w,
+                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg  1120w
                     "
-                    sizes="(max-width: 320px) 280px, 100vw"
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -109,7 +93,7 @@
               <div class="photos-card__thumb">
                 <picture class="photos__picture">
                   <!-- 1102px - 378x260-->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-02/architectural-model-378.webp      378w,
@@ -122,7 +106,7 @@
                       ./images/main/more-photos/desktop/more-02/architectural-model-1512@4x.jpg  1512w
                     "
                     sizes="(min-width: 1440px) 378px, 33vw"
-                  />
+                  /> -->
 
                   <!-- TODO: Kostiantyn Ochenash: Finish html and css for grid layout till EBD 2021-08-14 -->
                   <!-- /* more-photos sizes: desktop
@@ -134,7 +118,7 @@
                   -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-02/architectural-model-378.webp      378w,
@@ -146,11 +130,11 @@
                       ./images/main/more-photos/desktop/more-02/architectural-model-1134@3x.jpg  1134w,
                       ./images/main/more-photos/desktop/more-02/architectural-model-1512@4x.jpg  1512w
                     "
-                  />
+                  /> -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-02/architectural-model-378.webp      378w,
                       ./images/main/more-photos/desktop/more-02/architectural-model-756@2x.webp   756w,
@@ -161,11 +145,13 @@
                       ./images/main/more-photos/desktop/more-02/architectural-model-1134@3x.jpg  1134w,
                       ./images/main/more-photos/desktop/more-02/architectural-model-1512@4x.jpg  1512w
                     "
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -180,7 +166,7 @@
               <div class="photos-card__thumb">
                 <picture class="photos__picture">
                   <!-- 1102px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -192,10 +178,10 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -207,11 +193,11 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
@@ -222,11 +208,13 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -241,7 +229,7 @@
               <div class="photos-card__thumb">
                 <picture class="photos__picture">
                   <!-- 1102px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -253,10 +241,10 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -268,11 +256,11 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
@@ -283,11 +271,13 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -302,7 +292,7 @@
               <div class="photos-card__thumb">
                 <picture class="photos__picture">
                   <!-- 1102px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -314,10 +304,10 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -329,11 +319,11 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
@@ -344,11 +334,13 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -363,7 +355,7 @@
               <div class="photos-card__thumb">
                 <picture class="photos__picture">
                   <!-- 1102px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -375,10 +367,10 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -390,11 +382,11 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
@@ -405,11 +397,13 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -424,7 +418,7 @@
               <div class="photos-card__thumb">
                 <picture class="photos__picture">
                   <!-- 1102px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -436,10 +430,10 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -451,11 +445,11 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
@@ -466,11 +460,13 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -485,7 +481,7 @@
               <div class="photos-card__thumb">
                 <picture class="photos__picture">
                   <!-- 1102px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -497,10 +493,10 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -512,11 +508,11 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
@@ -527,11 +523,13 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -558,7 +556,7 @@
                   -->
 
                   <!-- 1102px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 1440px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -570,10 +568,10 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 768px -->
-                  <source
+                  <!-- <source
                     media="(min-width: 768px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
@@ -585,11 +583,11 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
-                  />
+                  /> -->
 
                   <!-- 320px -->
                   <source
-                    media="(max-width: 320px)"
+                    media="(max-width: 767px)"
                     srcset="
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
@@ -600,11 +598,13 @@
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg  1218w,
                       ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg  1624w
                     "
+                    sizes="(max-width: 767px) 280px, 100vw"
                   />
 
                   <img
-                    class="photos-card__image image"
-                    src="#"
+                    loading="lazy"
+                    class="photos-card__image image transition"
+                    data-lazy
                     alt="3D моделі виготовлені на 3D принтері "
                   />
                 </picture>
@@ -613,6 +613,10 @@
           </div>
         </li>
       </ul>
+
+      <svg class="more-photos__svg system-uicons-loader" width="45" height="45">
+        <use href="./images/svg-sprite.svg#loading-icon"></use>
+      </svg>
     </div>
   </div>
 </section>
