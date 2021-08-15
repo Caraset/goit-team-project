@@ -1,0 +1,141 @@
+<header>
+  <div class="container header-conteiner">
+    <nav class="header-nav">
+      <a class="header-nav__logo" href="../index.html">
+        <picture>
+          <source
+            media="(min-width: 1444px)"
+            srcset="
+              ../images/logo/logo-webp/logo-192.webp    1x,
+              ../images/logo/logo-webp/logo-192@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 1444px)"
+            srcset="../images/logo/logo-192.png 1x, ../images/logo/logo-192@2x.png 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="
+              ../images/logo/logo-webp/logo-125.webp    1x,
+              ../images/logo/logo-webp/logo-125@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="../images/logo/logo-125.png 1x, ../images/logo/logo-125@2x.png 2x"
+          />
+          <source
+            media="(min-width: 280px)"
+            srcset="
+              ../images/logo/logo-webp/logo-101.webp    1x,
+              ../images/logo/logo-webp/logo-101@2x.webp 2x
+            "
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 280px)"
+            srcset="../images/logo/logo-101.png 1x, ../images/logo/logo-101@2x.png 2x"
+          />
+          <img src="../images/logo/logo-101.png" alt="logo" />
+        </picture>
+      </a>
+
+      <ul class="list header-nav__list">
+        <li class="header-nav__item">
+          <a class="header-nav__link" href="../index.html">Головна</a>
+        </li>
+        <li class="header-nav__item header-nav__item-active">
+          <a class="header-nav__link" href="#"
+            >Послуги
+            <div class="header-nav__box-sub-menu">
+              <ul class="header-nav__list-sub-menu">
+                <li class="header-nav__item-sub-menu">
+                  <a class="header-nav__link-sub-menu" href="./modeling-page.html"
+                    >3D Моделювання</a
+                  >
+                </li>
+                <li class="header-nav__item-sub-menu">
+                  <a class="header-nav__link-sub-menu" href="./scanning-page.html">3D Сканування</a>
+                </li>
+                <li class="header-nav__item-sub-menu">
+                  <a class="header-nav__link-sub-menu" href="./printing-page.html">3D Друк</a>
+                </li>
+              </ul>
+            </div>
+          </a>
+        </li>
+        <li class="header-nav__item">
+          <a class="header-nav__link" href="./take-order-page.html">Замовити</a>
+        </li>
+        <li class="header-nav__item">
+          <a class="header-nav__link" href="./contacts-page.html">Контакти</a>
+        </li>
+      </ul>
+    </nav>
+    <button class="burger-btn" type="button">
+      <svg width="32" height="32" class="burger-btn__icon">
+        <use href="../images/svg-sprite.svg#burger-menu"></use>
+      </svg>
+    </button>
+
+    <div class="connect-mobile">
+      <button class="connect-mobile__btn" type="button">
+        <svg width="24" height="24" class="connect-mobile__icon">
+          <use href="../images/svg-sprite.svg#phone-icon"></use>
+        </svg>
+      </button>
+      <div class="connect-mobile__box is-hidden">
+        <div class="connect-mobile__figure"></div>
+        <ul class="connect-mobile__list">
+          <li class="connect-mobile__item">
+            <a class="connect-mobile__link" href="tel:+380936432288"> +38 (093) 643 22 88</a>
+          </li>
+          <li class="connect-mobile__item">
+            <a class="connect-mobile__link" href="tel:+380503454423"> +38 (050) 345 44 23</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <select id="selectID" class="select-language">
+      <option value="”ENG”">ENG</option>
+
+      <option value="”RUS”">RUS</option>
+
+      <option value="”UKR”">UKR</option>
+    </select>
+
+    <ul class="menu-connect">
+      <li class="menu-connect__list">
+        <a class="link menu-connect__link" href="tel:+380936432288">
+          <svg width="14" height="14" class="menu-connect__icon transition">
+            <use href="../images/svg-sprite.svg#phone-icon"></use>
+          </svg>
+          +38 (093) 643 22 88</a
+        >
+      </li>
+      <li class="menu-connect__list">
+        <a class="link menu-connect__link" href="tel:+380503454423">
+          <svg width="14" height="14" class="menu-connect__icon transition">
+            <use href="../images/svg-sprite.svg#phone-icon"></use>
+          </svg>
+          +38 (050) 345 44 23</a
+        >
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  const icon = document.querySelector('.connect-mobile__btn');
+  const telBlock = document.querySelector('.connect-mobile__box');
+  console.log(icon);
+  console.log(telBlock);
+  icon.addEventListener('click', onIconClick);
+  function onIconClick() {
+    telBlock.classList.toggle('is-hidden');
+  }
+</script>
