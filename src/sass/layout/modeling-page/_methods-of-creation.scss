@@ -68,7 +68,15 @@
                        background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246@2x.jpg);
                 }   
     }
-     
+
+    @media screen and (min-width: 769px) {
+        background-position: bottom 0 right 0;
+        background-image: url(../images/main/more-photos/desktop/modeling-pages/modeling-515.jpg);
+                @media screen and (min-device-pixel-ratio: 2),
+                        screen and (min-device-pixel-ratio: 2dppx) {
+                        background-image: url(../images/main/more-photos/desktop/modeling-pages/modeling-515@2x.jpg);
+        }
+    }
     /*.container-item {
         @media screen and (min-width: 321px) and (max-width: 768px) {
          max-height: 400px;
