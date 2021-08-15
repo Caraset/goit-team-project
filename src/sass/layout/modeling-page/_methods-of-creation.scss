@@ -3,8 +3,10 @@
 }
 
 .container-text {
-    @media screen and (min-width: 769px) {
-        width: 515px;
+    @media screen and (min-width: 768px) {
+        &:not(:last-child) {
+         margin-bottom: 16px;
+    }
          }
     &:not(:last-child) {
     margin-bottom: 16px;
@@ -13,12 +15,17 @@
 .container-modeling-text {
     @media screen and (min-width: 769px) {
         display: flex;
-        &:not(:last-child) {
-            margin-right: 32px;
-        }
     }
 }
-
+@media screen and (min-width: 769px) {
+    
+    .container-text{
+        width: 515px;
+        &:not(:last-child) {
+            margin-right: 32px;
+    }
+    }
+}
 
 
 .subtitle-modeling{
@@ -47,7 +54,50 @@
     @extend %list;
 }
 
-.container-item {
+.container-bg {
+  min-height: 450px;
+  background-size: 280px 164px;
+  background-repeat: no-repeat;
+  background-position: bottom 0 left 20px;
+  background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280.jpg);
+  @media screen and (min-device-pixel-ratio: 2),
+                    screen and (min-device-pixel-ratio: 2dppx) {
+                    background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280@2x.jpg);
+                    }
+  @media screen and (min-width: 650px) {
+    min-width: 570px;
+    max-width: 700px;
+    min-height: auto;
+    background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+                       screen and (min-device-pixel-ratio: 2dppx) {
+                       background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246@2x.jpg);
+                }  
+    background-size: 246px auto;
+    background-position: bottom 20px right 0;
+  }
+  @media screen and (min-width: 1440px) {
+      padding-top: 100px;
+      padding-right: 100px;
+    min-width: 570px;
+    max-width: 1200px;
+    min-height: auto;
+    background-image: url(../images/main/more-photos/desktop/modeling-pages/modeling-515.jpg);
+    @media screen and (min-device-pixel-ratio: 2),
+                        screen and (min-device-pixel-ratio: 2dppx) {
+                        background-image: url(../images/main/more-photos/desktop/modeling-pages/modeling-515@2x.jpg);
+        }
+    background-size: 415px auto;
+    background-position: bottom 20px right 0;
+  }
+}
+
+
+
+
+
+/*
+    .container-item {
     background-size: 164px 268px;
     background-repeat: no-repeat;
     background-size: contain;
@@ -118,5 +168,5 @@
         background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246@2x.jpg);
         }
     */ 
-}
-        
+
+       
