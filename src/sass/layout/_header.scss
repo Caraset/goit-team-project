@@ -1,37 +1,180 @@
 // ----- MENU FOR MOBILE/TABLET ----- //
 
 .menu-nav {
-    text-align: center;
-    padding-top: 30px;
-    margin-top: -24px;
+  text-align: center;
+  padding-top: 30px;
+  margin-top: -24px;
 }
 
 .menu-nav__item {
-    margin-top: 24px;
-    @include font (24px, 700, 30px);
-    color: var(--accent-color);
-    &-decoration {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 500;
-        margin-left: -12px;
-        &::before {
-            content: "";
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            background-color: var(--accent-color);
-            border-radius: 3px 0px;
-            margin-right: 12px;
-        } 
+  margin-top: 24px;
+  @include font(24px, 700, 30px);
+  color: var(--accent-color);
+  &-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-left: -12px;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-color);
+      border-radius: 3px 0px;
+      margin-right: 12px;
     }
+  }
 }
 
 .is-current {
-    color: white;
-    text-shadow: -1px -1px 0 var(--accent-color), 1px -1px 0 var(--accent-color), -1px 1px 0 var(--accent-color), 1px 1px 0 var(--accent-color);
+  color: white;
+  text-shadow: -1px -1px 0 var(--accent-color), 1px -1px 0 var(--accent-color),
+    -1px 1px 0 var(--accent-color), 1px 1px 0 var(--accent-color);
 }
 
+// ============HEADER====================
+.header-conteiner {
+  padding-top: 29px;
+  padding-bottom: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: $second-bp) {
+    padding: 20px 20px 10px 28px;
+  }
+  @media screen and (min-width: $third-bp) {
+    max-width: $third-bp;
+    padding: 40px 80px 24px 80px;
+  }
+}
 
+// ===================HEADER-NAVIGATION======================//
+.header-nav {
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: $third-bp) {
+    margin-right: 109px;
+  }
+  &__logo {
+    @media screen and (min-width: $third-bp) {
+      margin-right: 213px;
+    }
+  }
+  &__list {
+    @extend%list;
+    display: none;
+    @media screen and (min-width: $third-bp) {
+      display: flex;
+    }
+  }
+  &__item:not(:last-child) {
+    margin-right: 54px;
+  }
 
+  &__link {
+    @include font(18px, 400, 1.17, 0.01em);
+  }
+}
+
+// ===================END HEADER-NAVIGATION======================//
+
+// ===================lANGUAGE======================//
+.select-language {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  @include font($fs: 14px, $fw: bold, $lh: 1.29, $ls: 0.01em);
+  font-family: 'Caviar Dreams';
+  font-style: normal;
+  color: #bdbdbd;
+  @media screen and (min-width: $third-bp) {
+    margin-right: 94px;
+  }
+}
+
+// ===================BURGER  BUTTON======================//
+.burger-btn,
+.connect-mobile__btn {
+  border: none;
+  background: none;
+  padding: 0;
+}
+.burger-btn {
+  height: 32px;
+  // margin-right: 46px;
+  @media screen and (min-width: $third-bp) {
+    display: none;
+  }
+  &__icon {
+    fill: var(--accent-color);
+  }
+}
+
+// ===================PHONE  BUTTON======================//
+.connect-mobile {
+  @media screen and (min-width: $second-bp) {
+    display: none;
+  }
+
+  &__btn {
+    height: 24px;
+    position: relative;
+    // margin-right: 21px;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__icon {
+    fill: var(--second-accent-color);
+    padding: 0;
+  }
+
+  &__box {
+    position: absolute;
+    right: 0;
+  }
+  &__list {
+    width: 162px;
+    border-radius: 2px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 15px;
+    left: -58px;
+    background-color: #ecf2f5;
+    padding: 16px 4px;
+    @extend%list;
+  }
+
+  &__figure {
+    top: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #ecf1f3;
+
+    position: absolute;
+  }
+}
+
+// ===================PHONE NUMBER FOR TABLET AND DESKTOP======================//
+.menu-connect {
+  display: none;
+  @extend%list;
+  @media screen and (min-width: $second-bp) {
+    display: block;
+  }
+  &__list:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    fill: var(--second-accent-color);
+    margin-right: 4px;
+  }
+}
