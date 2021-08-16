@@ -12,11 +12,14 @@
 //                <picture class="photos-card__picture">
 //                 <img class="photos-card__image image transition"/>
 
+.more-photos {
+  @include bg-retina('../images/main-section/desktop/bg-img-1.jpg');
+}
+
 .more-photos__container {
   padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
   @include mq($tablet, $pb: 26px); // 26px =  tablet  mb52 - section pb26
-  @include mq($desktop, $pb: 74px); // 74px = desktop mb100 - section pb26
-  contain: content;
+  @include mq($desktop, $pb: 74px);
 }
 
 // .more-photos-wrapper { }

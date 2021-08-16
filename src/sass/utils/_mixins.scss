@@ -12,6 +12,9 @@
     screen and (min-resolution: 192dpi),
     screen and (min-resolution: 2dppx) {
     background-image: url('#{$url}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 
