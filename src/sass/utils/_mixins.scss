@@ -4,8 +4,22 @@
   line-height: $lh;
   letter-spacing: $ls;
 }
-/* ------------------------- START 'MIXINS' ------------------------- */
-/* Media Query + Margins + Paddings */ /* prettier-ignore */
+// ------------------------- START 'MIXINS' -------------------------
+
+// .box { @include bg-retina('./image.jpg'); }
+@mixin bg-retina($url: null) {
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('#{$url}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+// Media Query + Margins + Paddings
+/* prettier-ignore */
 @mixin mq(
   $start: null, $end: null,
   $mt: null, $mr: null, $mb: null, $ml: null,
@@ -44,7 +58,7 @@
   }
 }
 
-/* Padding converter */
+// Padding converter
 @mixin paddings($pt: null, $pr: null, $pb: null, $pl: null) {
   @if ($pt or $pr or $pb or $pl) {
     @if (($pt == $pb) and ($pb == $pr) and ($pr == $pl) and ($pt != null)) {
@@ -74,7 +88,7 @@
   @content;
 }
 
-/* Margin converter */
+// Margin converter
 @mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
   @if ($mt or $mr or $mb or $ml) {
     @if (($mt == $mb) and ($mb == $mr) and ($mr == $ml) and ($mt != null)) {
@@ -103,5 +117,14 @@
 
   @content;
 }
+
+/// MIXIN FOR ANIMATION
+@mixin animation {
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
+}
+//using
+//transition-property: анимир.свойства;
+//@include animation;
 
 /* -------------------------- END 'MIXINS' -------------------------- */

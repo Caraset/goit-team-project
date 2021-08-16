@@ -1,10 +1,10 @@
 <header>
   <div class="container header-conteiner">
     <nav class="header-nav">
-      <a class="header-nav__logo" href="#">
+      <a class="header-nav__logo" href="./index.html">
         <picture>
           <source
-            media="(min-width: $third-bp)"
+            media="(min-width: 1440px)"
             srcset="
               ./images/logo/logo-webp/logo-192.webp    1x,
               ./images/logo/logo-webp/logo-192@2x.webp 2x
@@ -12,11 +12,11 @@
             type="image/webp"
           />
           <source
-            media="(min-width: $third-bp)"
-            srcset="./images/logo/logo-192.jpg 1x, ./images/logo/logo-192@2x.jpg 2x"
+            media="(min-width: 1440px)"
+            srcset="./images/logo/logo-192.png 1x, ./images/logo/logo-192@2x.png 2x"
           />
           <source
-            media="(min-width: $second-bp)"
+            media="(min-width: 768px)"
             srcset="
               ./images/logo/logo-webp/logo-125.webp    1x,
               ./images/logo/logo-webp/logo-125@2x.webp 2x
@@ -24,8 +24,8 @@
             type="image/webp"
           />
           <source
-            media="(min-width: $second-bp)"
-            srcset="./images/logo/logo-125.jpg 1x, ./images/logo/logo-125@2x.jpg 2x"
+            media="(min-width: 768px)"
+            srcset="./images/logo/logo-125.png 1x, ./images/logo/logo-125@2x.png 2x"
           />
           <source
             media="(min-width: 360px)"
@@ -37,28 +37,46 @@
           />
           <source
             media="(min-width: 360px)"
-            srcset="./images/logo/logo-101.jpg 1x, ./images/logo/logo-101@2x.jpg 2x"
+            srcset="./images/logo/logo-101.png 1x, ./images/logo/logo-101@2x.png 2x"
           />
-          <img src="./images/logo/logo-101.jpg" alt="logo" />
+          <img src="./images/logo/logo-101.png" alt="logo" />
         </picture>
       </a>
 
       <ul class="list header-nav__list">
-        <li class="header-nav__item"><a class="header-nav__link" href="">Головна</a></li>
         <li class="header-nav__item">
-          <a class="header-nav__link" href=""
+          <a class="header-nav__link" href="./index.html">Головна</a>
+        </li>
+        <li class="header-nav__item header-nav__item-active">
+          <a class="header-nav__link" href="#"
             >Послуги
-            <!-- <ul class="list">
-              <li><a class="link" href="">3D Моделювання</a></li>
-              <li><a class="link" href="">3D Сканування</a></li>
-              <li><a class="link" href="">3D Друк</a></li>
-            </ul> -->
+            <div class="header-nav__box-sub-menu">
+              <ul class="header-nav__list-sub-menu">
+                <li class="header-nav__item-sub-menu">
+                  <a class="header-nav__link-sub-menu" href="./partials/modeling-page.html"
+                    >3D Моделювання</a
+                  >
+                </li>
+                <li class="header-nav__item-sub-menu">
+                  <a class="header-nav__link-sub-menu" href="./partials/scanning-page.html"
+                    >3D Сканування</a
+                  >
+                </li>
+                <li class="header-nav__item-sub-menu">
+                  <a class="header-nav__link-sub-menu" href="./partials/printing-page.html"
+                    >3D Друк</a
+                  >
+                </li>
+              </ul>
+            </div>
           </a>
         </li>
         <li class="header-nav__item">
-          <a class="header-nav__link" href="#">Замовити</a>
+          <a class="header-nav__link" href="./partials/take-order-page.html">Замовити</a>
         </li>
-        <li class="header-nav__item"><a class="header-nav__link" href="">Контакти</a></li>
+        <li class="header-nav__item">
+          <a class="header-nav__link" href="./partials/contacts-page.html">Контакти</a>
+        </li>
       </ul>
     </nav>
     <button class="burger-btn" type="button" data-modal-open hide-modal-btn>
@@ -66,7 +84,12 @@
         <use href="./images/svg-sprite.svg#burger-menu"></use>
       </svg>
     </button>
-    <button class="burger-btn burger-close-btn is-hidden" type="button" hide-close-icon data-modal-close>
+    <button
+      class="burger-btn burger-close-btn is-hidden"
+      type="button"
+      hide-close-icon
+      data-modal-close
+    >
       <svg width="22" height="22" class="burger-btn__icon">
         <use href="./images/svg-sprite.svg#icon-close-backdrop"></use>
       </svg>
@@ -91,59 +114,59 @@
           </ul>
         </div>
       </div>
-    <select id="selectID" class="select-language">
-      <option value="”ENG”">ENG</option>
+      <select id="selectID" class="select-language">
+        <option value="”ENG”">ENG</option>
 
-      <option value="”RUS”">RUS</option>
+        <option value="”RUS”">RUS</option>
 
-      <option value="”UKR”">UKR</option>
-    </select>
+        <option value="”UKR”">UKR</option>
+      </select>
 
-    <ul class="menu-connect">
-      <li class="menu-connect__list">
-        <a class="link menu-connect__link" href="tel:+380936432288">
-          <svg width="14" height="14" class="menu-connect__icon transition">
-            <use href="./images/svg-sprite.svg#phone-icon"></use>
-          </svg>
-          +38 (093) 643 22 88</a
-        >
-      </li>
-      <li class="menu-connect__list">
-        <a class="link menu-connect__link" href="tel:+380503454423">
-          <svg width="14" height="14" class="menu-connect__icon transition">
-            <use href="./images/svg-sprite.svg#phone-icon"></use>
-          </svg>
-          +38 (050) 345 44 23</a
-        >
-      </li>
-    </ul>
-  </div>
+      <ul class="menu-connect">
+        <li class="menu-connect__list">
+          <a class="link menu-connect__link" href="tel:+380936432288">
+            <svg width="14" height="14" class="menu-connect__icon transition">
+              <use href="./images/svg-sprite.svg#phone-icon"></use>
+            </svg>
+            +38 (093) 643 22 88</a
+          >
+        </li>
+        <li class="menu-connect__list">
+          <a class="link menu-connect__link" href="tel:+380503454423">
+            <svg width="14" height="14" class="menu-connect__icon transition">
+              <use href="./images/svg-sprite.svg#phone-icon"></use>
+            </svg>
+            +38 (050) 345 44 23</a
+          >
+        </li>
+      </ul>
+    </div>
   </div>
   <!--- MENU FOR MOBILE/TABLET -->
   <div class="backdrop is-hidden" data-modal>
-      <ul class="menu-nav">
-          <li class="menu-nav__item">
-              <a class="menu-nav__link is-current" href="#">Головна</a>
-          </li>
-          <li class="menu-nav__item">
-              <a class="menu-nav__link" href="#">Послуги</a>
-          </li>
-          <li class="menu-nav__item menu-nav__item-decoration">
-              <a class="menu-nav__link" href="./partials/modeling-page.html">3D Моделювання</a>
-          </li>
-          <li class="menu-nav__item menu-nav__item-decoration">
-              <a class="menu-nav__link" href="./partials/scanning-page.html">3D Сканування</a>
-          </li>
-          <li class="menu-nav__item menu-nav__item-decoration">   
-              <a class="menu-nav__link" href="./partials/printing-page.html">3D Друк</a>
-          </li>
-          <li class="menu-nav__item">
-              <a class="menu-nav__link" href="./partials/take-order-page.html">Замовити</a>
-          </li>
-          <li class="menu-nav__item">
-              <a class="menu-nav__link" href="./partials/contacts-page.html">Контакти</a>
-          </li>
-      </ul>
+    <ul class="menu-nav">
+      <li class="menu-nav__item">
+        <a class="menu-nav__link is-current" href="#">Головна</a>
+      </li>
+      <li class="menu-nav__item">
+        <a class="menu-nav__link" href="#">Послуги</a>
+      </li>
+      <li class="menu-nav__item menu-nav__item-decoration">
+        <a class="menu-nav__link" href="./partials/modeling-page.html">3D Моделювання</a>
+      </li>
+      <li class="menu-nav__item menu-nav__item-decoration">
+        <a class="menu-nav__link" href="./partials/scanning-page.html">3D Сканування</a>
+      </li>
+      <li class="menu-nav__item menu-nav__item-decoration">
+        <a class="menu-nav__link" href="./partials/printing-page.html">3D Друк</a>
+      </li>
+      <li class="menu-nav__item">
+        <a class="menu-nav__link" href="./partials/take-order-page.html">Замовити</a>
+      </li>
+      <li class="menu-nav__item">
+        <a class="menu-nav__link" href="./partials/contacts-page.html">Контакти</a>
+      </li>
+    </ul>
   </div>
 </header>
 <script>
@@ -156,28 +179,25 @@
     telBlock.classList.toggle('is-hidden');
   }
 
-
   (() => {
-  const refs = {
-    openModalBtn: document.querySelector('[data-modal-open]'),
-    closeModalBtn: document.querySelector('[data-modal-close]'),
-    hideBurgerBtn: document.querySelector('[hide-modal-btn]'),
-    modal: document.querySelector('[data-modal]'),
-    hideCloseIcon: document.querySelector('[hide-close-icon]'),
-    body: document.querySelector("body")
-  };
+    const refs = {
+      openModalBtn: document.querySelector('[data-modal-open]'),
+      closeModalBtn: document.querySelector('[data-modal-close]'),
+      hideBurgerBtn: document.querySelector('[hide-modal-btn]'),
+      modal: document.querySelector('[data-modal]'),
+      hideCloseIcon: document.querySelector('[hide-close-icon]'),
+      body: document.querySelector('body'),
+    };
 
-  refs.openModalBtn.addEventListener('click', toggleModal);
-  refs.closeModalBtn.addEventListener('click', toggleModal);
-  refs.hideCloseIco.addEventListener('click', toggleModal);
-  
+    refs.openModalBtn.addEventListener('click', toggleModal);
+    refs.closeModalBtn.addEventListener('click', toggleModal);
+    refs.hideCloseIco.addEventListener('click', toggleModal);
 
-  function toggleModal() {
-    refs.modal.classList.toggle('is-hidden');
-    refs.hideBurgerBtn.classList.toggle('is-hidden');
-    refs.hideCloseIcon.classList.toggle('is-hidden');
-    refs.body.classList.toggle('scroll-disabled');
-  }
-
-})();
+    function toggleModal() {
+      refs.modal.classList.toggle('is-hidden');
+      refs.hideBurgerBtn.classList.toggle('is-hidden');
+      refs.hideCloseIcon.classList.toggle('is-hidden');
+      refs.body.classList.toggle('scroll-disabled');
+    }
+  })();
 </script>

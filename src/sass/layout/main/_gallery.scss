@@ -1,5 +1,9 @@
 .main-gallery {
   padding-bottom: 52px;
+
+  @media screen and (min-width: 1440px) {
+    padding-bottom: 100px;
+  }
 }
 .main-gallery__title {
   @include font(24px, 700, 1.25, 0);
@@ -9,10 +13,12 @@
 
   @media screen and (min-width: 768px) {
     @include font(36px, 700, 1.25, 0);
+    margin-bottom: 32px;
   }
 
   @media screen and (min-width: 1440px) {
     @include font(48px, 700, 1.25, 0);
+    margin-bottom: 52px;
   }
 }
 
