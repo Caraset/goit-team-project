@@ -1,31 +1,26 @@
-(function () {
+(() => {
+  document.onload().console.log(`I'm Alive`);
+
   const refs = {
-    openModalImg: document.querySelector('[data-photos-lazy]'),
+    openModalImg: document.querySelectorAll('[data-photos-lazy]'),
+    openModalList: document.querySelectorAll('[data-photos-list]'),
     modal: document.querySelector('[data-gallery-modal]'),
+    modalImage: document.querySelectorAll('[data-gallery-image]'),
     htmlAndBody: document.querySelectorAll('[data-no-scroll]'),
   };
 
   function toggleModal() {
-    const isModalOpen = refs.openModalImg.getAttribute('aria-expanded') === 'true' || false;
+    const isModalOpen = refs.openModalList.getAttribute('aria-expanded') === 'true' || false;
+    refs.openModalList.setAttribute('aria-expanded', !isModalOpen);
 
-    refs.openModalImg.setAttribute('aria-expanded', !isModalOpen);
-    refs.modal.classList.toggle('is-hidden');
+    refs.modal.classList.toggle('is-hidden'); // MUST HAVE
+
     refs.htmlAndBody[0].classList.toggle('no-scroll');
     refs.htmlAndBody[1].classList.toggle('no-scroll');
   }
 
-  for (let i = refs.formInputs.length - 1; i >= 0; i--) {
-    refs.formInputs[i].addEventListener('focusin', e => {
-      e.currentTarget.placeholder = e.currentTarget.dataset.placeholder;
-    });
-
-    refs.formInputs[i].addEventListener('focusout', e => {
-      e.currentTarget.placeholder = ` `;
-    });
-  }
-
   var isFocused = 0;
-  function focusLog(targetElem = refs.openModalImg) {
+  function focusLog(targetElem = refs.openModalImg[0]) {
     /* Чарівництво */
     setTimeout(() => {
       targetElem.focus();
@@ -41,22 +36,26 @@
   function closeModal() {
     toggleModal(), focusLog();
   }
-
-  refs.openModalImg.addEventListener('click', function () {
-    refs.modal.classList.contains('is-hidden') && openModal();
+  // по event.target будет картинка а срабатывание произойдет на event.currentTarget
+  // Сделать проверку if(event.target !== img) {return}
+  refs.openModalList.addEventListener('click', event => {
+    if (event.currentTarget == refs.openModalImg || event.currentTarget == refs.openModalList) {
+      console.log('😍');
+    }
+    (refs.modal.classList.contains('is-hidden') || isModalOpen) && openModal();
   });
 
-  refs.closeModalBtn.addEventListener('click', event => {
-    closeModal();
-  });
+  // refs.closeModalBtn.addEventListener('click', event => {
+  //   closeModal();
+  // });
 
-  refs.modal.addEventListener('keyup', event => {
-    (event.which === 27 || event.key === 'Escape') &&
-      !refs.modal.classList.contains('is-hidden') &&
-      closeModal();
-  });
+  // refs.modal.addEventListener('keyup', event => {
+  //   (event.which === 27 || event.key === 'Escape') &&
+  //     !refs.modal.classList.contains('is-hidden') &&
+  //     closeModal();
+  // });
 
   refs.modal.addEventListener('mousedown', event => {
-    event.target.matches('[data-modal]') && closeModal();
+    event.target.matches('[data-gallery-modal]') && closeModal();
   });
 })();
