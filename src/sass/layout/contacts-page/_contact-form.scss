@@ -28,11 +28,13 @@
     width: 420px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 76px;
   }
   @media screen and (min-width: 1440px) {
     width: 515px;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 100px;
   }
 }
 
@@ -90,7 +92,7 @@
 
   &::placeholder {
     font-size: 16px;
-    line-height: 20px;
+    line-height: 1.25;
     color: #cdcdcd;
   }
 
@@ -101,8 +103,7 @@
 }
 
 .input-info {
-  font-size: 18px;
-  line-height: 1.11;
+  @include font(18px, 400, 1.11, 0);
   color: #cdcdcd;
   margin-bottom: 24px;
 }
@@ -119,13 +120,8 @@
   border: none;
   border-radius: 30.5px;
 
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 24px;
-
-  text-align: center;
-  letter-spacing: 0.1em;
+  @include font(16px, 700, 1.5, 0.1);
   text-transform: uppercase;
 
-  color: #487996;
+  color: var(--accent-color);
 }
