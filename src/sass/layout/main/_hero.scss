@@ -400,7 +400,15 @@
   @media screen and (min-width: 768px) {
     display: block;
     position: absolute;
-    top: 74px;
-    right: 118px;
+    top: 1062px;
+    left: 47px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 144px;
+    height: 144px;
+    top: 2083px;
+    left: 32px;
+    border-radius: 0px 0px 0px 72px;
   }
 }
