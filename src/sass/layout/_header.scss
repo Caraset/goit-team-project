@@ -192,7 +192,6 @@ header a:focus {
   position: absolute;
 }
 
-
 // ===================PHONE  BUTTON======================//
 .connect-mobile {
   @media screen and (min-width: $second-bp) {
@@ -264,4 +263,8 @@ header a:focus {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+header {
+  border-bottom: solid 1px #6e6e6e;
 }
