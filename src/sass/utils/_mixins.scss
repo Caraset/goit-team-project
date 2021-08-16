@@ -127,4 +127,13 @@
 //transition-property: анимир.свойства;
 //@include animation;
 
+@mixin bg-retina($url: null) {
+  @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('#{$url}');
+  }
+}
+//
+
 /* -------------------------- END 'MIXINS' -------------------------- */

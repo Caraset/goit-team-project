@@ -6,8 +6,6 @@
   }
 
   &__info {
-    @include font(16px, 400, 1.25);
-
     @include mq($tablet) {
       display: flex;
       justify-content: space-between;
@@ -67,7 +65,7 @@
 
   //list
   &_list {
-    @extend %list;
+    list-style: none;
   }
 
   // item
