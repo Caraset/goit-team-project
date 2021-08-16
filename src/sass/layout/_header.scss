@@ -4,6 +4,7 @@
   text-align: center;
   padding-top: 30px;
   margin-top: -24px;
+  @extend%list;
 }
 
 .menu-nav__item {
@@ -81,6 +82,12 @@
 // ===================END HEADER-NAVIGATION======================//
 
 // ===================lANGUAGE======================//
+
+.language-contact-position {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .select-language {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -90,6 +97,9 @@
   font-family: 'Caviar Dreams';
   font-style: normal;
   color: #bdbdbd;
+  @media screen and (min-width: $second-bp) {
+    margin-right: 30px;
+  }
   @media screen and (min-width: $third-bp) {
     margin-right: 94px;
   }
@@ -102,8 +112,12 @@
   background: none;
   padding: 0;
 }
+
 .burger-btn {
-  height: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  cursor: pointer;
   // margin-right: 46px;
   @media screen and (min-width: $third-bp) {
     display: none;
@@ -113,6 +127,11 @@
   }
 }
 
+.burger-close-btn {
+  position: absolute;
+}
+
+
 // ===================PHONE  BUTTON======================//
 .connect-mobile {
   @media screen and (min-width: $second-bp) {
@@ -120,7 +139,8 @@
   }
 
   &__btn {
-    height: 24px;
+    height: 18px;
+    margin-right: 25px;
     position: relative;
     // margin-right: 21px;
   }
