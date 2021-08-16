@@ -54,6 +54,7 @@
 }
 
 .text-wrapper {
+  position: relative;
   @media screen and (min-width: 768px) {
     margin-left: 20px;
   }
@@ -66,5 +67,30 @@
 
   @media screen and (min-width: 1444px) {
     margin-bottom: 24px;
+  }
+}
+
+.emoji {
+  position: absolute;
+
+  @media screen and (min-width: 320px) {
+    bottom: 0;
+    right: 79px;
+
+    width: 22px;
+    height: 22px;
+  }
+
+  @media screen and (min-width: 768px) {
+    bottom: 20px;
+    right: 171px;
+  }
+
+  @media screen and (min-width: 1444px) {
+    bottom: 0;
+    left: 0;
+
+    width: 49px;
+    height: 49px;
   }
 }

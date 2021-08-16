@@ -40,6 +40,12 @@
   }
 }
 
+.contacts-schedule__list:not(:last-child) {
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8px;
+  }
+}
+
 .contacts-schedule__time {
   display: block;
   margin-bottom: 8px;
