@@ -4,6 +4,7 @@
   text-align: center;
   padding-top: 30px;
   margin-top: -24px;
+  @extend%list;
 }
 
 .menu-nav__item {
@@ -137,6 +138,12 @@ header a:focus {
 // ===================END HEADER-NAVIGATION======================//
 
 // ===================lANGUAGE======================//
+
+.language-contact-position {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 .select-language {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -147,6 +154,9 @@ header a:focus {
   font-family: 'Caviar Dreams';
   font-style: normal;
   color: #bdbdbd;
+  @media screen and (min-width: $second-bp) {
+    margin-right: 30px;
+  }
   @media screen and (min-width: $third-bp) {
     margin-right: 94px;
   }
@@ -160,8 +170,12 @@ header a:focus {
   padding: 0;
   cursor: pointer;
 }
+
 .burger-btn {
-  height: 32px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  cursor: pointer;
   // margin-right: 46px;
   @media screen and (min-width: $third-bp) {
     display: none;
@@ -174,6 +188,10 @@ header a:focus {
   }
 }
 
+.burger-close-btn {
+  position: absolute;
+}
+
 // ===================PHONE  BUTTON======================//
 .connect-mobile {
   @media screen and (min-width: $second-bp) {
@@ -181,7 +199,8 @@ header a:focus {
   }
 
   &__btn {
-    height: 24px;
+    height: 18px;
+    margin-right: 25px;
     position: relative;
     // margin-right: 21px;
   }
@@ -238,4 +257,14 @@ header a:focus {
     fill: var(--second-accent-color);
     margin-right: 4px;
   }
+}
+
+.scroll-disabled {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+header {
+  border-bottom: solid 1px #6e6e6e;
 }
