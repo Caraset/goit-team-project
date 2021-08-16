@@ -1,5 +1,5 @@
-/* ------------------------- START "FUNCTIONS" ------------------------- */
-/* vw(30px, 768px) */
+// ------------------------- START "FUNCTIONS" -------------------------
+// vw(30px, 768px)
 @function vw($var, $vw) {
   @if ($vw and map_has_key($breakpoints, $vw)) {
     $vwValue: map-get($breakpoints, $vw);
@@ -7,4 +7,4 @@
     @return $result;
   }
 }
-/* -------------------------- END "FUNCTIONS" -------------------------- */
+// -------------------------- END "FUNCTIONS" --------------------------
