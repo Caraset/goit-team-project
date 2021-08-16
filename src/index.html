@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page-html" data-no-scroll lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F5F5FA" />
     <title>Заголовок страницы</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
@@ -11,29 +13,59 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- slick-carousel styles -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- slick-carousel theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
 
-  <body>
+  <body class="index-body" data-no-scroll>
     <!-- хедер -->
-    <include src="./partials/components/header.html"></include>
-    <include src="./partials/components/menu.html"></include>
-
-    <ul>
-      <li><a href="./partials/contacts-page.html">contacts-page</a></li>
-      <li><a href="./partials/modeling-page.html">modeling-page</a></li>
-      <li><a href="./partials/printing-page.html">printing-page</a></li>
-      <li><a href="./partials/scanning-page.html">scanning-page</a></li>
-      <li><a href="./partials/take-order-page.html">take-order-page</a></li>
-    </ul>
+    <include src="./partials/components/header-index.html"></include>
 
     <include src="./partials/1-main/hero.html"></include>
     <include src="./partials/1-main/gallery.html"></include>
-    <include src="./partials/1-main/more-photo.html"></include>
+    <include src="./partials/1-main/more-photos.html"></include>
 
     <!-- футер -->
-    <include src="./partials/components/footer.html"></include>
+    <!-- <include src="./partials/components/footer.html"></include> -->
+
+    <include src="./partials/1-main/gallery-overlay.html"></include>
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
+
+    <!-- External - jq core lib (slick-carousel needs it) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- External - jq slick-carousel -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- Internal - slick-carousel initialization and images scr replace (for lazy-loading) -->
+    <script type="text/javascript" src="./js/more-photos.js"></script>
   </body>
 </html>

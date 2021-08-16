@@ -1,37 +1,270 @@
 // ----- MENU FOR MOBILE/TABLET ----- //
 
 .menu-nav {
-    text-align: center;
-    padding-top: 30px;
-    margin-top: -24px;
+  text-align: center;
+  padding-top: 30px;
+  margin-top: -24px;
+  @extend%list;
 }
 
 .menu-nav__item {
-    margin-top: 24px;
-    @include font (24px, 700, 30px);
-    color: var(--accent-color);
-    &-decoration {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: 500;
-        margin-left: -12px;
-        &::before {
-            content: "";
-            display: inline-block;
-            width: 7px;
-            height: 7px;
-            background-color: var(--accent-color);
-            border-radius: 3px 0px;
-            margin-right: 12px;
-        } 
+  margin-top: 24px;
+  @include font(24px, 700, 30px);
+  color: var(--accent-color);
+  &-decoration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-left: -12px;
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-color);
+      border-radius: 3px 0px;
+      margin-right: 12px;
     }
+  }
 }
 
 .is-current {
-    color: white;
-    text-shadow: -1px -1px 0 var(--accent-color), 1px -1px 0 var(--accent-color), -1px 1px 0 var(--accent-color), 1px 1px 0 var(--accent-color);
+  color: white;
+  text-shadow: -1px -1px 0 var(--accent-color), 1px -1px 0 var(--accent-color),
+    -1px 1px 0 var(--accent-color), 1px 1px 0 var(--accent-color);
 }
 
+// ============HEADER====================
+.header-conteiner {
+  padding-top: 29px;
+  padding-bottom: 29px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media screen and (min-width: $second-bp) {
+    padding: 20px 20px 10px 28px;
+  }
+  @media screen and (min-width: $third-bp) {
+    max-width: 1321px;
+    padding: 40px 20px 60px 20px;
+  }
+}
+header a {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+header a:hover,
+header a:focus {
+  color: var(--accent-color);
+}
 
+// ===================HEADER-NAVIGATION======================//
+.header-nav {
+  display: flex;
+  align-items: center;
+  @media screen and (min-width: $third-bp) {
+    margin-right: 109px;
+  }
+  &__logo {
+    @media screen and (min-width: $third-bp) {
+      margin-right: 213px;
+    }
+  }
+  &__list {
+    @extend%list;
+    display: none;
+    @media screen and (min-width: $third-bp) {
+      display: flex;
+    }
+  }
+  &__item {
+    position: relative;
+    display: inline-block;
+  }
+  &__item:hover .header-nav__box-sub-menu,
+  &__item:focus .header-nav__box-sub-menu {
+    transform: translate(-50%, 0);
+    opacity: 1;
+    overflow: visible;
+    pointer-events: auto;
+  }
+  &__box-sub-menu {
+    background-color: none;
+    position: absolute;
+    width: 151px;
+    height: 87px;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -5px);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  &__list-sub-menu {
+    @extend%list;
+  }
+  &__link-sub-menu {
+    @include font(16px, 400, 1.19, 0.01em);
+  }
+  &__item-sub-menu :not(:last-child) {
+    margin-bottom: 8px;
+  }
+  &__item:not(:last-child) {
+    margin-right: 54px;
+  }
+  &__link {
+    @include font(18px, 400, 1.17, 0.01em);
+    &:hover {
+      color: var(--accent-color);
+    }
+  }
+}
+.header-nav__item-active::after {
+  content: ' ';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  background-image: url(../images/header-triangle/triangle.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.header-nav__item-active:hover::after {
+  transform: rotate(0deg);
+}
 
+// ===================END HEADER-NAVIGATION======================//
+
+// ===================lANGUAGE======================//
+
+.language-contact-position {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.select-language {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  @include font($fs: 14px, $fw: bold, $lh: 1.29, $ls: 0.01em);
+  font-family: 'Caviar Dreams';
+  font-style: normal;
+  color: #bdbdbd;
+  @media screen and (min-width: $second-bp) {
+    margin-right: 30px;
+  }
+  @media screen and (min-width: $third-bp) {
+    margin-right: 94px;
+  }
+}
+
+// ===================BURGER  BUTTON======================//
+.burger-btn,
+.connect-mobile__btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.burger-btn {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  cursor: pointer;
+  // margin-right: 46px;
+  @media screen and (min-width: $third-bp) {
+    display: none;
+  }
+  &__icon {
+    fill: var(--accent-color);
+  }
+  &:hover .burger-btn__icon {
+    fill: var(--second-accent-color);
+  }
+}
+
+.burger-close-btn {
+  position: absolute;
+}
+
+// ===================PHONE  BUTTON======================//
+.connect-mobile {
+  @media screen and (min-width: $second-bp) {
+    display: none;
+  }
+
+  &__btn {
+    height: 18px;
+    margin-right: 25px;
+    position: relative;
+    // margin-right: 21px;
+  }
+  &__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__icon {
+    fill: var(--second-accent-color);
+    padding: 0;
+  }
+
+  &__box {
+    position: absolute;
+    right: 0;
+  }
+  &__list {
+    width: 162px;
+    border-radius: 2px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 15px;
+    left: -58px;
+    background-color: #ecf2f5;
+    padding: 16px 4px;
+    @extend%list;
+  }
+
+  &__figure {
+    top: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #ecf1f3;
+
+    position: absolute;
+  }
+}
+
+// ===================PHONE NUMBER FOR TABLET AND DESKTOP======================//
+.menu-connect {
+  display: none;
+  @extend%list;
+  @media screen and (min-width: $second-bp) {
+    display: block;
+  }
+  &__list:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+  }
+  &__icon {
+    fill: var(--second-accent-color);
+    margin-right: 4px;
+  }
+}
+
+.scroll-disabled {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+header {
+  border-bottom: solid 1px #6e6e6e;
+}

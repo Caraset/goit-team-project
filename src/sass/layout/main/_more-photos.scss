@@ -1,0 +1,241 @@
+// html structure reference
+//<section class="more-photos section">
+//  <div class="more-photos__container">
+//    <div class="container more-photos__wrapper">
+//      <h2 class="title-v1">БІЛЬШЕ ФОТО</h2>
+//
+//      <ul class="more-photos-list more-photos__list">
+//        <li class="more-photos__item">
+//          <div class="photos-card">
+//            <a class="photos-card__link links"
+//              <div class="photos-card__thumb">
+//                <picture class="photos-card__picture">
+//                 <img class="photos-card__image image transition"/>
+
+.more-photos {
+  @include bg-retina('../images/main-section/desktop/bg-img-1.jpg');
+}
+
+.more-photos__container {
+  padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
+  @include mq($tablet, $pb: 26px); // 26px =  tablet  mb52 - section pb26
+  @include mq($desktop, $pb: 74px);
+}
+
+// .more-photos-wrapper { }
+.more-photos__title {
+  margin-bottom: 16px;
+  @include mq($tablet, $mb: 32px);
+  @include mq($desktop, $mb: 52px);
+}
+
+.more-photos__list {
+  margin-bottom: 32px;
+
+  @include mq($tablet, null, -30px, 0, 32px, -30px);
+  @include mq($desktop, $mb: 56px);
+}
+
+.more-photos-list {
+  @extend %list;
+
+  outline: 1px solid red;
+  @include mq($tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/* photos */
+.more-photos__item {
+  outline: 1px solid gold;
+  cursor: pointer;
+
+  @include mq($tablet, $mt: 30px, $ml: 30px);
+
+  &:not(:last-child) {
+    @include mq($end: $tablet, $mb: 16px);
+  }
+}
+
+// .photos-card__thumb {  }
+// .photos-card { }
+
+.photos-card__image:not([src]):not([srcset]) {
+  visibility: hidden;
+}
+
+.photos-card__image {
+  object-fit: cover;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+// more-photos sizes: desktop
+//   406x260 378x260 214x260
+//   214x271 378x271 406x271
+//   406x203 405x203 187x203
+//   214x250 378x260 406x260
+
+//more-photos sizes: tablet
+// 247.73x158.64 230.64x158.64 130.58x158.64
+// 130.58x165.36 230.64x165.36 247.73x165.36
+// 247.73x123.86 247.12x123.86 114.10x123.86
+// 130.58x158.64 230.64x158.64 247.73x158.64
+//
+// 0.3822993827	0.2171751412	0.2015123457
+// 0.2015123457	0.2171751412	0.3822993827
+// 0.3822993827	0.2326930320  0.1760802469
+// 0.2015123457	0.2171751412	0.3822993827
+//
+// more-photos sizes: mobile
+//     mobile sizes
+//     280x179
+//     280x193
+//     280x340
+
+// .to-be-loaded-images { @include mq($end: $mobile) { opacity: 0; transform: translateX(50%) scaleX(0); } }
+
+.appear {
+  @extend .transition;
+  opacity: 1;
+  transition-property: transform, opacity;
+  transform: translateX(0) scaleX(1);
+}
+
+.more-photos__icon-loader {
+  display: block;
+  margin: 0 auto;
+}
+
+.system-uicons-loader {
+  transition-timing-function: var(--cubic);
+
+  &:hover,
+  &:focus {
+    transform: rotateZ(360deg);
+    transition-duration: calc(var(--time) * 4);
+  }
+}
+
+/* Overlay - Rectangle 80 */
+.gallery-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+
+  overflow-y: scroll;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
+    visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
+  /* Fading is smooth after deleting excessive is-hidden parts. */
+
+  &.is-hidden {
+    overflow: hidden;
+  }
+
+  &__container {
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @include mq($desktop, $pr: 200px, $pl: 200px) {
+      /* TODO: Kostiantyn Ochenash: check mockup sizes for container of modal window.
+      Finish html and css for gallery-overlay__container till EBD 2021-08-16 */
+    }
+  }
+
+  background: rgba(#2b2b2b, 0.8);
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
+}
+
+// ------------------------------------------------------
+/* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
+// ------------------------------------------------------
+
+/* Modal window */
+/* mobile.modal  { w450 x h609 mt93   ml=mr15  mb94  p40 } */
+/* tablet.modal  { w450 x h609 mt208  ml=mr159 mb207 p40 } */
+/* desktop.modal { w528 x h581 mt221  ml=mr536 mb222 p40 } */
+
+.gallery-modal {
+  @extend .transition;
+  padding: 2.5rem;
+  overflow: hidden;
+
+  background: rgba(var(--third-color), 0.8);
+  border-radius: 4px;
+
+  transition-property: transform, opacity;
+
+  .gallery-overlay.is-hidden > & {
+    transform: scale(1.21);
+  }
+
+  &__btn-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--main-color);
+
+    @include mq($end: $tablet, $mr: 9px) {
+      width: 11px;
+      height: 10px;
+    }
+
+    @include mq($tablet, $mr: 21px) {
+      width: 26px;
+      height: 26px;
+    }
+
+    @include mq($desktop, $mr: 47px) {
+      width: 42px;
+      height: 42px;
+    }
+
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      color: var(--second-accent-color);
+      background-color: transparent;
+    }
+
+    &:focus {
+      box-shadow: 0 0 3px 2px rgba(var(--third-color), 0.5);
+    }
+  }
+
+  &__btn-next {
+    @extend .gallery-modal__btn-back;
+
+    @include mq($end: $tablet, $mr: 0, $ml: 9px);
+    @include mq($tablet, $mr: 0, $ml: 21px);
+    @include mq($desktop, $mr: 0, $ml: 47px);
+  }
+
+  /* topcoat:next-light right */
+  &__next-icon {
+    @extend %svg;
+    @extend .transition;
+
+    fill: currentColor;
+  }
+
+  /* topcoat:next-light left */
+  &__back-icon {
+    @extend .gallery-modal__next-icon;
+    transform: rotate(180deg);
+    fill: currentColor;
+  }
+}
+
+// ------------------------------------------------------
+/* || -------------- END "МОДАЛЬНОЕ ОКНО" --------------- */
+// ------------------------------------------------------
