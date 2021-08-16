@@ -1,24 +1,23 @@
 <section class="contact-us container">
     <h2 class="contact-us__title title-v2">зв'яжіться з нами</h2>
     <form class="contact-form">
-        <label class="label">
-            Ім'я
-            <input type="text" class="label__input" name="name" minlength="2" required>
-        </label>
-
-        <label class="label">
-            E-mail
+        <div>
+            <label class="label">Ім'я</label>
+            <input type="text" class="label__input" name="name" minlength="2" required>            
+        </div>
+        
+        <div>
+            <label class="label">E-mail</label>
             <input type="email" class="label__input" name="email" required>
-        </label>
-
-        <label class="label">
-            Повідомлення
+        </div>
+        
+        <div>
+            <label class="label">Повідомлення</label>
             <textarea name="user-comment" class="label__comment" placeholder="Залишіть своє повідомлення"></textarea>
             <input type="file" id="file" name="file">
-        </label>   
-        
-        <p class="input-info">*Прикріпіть зображення / креслення / STL / Obj / CAD-модель</p>
-        
+            <p class="input-info">*Прикріпіть зображення / креслення / STL / Obj / CAD-модель</p>
+        </div>
+       
         <button class="send-btn" type="submit">відправити</button>
     </form>
 </section>
