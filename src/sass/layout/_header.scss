@@ -38,12 +38,12 @@
 // ============HEADER====================
 .header-conteiner {
   padding-top: 29px;
-  padding-bottom: 29px;
+  padding-bottom: 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   @media screen and (min-width: $second-bp) {
-    padding: 20px 20px 10px 28px;
+    padding: 20px 60px 12px 69px;
   }
   @media screen and (min-width: $third-bp) {
     max-width: 1321px;
@@ -115,9 +115,6 @@ header a:focus {
   }
   &__link {
     @include font(18px, 400, 1.17, 0.01em);
-    &:hover {
-      color: var(--accent-color);
-    }
   }
 }
 .header-nav__item-active::after {
@@ -138,12 +135,6 @@ header a:focus {
 // ===================END HEADER-NAVIGATION======================//
 
 // ===================lANGUAGE======================//
-
-.language-contact-position {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
 .select-language {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -154,9 +145,6 @@ header a:focus {
   font-family: 'Caviar Dreams';
   font-style: normal;
   color: #bdbdbd;
-  @media screen and (min-width: $second-bp) {
-    margin-right: 30px;
-  }
   @media screen and (min-width: $third-bp) {
     margin-right: 94px;
   }
@@ -170,12 +158,8 @@ header a:focus {
   padding: 0;
   cursor: pointer;
 }
-
 .burger-btn {
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, 0);
-  cursor: pointer;
+  height: 32px;
   // margin-right: 46px;
   @media screen and (min-width: $third-bp) {
     display: none;
@@ -188,21 +172,24 @@ header a:focus {
   }
 }
 
-.burger-close-btn {
+// ===================PHONE  BUTTON======================//
+.shadow {
   position: absolute;
+  width: 1px;
+  height: 1px;
+  top: 80%;
+  left: 50%;
+  box-shadow: 0px 0px 100px 70px rgba(0, 0, 0, 0.1);
 }
 
-
-// ===================PHONE  BUTTON======================//
 .connect-mobile {
+  position: relative;
   @media screen and (min-width: $second-bp) {
     display: none;
   }
-
   &__btn {
-    height: 18px;
-    margin-right: 25px;
-    position: relative;
+    height: 24px;
+    // position: relative;
     // margin-right: 21px;
   }
   &__item:not(:last-child) {
@@ -212,30 +199,34 @@ header a:focus {
     fill: var(--second-accent-color);
     padding: 0;
   }
-
   &__box {
     position: absolute;
-    right: 0;
+    top: 29px;
+    left: -68px;
   }
   &__list {
     width: 162px;
     border-radius: 2px;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-    position: relative;
-    top: 15px;
-    left: -58px;
-    background-color: #ecf2f5;
+    // box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    // top: 15px;
+    // left: -58px;
+    background-color: #ffffff;
     padding: 16px 4px;
     @extend%list;
+    position: relative;
   }
-
   &__figure {
-    top: 0;
+    // top: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #ecf1f3;
-
-    position: absolute;
+    border-bottom: 15px solid #ffffff;
+    // position: absolute;
+    width: 15px;
+    height: 10px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
   }
 }
 
@@ -258,10 +249,4 @@ header a:focus {
     fill: var(--second-accent-color);
     margin-right: 4px;
   }
-}
-
-.scroll-disabled {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
 }

@@ -1,10 +1,11 @@
+
 <header>
   <div class="container header-conteiner">
     <nav class="header-nav">
-      <a class="header-nav__logo" href="#">
+      <a class="header-nav__logo" href="../index.html">
         <picture>
           <source
-            media="(min-width: $third-bp)"
+            media="(min-width: 1444px)"
             srcset="
               ../images/logo/logo-webp/logo-192.webp    1x,
               ../images/logo/logo-webp/logo-192@2x.webp 2x
@@ -12,11 +13,11 @@
             type="image/webp"
           />
           <source
-            media="(min-width: $third-bp)"
-            srcset="../images/logo/logo-192.jpg 1x, ../images/logo/logo-192@2x.jpg 2x"
+            media="(min-width: 1444px)"
+            srcset="../images/logo/logo-192.png 1x, ../images/logo/logo-192@2x.png 2x"
           />
           <source
-            media="(min-width: $second-bp)"
+            media="(min-width: 768px)"
             srcset="
               ../images/logo/logo-webp/logo-125.webp    1x,
               ../images/logo/logo-webp/logo-125@2x.webp 2x
@@ -24,11 +25,11 @@
             type="image/webp"
           />
           <source
-            media="(min-width: $second-bp)"
-            srcset="../images/logo/logo-125.jpg 1x, ../images/logo/logo-125@2x.jpg 2x"
+            media="(min-width: 768px)"
+            srcset="../images/logo/logo-125.png 1x, ../images/logo/logo-125@2x.png 2x"
           />
           <source
-            media="(min-width: 360px)"
+            media="(min-width: 280px)"
             srcset="
               ../images/logo/logo-webp/logo-101.webp    1x,
               ../images/logo/logo-webp/logo-101@2x.webp 2x
@@ -36,15 +37,14 @@
             type="image/webp"
           />
           <source
-            media="(min-width: 360px)"
-            srcset="../images/logo/logo-101.jpg 1x, ../images/logo/logo-101@2x.jpg 2x"
+            media="(min-width: 280px)"
+            srcset="../images/logo/logo-101.png 1x, ../images/logo/logo-101@2x.png 2x"
           />
           <img src="../images/logo/logo-101.png" alt="logo" />
         </picture>
       </a>
 
       <ul class="list header-nav__list">
-        <li class="header-nav__item"><a class="header-nav__link" href="">Головна</a></li>
         <li class="header-nav__item">
           <a class="header-nav__link" href="../index.html">Головна</a>
         </li>
@@ -69,41 +69,39 @@
           </a>
         </li>
         <li class="header-nav__item">
-          <a class="header-nav__link" href="#">Замовити</a>
+          <a class="header-nav__link" href="./take-order-page.html">Замовити</a>
         </li>
-        <li class="header-nav__item"><a class="header-nav__link" href="">Контакти</a></li>
+        <li class="header-nav__item">
+          <a class="header-nav__link" href="./contacts-page.html">Контакти</a>
+        </li>
       </ul>
     </nav>
-    <button class="burger-btn" type="button" data-modal-open hide-modal-btn>
+    <button class="burger-btn" type="button">
       <svg width="32" height="32" class="burger-btn__icon">
         <use href="../images/svg-sprite.svg#burger-menu"></use>
       </svg>
     </button>
-    <button class="burger-btn burger-close-btn is-hidden" type="button" hide-close-icon data-modal-close>
-      <svg width="22" height="22" class="burger-btn__icon">
-        <use href="../images/svg-sprite.svg#icon-close-backdrop"></use>
-      </svg>
-    </button>
 
-    <div class="language-contact-position">
-      <div class="connect-mobile">
-        <button class="connect-mobile__btn" type="button">
-          <svg width="18" height="18" class="connect-mobile__icon">
-            <use href="../images/svg-sprite.svg#phone-icon"></use>
-          </svg>
-        </button>
-        <div class="connect-mobile__box is-hidden">
-          <div class="connect-mobile__figure"></div>
-          <ul class="connect-mobile__list">
-            <li class="connect-mobile__item">
-              <a class="connect-mobile__link" href="tel:+380936432288"> +38 (093) 643 22 88</a>
-            </li>
-            <li class="connect-mobile__item">
-              <a class="connect-mobile__link" href="tel:+380503454423"> +38 (050) 345 44 23</a>
-            </li>
-          </ul>
-        </div>
+    <div class="connect-mobile">
+      <button class="connect-mobile__btn" type="button">
+        <svg width="24" height="24" class="connect-mobile__icon">
+          <use href="../images/svg-sprite.svg#phone-icon"></use>
+        </svg>
+      </button>
+      <div class="connect-mobile__box is-hidden">
+        <div class="connect-mobile__figure"></div>
+        <div class="shadow"></div>
+        <ul class="connect-mobile__list">
+          <li class="connect-mobile__item">
+            <a class="connect-mobile__link" href="tel:+380936432288"> +38 (093) 643 22 88</a>
+          </li>
+          <li class="connect-mobile__item">
+            <a class="connect-mobile__link" href="tel:+380503454423"> +38 (050) 345 44 23</a>
+          </li>
+        </ul>
       </div>
+    </div>
+
     <select id="selectID" class="select-language">
       <option value="”ENG”">ENG</option>
 
@@ -131,21 +129,24 @@
       </li>
     </ul>
   </div>
-  </div>
-  <!--- MENU FOR MOBILE/TABLET -->
-  <div class="backdrop is-hidden" data-modal>
-      <ul class="menu-nav">
-          <li class="menu-nav__item">
-              <a class="menu-nav__link is-current" href="../index.html">Головна</a>
-          </li>
-          <li class="menu-nav__item">
-              <a class="menu-nav__link" href="#">Послуги</a>
-          </li>
-          <li class="menu-nav__item menu-nav__item-decoration">
-              <a class="menu-nav__link" href="../partials/modeling-page.html">3D Моделювання</a>
-          </li>
-          <li class="menu-nav__item menu-nav__item-decoration">
-              <a class="menu-nav__link" href="../partials/scanning-page.html">3D Сканування</a>
+</header>
+
+<script>
+  const telBlock = document.querySelector('.connect-mobile__box');
+  const icon = document.querySelector('.connect-mobile');
+  console.log(icon);
+  console.log(telBlock);
+  icon.addEventListener('click', onIconClick);
+  function onIconClick() {
+    telBlock.classList.toggle('is-hidden');
+    document.removeEventListener('scroll', onScroll);
+    document.addEventListener('scroll', onScroll);
+  }
+  function onScroll() {
+    telBlock.classList.add('is-hidden');
+    document.removeEventListener('scroll', onScroll);
+  }
+</script>
           </li>
           <li class="menu-nav__item menu-nav__item-decoration">   
               <a class="menu-nav__link" href="../partials/printing-page.html">3D Друк</a>
