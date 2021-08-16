@@ -12,17 +12,17 @@
 //                <picture class="photos-card__picture">
 //                 <img class="photos-card__image image transition"/>
 
-.more-photos {
-  @include bg-retina('../images/main-section/desktop/bg-img-1.jpg');
-}
-
 .more-photos__container {
   padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
   @include mq($tablet, $pb: 26px); // 26px =  tablet  mb52 - section pb26
   @include mq($desktop, $pb: 74px);
 }
 
-// .more-photos-wrapper { }
+.more-photos__wrapper {
+  margin-bottom: 32px;
+  @include mq($desktop, $mb: 56px);
+}
+
 .more-photos__title {
   margin-bottom: 16px;
   @include mq($tablet, $mb: 32px);
@@ -30,10 +30,7 @@
 }
 
 .more-photos__list {
-  margin-bottom: 32px;
-
-  @include mq($tablet, null, -30px, 0, 32px, -30px);
-  @include mq($desktop, $mb: 56px);
+  @include mq($tablet, null, -19.53px, 0, 0, -19.53px);
 }
 
 .more-photos-list {
@@ -51,7 +48,7 @@
   outline: 1px solid gold;
   cursor: pointer;
 
-  @include mq($tablet, $mt: 30px, $ml: 30px);
+  @include mq($tablet, $mt: 19.53px, $ml: 19.53px);
 
   &:not(:last-child) {
     @include mq($end: $tablet, $mb: 16px);
@@ -103,9 +100,8 @@
   transform: translateX(0) scaleX(1);
 }
 
-.more-photos__icon-loader {
-  display: block;
-  margin: 0 auto;
+.more-photos__svg-wrapper {
+  text-align: center;
 }
 
 .system-uicons-loader {
