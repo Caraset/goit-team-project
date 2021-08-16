@@ -1,9 +1,10 @@
 .backdrop {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: auto;
+  left: auto;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
 
   opacity: 1;
   visibility: visible;
@@ -11,7 +12,7 @@
   overflow: hidden;
   transition-property: opacity, visibility, pointer-events;
 
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: white;
 }
 
 .is-hidden {
