@@ -1,6 +1,6 @@
 (() => {
   // Image src replace (for lazy-loading)
-  const targets = document.querySelectorAll('[loading="lazy"]');
+  const targets = document.querySelectorAll('[data-photos-lazy]');
 
   const lazyLoad = target => {
     const io = new IntersectionObserver((entries, observer) => {
@@ -32,7 +32,7 @@
   };
 
   // Start slick-carousel slider
-  $('.more-photos-list').slick({
+  $('[data-photos-carousel]').slick({
     dots: true,
     arrow: true,
     speed: 300,
