@@ -104,4 +104,14 @@
   @content;
 }
 
+/// MIXIN FOR ANIMATION
+
+@mixin animation {
+  transition-duration: var(--time);
+  transition-timing-function: var(--cubic);
+}
+//using
+//transition-property: анимир.свойства;
+//@include animation;
+
 /* -------------------------- END 'MIXINS' -------------------------- */
