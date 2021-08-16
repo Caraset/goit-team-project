@@ -42,17 +42,20 @@
         height: 181.66px;
         flex-basis: calc((100% - 51.2px) / 4);
         margin-left: 12.8px;
-    margin-top: 12.8px; }
+        margin-top: 12.8px; }
 
     @media screen and (min-width: 1440px) {
         width: 250px;
         height: 298px;
         flex-basis: calc((100% - 84px) / 4);
         margin-left: 21px;
-    margin-top: 21px;
+        margin-top: 21px;
     }
 }
-.examples__image {margin-left: auto;
+
+.examples__image {
+    display: block;
+    margin-left: auto;
     margin-right: auto;
     margin-bottom: 17px;
 

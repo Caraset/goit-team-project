@@ -6,9 +6,11 @@
     }
 }
 .process__left-side {display: block;}
+
 .process__item {display: flex;
     flex-direction: column;
-    &:not(:last-child) {margin-bottom: 52px;}
+    margin-bottom: 52px;
+    &:last-child {margin-bottom: 0px;}
 
     @media screen and (min-width: 768px) {
         display: flex;
@@ -59,6 +61,7 @@
         @include font(16px, 300, 1.25, 0.01em);
         color: #2B2B2B;
         margin-bottom: 16px;
+        &:last-child {margin-bottom: 0px;}
 
         @media screen and (min-width: 1440px) {
             @include font(18px, 300, 1.25, 0.01em);
