@@ -1,0 +1,58 @@
+<!-- Backdrop (Overlay) -->
+<div
+  class="gallery-overlay is-hidden"
+  id="gallery-overlay-id"
+  data-modal
+  role="dialog"
+  aria-label="Фон галереї"
+  tabindex="-1"
+>
+  <div class="container gallery-overlay__container">
+    <!-- Модальное окно -->
+    <div
+      class="gallery-modal gallery-overlay__gallery-modal"
+      id="gallery-modal-id"
+      role="document"
+      aria-label="Модальне вікно з галереєю фото 3D моделей"
+      aria-modal="true"
+    >
+      <!-- Кнопка "Попередній слайд" (back) -->
+      <button
+        class="gallery-modal__btn-back"
+        data-gallery-next
+        type="button"
+        aria-label="Попередній слайд"
+      >
+        <!-- m11x10, t26x26, d42x42 -->
+        <svg
+          class="gallery-modal__back-icon svg"
+          aria-hidden="true"
+          width="11"
+          height="10"
+          tabindex="-1"
+        >
+          <use xlink:href="./images/svg-sprite.svg#next-icon"></use>
+        </svg>
+      </button>
+
+      <!-- Кнопка "Наступний слайд" (next) -->
+      <button
+        class="gallery-modal__btn-next"
+        data-gallery-next
+        type="button"
+        aria-label="Наступний слайд"
+      >
+        <!-- m11x10, t26x26, d42x42 -->
+        <svg
+          class="gallery-modal__next-icon svg"
+          aria-hidden="true"
+          width="11"
+          height="10"
+          tabindex="-1"
+        >
+          <use xlink:href="./images/svg-sprite.svg#next-icon"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
