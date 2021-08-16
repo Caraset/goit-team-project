@@ -32,9 +32,13 @@
   }
 
   @media screen and (min-width: 768px) {
-    justify-content: unset;
-    margin-top: -20px;
-    margin-left: -20px;
+    margin-top: -18px;
+    margin-left: -18px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: -32px;
+    margin-left: -32px;
   }
 }
 
@@ -46,9 +50,15 @@
   }
 
   @media screen and (min-width: 768px) {
-    margin-top: 20px;
-    margin-left: 20px;
-    flex-basis: calc((100% - 40px) / 2);
+    margin-top: 18px;
+    margin-left: 18px;
+    flex-basis: calc((100% - 36px) / 2);
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-top: 32px;
+    margin-left: 32px;
+    flex-basis: calc((100% - 64px) / 2);
   }
 }
 
