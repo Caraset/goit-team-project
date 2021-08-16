@@ -77,37 +77,16 @@
   }
 }
 
-//select
-// .of {
-//   &__wrap-select {
-//     display: flex;
-//     flex-direction: column;
-//     margin-bottom: 44px;
-//     position: relative;
-//   }
-
-//   &__label-select {
-//     margin-bottom: 4px;
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//   }
-
-//   &__select-option {
-//     width: 420px;
-//     &:checked {
-//       background: rgba(72, 121, 150, 0.5);
-//     }
-//   }
-// }
-
 //comment
 .of {
   &__wrap-comment {
     display: flex;
     flex-direction: column;
-    margin-bottom: 44px;
+    margin-bottom: 24px;
     position: relative;
+
+    @include mq($tablet, $mb: 44px);
+    @include mq($desktop, $mb: 24px);
   }
 
   &__label-comment {
@@ -140,7 +119,6 @@
     font-size: 18px;
     line-height: 20px;
     color: #cdcdcd;
-    margin-bottom: 24px;
   }
 }
 
