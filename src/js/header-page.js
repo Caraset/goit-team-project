@@ -1,7 +1,5 @@
 const telBlock = document.querySelector('.connect-mobile__box');
 const icon = document.querySelector('.connect-mobile');
-console.log(icon);
-console.log(telBlock);
 icon.addEventListener('click', onIconClick);
 function onIconClick() {
   telBlock.classList.toggle('is-hidden');
