@@ -1,63 +1,108 @@
-.contacts__section {
-  padding-bottom: 76px;
-}
+// style for sections positioning
 
-.contacts__wrapper {
-  @media screen and (min-width: 768px) {
+.contacts-us {
+  &__info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @include mq($tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    @include mq($desktop) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: start;
+    }
   }
 }
 
-.contacts-link:not(:last-child) {
-  margin-bottom: 24px;
+//style for block
 
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
+.contacts-us {
+  &__wrap {
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq($tablet, $mb: 0) {
+      &:last-child {
+        text-align: right;
+      }
+    }
+    @include mq($desktop, $mb: 68px) {
+      text-align: start;
+      &:last-child {
+        text-align: start;
+      }
+    }
   }
 
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 68px;
-  }
-}
-
-.contacts-title {
-  margin-bottom: 8px;
-}
-
-.contacts__list {
-  @extend %list;
-}
-
-.letter {
-  text-transform: capitalize;
-}
-
-.contacts-schedule {
-  @extend %list;
-  @media screen and (min-width: 768px) {
-    text-align: right;
-  }
-}
-
-.contacts-schedule__list:not(:last-child) {
-  @media screen and (min-width: 768px) {
+  //title
+  &__title {
     margin-bottom: 8px;
+    @include mq($desktop, $mb: 18px);
+    &_firstleter {
+      text-transform: capitalize;
+    }
+  }
+
+  //list
+  &__list {
+    list-style: none;
+  }
+
+  // item
+  &__item {
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  // link
+  &__link {
+    @include mq($desktop) {
+      @include font(18px, 400, 1.25, 0);
+    }
+  }
+
+  //text in schedule
+  &__graphic-time {
+    display: block;
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include mq($desktop) {
+      display: inline;
+    }
   }
 }
 
-.contacts-schedule__time {
-  display: block;
-  margin-bottom: 8px;
-  &:last-child {
-    margin-bottom: 0;
+// Add new mq for contact elements - mb need del
+@media screen and (min-width: 530px) and (max-width: 767px) {
+  .contacts-us__info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 490px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  @media screen and (min-width: 1440px) {
-    display: inline;
-  }
-}
+  .contacts-us__wrap {
+    margin-bottom: 50px;
 
-.workday {
-  margin-left: 24px;
+    &:last-child {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .contacts-us__item {
+    display: flex;
+  }
 }
