@@ -1,127 +1,175 @@
-.contact-us {
-  margin-bottom: 52px;
+.contact-form-contact__container {
+  @include font(16px, 400, 1.25);
+  padding-bottom: 76px;
 
-  @media screen and (min-width: 768px) {
-    margin-bottom: 76px;
-  }
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
-  }
-}
-
-.contact-us__title {
-  margin-bottom: 28px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 35px;
-    text-align: center;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 44px;
-    text-align: left;
+  @include mq($desktop, $pb: 100px) {
+    @include font(18px, 400, 1.11);
+    display: flex;
+    justify-content: space-between;
   }
 }
 
-.contact-us__form {
-  @media screen and (min-width: 768px) {
-    width: 420px;
+//positioning section
+
+.contact-form {
+  &__section {
+    padding-bottom: 52px;
+    @include mq($tablet, $pb: 76px);
+    @include mq($desktop, $pb: 0px);
+  }
+
+  &__container {
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 76px;
-  }
-  @media screen and (min-width: 1440px) {
-    width: 515px;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 100px;
-  }
-}
-
-.contact-us__wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 44px;
-  position: relative;
-}
-
-.contact-us__label {
-  margin-bottom: 4px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translateY(0);
-  transition: transform var(--time) var(--cubic);
-}
-
-.contact-us__input {
-  border: none;
-  border-bottom: 1px solid #487996;
-  width: 100%;
-  height: 28px;
-
-  &:hover,
-  &:focus {
-    outline: none;
+    @include mq($end: $tablet) {
+      max-width: 420px;
+    }
   }
 
-  &:hover ~ .of__label-input,
-  &:focus ~ .of__label-input {
-    transform: translateY(-150%);
+  &__title {
+    margin-bottom: 28px;
+    @include mq($tablet, $mb: 35px) {
+      text-align: center;
+    }
+    @include mq($desktop, $mb: 44px) {
+      text-align: left;
+    }
   }
 }
 
-.comment-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 44px;
-  position: relative;
-}
-
-.label-comment {
-  margin-bottom: 4px;
-}
-
-.comment {
-  border: 1px solid #487996;
-  border-radius: 50px 0px;
-  resize: none;
-  height: 199px;
-  padding: 22px 25px;
-  margin-bottom: 4px;
-
-  &::placeholder {
-    font-size: 16px;
-    line-height: 1.25;
-    color: #cdcdcd;
-  }
-
-  &:hover,
-  &:focus {
-    outline: none;
-  }
-}
-
-.input-info {
-  @include font(18px, 400, 1.11, 0);
-  color: #cdcdcd;
-  margin-bottom: 24px;
-}
-
-.send-btn {
-  display: block;
-  width: 280px;
-  height: 56px;
+//style for form
+.contact-form__form {
+  max-width: 420px;
+  margin-right: auto;
   margin-left: auto;
 
-  background: #f5f5fa;
-  box-shadow: -10px -10px 20px #ffffff, 10px 10px 20px rgba(72, 121, 150, 0.1),
-    5px 5px 10px rgba(72, 121, 150, 0.25), -5px -5px 10px #ffffff;
-  border: none;
-  border-radius: 30.5px;
+  @include mq($desktop, $ml: 0, $mr: 0) {
+    max-width: 516px;
+  }
+}
 
-  @include font(16px, 700, 1.5, 0.1);
-  text-transform: uppercase;
+////input - name, email
+.contact-form {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 44px;
+    position: relative;
+  }
 
-  color: var(--accent-color);
+  &__label {
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    transform: translateY(0);
+    @include animation;
+  }
+
+  &__input {
+    padding: 4px 0;
+    border: none;
+    border-bottom: 1px solid var(--accent-color);
+    width: 100%;
+    height: 28px;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+
+    &:hover ~ .contact-form__label,
+    &:focus ~ .contact-form__label {
+      transform: translateY(-150%);
+    }
+  }
+}
+
+// comment
+
+.contact-form {
+  &__wrap-comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    position: relative;
+    @include mq($tablet, $mb: 44px);
+    @include mq($desktop, $mb: 24px);
+  }
+
+  &__comment-aria {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 4px;
+  }
+
+  &__label-comment {
+    margin-bottom: 4px;
+  }
+
+  &__comment {
+    border: 1px solid var(--accent-color);
+    border-radius: 50px 0px;
+    resize: none;
+    height: 199px;
+    padding: 22px 25px;
+
+    &::placeholder {
+      @include font(16px, 400, 1.25);
+      color: #cdcdcd;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__loading-file {
+    display: none;
+  }
+
+  &__loading-file-label {
+    position: absolute;
+    bottom: 18px;
+    right: 21px;
+    cursor: pointer;
+    fill: #cdcdcd;
+    transition-property: fill;
+    @include animation;
+
+    &:hover,
+    &:focus {
+      fill: var(--accent-color);
+    }
+
+    &.active {
+      fill: #d6a12f;
+    }
+  }
+
+  &__file-icon {
+    width: 22px;
+    height: 20px;
+  }
+
+  &__info {
+    color: #cdcdcd;
+  }
+}
+
+//btn position
+
+.contact-form__button {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq($tablet) {
+    margin-right: 0;
+    margin-left: auto;
+    width: 177px;
+  }
 }
