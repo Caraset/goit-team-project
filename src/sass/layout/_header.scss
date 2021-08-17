@@ -295,4 +295,8 @@ header a:focus {
 
 .scroll-disabled {
   position: fixed;
+
+  width: 100vw;
+
+  // overflow: hidden;
 }
