@@ -1,7 +1,5 @@
 const telBlock = document.querySelector('.connect-mobile__box');
 const icon = document.querySelector('.connect-mobile');
-console.log(icon);
-console.log(telBlock);
 icon.addEventListener('click', onIconClick);
 function onIconClick() {
   telBlock.classList.toggle('is-hidden');
@@ -25,7 +23,7 @@ function onScroll() {
 
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModal);
-  refs.hideCloseIco.addEventListener('click', toggleModal);
+  refs.hideCloseIcon.addEventListener('click', toggleModal);
 
   function toggleModal() {
     refs.modal.classList.toggle('is-hidden');

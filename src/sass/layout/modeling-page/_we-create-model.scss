@@ -1,33 +1,33 @@
 .model-examples {
   list-style: none;
 
-  margin-right: -10px;
+  margin-left: -10px;
   margin-top: -16px;
+  margin-bottom: 52px;
 
   display: flex;
   flex-wrap: wrap;
   // justify-content: left;
 
   @media screen and (min-width: 465px) {
-    margin-right: -12px;
+    margin-left: -12px;
   }
 
   @include mq($desktop) {
-    margin-right: -20px;
+    margin-left: -20px;
   }
 }
 
 .model-examples__item {
-  margin-right: 10px;
+  margin-left: 10px;
   margin-top: 16px;
 
   @media screen and (min-width: 465px) {
-    margin-right: 12px;
+    margin-left: 12px;
   }
 
   @include mq($desktop) {
-    margin-right: 20px;
-    width: 230px;
+    margin-left: 20px;
   }
 }
 
@@ -73,7 +73,7 @@
   }
 
   @media screen and (min-width: 1440px) {
-    max-width: 980px;
+    max-width: initial;
     margin-bottom: 100px;
   }
 }
