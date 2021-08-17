@@ -1,5 +1,5 @@
 //positioning
-.contacts-hero {
+.contact-hero {
   &__container {
     margin-bottom: 52px;
 
@@ -24,7 +24,7 @@
 }
 
 //video
-.contacts__video {
+.contact-hero__video {
   border-radius: 15px;
   width: 280px;
   height: 171px;
@@ -46,9 +46,11 @@
 }
 
 //text
-.contact__text {
+.contact-hero__text {
   @include font(18px, 300, 1.28);
   color: var(--third-color);
+
+  @include mq($desktop, $pb: 106px);
 
   &-block {
     margin-bottom: 16px;
