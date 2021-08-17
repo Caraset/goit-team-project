@@ -4,7 +4,7 @@
 //    <div class="container more-photos__wrapper">
 //      <h2 class="title-v1">БІЛЬШЕ ФОТО</h2>
 //
-//      <ul class="more-photos-list more-photos__list">
+//      <ul class="more-photos__list">
 //        <li class="more-photos__item">
 //          <div class="photos-card">
 //            <a class="photos-card__link links"
@@ -30,14 +30,10 @@
 }
 
 .more-photos__list {
-  @include mq($tablet, null, -19.53px, 0, 0, -19.53px);
-}
-
-.more-photos-list {
   @extend %list;
 
   outline: 1px solid red;
-  @include mq($tablet) {
+  @include mq($tablet, null, -19.53px, 0, 0, -19.53px) {
     display: flex;
     flex-wrap: wrap;
   }
@@ -151,13 +147,24 @@
 /* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
 // ------------------------------------------------------
 
-/* Modal window */
-/* mobile.modal  { w450 x h609 mt93   ml=mr15  mb94  p40 } */
-/* tablet.modal  { w450 x h609 mt208  ml=mr159 mb207 p40 } */
-/* desktop.modal { w528 x h581 mt221  ml=mr536 mb222 p40 } */
-
+// Modal window
 .gallery-modal {
   @extend .transition;
+  position: relative;
+
+  top: 44.6%; // 1168px
+  min-width: 648px;
+
+  @include mq($tablet) {
+    top: 55.8%; // 1193px
+    min-width: 648px;
+  }
+
+  @include mq($desktop) {
+    top: 59.8%; // 1924px
+    min-width: 1062px;
+  }
+
   padding: 2.5rem;
   overflow: hidden;
 
@@ -231,6 +238,13 @@
     fill: currentColor;
   }
 }
+
+/*
+image size for modal window
+d w906x605
+t w554x369
+m w236x157
+*/
 
 // ------------------------------------------------------
 /* || -------------- END "МОДАЛЬНОЕ ОКНО" --------------- */
