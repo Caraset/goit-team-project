@@ -12,7 +12,7 @@
   };
 
   // Start slick-carousel slider
-  $('[data-photos-carousel]').slick({
+  $('.gallery-carousel').slick({
     dots: true,
     arrow: true,
     speed: 300,
@@ -20,7 +20,7 @@
     centerMode: true,
     variableWidth: true,
     // adaptiveHeight: true,
-    lazyLoad: 'ondemand',
+    // lazyLoad: 'ondemand',
     slidesToScroll: 1,
 
     responsive: [

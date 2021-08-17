@@ -18,7 +18,7 @@
       <!-- Кнопка "Попередній слайд" (back) -->
       <button
         class="gallery-modal__btn-back"
-        data-gallery-next
+        data-gallery-back
         type="button"
         aria-label="Попередній слайд"
       >
@@ -34,18 +34,37 @@
         </svg>
       </button>
 
-      <div data-gallery-carousel="">
+      <div class="gallery-carousel" data-gallery-carousel>
         <div class="gallery-modal__thumb">
           <picture>
-            <!-- webp -->
-            <source media="(min-width: )" sizes srcset />
+            <!-- 768px  webp -->
+            <source
+              media="(min-width: 768px)"
+              sizes="(min-width: 768px) 554px, 85vw"
+              srcset="
+                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-554.webp      554w,
+                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1108@2x.webp 1108w,
+                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1662@3x.webp 1108w
+              "
+              type="image/webp"
+            />
 
-            <!-- jpeg -->
+            <!-- 768px jpeg -->
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-554.jpg      554w,
+                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1108@2x.jpg 1108w,
+                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1662@3x.jpg 1108w
+              "
+              sizes="(min-width: 768px) 554px, 85vw"
+              type="image/jpeg"
+            />
 
             <img
               class="gallery-modal__image"
+              data-photos-lazy
               data-gallery-image
-              data-lazy="./images/main/more-photos/desktop/modal/lamps-enlarged-906.jpg"
               sizes="(min-width: 1440px) 906px, (min-width: 768px) 554px, (max-width: 767px) 236px, 88vw"
               srcset="
                 ./images/main/more-photos/desktop/modal/lamps-enlarged-906.jpg       906w,

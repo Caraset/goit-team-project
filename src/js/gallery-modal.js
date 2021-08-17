@@ -3,36 +3,35 @@
     openModalImg: document.querySelectorAll('[data-photos-lazy]'),
     openModalList: document.querySelector('[data-photos-list]'),
     modal: document.querySelector('[data-gallery-modal]'),
+    modalNextBtn: document.querySelector('[data-gallery-next]'),
     modalImage: document.querySelectorAll('[data-gallery-image]'),
     htmlAndBody: document.querySelectorAll('[data-no-scroll]'),
   };
 
   function toggleModal() {
     const isModalOpen = refs.openModalList.getAttribute('aria-expanded') === 'true' || false;
-    refs.openModalList.setAttribute('aria-expanded', !isModalOpen);
-
-    refs.modal.classList.toggle('is-hidden'); // MUST HAVE
-
-    refs.htmlAndBody[0].classList.toggle('no-scroll');
-    refs.htmlAndBody[1].classList.toggle('no-scroll');
+    refs.openModalList.setAttribute('aria-expanded', !isModalOpen),
+      refs.modal.classList.toggle('is-hidden'), // MUST HAVE
+      refs.htmlAndBody[0].classList.toggle('no-scroll'),
+      refs.htmlAndBody[1].classList.toggle('no-scroll');
   }
 
   var isFocused = 0;
-  function focusLog(targetElem = refs.openModalList) {
+  function focusLog(targetElem = null) {
     /* Чарівництво */
     setTimeout(() => {
-      targetElem.focus();
+      targetElem !== null && targetElem.focus();
       isFocused = document.activeElement === targetElem;
       console.log(`${targetElem.className} isFocused: ${isFocused}`);
     }, 250);
   }
 
-  function openModal(focusTarget = refs.modal) {
-    toggleModal(), focusLog(focusTarget);
+  function openModal(targetOnOpen = refs.modalNextBtn) {
+    toggleModal(), focusLog(targetOnOpen);
   }
 
-  function closeModal() {
-    toggleModal(), focusLog();
+  function closeModal(targetOnClose = null) {
+    toggleModal(), focusLog(targetOnClose);
   }
   // по event.target будет картинка а срабатывание произойдет на event.currentTarget
   // Сделать проверку if(event.target !== img) {return}

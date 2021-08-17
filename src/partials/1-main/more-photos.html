@@ -13,10 +13,7 @@
       <h2 class="title-v1 more-photos__title" id="more-photos__title-id">Більше Фото</h2>
 
       <!-- path
-
-Для начала, надо сделать обычный x1 и x2. Это база.
 Потом в модалке можно прикрутить x3 и x4 на выбор.
-x3 and x4 - keep for modal window
 Делаю так: просто все пути ставлю, а потом скопирую их в модалку и не парюсь.
 Потом с мобильной версию удаляю x3, чтобы трафик не хавало у пользователей.
 x2 почти не отличить от x3 на мобилке.
@@ -104,6 +101,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280x179 jpg - default 1st image -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
@@ -114,8 +112,28 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg 1120w
                   "
                   alt="3D моделі виготовлені на 3D принтері"
+                  tabindex="-1"
                 />
               </picture>
+
+              <noscript>
+                <!-- 320px - 280x179 jpg - default 1st image -->
+                <img
+                  class="fallback-image"
+                  src="http://spacergif.org/spacer.gif"
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg      280w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.jpg   560w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.jpg   840w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg 1120w
+                  "
+                  alt="3D моделі виготовлені на 3D принтері"
+                  tabindex="-1"
+                />
+              </noscript>
             </div>
           </div>
         </li>
@@ -192,6 +210,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280x193 jpg - default 2nd image -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
@@ -281,6 +300,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280x340 jpeg - default 3rd image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
@@ -329,7 +349,7 @@ jpeg is in scrset="" by defaul as fallback
                   "
                 />
 
-                <!-- 768px - 130x165 webp -->
+                <!-- 768px - 131x165 webp -->
                 <source
                   media="(min-width: 768px)"
                   sizes="(min-width: 768px) 131px, 17vw"
@@ -370,6 +390,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 4th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
@@ -459,6 +480,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 5th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
@@ -548,6 +570,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 6th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
@@ -637,6 +660,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 7th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
@@ -726,6 +750,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 8th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 405px, (min-width: 768px) 248px, 88vw"
@@ -815,6 +840,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 9th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 187px, (min-width: 768px) 115px, 88vw"
@@ -904,6 +930,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 10th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
@@ -993,6 +1020,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 11th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
@@ -1082,6 +1110,7 @@ jpeg is in scrset="" by defaul as fallback
 
                 <!-- 320px - 280xauto jpeg - default 12th image  -->
                 <img
+                  src="http://spacergif.org/spacer.gif"
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"

@@ -14,7 +14,10 @@
 
 .more-photos__container {
   padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
-  @include mq($tablet, $pb: 26px); // 26px =  tablet  mb52 - section pb26
+  @include mq($tablet, $pb: 26px) {
+    min-width: 648px;
+    max-width: 1062px; // 26px =  tablet  mb52 - section pb26
+  }
   @include mq($desktop, $pb: 74px);
 }
 
@@ -32,10 +35,10 @@
 .more-photos__list {
   @extend %list;
 
-  outline: 1px solid red;
-  @include mq($tablet, null, calc(-1 * var(--gap-t)), 0, 0, calc(-1 * var(--gap-t))) {
+  @include mq($tablet, $mt: calc(-1 * var(--gap-t-v)), $ml: calc(-1 * var(--gap-t-h))) {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   @include mq($desktop, $mt: calc(-1 * var(--gap)), $ml: calc(-1 * var(--gap)));
@@ -43,10 +46,9 @@
 
 /* photos */
 .more-photos__item {
-  outline: 1px solid gold;
   cursor: pointer;
 
-  @include mq($tablet, $mt: var(--gap-t), $ml: var(--gap-t));
+  @include mq($tablet, $mt: var(--gap-t-v), $ml: var(--gap-t-h));
   @include mq($desktop, $mt: var(--gap), $ml: var(--gap));
 
   &:not(:last-child) {
@@ -57,7 +59,7 @@
 // .photos-card__thumb {}
 // .photos-card { }
 
-.photos-card__image:not([src]):not([srcset]) {
+.photos-card__image:not([src]) {
   visibility: hidden;
 }
 
@@ -93,10 +95,10 @@
 // .to-be-loaded-images { @include mq($end: $mobile) { opacity: 0; transform: translateX(50%) scaleX(0); } }
 
 .appear {
-  @extend .transition;
-  opacity: 1;
   transition-property: transform, opacity;
+  opacity: 1;
   transform: translateX(0) scaleX(1);
+  @include animation;
 }
 
 .more-photos__svg-wrapper {
@@ -116,43 +118,30 @@
 /* Overlay - Rectangle 80 */
 .gallery-overlay {
   position: fixed;
-  inset: 0;
 
+  top: 0;
+  left: 0;
   display: flex;
-
+  width: 100%;
+  height: 100vh;
   overflow-y: scroll;
+  contain: strict;
 
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
-    visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
-  /* Fading is smooth after deleting excessive is-hidden parts. */
+  transition-property: opacity, visibility;
+  @include animation; // Fading is smooth
+
+  background-color: rgba(#2b2b2b, 0.8);
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
 
   &.is-hidden {
     overflow: hidden;
   }
 
   &__container {
-    position: relative;
-
-    top: 44.6%; // 1168px
-    min-width: 648px;
-
-    @include mq($tablet) {
-      top: 55.8%; // 1193px
-      min-width: 648px;
-    }
-
-    @include mq($desktop) {
-      /* TODO: Kostiantyn Ochenash: check mockup sizes for container of modal window.
-      Finish html and css for gallery-overlay__container till EBD 2021-08-16 */
-      top: 59.8%; // 1924px
-      min-width: 1062px;
-    }
+    margin: auto;
+    padding: 0;
   }
-
-  background: rgba(#2b2b2b, 0.8);
-  backdrop-filter: blur(4px);
-  /* Note: backdrop-filter has minimal browser support */
 }
 
 // ------------------------------------------------------
@@ -161,9 +150,8 @@
 
 // Modal window
 .gallery-modal {
-  @extend .transition;
   display: flex;
-  justify-content: center;
+
   align-items: center;
 
   overflow: hidden;
@@ -172,6 +160,7 @@
   border-radius: 4px;
 
   transition-property: transform, opacity;
+  @include animation;
 
   .gallery-overlay.is-hidden > & {
     transform: scale(1.21);
