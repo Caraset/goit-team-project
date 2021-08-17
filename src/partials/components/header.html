@@ -73,16 +73,15 @@
         </li>
       </ul>
     </nav>
-    <button class="burger-btn" type="button" data-modal-open hide-modal-btn>
+    <button class="burger-btn js-hide-modal-btn" type="button" data-modal-open>
       <svg width="32" height="32" class="burger-btn__icon">
         <use href="../images/svg-sprite.svg#burger-menu"></use>
       </svg>
     </button>
 
     <button
-      class="burger-btn burger-close-btn is-hidden"
+      class="burger-btn burger-close-btn is-hidden js-hide-close-btn"
       type="button"
-      hide-close-icon
       data-modal-close
     >
       <svg width="22" height="22" class="burger-btn__icon">
@@ -141,7 +140,7 @@
   <div class="backdrop is-hidden" data-modal>
     <ul class="menu-nav">
       <li class="menu-nav__item">
-        <a class="menu-nav__link is-current" href="../index.html">Головна</a>
+        <a class="menu-nav__link" href="../index.html">Головна</a>
       </li>
       <li class="menu-nav__item">
         <a class="menu-nav__link" href="#">Послуги</a>
@@ -164,4 +163,3 @@
     </ul>
   </div>
 </header>
-

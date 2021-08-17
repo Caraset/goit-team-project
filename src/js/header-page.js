@@ -15,9 +15,9 @@ function onScroll() {
   const refs = {
     openModalBtn: document.querySelector('[data-modal-open]'),
     closeModalBtn: document.querySelector('[data-modal-close]'),
-    hideBurgerBtn: document.querySelector('[hide-modal-btn]'),
+    hideBurgerBtn: document.querySelector('.js-hide-modal-btn'),
     modal: document.querySelector('[data-modal]'),
-    hideCloseIcon: document.querySelector('[hide-close-icon]'),
+    hideCloseIcon: document.querySelector('.js-hide-close-btn'),
     body: document.querySelector('body'),
   };
 
@@ -30,5 +30,15 @@ function onScroll() {
     refs.hideBurgerBtn.classList.toggle('is-hidden');
     refs.hideCloseIcon.classList.toggle('is-hidden');
     refs.body.classList.toggle('scroll-disabled');
+    isCurrent();
   }
 })();
+
+function isCurrent() {
+  const links = document.querySelectorAll('.menu-nav__link');
+  links.forEach(item => {
+    if (item.href == window.location.href) {
+      item.classList.add('is-current');
+    }
+  });
+}

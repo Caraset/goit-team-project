@@ -1,22 +1,64 @@
-<section class="contact-us container">
-    <h2 class="contact-us__title title-v2">зв'яжіться з нами</h2>
-    <form class="contact-us__form">
-        <div class="contact-us__wrapper">
-            <label for="user_name" class="contact-us__label">Ім'я</label>
-            <input type="text" id="user_name" class="contact-us__input" name="name" minlength="2" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Приклад: Олександра" required>            
+<section class="contact-form contact-form__section">
+  <div class="contact-form__container">
+    <h2 class="contact-form__title title-v2">зв'яжіться з нами</h2>
+    <form class="contact-form__form">
+      <div class="contact-form__wrapper">
+        <input
+          type="text"
+          id="contact-form_name"
+          class="contact-form__input"
+          name="user-name"
+          minlength="2"
+          pattern="^[A-Za-zА-Яа-яЁё]+$"
+          title="Приклад: Олексій"
+          required
+        />
+        <label for="contact-form_name" class="contact-form__label">Ім'я</label>
+      </div>
+
+      <div class="contact-form__wrapper">
+        <input
+          type="email"
+          id="contact-form_email"
+          class="contact-form__input"
+          name="user-email"
+          required
+        />
+        <label for="contact-form_email" class="contact-form__label">Email</label>
+      </div>
+
+      <div class="contact-form__wrap-comment">
+        <div class="contact-form__comment-aria">
+          <label for="contact-form__comment" class="contact-form__label-comment"
+            >Повідомлення</label
+          >
+          <textarea
+            name="user_comment"
+            id="contact-form__comment"
+            class="contact-form__comment"
+            placeholder="Залишіть своє повідомлення"
+          ></textarea>
+
+          <input
+            type="file"
+            name="user-file"
+            class="contact-form__loading-file"
+            id="contact-form__user-file"
+          />
+          <label
+            for="contact-form__user-file"
+            aria-label="Прикріпити файл"
+            class="contact-form__loading-file-label"
+          >
+            <svg class="contact-form__file-icon">
+              <use href="../../src/images/svg-sprite.svg#file-icon"></use>
+            </svg>
+          </label>
         </div>
-        
-        <div class="contact-us__wrapper">
-            <label for="user_email" class="contact-us__label">Email</label>
-            <input type="email" id="user_email" class="contact-us__input" name="email" required>
-        </div>
-        
-        <div class="comment-wrapper">
-            <label for="user_comment" class="label-comment">Повідомлення</label>
-            <textarea id="user_comment" name="user-comment" class="comment" placeholder="Залишіть своє повідомлення"></textarea>
-            <p class="input-info">*Прикріпіть зображення / креслення / STL / Obj / CAD-модель</p>
-        </div>
-       
-        <button type="submit" class="send-btn" >відправити</button>
+        <p class="contact-form__info">*Прикріпіть зображення/креслення/STL/Obj/CAD-модель</p>
+      </div>
+
+      <button type="submit" class="button contact-form__button">відправити</button>
     </form>
+  </div>
 </section>
