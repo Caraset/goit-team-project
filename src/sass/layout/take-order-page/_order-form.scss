@@ -1,5 +1,6 @@
 .of-contact__container {
   @include font(16px, 400, 1.25);
+  padding-bottom: 76px;
 
   @include mq($start: $tablet, $end: $desktop) {
     max-width: 1000px;
@@ -17,8 +18,17 @@
 .of {
   &__section {
     padding-bottom: 52px;
+
     @include mq($tablet, $pb: 76px);
     @include mq($desktop, $pb: 0px);
+  }
+
+  &__container {
+    margin-left: auto;
+    margin-right: auto;
+    @include mq($end: $tablet) {
+      max-width: 420px;
+    }
   }
 
   &__title {
@@ -54,14 +64,14 @@
     position: relative;
   }
   &__label-input {
-    margin-bottom: 4px;
     position: absolute;
-    bottom: 0;
+    bottom: 4px;
     left: 0;
     transform: translateY(0);
     @include animation;
   }
   &__input {
+    padding: 4px 0;
     border: none;
     border-bottom: 1px solid var(--accent-color);
     width: 100%;
@@ -268,12 +278,5 @@
 
   &__radio {
     display: none;
-  }
-}
-
-//new mq
-@media screen and (min-width: 530px) and (max-width: 767px) {
-  .of__title {
-    text-align: center;
   }
 }
