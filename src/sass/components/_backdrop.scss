@@ -9,7 +9,7 @@
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  overflow: hidden;
+  overflow: scroll;
   transition-property: opacity, visibility, pointer-events;
 
   background-color: white;
