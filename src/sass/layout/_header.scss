@@ -243,6 +243,7 @@ header a:focus {
     position: absolute;
     top: 29px;
     left: -68px;
+    z-index: 200;
   }
   &__list {
     width: 162px;
