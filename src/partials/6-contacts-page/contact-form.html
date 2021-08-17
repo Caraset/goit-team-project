@@ -1,24 +1,22 @@
-<section class="contact-us">
-    <h2 class="contact-us__title">зв'яжіться з нами</h2>
-    <form class="contact-form">
-        <label class="label">
-            Ім'я
-            <input type="text" class="label__input" name="name" minlength="2" required>
-        </label>
-
-        <label class="label">
-            E-mail
-            <input type="email" class="label__input" name="email" required>
-        </label>
-
-        <label class="label">
-            Повідомлення
-            <textarea name="user-comment" class="label__comment" placeholder="Залишіть своє повідомлення"></textarea>
-            <input type="file" id="file" name="file">
-        </label>   
+<section class="contact-us container">
+    <h2 class="contact-us__title title-v2">зв'яжіться з нами</h2>
+    <form class="contact-us__form">
+        <div class="contact-us__wrapper">
+            <label for="user_name" class="contact-us__label">Ім'я</label>
+            <input type="text" id="user_name" class="contact-us__input" name="name" minlength="2" pattern="^[A-Za-zА-Яа-яЁё]+$" title="Приклад: Олександра" required>            
+        </div>
         
-        <p class="input-info">*Прикріпіть зображення / креслення / STL / Obj / CAD-модель</p>
+        <div class="contact-us__wrapper">
+            <label for="user_email" class="contact-us__label">Email</label>
+            <input type="email" id="user_email" class="contact-us__input" name="email" required>
+        </div>
         
-        <button class="send-btn" type="submit">ВІДПРАВИТИ</button>
+        <div class="comment-wrapper">
+            <label for="user_comment" class="label-comment">Повідомлення</label>
+            <textarea id="user_comment" name="user-comment" class="comment" placeholder="Залишіть своє повідомлення"></textarea>
+            <p class="input-info">*Прикріпіть зображення / креслення / STL / Obj / CAD-модель</p>
+        </div>
+       
+        <button type="submit" class="send-btn" >відправити</button>
     </form>
 </section>

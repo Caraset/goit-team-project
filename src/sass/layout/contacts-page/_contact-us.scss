@@ -1,0 +1,63 @@
+.contacts__section {
+  padding-bottom: 76px;
+}
+
+.contacts__wrapper {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.contacts-link:not(:last-child) {
+  margin-bottom: 24px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 68px;
+  }
+}
+
+.contacts-title {
+  margin-bottom: 8px;
+}
+
+.contacts__list {
+  @extend %list;
+}
+
+.letter {
+  text-transform: capitalize;
+}
+
+.contacts-schedule {
+  @extend %list;
+  @media screen and (min-width: 768px) {
+    text-align: right;
+  }
+}
+
+.contacts-schedule__list:not(:last-child) {
+  @media screen and (min-width: 768px) {
+    margin-bottom: 8px;
+  }
+}
+
+.contacts-schedule__time {
+  display: block;
+  margin-bottom: 8px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: inline;
+  }
+}
+
+.workday {
+  margin-left: 24px;
+}

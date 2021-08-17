@@ -1,0 +1,127 @@
+.contact-us {
+  margin-bottom: 52px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 76px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
+}
+
+.contact-us__title {
+  margin-bottom: 28px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 35px;
+    text-align: center;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 44px;
+    text-align: left;
+  }
+}
+
+.contact-us__form {
+  @media screen and (min-width: 768px) {
+    width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 76px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 515px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 100px;
+  }
+}
+
+.contact-us__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 44px;
+  position: relative;
+}
+
+.contact-us__label {
+  margin-bottom: 4px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translateY(0);
+  transition: transform var(--time) var(--cubic);
+}
+
+.contact-us__input {
+  border: none;
+  border-bottom: 1px solid #487996;
+  width: 100%;
+  height: 28px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover ~ .of__label-input,
+  &:focus ~ .of__label-input {
+    transform: translateY(-150%);
+  }
+}
+
+.comment-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 44px;
+  position: relative;
+}
+
+.label-comment {
+  margin-bottom: 4px;
+}
+
+.comment {
+  border: 1px solid #487996;
+  border-radius: 50px 0px;
+  resize: none;
+  height: 199px;
+  padding: 22px 25px;
+  margin-bottom: 4px;
+
+  &::placeholder {
+    font-size: 16px;
+    line-height: 1.25;
+    color: #cdcdcd;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+}
+
+.input-info {
+  @include font(18px, 400, 1.11, 0);
+  color: #cdcdcd;
+  margin-bottom: 24px;
+}
+
+.send-btn {
+  display: block;
+  width: 280px;
+  height: 56px;
+  margin-left: auto;
+
+  background: #f5f5fa;
+  box-shadow: -10px -10px 20px #ffffff, 10px 10px 20px rgba(72, 121, 150, 0.1),
+    5px 5px 10px rgba(72, 121, 150, 0.25), -5px -5px 10px #ffffff;
+  border: none;
+  border-radius: 30.5px;
+
+  @include font(16px, 700, 1.5, 0.1);
+  text-transform: uppercase;
+
+  color: var(--accent-color);
+}
