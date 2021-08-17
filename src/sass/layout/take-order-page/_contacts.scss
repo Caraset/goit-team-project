@@ -1,109 +1,124 @@
-.contact__section {
-  padding-bottom: 76px;
-}
+// style for sections positioning
 
-.contact__title {
-  margin-bottom: 8px;
-
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 18px;
+.contact {
+  &__section {
+    padding-bottom: 76px;
   }
 
-  &_firstleter {
-    text-transform: capitalize;
-  }
-}
-
-.contact__info {
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  @media screen and (min-width: 1440px) {
+  &__info {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: end;
-  }
-}
 
-.contact__wrap {
-  margin-bottom: 24px;
-  &:last-child {
-    margin-bottom: 0;
-  }
+    @include mq($tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
-    &:last-child {
-      text-align: right;
+    @include mq($desktop) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: end;
     }
   }
 
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 30px;
-    &:last-child {
-      margin-bottom: 76px;
-    }
-  }
-}
-
-.contact__link {
-  font-size: 16px;
-  line-height: 20px;
-  color: #2b2b2b;
-
-  // delete after add main style
-  @media screen and (min-width: 1440px) {
-    font-size: 18px;
-    line-height: 20px;
-  }
-}
-
-.contact__list {
-  @extend %list;
-}
-
-.contact__item {
-  margin-bottom: 8px;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.contact__graphic-time {
-  display: block;
-  margin-bottom: 8px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-
-  @media screen and (min-width: 1440px) {
-    display: inline;
-  }
-}
-
-//photo
-.contact {
   &__gallery-wrap {
     display: none;
-    width: 438px;
-    height: 294px;
+    width: 598px;
+    height: 455px;
+    position: relative;
+    right: -100px;
+    bottom: -8px;
 
-    @media screen and (min-width: 1440px) {
+    @include mq($desktop) {
       display: block;
     }
   }
 }
 
-// delete after add in base files
+//style for block
 
-.contact__info {
-  font-family: Cera Pro;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  color: #2b2b2b;
+.contact {
+  &__wrap {
+    margin-bottom: 24px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mq($tablet, $mb: 0) {
+      &:last-child {
+        text-align: right;
+      }
+    }
+    @include mq($desktop, $mb: 30px) {
+      &:last-child {
+        margin-bottom: 76px;
+      }
+    }
+  }
+
+  //title
+  &__title {
+    margin-bottom: 8px;
+    @include mq($desktop, $mb: 18px);
+    &_firstleter {
+      text-transform: capitalize;
+    }
+  }
+
+  //list
+  &__list {
+    list-style: none;
+  }
+
+  // item
+  &__item {
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  // link
+  &__link {
+    @include mq($desktop) {
+      @include font(18px, 400, 1.25, 0);
+    }
+  }
+
+  //text in schedule
+  &__graphic-time {
+    display: block;
+    margin-bottom: 8px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include mq($desktop) {
+      display: inline;
+    }
+  }
+}
+
+// Add new mq for contact elements - mb need del
+@media screen and (min-width: 530px) and (max-width: 767px) {
+  .contact__info {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 490px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact__wrap {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .contact__item {
+    display: flex;
+  }
 }
