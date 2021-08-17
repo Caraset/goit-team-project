@@ -141,7 +141,7 @@
   <div class="backdrop is-hidden" data-modal>
     <ul class="menu-nav">
       <li class="menu-nav__item">
-        <a class="menu-nav__link is-current" href="../index.html">Головна</a>
+        <a class="menu-nav__link" href="../index.html">Головна</a>
       </li>
       <li class="menu-nav__item">
         <a class="menu-nav__link" href="#">Послуги</a>
@@ -192,13 +192,23 @@
 
     refs.openModalBtn.addEventListener('click', toggleModal);
     refs.closeModalBtn.addEventListener('click', toggleModal);
-    refs.hideCloseIco.addEventListener('click', toggleModal);
+    // refs.hideCloseIco.addEventListener('click', toggleModal);
 
     function toggleModal() {
       refs.modal.classList.toggle('is-hidden');
       refs.hideBurgerBtn.classList.toggle('is-hidden');
       refs.hideCloseIcon.classList.toggle('is-hidden');
       refs.body.classList.toggle('scroll-disabled');
+      isCurrent();
     }
   })();
+
+    function isCurrent() {
+      const links = document.querySelectorAll('.menu-nav__link');
+        links.forEach(item => { 
+          if(item.href == window.location.href) {
+            item.classList.add('is-current')
+        }
+      })
+    };
 </script>
