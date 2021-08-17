@@ -33,12 +33,12 @@
   @extend %list;
 
   outline: 1px solid red;
-  @include mq($tablet, null, -19.53px, 0, 0, -19.53px) {
+  @include mq($tablet, null, calc(-1 * var(--gap-t)), 0, 0, calc(-1 * var(--gap-t))) {
     display: flex;
     flex-wrap: wrap;
   }
 
-  @include mq($desktop, $mt: -32px, $ml: -32px);
+  @include mq($desktop, $mt: calc(-1 * var(--gap)), $ml: calc(-1 * var(--gap)));
 }
 
 /* photos */
@@ -46,8 +46,8 @@
   outline: 1px solid gold;
   cursor: pointer;
 
-  @include mq($tablet, $mt: 19.53px, $ml: 19.53px);
-  @include mq($desktop, $mt: 32px, $ml: 32px);
+  @include mq($tablet, $mt: var(--gap-t), $ml: var(--gap-t));
+  @include mq($desktop, $mt: var(--gap), $ml: var(--gap));
 
   &:not(:last-child) {
     @include mq($end: $tablet, $mb: 16px);
@@ -163,7 +163,7 @@
 .gallery-modal {
   @extend .transition;
   display: flex;
-
+  justify-content: center;
   align-items: center;
 
   overflow: hidden;
@@ -175,10 +175,6 @@
 
   .gallery-overlay.is-hidden > & {
     transform: scale(1.21);
-  }
-
-  &__image {
-    margin: 0 auto;
   }
 
   &__btn-back {
