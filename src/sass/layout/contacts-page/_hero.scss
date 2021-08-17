@@ -25,63 +25,74 @@
 
 //video
 .contact-hero__video {
+  flex-shrink: 0;
   border-radius: 15px;
-  width: 280px;
+  max-width: 480px;
   height: 171px;
-  @include mq($end: tablet, $mb: 16px);
+  @include mq($end: tablet, $mb: 16px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-  @include mq($tablet, $ml: 20px) {
-    width: 247px;
+  @include mq($tablet, $mr: 20px) {
+    min-width: 247px;
     height: 192px;
   }
-  @include mq($desktop, $ml: 32px) {
-    width: 515px;
+  @include mq($desktop, $mr: 32px) {
+    min-width: 515px;
     height: 315px;
   }
 }
 
 .video {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
 //text
-.contact-hero__text {
-  @include font(18px, 300, 1.28);
-  color: var(--third-color);
+.contact-hero {
+  &__text {
+    @include font(16px, 300, 1.25, 0);
+    color: var(--third-color);
 
-  @include mq($desktop, $pb: 106px);
+    @include mq($desktop) {
+      @include font(18px, 300, 1.28, 0);
+    }
+  }
 
-  &-block {
+  &__text-block {
+    position: relative;
     margin-bottom: 16px;
     &:last-child {
       margin-bottom: 0;
     }
-    @include mq($desktop, $mb: 24px);
+    @include mq($desktop, $mb: 24px) {
+      &:last-child {
+        padding-bottom: 106px;
+      }
+    }
   }
-}
 
-.emoji {
-  position: absolute;
+  &__emoji {
+    position: absolute;
 
-  @media screen and (min-width: 320px) {
     bottom: 0;
-    right: 79px;
+    left: 178px;
 
     width: 22px;
     height: 22px;
-  }
 
-  @media screen and (min-width: 768px) {
-    bottom: 20px;
-    right: 171px;
-  }
+    @include mq($tablet) {
+      bottom: 5px;
+      left: 188px;
+    }
 
-  @media screen and (min-width: 1444px) {
-    bottom: 0;
-    left: 0;
+    @include mq($desktop) {
+      bottom: 0;
+      left: 0;
 
-    width: 49px;
-    height: 49px;
+      width: 49px;
+      height: 49px;
+    }
   }
 }
