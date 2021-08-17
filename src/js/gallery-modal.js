@@ -1,9 +1,7 @@
 (() => {
-  document.onload().console.log(`I'm Alive`);
-
   const refs = {
     openModalImg: document.querySelectorAll('[data-photos-lazy]'),
-    openModalList: document.querySelectorAll('[data-photos-list]'),
+    openModalList: document.querySelector('[data-photos-list]'),
     modal: document.querySelector('[data-gallery-modal]'),
     modalImage: document.querySelectorAll('[data-gallery-image]'),
     htmlAndBody: document.querySelectorAll('[data-no-scroll]'),
@@ -20,7 +18,7 @@
   }
 
   var isFocused = 0;
-  function focusLog(targetElem = refs.openModalImg[0]) {
+  function focusLog(targetElem = refs.openModalList) {
     /* Чарівництво */
     setTimeout(() => {
       targetElem.focus();
@@ -39,21 +37,17 @@
   // по event.target будет картинка а срабатывание произойдет на event.currentTarget
   // Сделать проверку if(event.target !== img) {return}
   refs.openModalList.addEventListener('click', event => {
-    if (event.currentTarget == refs.openModalImg || event.currentTarget == refs.openModalList) {
-      console.log('😍');
+    if (event.currentTarget == refs.openModalList) {
+      console.log('list is clicked upon ');
     }
-    (refs.modal.classList.contains('is-hidden') || isModalOpen) && openModal();
+    refs.modal.classList.contains('is-hidden') && openModal();
   });
 
-  // refs.closeModalBtn.addEventListener('click', event => {
-  //   closeModal();
-  // });
-
-  // refs.modal.addEventListener('keyup', event => {
-  //   (event.which === 27 || event.key === 'Escape') &&
-  //     !refs.modal.classList.contains('is-hidden') &&
-  //     closeModal();
-  // });
+  refs.modal.addEventListener('keyup', event => {
+    (event.which === 27 || event.key === 'Escape') &&
+      !refs.modal.classList.contains('is-hidden') &&
+      closeModal();
+  });
 
   refs.modal.addEventListener('mousedown', event => {
     event.target.matches('[data-gallery-modal]') && closeModal();
