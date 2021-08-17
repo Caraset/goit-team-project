@@ -25,6 +25,7 @@
 }
 
 .examples__item {
+    position: relative;
     width: 133px;
     height: 158.54px;
     border-radius: 50px 0px;
@@ -67,6 +68,10 @@
 }
 
 .examples__description {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 118px;
     @include font(14px, 400, 1.25);
     text-transform: uppercase;
     color: var(--accent-color);
@@ -74,9 +79,11 @@
     
     @media screen and (min-width: 768px) {
         @include font(14px, 400, 1.28);}
+        top: 136px;
 
     @media screen and (min-width: 1440px) {
         @include font(18px, 400, 1.28);
+        top: 245px;
     }
 
 
