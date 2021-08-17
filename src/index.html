@@ -17,27 +17,23 @@
       integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-      async
     />
 
     <!-- slick-carousel styles -->
     <link
-      rel="map"
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
       integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-      async
     />
 
     <!-- map for slick-carousel styles -->
     <link
-      rel="map"
+      rel="stylesheet"
+      type="application/json"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css.map"
-      integrity="sha512-mInzXz53SaIql4PcFd3Uu/xRqpCifV049/sh9AcYu27Fs++CCXrQknd0qnS55Utn94vxHkGRA3hQHLmb6YOzFg=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      async
     />
 
     <!-- slick-carousel theme -->
@@ -47,17 +43,14 @@
       integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
-      async
     />
 
     <!-- map for slick-carousel theme -->
     <link
-      rel="map"
+      rel="stylesheet"
+      type="application/json"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css.map"
-      integrity="sha512-SYONmBqtSCirYQ70MuIvyckt9pzESdQHePBIUPI8NwyixsBxhG3EQ8u2bmvIH4vB0ny9dTBdQXERhqd4ieX50g=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      async
     />
 
     <link rel="preload" href="./sass/fonts/CaviarDreams.woff2" crossorigin="anonymous" as="font" />
@@ -99,6 +92,9 @@
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
 
+    <!-- Internal - images scr replace (for lazy-loading) -->
+    <script type="text/javascript" src="./js/more-photos.js" defer></script>
+
     <!-- External - jq core lib (slick-carousel needs it) -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
@@ -117,7 +113,10 @@
       defer
     ></script>
 
-    <!-- Internal - slick-carousel initialization and images scr replace (for lazy-loading) -->
-    <script type="text/javascript" src="./js/more-photos.js" defer></script>
+    <!-- gallery-modal -->
+    <script type="text/javascript" src="./js/gallery-modal.js" defer></script>
+
+    <!-- External with dependencies - slick-carousel initialization and images data-src replace (for lazy-loading) -->
+    <script type="text/javascript" src="./js/gallery-slick.js" defer></script>
   </body>
 </html>
