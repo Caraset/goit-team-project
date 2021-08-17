@@ -37,6 +37,30 @@
       <div class="gallery-carousel" data-gallery-carousel>
         <div class="gallery-modal__thumb">
           <picture>
+            <!-- 1440px  webp -->
+            <source
+              media="(min-width: 768px)"
+              sizes="(min-width: 768px) 906px, 85vw"
+              srcset="
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-906.webp       906w,
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-1812-@2x.webp 1812w,
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-2718-@3x.webp 2718w
+              "
+              type="image/webp"
+            />
+
+            <!-- 1440px jpeg -->
+            <source
+              media="(min-width: 768px)"
+              srcset="
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-906.jpg       906w,
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-1812-@2x.jpg 1812w,
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-2718-@3x.jpg 2718w
+              "
+              sizes="(min-width: 768px) 906px, 85vw"
+              type="image/jpeg"
+            />
+
             <!-- 768px  webp -->
             <source
               media="(min-width: 768px)"
@@ -66,11 +90,7 @@
               data-photos-lazy
               data-gallery-image
               sizes="(min-width: 1440px) 906px, (min-width: 768px) 554px, (max-width: 767px) 236px, 88vw"
-              srcset="
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-906.jpg       906w,
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-1812-@2x.jpg 1812w,
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-2718-@3x.jpg 2718w
-              "
+              srcset=""
               alt="Двi лампи зроблені на 3D-принтері"
             />
           </picture>

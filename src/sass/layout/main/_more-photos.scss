@@ -24,6 +24,12 @@
 .more-photos__wrapper {
   margin-bottom: 32px;
   @include mq($desktop, $mb: 56px);
+
+  min-width: 280px;
+
+  @include mq($desktop) {
+    min-width: 1062px;
+  }
 }
 
 .more-photos__title {
@@ -47,7 +53,8 @@
 /* photos */
 .more-photos__item {
   cursor: pointer;
-
+  flex-grow: 1;
+  object-fit: cover;
   @include mq($tablet, $mt: var(--gap-t-v), $ml: var(--gap-t-h));
   @include mq($desktop, $mt: var(--gap), $ml: var(--gap));
 
@@ -65,8 +72,6 @@
 
 .photos-card__image {
   object-fit: cover;
-  margin: 0 auto;
-  border-radius: 5px;
 }
 
 // more-photos sizes: desktop
