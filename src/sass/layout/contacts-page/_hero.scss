@@ -1,72 +1,61 @@
+//positioning
 .contacts-hero {
-  @media screen and (min-width: 320px) {
+  &__container {
     margin-bottom: 52px;
+
+    @include mq($desktop) {
+      margin-bottom: 100px;
+    }
   }
 
-  @media screen and (min-width: 1444px) {
-    margin-bottom: 100px;
-  }
-}
-
-.contacts-hero__title {
-  @media screen and (min-width: 320px) {
+  &__title {
     margin-bottom: 16px;
+
+    @include mq($tablet) {
+      margin-bottom: 24px;
+    }
   }
 
-  @media screen and (min-width: 768px) {
-    margin-bottom: 24px;
-  }
-}
-
-.video {
-  @media screen and (min-width: 320px) {
-    margin-bottom: 16px;
-  }
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
+  &__wrapper {
+    @include mq($tablet) {
+      display: flex;
+    }
   }
 }
 
-.contacts-wrapper {
-  @media screen and (min-width: 768px) {
-    display: flex;
-  }
-}
-
+//video
 .contacts__video {
   border-radius: 15px;
+  width: 280px;
+  height: 171px;
+  @include mq($end: tablet, $mb: 16px);
 
-  @media screen and (min-width: 320px) {
-    width: 280px;
-    height: 171px;
-  }
-
-  @media screen and (min-width: 768px) {
+  @include mq($tablet, $ml: 20px) {
     width: 247px;
     height: 192px;
   }
-
-  @media screen and (min-width: 1444px) {
+  @include mq($desktop, $ml: 32px) {
     width: 515px;
     height: 315px;
   }
 }
 
-.text-wrapper {
-  position: relative;
-  @media screen and (min-width: 768px) {
-    margin-left: 20px;
-  }
+.video {
+  width: 100%;
+  height: auto;
 }
 
-.contacts__text {
-  @media screen and (min-width: 320px) {
-    margin-bottom: 16px;
-  }
+//text
+.contact__text {
+  @include font(18px, 300, 1.28);
+  color: var(--third-color);
 
-  @media screen and (min-width: 1444px) {
-    margin-bottom: 24px;
+  &-block {
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include mq($desktop, $mb: 24px);
   }
 }
 
