@@ -30,5 +30,15 @@ function onScroll() {
     refs.hideBurgerBtn.classList.toggle('is-hidden');
     refs.hideCloseIcon.classList.toggle('is-hidden');
     refs.body.classList.toggle('scroll-disabled');
+    isCurrent();
   }
 })();
+
+  function isCurrent() {
+    const links = document.querySelectorAll('.menu-nav__link');
+      links.forEach(item => { 
+        if(item.href == window.location.href) {
+          item.classList.add('is-current')
+      }
+    })
+  };
