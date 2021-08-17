@@ -3,7 +3,7 @@
     <h2 class="is-hidden">Процес</h2>
     <ul class="process__list list">
       <li class="process__item">
-          <picture class="process__picture img">
+          <picture>
             <source
               media="(min-width: 1440px)"
               srcset="
@@ -56,6 +56,7 @@
             />
           </picture>
           <div class="process__right-side">
+            <div class="process__text-container">
             <p class="process__text">
               <span class="process__text-title">3D-друк</span> - ми використовуємо FDM технологію
               друку. Вона представляє собою пошарове формування об'єкта за допомогою 3D принтера.
@@ -68,11 +69,11 @@
               3D друк знайшов широке застосування в архітектурі, промисловості, маркетингу,
               мистецтві і багатьох інших сфер.
             </p>
-            <include src="./partials/components/order-form-button.html" class="order-button"></include>
+          </div>
+            <include src="./partials/components/order-form-button.html"></include>
         </div>
       </li>
       <li class="process__item">
-        <div class="process__left-side">
           <picture>
             <source
               media="(min-width: 1440px)"
@@ -125,7 +126,6 @@
               alt="3-D моделювання"
             />
           </picture>
-        </div>
         <div class="process__right-side">
           <div class="process__text-container">
             <p class="process__text">
@@ -145,7 +145,6 @@
         </div>
       </li>
       <li class="process__item">
-        <div class="process__left-side">
           <picture>
             <source
               media="(min-width: 1440px)"
@@ -198,7 +197,6 @@
               alt="3-D сканиування"
             />
           </picture>
-        </div>
         <div class="process__right-side">
           <div class="process__text-container">
             <p class="process__text">
