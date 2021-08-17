@@ -78,28 +78,28 @@
 }
 
 //select
-.of {
-  &__wrap-select {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 44px;
-    position: relative;
-  }
+// .of {
+//   &__wrap-select {
+//     display: flex;
+//     flex-direction: column;
+//     margin-bottom: 44px;
+//     position: relative;
+//   }
 
-  &__label-select {
-    margin-bottom: 4px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
+//   &__label-select {
+//     margin-bottom: 4px;
+//     position: absolute;
+//     bottom: 0;
+//     left: 0;
+//   }
 
-  &__select-option {
-    width: 420px;
-    &:checked {
-      background: rgba(72, 121, 150, 0.5);
-    }
-  }
-}
+//   &__select-option {
+//     width: 420px;
+//     &:checked {
+//       background: rgba(72, 121, 150, 0.5);
+//     }
+//   }
+// }
 
 //comment
 .of {
@@ -149,4 +149,93 @@
   margin-left: auto;
 }
 
-// //////////////del
+//select
+
+.select {
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  margin-bottom: 44px;
+
+  @media screen and (min-width: 768px) {
+    width: 420px;
+  }
+  @media screen and (min-width: 1440px) {
+    width: 515px;
+  }
+}
+
+.select__container {
+  width: 100%;
+  transition: all 250ms var(--cubic);
+  border: none;
+  border-bottom: 1px solid #487996;
+
+  overflow: hidden;
+  max-height: 0px;
+  opacity: 0;
+  order: 1;
+
+  &.active {
+    opacity: 1;
+    max-height: 130px;
+    // overflow-y: auto;
+
+    & + .select__title::after {
+      transform: rotate(180deg);
+      bottom: 10px;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(72, 121, 150, 0.5);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #487996;
+    height: 20px;
+  }
+}
+
+.select__title {
+  padding-bottom: 4px;
+  border-bottom: 1px solid #487996;
+  position: relative;
+  order: 0;
+  transition: all var(--time) var(--cubic);
+
+  &::after {
+    content: '';
+    cursor: pointer;
+    display: flex;
+    background-image: url(../../src/images/take-order/polygon1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    position: absolute;
+    bottom: 7px;
+    right: 2px;
+    width: 15px;
+    height: 10px;
+  }
+}
+
+.select__option {
+  padding: 4px 8px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(72, 121, 150, 0.5);
+    color: #fff;
+  }
+}
+
+.select__label {
+  cursor: pointer;
+}
+
+.select__radio {
+  display: none;
+}
