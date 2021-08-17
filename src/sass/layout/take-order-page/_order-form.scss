@@ -1,49 +1,51 @@
 .of-contact__container {
-  @media screen and (min-width: 1440px) {
+  @include font(16px, 400, 1.25);
+
+  @include mq($start: $tablet, $end: $desktop) {
+    max-width: 1000px;
+  }
+
+  @include mq($desktop, $pb: 100px) {
+    @include font(18px, 400, 1.11);
     display: flex;
-    padding-bottom: 100px;
     justify-content: space-between;
   }
 }
 
-.of__section {
-  padding-bottom: 52px;
-  @media screen and (min-width: 768px) {
-    padding-bottom: 76px;
+//positioning section
+
+.of {
+  &__section {
+    padding-bottom: 52px;
+    @include mq($tablet, $pb: 76px);
+    @include mq($desktop, $pb: 0px);
   }
-  @media screen and (min-width: 1440px) {
-    padding-bottom: 0px;
+
+  &__title {
+    margin-bottom: 28px;
+
+    @include mq($tablet, $mb: 35px) {
+      text-align: center;
+    }
+    @include mq($desktop, $mb: 44px) {
+      margin-bottom: 44px;
+    }
   }
 }
 
-.of__title {
-  margin-bottom: 28px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 35px;
-    text-align: center;
-  }
-  @media screen and (min-width: 1440px) {
-    margin-bottom: 44px;
-    text-align: left;
-  }
-}
+//style for form
 
 .of__form {
-  @media screen and (min-width: 768px) {
-    width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media screen and (min-width: 1440px) {
-    width: 515px;
-    margin-left: 0;
-    margin-right: 0;
+  max-width: 420px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq($desktop, $ml: 0, $mr: 0) {
+    max-width: 515px;
   }
 }
 
-//input/////
-
+//input - name, email
 .of {
   &__wrap-input {
     display: flex;
@@ -57,11 +59,11 @@
     bottom: 0;
     left: 0;
     transform: translateY(0);
-    transition: transform var(--time) var(--cubic);
+    @include animation;
   }
   &__input {
     border: none;
-    border-bottom: 1px solid #487996;
+    border-bottom: 1px solid var(--accent-color);
     width: 100%;
     height: 28px;
 
@@ -77,37 +79,22 @@
   }
 }
 
-//select
-// .of {
-//   &__wrap-select {
-//     display: flex;
-//     flex-direction: column;
-//     margin-bottom: 44px;
-//     position: relative;
-//   }
-
-//   &__label-select {
-//     margin-bottom: 4px;
-//     position: absolute;
-//     bottom: 0;
-//     left: 0;
-//   }
-
-//   &__select-option {
-//     width: 420px;
-//     &:checked {
-//       background: rgba(72, 121, 150, 0.5);
-//     }
-//   }
-// }
-
 //comment
 .of {
   &__wrap-comment {
     display: flex;
     flex-direction: column;
-    margin-bottom: 44px;
+    margin-bottom: 24px;
     position: relative;
+    @include mq($tablet, $mb: 44px);
+    @include mq($desktop, $mb: 24px);
+  }
+
+  &__comment-aria {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 4px;
   }
 
   &__label-comment {
@@ -115,16 +102,14 @@
   }
 
   &__comment {
-    border: 1px solid #487996;
+    border: 1px solid var(--accent-color);
     border-radius: 50px 0px;
     resize: none;
     height: 199px;
     padding: 22px 25px;
-    margin-bottom: 4px;
 
     &::placeholder {
-      font-size: 16px;
-      line-height: 20px;
+      @include font(16px, 400, 1.25);
       color: #cdcdcd;
     }
 
@@ -134,108 +119,161 @@
     }
   }
 
+  &__loading-file {
+    display: none;
+  }
+
+  &__loading-file-label {
+    position: absolute;
+    bottom: 18px;
+    right: 21px;
+    cursor: pointer;
+    fill: #cdcdcd;
+    transition-property: fill;
+    @include animation;
+
+    &:hover,
+    &:focus {
+      fill: var(--accent-color);
+    }
+
+    &.active {
+      fill: #d6a12f;
+    }
+  }
+
+  &__file-icon {
+    width: 22px;
+    height: 20px;
+  }
+
   &__info {
-    font-family: Cera Pro;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 20px;
     color: #cdcdcd;
-    margin-bottom: 24px;
   }
 }
 
+//btn position
+
 .of__button {
   display: block;
+  width: 100%;
+  max-width: 280px;
   margin-left: auto;
+  margin-right: auto;
+
+  @include mq($tablet) {
+    margin-right: 0;
+    margin-left: auto;
+    width: 177px;
+  }
 }
 
 //select
 
 .select {
   display: flex;
-  width: 280px;
+  // width: 280px;
   flex-direction: column;
   margin-bottom: 44px;
 
-  @media screen and (min-width: 768px) {
+  @include mq($tablet) {
     width: 420px;
   }
-  @media screen and (min-width: 1440px) {
+  @include mq($desktop) {
     width: 515px;
   }
-}
 
-.select__container {
-  width: 100%;
-  transition: all 250ms var(--cubic);
-  border: none;
-  border-bottom: 1px solid #487996;
+  &__container {
+    order: 1;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #487996;
 
-  overflow: hidden;
-  max-height: 0px;
-  opacity: 0;
-  order: 1;
+    overflow: hidden;
+    max-height: 0px;
+    opacity: 0;
 
-  &.active {
-    opacity: 1;
-    max-height: 130px;
-    // overflow-y: auto;
+    transition-property: opacity, max-height;
+    @include animation;
 
-    & + .select__title::after {
-      transform: rotate(180deg);
-      bottom: 10px;
+    &.active {
+      opacity: 1;
+      max-height: 130px;
+
+      //if need scroll
+      // overflow-y: auto;
+
+      & + .select__title::after {
+        transform: rotate(180deg);
+        bottom: 10px;
+      }
+    }
+
+    //if need scroll
+    // &::-webkit-scrollbar {
+    //   width: 8px;
+    //   background-color: rgba(72, 121, 150, 0.5);
+    // }
+
+    // &::-webkit-scrollbar-thumb {
+    //   background-color: #487996;
+    //   height: 20px;
+    // }
+  }
+
+  //title-select
+  &__title {
+    order: 0;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #487996;
+    position: relative;
+    transition: all var(--time) var(--cubic);
+
+    //arrowdown
+    &::after {
+      content: '';
+      cursor: pointer;
+      display: flex;
+      background-image: url(../../src/images/take-order/polygon1.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      position: absolute;
+      bottom: 7px;
+      right: 2px;
+      width: 15px;
+      height: 10px;
+      transition-property: transform;
+      @include animation;
+    }
+  }
+  // all options
+  &__option {
+    padding: 4px 8px;
+    cursor: pointer;
+    transition-property: color, background-color;
+    @include animation;
+
+    &:hover,
+    &:focus {
+      background-color: rgba(72, 121, 150, 0.5);
+      color: #fff;
     }
   }
 
-  &::-webkit-scrollbar {
-    width: 8px;
-    background-color: rgba(72, 121, 150, 0.5);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: #487996;
-    height: 20px;
-  }
-}
-
-.select__title {
-  padding-bottom: 4px;
-  border-bottom: 1px solid #487996;
-  position: relative;
-  order: 0;
-  transition: all var(--time) var(--cubic);
-
-  &::after {
-    content: '';
+  //name of options
+  &__label {
     cursor: pointer;
-    display: flex;
-    background-image: url(../../src/images/take-order/polygon1.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
+  }
 
-    position: absolute;
-    bottom: 7px;
-    right: 2px;
-    width: 15px;
-    height: 10px;
+  &__radio {
+    display: none;
   }
 }
 
-.select__option {
-  padding: 4px 8px;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    background-color: rgba(72, 121, 150, 0.5);
-    color: #fff;
+//new mq
+@media screen and (min-width: 530px) and (max-width: 767px) {
+  .of__title {
+    text-align: center;
   }
-}
-
-.select__label {
-  cursor: pointer;
-}
-
-.select__radio {
-  display: none;
 }
