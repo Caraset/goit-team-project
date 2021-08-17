@@ -243,6 +243,7 @@ header a:focus {
     position: absolute;
     top: 29px;
     left: -68px;
+    z-index: 200;
   }
   &__list {
     width: 162px;
@@ -299,12 +300,4 @@ header a:focus {
 
 header {
   border-bottom: solid 1px #6e6e6e;
-}
-.language-box {
-  position: absolute;
-  top: 29px;
-  left: -68px;
-}
-.language {
-  position: relative;
 }

@@ -4,7 +4,7 @@
 //    <div class="container more-photos__wrapper">
 //      <h2 class="title-v1">БІЛЬШЕ ФОТО</h2>
 //
-//      <ul class="more-photos-list more-photos__list">
+//      <ul class="more-photos__list">
 //        <li class="more-photos__item">
 //          <div class="photos-card">
 //            <a class="photos-card__link links"
@@ -12,17 +12,17 @@
 //                <picture class="photos-card__picture">
 //                 <img class="photos-card__image image transition"/>
 
-.more-photos {
-  @include bg-retina('../images/main-section/desktop/bg-img-1.jpg');
-}
-
 .more-photos__container {
   padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
   @include mq($tablet, $pb: 26px); // 26px =  tablet  mb52 - section pb26
   @include mq($desktop, $pb: 74px);
 }
 
-// .more-photos-wrapper { }
+.more-photos__wrapper {
+  margin-bottom: 32px;
+  @include mq($desktop, $mb: 56px);
+}
+
 .more-photos__title {
   margin-bottom: 16px;
   @include mq($tablet, $mb: 32px);
@@ -30,17 +30,10 @@
 }
 
 .more-photos__list {
-  margin-bottom: 32px;
-
-  @include mq($tablet, null, -30px, 0, 32px, -30px);
-  @include mq($desktop, $mb: 56px);
-}
-
-.more-photos-list {
   @extend %list;
 
   outline: 1px solid red;
-  @include mq($tablet) {
+  @include mq($tablet, null, -19.53px, 0, 0, -19.53px) {
     display: flex;
     flex-wrap: wrap;
   }
@@ -51,7 +44,7 @@
   outline: 1px solid gold;
   cursor: pointer;
 
-  @include mq($tablet, $mt: 30px, $ml: 30px);
+  @include mq($tablet, $mt: 19.53px, $ml: 19.53px);
 
   &:not(:last-child) {
     @include mq($end: $tablet, $mb: 16px);
@@ -103,9 +96,8 @@
   transform: translateX(0) scaleX(1);
 }
 
-.more-photos__icon-loader {
-  display: block;
-  margin: 0 auto;
+.more-photos__svg-wrapper {
+  text-align: center;
 }
 
 .system-uicons-loader {
@@ -137,12 +129,21 @@
   }
 
   &__container {
-    margin-top: auto;
-    margin-bottom: auto;
+    position: relative;
 
-    @include mq($desktop, $pr: 200px, $pl: 200px) {
+    top: 44.6%; // 1168px
+    min-width: 648px;
+
+    @include mq($tablet) {
+      top: 55.8%; // 1193px
+      min-width: 648px;
+    }
+
+    @include mq($desktop) {
       /* TODO: Kostiantyn Ochenash: check mockup sizes for container of modal window.
       Finish html and css for gallery-overlay__container till EBD 2021-08-16 */
+      top: 59.8%; // 1924px
+      min-width: 1062px;
     }
   }
 
@@ -155,14 +156,13 @@
 /* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
 // ------------------------------------------------------
 
-/* Modal window */
-/* mobile.modal  { w450 x h609 mt93   ml=mr15  mb94  p40 } */
-/* tablet.modal  { w450 x h609 mt208  ml=mr159 mb207 p40 } */
-/* desktop.modal { w528 x h581 mt221  ml=mr536 mb222 p40 } */
-
+// Modal window
 .gallery-modal {
   @extend .transition;
-  padding: 2.5rem;
+  display: flex;
+
+  align-items: center;
+
   overflow: hidden;
 
   background: rgba(var(--third-color), 0.8);
@@ -172,6 +172,10 @@
 
   .gallery-overlay.is-hidden > & {
     transform: scale(1.21);
+  }
+
+  &__image {
+    margin: 0 auto;
   }
 
   &__btn-back {
@@ -235,6 +239,13 @@
     fill: currentColor;
   }
 }
+
+/*
+image size for modal window
+d w906x605
+t w554x369
+m w236x157
+*/
 
 // ------------------------------------------------------
 /* || -------------- END "МОДАЛЬНОЕ ОКНО" --------------- */

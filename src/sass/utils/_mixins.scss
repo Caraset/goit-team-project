@@ -2,7 +2,7 @@
   font-size: $fs;
   font-weight: $fw;
   line-height: $lh;
-  letter-spacing: $ls;
+  // letter-spacing: $ls;
 }
 // ------------------------- START 'MIXINS' -------------------------
 
@@ -126,5 +126,7 @@
 //using
 //transition-property: анимир.свойства;
 //@include animation;
+
+
 
 /* -------------------------- END 'MIXINS' -------------------------- */
