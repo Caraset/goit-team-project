@@ -45,7 +45,7 @@
   @media screen and (min-width: $second-bp) {
     padding: 20px 60px 12px 69px;
   }
-  @media screen and (min-width: $third-bp) {
+  @media screen and (min-width: 1440px) {
     max-width: 1321px;
     padding: 40px 20px 60px 20px;
   }
@@ -62,18 +62,18 @@ header a:focus {
 .header-nav {
   display: flex;
   align-items: center;
-  @media screen and (min-width: $third-bp) {
+  @media screen and (min-width: 1440px) {
     margin-right: 109px;
   }
   &__logo {
-    @media screen and (min-width: $third-bp) {
+    @media screen and (min-width: 1440px) {
       margin-right: 213px;
     }
   }
   &__list {
     @extend%list;
     display: none;
-    @media screen and (min-width: $third-bp) {
+    @media screen and (min-width: 1440px) {
       display: flex;
     }
   }
@@ -177,7 +177,7 @@ header a:focus {
   @media screen and (min-width: $second-bp) {
     margin-right: 30px;
   }
-  @media screen and (min-width: $third-bp) {
+  @media screen and (min-width: 1440px) {
     margin-right: 94px;
   }
 }
@@ -197,7 +197,7 @@ header a:focus {
 
   height: 32px;
 
-  @media screen and (min-width: $third-bp) {
+  @media screen and (min-width: 1440px) {
     display: none;
   }
   &__icon {
