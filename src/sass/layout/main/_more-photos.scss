@@ -37,6 +37,8 @@
     display: flex;
     flex-wrap: wrap;
   }
+
+  @include mq($desktop, $mt: -32px, $ml: -32px);
 }
 
 /* photos */
@@ -45,13 +47,14 @@
   cursor: pointer;
 
   @include mq($tablet, $mt: 19.53px, $ml: 19.53px);
+  @include mq($desktop, $mt: 32px, $ml: 32px);
 
   &:not(:last-child) {
     @include mq($end: $tablet, $mb: 16px);
   }
 }
 
-// .photos-card__thumb {  }
+// .photos-card__thumb {}
 // .photos-card { }
 
 .photos-card__image:not([src]):not([srcset]) {
