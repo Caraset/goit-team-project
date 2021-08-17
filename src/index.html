@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="3D Freedom - виконуємо замовлення на 3D-друк, 3D-моделювання, високоточне 3D-сканування. Робимо 3D-моделі для друку на 3D-принтерах. Проводимо інженерну, конструкторську і дизайнерську роботу - створюємо прототипи, макети, декор та корпоративний дизайн. Створюємо точну 3D-копію на базі сканування reverse engineering"
+    />
     <meta name="theme-color" content="#F5F5FA" />
+
     <title>3DFreedom</title>
 
     <link
@@ -12,15 +17,27 @@
       integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      async
     />
 
     <!-- slick-carousel styles -->
     <link
-      rel="stylesheet"
+      rel="map"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
       integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      async
+    />
+
+    <!-- map for slick-carousel styles -->
+    <link
+      rel="map"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css.map"
+      integrity="sha512-mInzXz53SaIql4PcFd3Uu/xRqpCifV049/sh9AcYu27Fs++CCXrQknd0qnS55Utn94vxHkGRA3hQHLmb6YOzFg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      async
     />
 
     <!-- slick-carousel theme -->
@@ -30,7 +47,40 @@
       integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      async
     />
+
+    <!-- map for slick-carousel theme -->
+    <link
+      rel="map"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css.map"
+      integrity="sha512-SYONmBqtSCirYQ70MuIvyckt9pzESdQHePBIUPI8NwyixsBxhG3EQ8u2bmvIH4vB0ny9dTBdQXERhqd4ieX50g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      async
+    />
+
+    <link rel="preload" href="./sass/fonts/CaviarDreams.woff2" crossorigin="anonymous" as="font" />
+    <link
+      rel="preload"
+      href="./sass/fonts/CaviarDreams-Bold.woff2"
+      crossorigin="anonymous"
+      as="font"
+    />
+    <link rel="preload" href="./sass/fonts/CeraPro-Light.woff2" crossorigin="anonymous" as="font" />
+    <link
+      rel="preload"
+      href="./sass/fonts/CeraPro-Regular.woff2"
+      crossorigin="anonymous"
+      as="font"
+    />
+    <link
+      rel="preload"
+      href="./sass/fonts/CeraPro-Medium.woff2"
+      crossorigin="anonymous"
+      as="font"
+    />
+    <link rel="preload" href="./sass/fonts/CeraPro-Bold.woff2" crossorigin="anonymous" as="font" />
   </head>
 
   <body class="index-body" data-no-scroll>
@@ -55,6 +105,7 @@
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
 
     <!-- External - jq slick-carousel -->
@@ -63,9 +114,10 @@
       integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
 
     <!-- Internal - slick-carousel initialization and images scr replace (for lazy-loading) -->
-    <script type="text/javascript" src="./js/more-photos.js"></script>
+    <script type="text/javascript" src="./js/more-photos.js" defer></script>
   </body>
 </html>
