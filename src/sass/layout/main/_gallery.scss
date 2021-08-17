@@ -31,6 +31,11 @@
     justify-content: center;
   }
 
+  @media screen and (min-width: 600px) {
+    margin-top: -5px;
+    margin-left: -5px;
+  }
+
   @media screen and (min-width: 768px) {
     margin-top: -18px;
     margin-left: -18px;
@@ -43,10 +48,16 @@
 }
 
 .main-gallery__item {
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 599px) {
     &:not(:last-child) {
       margin-bottom: 24px;
     }
+  }
+
+  @media screen and (min-width: 600px) {
+    margin-top: 5px;
+    margin-left: 5px;
+    flex-basis: calc((100% - 10px) / 2);
   }
 
   @media screen and (min-width: 768px) {
