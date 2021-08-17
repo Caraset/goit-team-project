@@ -1,6 +1,6 @@
 <section class="of of__section">
   <h2 class="title-v1 of__title">ЗВ’ЯЖІТЬСЯ З НАМИ</h2>
-  <form action="" class="of__form">
+  <form action="#" class="of__form" method="POST" enctype="multipart/form-data">
     <div class="of__wrap-input">
       <input
         type="text"
@@ -99,14 +99,22 @@
     </div>
 
     <div class="of__wrap-comment">
-      <label for="user_comment" class="of__label-comment">Повідомлення</label>
-      <textarea
-        name="user_comment"
-        id="user_comment"
-        class="of__comment"
-        placeholder="Залишіть своє повідомлення"
-      ></textarea>
+      <div class="of__comment-aria">
+        <label for="user_comment" class="of__label-comment">Повідомлення</label>
+        <textarea
+          name="user_comment"
+          id="user_comment"
+          class="of__comment"
+          placeholder="Залишіть своє повідомлення"
+        ></textarea>
 
+        <input type="file" name="user-file" class="of__loading-file" id="user-file" />
+        <label for="user-file" aria-label="Прикріпити файл" class="of__loading-file-label">
+          <svg class="of__file-icon">
+            <use href="../../src/images/svg-sprite.svg#file-icon"></use>
+          </svg>
+        </label>
+      </div>
       <p class="of__info">*Прикріпіть зображення/креслення/STL/Obj/CAD-модель</p>
     </div>
 

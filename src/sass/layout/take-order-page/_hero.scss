@@ -7,6 +7,13 @@
     @include mq($desktop, $pb: 100px);
   }
 
+  //container
+  &__conteiner {
+    @include mq($start: $tablet, $end: $desktop) {
+      max-width: 1000px;
+    }
+  }
+
   //main title
   &__title {
     letter-spacing: 0em;
@@ -33,6 +40,9 @@
   background-color: rgb(42, 42, 87);
   margin-bottom: 16px;
   border-radius: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   background-image: url('../../src/images/take-order/hero/hero-mobile.jpg');
   @include bg-retina('../../src/images/take-order/hero/hero-mobile@2x.jpg');
 

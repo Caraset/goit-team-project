@@ -52,3 +52,12 @@ optionsList_3.forEach(o => {
     document.removeEventListener('scroll', () => optionsContainer_3.classList.remove('active'));
   });
 });
+
+//
+
+const input = document.querySelector('.of__loading-file');
+const labelOf = document.querySelector('.of__loading-file-label');
+
+input.addEventListener('change', () => {
+  labelOf.classList.toggle('active');
+});
