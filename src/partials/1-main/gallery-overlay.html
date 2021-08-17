@@ -11,7 +11,6 @@
     <!-- Модальное окно -->
     <div
       class="gallery-modal gallery-overlay__gallery-modal"
-      id="gallery-modal-id"
       role="document"
       aria-label="Модальне вікно з галереєю фото 3D моделей"
       aria-modal="true"
@@ -34,6 +33,30 @@
           <use xlink:href="./images/svg-sprite.svg#next-icon"></use>
         </svg>
       </button>
+
+      <div data-gallery-carousel="">
+        <div class="gallery-modal__thumb">
+          <picture>
+            <!-- webp -->
+            <source media="(min-width: )" sizes srcset />
+
+            <!-- jpeg -->
+
+            <img
+              class="gallery-modal__image"
+              data-gallery-image
+              data-lazy="./images/main/more-photos/desktop/modal/lamps-enlarged-906.jpg"
+              sizes="(min-width: 1440px) 906px, (min-width: 768px) 554px, (max-width: 767px) 236px, 88vw"
+              srcset="
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-906.jpg       906w,
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-1812-@2x.jpg 1812w,
+                ./images/main/more-photos/desktop/modal/lamps-enlarged-2718-@3x.jpg 2718w
+              "
+              alt="Двi лампи зроблені на 3D-принтері"
+            />
+          </picture>
+        </div>
+      </div>
 
       <!-- Кнопка "Наступний слайд" (next) -->
       <button

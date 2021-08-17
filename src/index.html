@@ -3,8 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="3D Freedom - виконуємо замовлення на 3D-друк, 3D-моделювання, високоточне 3D-сканування. Робимо 3D-моделі для друку на 3D-принтерах. Проводимо інженерну, конструкторську і дизайнерську роботу - створюємо прототипи, макети, декор та корпоративний дизайн. Створюємо точну 3D-копію на базі сканування reverse engineering"
+    />
     <meta name="theme-color" content="#F5F5FA" />
-    <title>Заголовок страницы</title>
+
+    <title>3DFreedom</title>
 
     <link
       rel="stylesheet"
@@ -23,6 +28,14 @@
       referrerpolicy="no-referrer"
     />
 
+    <!-- map for slick-carousel styles -->
+    <link
+      rel="stylesheet"
+      type="application/json"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css.map"
+      crossorigin="anonymous"
+    />
+
     <!-- slick-carousel theme -->
     <link
       rel="stylesheet"
@@ -31,6 +44,36 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- map for slick-carousel theme -->
+    <link
+      rel="stylesheet"
+      type="application/json"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css.map"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preload" href="./sass/fonts/CaviarDreams.woff2" crossorigin="anonymous" as="font" />
+    <link
+      rel="preload"
+      href="./sass/fonts/CaviarDreams-Bold.woff2"
+      crossorigin="anonymous"
+      as="font"
+    />
+    <link rel="preload" href="./sass/fonts/CeraPro-Light.woff2" crossorigin="anonymous" as="font" />
+    <link
+      rel="preload"
+      href="./sass/fonts/CeraPro-Regular.woff2"
+      crossorigin="anonymous"
+      as="font"
+    />
+    <link
+      rel="preload"
+      href="./sass/fonts/CeraPro-Medium.woff2"
+      crossorigin="anonymous"
+      as="font"
+    />
+    <link rel="preload" href="./sass/fonts/CeraPro-Bold.woff2" crossorigin="anonymous" as="font" />
   </head>
 
   <body class="index-body" data-no-scroll>
@@ -49,12 +92,16 @@
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
 
+    <!-- Internal - images scr replace (for lazy-loading) -->
+    <script type="text/javascript" src="./js/more-photos.js" defer></script>
+
     <!-- External - jq core lib (slick-carousel needs it) -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
 
     <!-- External - jq slick-carousel -->
@@ -63,9 +110,13 @@
       integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
+      defer
     ></script>
 
-    <!-- Internal - slick-carousel initialization and images scr replace (for lazy-loading) -->
-    <script type="text/javascript" src="./js/more-photos.js"></script>
+    <!-- gallery-modal -->
+    <script type="text/javascript" src="./js/gallery-modal.js" defer></script>
+
+    <!-- External with dependencies - slick-carousel initialization and images data-src replace (for lazy-loading) -->
+    <script type="text/javascript" src="./js/gallery-slick.js" defer></script>
   </body>
 </html>
