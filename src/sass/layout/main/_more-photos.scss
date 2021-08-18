@@ -188,18 +188,18 @@
     color: var(--main-color);
 
     @include mq($end: $tablet, $mr: 9px) {
-      width: 11px;
-      height: 10px;
+      min-width: 11px;
+      min-height: 10px;
     }
 
     @include mq($tablet, $mr: 21px) {
-      width: 26px;
-      height: 26px;
+      min-width: 26px;
+      min-height: 26px;
     }
 
     @include mq($desktop, $mr: 47px) {
-      width: 42px;
-      height: 42px;
+      min-width: 42px;
+      min-height: 42px;
     }
 
     padding: 0;

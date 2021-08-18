@@ -1,6 +1,11 @@
 (() => {
   // Image src replace (for lazy-loading)
-  const targets = document.querySelectorAll('[data-photos-lazy]');
+  const refs = {
+    initiator: document.querySelector('[data-photos-list]'),
+    modal: document.querySelector('[data-gallery-modal]'),
+    targetsBigImages: document.querySelectorAll('[data-gallery-image]'),
+    targets: document.querySelectorAll('[data-photos-lazy]'),
+  };
 
   const lazyLoad = target => {
     const io = new IntersectionObserver((entries, observer) => {
@@ -19,5 +24,12 @@
 
     io.observe(target);
   };
-  targets.forEach(lazyLoad);
+  refs.targets.forEach(lazyLoad);
+
+  refs.initiator.addEventListener('click', event => {
+    event.target === refs.initiator &&
+      !refs.modal.classList.contains('is-hidden') &&
+      refs.targetsBigImages.forEach(lazyLoad);
+    refs.initiator.removeEventListener('click');
+  });
 })();
