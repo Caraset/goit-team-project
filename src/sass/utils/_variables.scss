@@ -11,12 +11,15 @@
   --third-color: #2b2b2b;
 
   --gap: 32px;
-  --gap-t: 19px;
+  --gap-t-v: 19px;
+  --gap-t-h: 14px; //  tablet horizontal. Mockup gap = 19.53px. Actual pictures with gap = +5px more than mockup.
   /* || ---------------- START 'АНИМАЦИЯ' ----------------- */
   --time: 250ms;
   --cubic: cubic-bezier(0.4, 0, 0.2, 1);
   /* || ----------------- END 'АНИМАЦИЯ' ------------------ */
 }
+
+$elc: #fff;
 
 $first-bp: 320px;
 $second-bp: 768px;
@@ -29,26 +32,18 @@ $precision: (10 * 3);
 /* || ---------------- END 'ПЕРЕМЕННЫЕ' ----------------- */
 // ------------------------------------------------------
 
-/* Добавляем в карту $z-index селекторы для наших абсолютно - позиционированных элементов,
-и для них @mixin zi сгенерит z-index с шагом в 3(можно менять) */
-$z-index: (
-  'put-here__your-selector',
-  'without-first-leading-dot, .empty::after',
-  'empty',
-  'empty, .empty',
-  'empty',
-  'empty'
-);
+/* Полуавтоматический z-index - оказался не удобным, если мы используем медиа запросы. */
+$z-index: ('.place-for-your-css-selector');
 
 @mixin zi($i: 3) {
-  $z-step: $i;
+  $z-step: $i + 3;
   @each $index in $z-index {
     $z-step: $z-step + $i;
 
-    .#{$index} {
+    #{$index} {
       z-index: $z-step;
     }
   }
 }
 
-@include zi;
+// @include zi;

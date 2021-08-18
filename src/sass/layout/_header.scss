@@ -44,7 +44,8 @@
   align-items: center;
   justify-content: space-between;
   @media screen and (min-width: $second-bp) {
-    padding: 20px 60px 12px 69px;
+    padding: 20px 60px 20px 69px;
+    max-width: 768px;
   }
   @media screen and (min-width: $third-bp) {
     max-width: 1321px;
@@ -299,8 +300,4 @@ header a:focus {
   width: 100vw;
 
   // overflow: hidden;
-}
-
-header {
-  border-bottom: solid 1px #6e6e6e;
 }

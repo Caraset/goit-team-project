@@ -34,6 +34,12 @@
   border-radius: 15px;
   max-width: 480px;
   height: 171px;
+  overflow: hidden;
+
+  @media screen and (min-width: 425px) {
+    height: 250px;
+  }
+
   @include mq($end: tablet, $mb: 16px) {
     margin-left: auto;
     margin-right: auto;
@@ -52,6 +58,8 @@
 .video {
   width: 100%;
   height: 100%;
+
+  border: none;
 }
 
 //text

@@ -21,40 +21,6 @@
       referrerpolicy="no-referrer"
     />
 
-    <!-- slick-carousel styles -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-      integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <!-- map for slick-carousel styles -->
-    <link
-      rel="stylesheet"
-      type="application/json"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css.map"
-      crossorigin="anonymous"
-    />
-
-    <!-- slick-carousel theme -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-      integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-
-    <!-- map for slick-carousel theme -->
-    <link
-      rel="stylesheet"
-      type="application/json"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css.map"
-      crossorigin="anonymous"
-    />
-
     <link rel="preload" href="./sass/fonts/CaviarDreams.woff2" crossorigin="anonymous" as="font" />
     <link
       rel="preload"
@@ -82,46 +48,29 @@
     <!-- хедер -->
     <include src="./partials/components/header-index.html"></include>
 
-    <include src="./partials/1-main/hero.html"></include>
-    <include src="./partials/1-main/gallery.html"></include>
-    <include src="./partials/1-main/more-photos.html"></include>
+    <main>
+      <include src="./partials/1-main/hero.html"></include>
+      <include src="./partials/1-main/gallery.html"></include>
+      <include src="./partials/1-main/more-photos.html"></include>
+    </main>
 
     <!-- футер -->
     <include src="./partials/components/footer-index.html"></include>
 
+    <include src="./partials/components/bg-elements-main.html"></include>
+
     <include src="./partials/1-main/gallery-overlay.html"></include>
-    <include src="./partials/1-main/white-spots.html"></include>
+    <!-- <include src="./partials/1-main/white-spots.html"></include> -->
 
     <!-- Скрипт идёт последним в разметке. В нём уже подключен главный SASS-файл. -->
     <script src="./index.js"></script>
 
     <!-- Internal - images scr replace (for lazy-loading) -->
-    <script type="text/javascript" src="./js/more-photos.js" defer></script>
+    <script src="./js/more-photos.js" async defer></script>
 
-    <!-- External - jq core lib (slick-carousel needs it) -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      defer
-    ></script>
+    <!-- Gallery-modal -->
+    <script src="./js/gallery-modal.js" async defer></script>
 
-    <!-- External - jq slick-carousel -->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-      defer
-    ></script>
-
-    <!-- gallery-modal -->
-    <script type="text/javascript" src="./js/gallery-modal.js" defer></script>
-
-    <!-- External with dependencies - slick-carousel initialization and images data-src replace (for lazy-loading) -->
-    <script type="text/javascript" src="./js/gallery-slick.js" defer></script>
-
-    <script type="text/javascript" src="./js/header-page.js"></script>
+    <script src="./js/header-page.js" async defer></script>
   </body>
 </html>

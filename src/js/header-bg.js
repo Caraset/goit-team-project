@@ -21,6 +21,9 @@ function onScroll() {
     body: document.querySelector('body'),
 
     bg: document.querySelector('.bg-elements-container'),
+    menuDecor: document.querySelector('.hidden-element'),
+
+    screenWidth: window.screen.width,
   };
 
   refs.openModalBtn.addEventListener('click', toggleModal);
@@ -35,6 +38,10 @@ function onScroll() {
     isCurrent();
 
     refs.bg.classList.toggle('menu-bg');
+
+    if (refs.screenWidth >= 768) {
+      refs.menuDecor.classList.toggle('is-hidden');
+    }
   }
 })();
 

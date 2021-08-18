@@ -247,31 +247,33 @@
 
 .bg-shadow-button__link {
   display: none;
+  z-index: 50;
 
   @media screen and (min-width: 768px) {
     position: absolute;
-    top: 295px;
-    left: 118px;
+    top: 217px;
+    left: 106px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 71px;
+    width: 74px;
     height: 74px;
     fill: var(--second-accent-color);
 
     background: var(--main-color);
-    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
     border-radius: 0px 0px 35px 0px;
   }
 
   @media screen and (min-width: 1440px) {
-    top: 583px;
+    top: 435px;
     left: 176px;
 
     width: 144px;
     height: 144px;
+
+    border-radius: 0px 0px 72px 0px;
   }
 }
 
