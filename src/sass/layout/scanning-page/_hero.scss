@@ -6,10 +6,10 @@
   }
   &__desc {
     margin-bottom: 16px;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $second-bp) {
       width: 515px;
     }
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: $third-bp) {
       margin-right: 32px;
       &:last-child {
         margin-bottom: 0;
@@ -17,12 +17,12 @@
     }
   }
   &__desc-text {
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $second-bp) {
       width: 515px;
     }
   }
   &__block {
-    @media screen and (min-width: 1440px) {
+    @media screen and (min-width: $third-bp) {
       display: flex;
     }
   }
@@ -37,10 +37,10 @@
   // @media screen and (min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2dppx) {
   //   background-image: url(../images/main/more-photos/mobile/modeling-pages/modeling-280@2x.jpg);
   // }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $second-bp) {
     padding-bottom: 52px;
     padding-right: 135px;
-    max-width: 768px;
+    max-width: $second-bp;
     background-image: url(../images/scanning-page/scanning_photo_tablet.jpg);
     // @media screen and (min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2dppx) {
     //   background-image: url(../images/main/more-photos/tablet/modeling-pages/modeling-246@2x.jpg);
@@ -48,7 +48,7 @@
     background-size: 241px 172px;
     background-position: bottom 77px right 0;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $third-bp) {
     padding: 35px 0 73px 0;
     max-width: 1068px;
     background-image: url(../images/scanning-page/scanning_photo_desktop.jpg);
