@@ -21,20 +21,24 @@
     <!-- хедер -->
     <include src="./partials/components/header.html"></include>
 
-    <include src="./partials/5-take-order-page/hero.html"></include>
-    <section class="of-contact">
-      <div class="container of-contact__container">
-        <h2 class="of-contact__title visually-hidden">Форма для оформлення заявок</h2>
-        <include src="./partials/5-take-order-page/order-form.html"></include>
-        <include src="./partials/5-take-order-page/contacts.html"></include>
-      </div>
-    </section>
+    <main>
+      <include src="./partials/5-take-order-page/hero.html"></include>
+      <section class="of-contact">
+        <div class="container of-contact__container">
+          <h2 class="of-contact__title visually-hidden">Форма для оформлення заявок</h2>
+          <include src="./partials/5-take-order-page/order-form.html"></include>
+          <include src="./partials/5-take-order-page/contacts.html"></include>
+        </div>
+      </section>
+    </main>
 
     <!-- футер -->
     <include src="./partials/components/footer.html"></include>
-    <include src="./partials/5-take-order-page/to-white-spots.html"></include>
 
+    <include src="./partials/components/bg-elements.html"></include>
+    <!-- <include src="./partials/5-take-order-page/to-white-spots.html"></include> -->
+
+    <script src="../js/header-bg.js"></script>
     <script src="../js/take-order-page.js"></script>
-    <script src="../js/header-page.js"></script>
   </body>
 </html>
