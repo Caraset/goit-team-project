@@ -24,7 +24,10 @@
 
     io.observe(target);
   };
-  refs.targets.forEach(lazyLoad);
+
+  setTimeout(() => {
+    refs.targets.forEach(lazyLoad);
+  }, 250);
 
   const listIsClicked = event => {
     event.currentTarget == refs.openModalList &&
