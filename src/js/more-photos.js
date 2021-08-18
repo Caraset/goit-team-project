@@ -1,7 +1,7 @@
 (() => {
   // Image src replace (for lazy-loading)
   const refs = {
-    initiator: document.querySelector('[data-photos-list]'),
+    openModalList: document.querySelector('[data-photos-list]'),
     modal: document.querySelector('[data-gallery-modal]'),
     targetsBigImages: document.querySelectorAll('[data-gallery-image]'),
     targets: document.querySelectorAll('[data-photos-lazy]'),
@@ -26,10 +26,14 @@
   };
   refs.targets.forEach(lazyLoad);
 
-  refs.initiator.addEventListener('click', event => {
-    event.target === refs.initiator &&
-      !refs.modal.classList.contains('is-hidden') &&
+  const listIsClicked = event => {
+    event.currentTarget == refs.openModalList &&
+      refs.modal.classList.contains('is-hidden') &&
       refs.targetsBigImages.forEach(lazyLoad);
-    refs.initiator.removeEventListener('click');
-  });
+    setTimeout(() => {
+      refs.openModalList.removeEventListener('click', listIsClicked);
+    }, 250);
+  };
+
+  refs.openModalList.addEventListener('click', listIsClicked);
 })();
