@@ -32,16 +32,15 @@ $precision: (10 * 3);
 /* || ---------------- END 'ПЕРЕМЕННЫЕ' ----------------- */
 // ------------------------------------------------------
 
-/* Добавляем в карту $z-index селекторы для наших абсолютно - позиционированных элементов,
-и для них @mixin zi сгенерит z-index с шагом в 3(можно менять) */
-$z-index: ('put-here__your-selector', 'without-first-leading-dot, .empty::after');
+/* Полуавтоматический z-index - оказался не удобным, если мы используем медиа запросы. */
+$z-index: ('.place-for-your-css-selector');
 
 @mixin zi($i: 3) {
-  $z-step: $i;
+  $z-step: $i + 3;
   @each $index in $z-index {
     $z-step: $z-step + $i;
 
-    .#{$index} {
+    #{$index} {
       z-index: $z-step;
     }
   }

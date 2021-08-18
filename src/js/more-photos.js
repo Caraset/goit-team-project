@@ -5,10 +5,13 @@
     modal: document.querySelector('[data-gallery-modal]'),
     galleryList: document.querySelector('[data-gallery-list]'),
     targetsBigImages: document.querySelectorAll('[data-gallery-image]'),
+    belowFoldItems: document.querySelectorAll('[data-li-below-fold]'),
+    belowFoldImages: document.querySelectorAll('[data-photos-below-fold]'),
     galleryModalItems: document.querySelectorAll('[data-gallery-item]'),
     targets: document.querySelectorAll('[data-photos-lazy]'),
     galleryNextBtn: document.querySelector('[data-gallery-next]'),
     galleryBackBtn: document.querySelector('[data-gallery-back]'),
+    svgLoaderWrapper: document.querySelector('[data-photos-loader]'),
   };
 
   const lazyLoad = target => {
@@ -23,7 +26,7 @@
             img.classList.add('appear');
 
           console.log('imageLoaded');
-          observer.disconnect(); // after loading the img - remove the observer from the main thread.
+          observer.disconnect(); // after loading the img - it removes the observer from the main thread.
         }
       });
     });
@@ -32,6 +35,7 @@
   };
 
   setTimeout(() => {
+    // change to = onReadystatechange or smth similar - instead of timeout.
     refs.targets.forEach(lazyLoad);
   }, 250);
 
@@ -46,8 +50,26 @@
 
   refs.openModalList.addEventListener('click', listIsClicked);
 
-  // carousel for refs.targetsBigImages
+  function mq(w) {
+    if (!w.matches) return;
+    refs.svgLoaderWrapper.addEventListener('click', () => {
+      refs.belowFoldImages.forEach(lazyLoad); // change to download 3 items per 1 time.
+      refs.belowFoldItems.classList.remove('is-hidden');
+    });
+  }
 
+  let tablet = window.matchMedia('(min-width: 768px)');
+  tablet.addEventListener('change', mq(tablet));
+
+  // closes mobile window on screen rotation. Use if need. Delete if not.
+  // tablet.addEventListener('change', e => {
+  //   if (!e.matches) return;
+  //   (!refsMobile.menu.classList.contains('is-hidden') ||
+  //     refsMobile.openMenuBtn.getAttribute('aria-expanded') === 'true') &&
+  //     closeMenuAndFocusLog(refsMobile.focusTarget);
+  // });
+
+  // carousel for refs.targetsBigImages
   // toggle classes for next listItem without 'is-hidden' = slide forwards
   refs.galleryNextBtn.addEventListener('click', () => {
     for (let i = 0; i < refs.galleryModalItems.length; i++) {
@@ -91,19 +113,4 @@
       }
     }
   });
-
-  function mq(w) {
-    if (w.matches) {
-      //do stuff;
-      // like what do i need ?
-      // to hide below the fold photos on mobile.
-      // apply to them is-hidden and do not load them
-      // until user had scrolled down to download more photos.
-    } else {
-      document.body.backgroundColor = 'pink';
-    }
-  }
-
-  let tablet = window.matchMedia('(min-width: 768px)');
-  tablet.addEventListener(mq(tablet));
 })();

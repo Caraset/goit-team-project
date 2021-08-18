@@ -64,15 +64,23 @@
 
   object-fit: cover;
 
+  &.is-hidden {
+    @include mq($end: $tablet) {
+      position: absolute;
+      opacity: 0;
+      transform: translateX(50%) scaleX(0);
+    }
+
+    visibility: visible;
+    opacity: 1;
+    pointer-events: initial;
+  }
+
   @include mq($tablet, $mt: var(--gap-t-v), $ml: var(--gap-t-h));
   @include mq($desktop, $mt: var(--gap), $ml: var(--gap));
 
   &:not(:last-child) {
     @include mq($end: $tablet, $mb: 16px);
-  }
-
-  &.is-hidden {
-    position: absolute;
   }
 }
 
@@ -90,31 +98,6 @@
   max-height: 85vh;
 }
 
-// more-photos sizes: desktop
-//   406x260 378x260 214x260
-//   214x271 378x271 406x271
-//   406x203 405x203 187x203
-//   214x250 378x260 406x260
-
-//more-photos sizes: tablet
-// 247.73x158.64 230.64x158.64 130.58x158.64
-// 130.58x165.36 230.64x165.36 247.73x165.36
-// 247.73x123.86 247.12x123.86 114.10x123.86
-// 130.58x158.64 230.64x158.64 247.73x158.64
-//
-// 0.3822993827	0.2171751412	0.2015123457
-// 0.2015123457	0.2171751412	0.3822993827
-// 0.3822993827	0.2326930320  0.1760802469
-// 0.2015123457	0.2171751412	0.3822993827
-//
-// more-photos sizes: mobile
-//     mobile sizes
-//     280x179
-//     280x193
-//     280x340
-
-// .to-be-loaded-images { @include mq($end: $mobile) { opacity: 0; transform: translateX(50%) scaleX(0); } }
-
 .appear {
   transition-property: transform, opacity;
   opacity: 1;
@@ -127,6 +110,7 @@
 }
 
 .system-uicons-loader {
+  cursor: pointer;
   transition-timing-function: var(--cubic);
 
   &:hover,
@@ -141,11 +125,13 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 210;
+  contain: strict;
+
   display: flex;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
-  contain: strict;
 
   transition-property: opacity, visibility;
   @include animation; // Fading is smooth
@@ -153,7 +139,6 @@
   background-color: rgba(#2b2b2b, 0.8);
   backdrop-filter: blur(4px);
   /* Note: backdrop-filter has minimal browser support */
-  z-index: 200;
 
   &.is-hidden {
     overflow: hidden;
@@ -174,7 +159,11 @@
 .gallery-modal {
   position: relative;
 
-  max-height: 85vh;
+  max-height: 80vh;
+
+  // @include mq($tablet) {    max-height: 75vh;}
+
+  // @include mq($desktop) {    max-height: 75vh;}
 
   display: flex;
   justify-content: center;
