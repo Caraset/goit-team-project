@@ -83,7 +83,8 @@
     }
 
     &:hover ~ .of__label-input,
-    &:focus ~ .of__label-input {
+    &:focus ~ .of__label-input,
+    &:not(:placeholder-shown) ~ .of__label-input {
       transform: translateY(-150%);
     }
   }
