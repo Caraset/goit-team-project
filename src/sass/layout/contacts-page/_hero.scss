@@ -1,11 +1,14 @@
 //positioning
 .contact-hero {
   &__container {
-    padding-top: 11px;
+    padding-top: 0px;
     padding-bottom: 52px;
 
     @include mq($end: $tablet) {
       max-width: 460px;
+    }
+    @include mq($start: $tablet) {
+      padding-top: 24px;
     }
     @include mq($start: $tablet, $end: $desktop) {
       max-width: 1000px;
