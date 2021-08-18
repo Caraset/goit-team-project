@@ -1,0 +1,976 @@
+.bg-elements-container {
+  min-width: 320px;
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  overflow: hidden;
+  z-index: 12;
+
+  pointer-events: none;
+
+  // @include mq($tablet) {
+  //   max-width: 1259px;
+  // }
+}
+
+.menu-bg {
+  top: -86px;
+}
+
+.header-elements-container {
+  width: 320px;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  // overflow: hidden;
+  z-index: 13;
+
+  // pointer-events: none;
+
+  @include mq($desktop) {
+    width: 854px;
+  }
+}
+
+.element-1 {
+  position: absolute;
+  width: 74px;
+  height: 74px;
+
+  top: 8px;
+  left: 1px;
+
+  background-color: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+
+  border-radius: 0 72px 72px 0;
+
+  z-index: 13;
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+  }
+}
+
+.element-2 {
+  position: absolute;
+  width: 74px;
+  height: 74px;
+
+  top: 8px;
+  right: 1px;
+
+  background-color: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+
+  border-radius: 72px 0 0 72px;
+
+  z-index: 13;
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+  }
+}
+
+.element-3 {
+  position: absolute;
+  width: 74px;
+  height: 74px;
+
+  top: 302px;
+  left: -29px;
+
+  background-color: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+
+  border-radius: 0 0 35px 0;
+
+  @include mq($tablet) {
+    top: 82px;
+    left: 32px;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 151px;
+    left: 32px;
+
+    border-radius: 0px 0px 72px 0px;
+  }
+}
+
+// .element-3-menu {
+//   position: absolute;
+//   width: 74px;
+//   height: 74px;
+
+//   top: 214px;
+//   left: -29px;
+
+//   background-color: var(--main-color);
+
+//   box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+
+//   border-radius: 0 0 35px 0;
+
+//   @include mq($desktop) {
+//     width: 144px;
+//     height: 144px;
+//   }
+// }
+
+.element-4 {
+  position: absolute;
+  width: 74px;
+  height: 74px;
+
+  top: 589px;
+  right: -15px;
+
+  background-color: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+
+  // border-radius: 50px 50px 50px 50px;
+
+  border-radius: 50%;
+
+  @include mq($tablet) {
+    border-radius: 0 0 0 0;
+
+    top: 82px;
+    right: 105px;
+
+    z-index: 2;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 151px;
+    right: 176px;
+  }
+}
+
+.element-5 {
+  position: absolute;
+  width: 74px;
+  height: 74px;
+
+  top: 650px;
+  left: -29px;
+
+  background-color: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+
+  border-radius: 0 0 35px 0;
+
+  @include mq($tablet) {
+    border-radius: 0 35px 0 0;
+
+    top: 155px;
+    left: 105px;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 295px;
+    left: 176px;
+
+    border-radius: 0px 72px 0px 0px;
+  }
+}
+
+.element-6 {
+  position: absolute;
+  width: 74px;
+  height: 74px;
+
+  top: 1033px;
+  right: -21px;
+
+  background-color: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+
+  border-radius: 0 25px;
+
+  @include mq($tablet) {
+    border-radius: 50%;
+
+    top: 155px;
+    right: 105px;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 295px;
+    right: 176px;
+  }
+}
+
+.element-7 {
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 1070px;
+  left: -18px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+
+  border-radius: 0px 0px 0px 35px;
+
+  @include mq($tablet) {
+    top: 229px;
+    left: 32px;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 439px;
+    left: 32px;
+
+    border-radius: 0px 0px 0px 72px;
+  }
+}
+
+.element-8 {
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 1330px;
+  left: 261px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 25px 0px;
+
+  @include mq($tablet) {
+    top: 229px;
+    right: 32px;
+    left: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 439px;
+    right: 32px;
+
+    border-radius: 72px 0px;
+  }
+}
+
+.element-9 {
+  display: none;
+
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 302px;
+  left: 105px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 35px 0px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 583px;
+    left: 176px;
+
+    border-radius: 0px 0px 72px 0px;
+  }
+}
+
+.element-10 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 302px;
+  right: 105px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 0px 35px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 583px;
+    right: 176px;
+
+    border-radius: 0px 0px 0px 72px;
+  }
+}
+
+.element-11 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 376px;
+  right: 32px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 0px 35px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 727px;
+    right: 32px;
+
+    border-radius: 0px 0 0px 72px;
+  }
+}
+
+.element-12 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 438px;
+  left: 32px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 35px 0px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 848px;
+    left: 32px;
+
+    border-radius: 0px 0px 72px 0px;
+  }
+}
+
+.element-13 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 514px;
+  right: 32px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 35px 0px 0px 0px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 998px;
+    right: 32px;
+
+    border-radius: 75px 0px 0px 0px;
+  }
+}
+
+.element-14 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 588px;
+  right: -17px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 1142px;
+    right: -64px;
+  }
+}
+
+.element-15 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 651px;
+  left: 32px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 25px 0px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 1264px;
+    left: 32px;
+
+    border-radius: 72px 0px;
+  }
+}
+
+.element-16 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 996px;
+  left: 105px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 35px 0px 0px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 1939px;
+    left: 176px;
+
+    border-radius: 0px 72px 0px 0px;
+  }
+}
+
+.element-17 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 1033px;
+  right: 32px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 0 25px 0px 25px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 2011px;
+    right: 32px;
+
+    border-radius: 0px 72px;
+  }
+}
+
+.element-18 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 1070px;
+  left: 32px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 0px 35px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 2083px;
+    left: 32px;
+
+    border-radius: 0px 0px 0px 72px;
+  }
+}
+
+.element-19 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 1360px;
+  right: 32px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 25px 0px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 2650px;
+    right: 32px;
+
+    border-radius: 72px 0px;
+  }
+}
+
+.element-20 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 1330px;
+  left: -17px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 2592px;
+    left: -62px;
+  }
+}
+
+.element-20-1 {
+  display: none;
+  position: absolute;
+
+  width: 144px;
+  height: 144px;
+
+  top: 2794px;
+  right: 176px;
+
+  background: var(--main-color);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  border-radius: 0px 0px 0px 72px;
+
+  @include mq($desktop) {
+    display: initial;
+  }
+}
+
+.element-21 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 79px;
+  left: 106px;
+
+  background: var(--main-color);
+  background-image: url(../images/main-section/tablet/bg-img-1.jpg);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 146px;
+    left: 176px;
+  }
+}
+
+.element-22 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 82px;
+  right: 32px;
+
+  background: var(--main-color);
+  background-image: url(../images/main-section/tablet/bg-img-2.jpg);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 72px 0px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 151px;
+    right: 32px;
+  }
+}
+
+.element-23 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 365px;
+  left: 32px;
+
+  background: var(--main-color);
+  background-image: url(../images/main-section/tablet/bg-img-3.jpg);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 704px;
+    left: 32px;
+  }
+}
+
+.element-24 {
+  display: none;
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  top: 303px;
+  right: 32px;
+
+  background: var(--main-color);
+  background-image: url(../images/main-section/tablet/bg-img-4.jpg);
+
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 72px 72px 0px 0px;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 583px;
+    right: 32px;
+  }
+}
+
+header {
+  position: relative;
+  z-index: 14;
+}
+
+footer {
+  position: relative;
+  z-index: 14;
+}
+
+section {
+  position: relative;
+  z-index: 10;
+}
+
+main {
+  position: relative;
+  z-index: 13;
+}
+
+.container {
+  position: relative;
+
+  z-index: 14;
+}
+
+.secondary-1 {
+  @include mq($tablet) {
+    position: absolute;
+
+    width: 74px;
+    height: 63px;
+
+    top: 90px;
+    right: 18px;
+    left: initial;
+
+    background: var(--main-color);
+
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 0px 35px;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 159px;
+    right: 13px;
+
+    border-radius: 0px 0px 0px 72px;
+  }
+}
+
+.secondary-2 {
+  @include mq($tablet) {
+    position: absolute;
+
+    width: 74px;
+    height: 74px;
+
+    top: 229px;
+    right: initial;
+    left: 8px;
+
+    background: var(--main-color);
+
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 0px 35px 0px;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 280px;
+    left: 13px;
+
+    border-radius: 0px 0px 72px 0px;
+  }
+}
+
+.secondary-3 {
+  @include mq($tablet) {
+    position: absolute;
+
+    width: 74px;
+    height: 74px;
+
+    top: 471px;
+    right: 8px;
+    left: initial;
+
+    background: var(--main-color);
+
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+    border-radius: 25px 0px;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 667px;
+    right: 23px;
+
+    border-radius: 72px 0px;
+  }
+}
+
+.secondary-4 {
+  @include mq($tablet) {
+    position: absolute;
+
+    width: 74px;
+    height: 74px;
+
+    top: 1033px;
+    right: 8px;
+    left: initial;
+
+    background: var(--main-color);
+
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+    border-radius: 0px 25px;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 1247px;
+    right: -44px;
+
+    border-radius: 0px 72px;
+  }
+}
+
+.secondary-5 {
+  @include mq($tablet) {
+    position: absolute;
+
+    width: 74px;
+    height: 74px;
+
+    top: 1330px;
+    right: initial;
+    left: -17px;
+
+    background: var(--main-color);
+
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+  }
+
+  @include mq($desktop) {
+    width: 144px;
+    height: 144px;
+
+    top: 1077px;
+    left: -64px;
+  }
+}
+
+.hidden-element {
+  // opacity: 0;
+
+  position: absolute;
+
+  width: 74px;
+  height: 74px;
+
+  background: var(--main-color);
+  background-image: url(../images/main-section/tablet/bg-img-1.jpg);
+  top: 79px;
+  left: 106px;
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+
+  @include mq($tablet) {
+    display: initial;
+  }
+}
+
+.secondary {
+  display: none;
+}
