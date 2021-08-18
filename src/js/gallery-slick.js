@@ -1,4 +1,4 @@
-(() => {
+$(document).ready(function () {
   // Remove warnings from Dev Tools console about addEventListener - that it will not invoke the preventDefault() method;
   jQuery.event.special.touchstart = {
     setup: function (_, ns, handle) {
@@ -20,16 +20,7 @@
     centerMode: true,
     variableWidth: true,
     // adaptiveHeight: true,
-    // lazyLoad: 'ondemand',
+    lazyLoad: 'ondemand',
     slidesToScroll: 1,
-
-    responsive: [
-      {
-        breakpoint: 1440,
-        settings: {
-          infinite: true,
-        },
-      },
-    ],
   });
-})();
+});

@@ -16,12 +16,16 @@
   }
 
   var isFocused = 0;
-  function focusLog(targetElem = null) {
+  function focusLog(targetElem) {
     /* Чарівництво */
     setTimeout(() => {
-      targetElem !== null && targetElem.focus();
-      isFocused = document.activeElement === targetElem;
-      console.log(`${targetElem.className} isFocused: ${isFocused}`);
+      if (targetElem == null) {
+        return;
+      } else {
+        targetElem.focus();
+        isFocused = document.activeElement === targetElem;
+        console.log(`${targetElem.className} isFocused: ${isFocused}`);
+      }
     }, 250);
   }
 
@@ -29,8 +33,8 @@
     toggleModal(), focusLog(targetOnOpen);
   }
 
-  function closeModal(targetOnClose = null) {
-    toggleModal(), focusLog(targetOnClose);
+  function closeModal() {
+    toggleModal(), focusLog();
   }
   // по event.target будет картинка а срабатывание произойдет на event.currentTarget
   // Сделать проверку if(event.target !== img) {return}

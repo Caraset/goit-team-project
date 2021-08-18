@@ -13,23 +13,20 @@
 //                 <img class="photos-card__image image transition"/>
 
 .more-photos__container {
+  // 768px = container max-width = 688px;
   padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
-  @include mq($tablet, $pb: 26px) {
-    min-width: 648px;
-    max-width: 1062px; // 26px =  tablet  mb52 - section pb26
+
+  @include mq($tablet, $desktop, $pb: 26px) {
+    max-width: 768px; // 26px =  tablet  mb52 - section pb26
   }
+
   @include mq($desktop, $pb: 74px);
 }
 
 .more-photos__wrapper {
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
+
   @include mq($desktop, $mb: 56px);
-
-  min-width: 280px;
-
-  @include mq($desktop) {
-    min-width: 1062px;
-  }
 }
 
 .more-photos__title {
@@ -41,20 +38,31 @@
 .more-photos__list {
   @extend %list;
 
-  @include mq($tablet, $mt: calc(-1 * var(--gap-t-v)), $ml: calc(-1 * var(--gap-t-h))) {
+  $margin-top-tablet: calc(-1 * var(--gap-t-v));
+  $margin-left-tablet: calc(-1 * var(--gap-t-h));
+
+  @include mq($tablet, $mt: $margin-top-tablet, $ml: $margin-left-tablet) {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  @include mq($desktop, $mt: calc(-1 * var(--gap)), $ml: calc(-1 * var(--gap)));
+  // --gap: 32px;
+  // --gap-t-v: 19px;
+  // --gap-t-h: 14px;
+
+  $margin-top-desktop: calc(-1 * var(--gap));
+  $margin-left-desktop: $margin-top-desktop;
+
+  @include mq($desktop, $mt: $margin-top-desktop, $ml: $margin-left-desktop);
 }
 
 /* photos */
 .more-photos__item {
   cursor: pointer;
-  flex-grow: 1;
+
   object-fit: cover;
+
   @include mq($tablet, $mt: var(--gap-t-v), $ml: var(--gap-t-h));
   @include mq($desktop, $mt: var(--gap), $ml: var(--gap));
 
@@ -71,7 +79,8 @@
 }
 
 .photos-card__image {
-  object-fit: cover;
+  object-fit: contain;
+  margin: 0 auto;
 }
 
 // more-photos sizes: desktop
