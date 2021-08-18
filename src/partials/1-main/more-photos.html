@@ -1,5 +1,4 @@
 <!--
-  Задача от Тим Лида @Valerii на "Бiльше Фото":
 -В бекдропе - ставлю 12 копий одного большого качественного изображения с макета (2 лампы)- потому что нет других больших изображений от дизайнера, только 1.
 - Сделать слайдер на Slick (jquery).
 - Развешать доп классы, как требуется для плавной прокрутки галереи от slick.
@@ -13,15 +12,7 @@
       <h2 class="title-v1 more-photos__title" id="more-photos__title-id">Більше Фото</h2>
 
       <!-- path
-
-Для начала, надо сделать обычный x1 и x2. Это база.
-Потом в модалке можно прикрутить x3 и x4 на выбор.
-x3 and x4 - keep for modal window
-Делаю так: просто все пути ставлю, а потом скопирую их в модалку и не парюсь.
-Потом с мобильной версию удаляю x3, чтобы трафик не хавало у пользователей.
-x2 почти не отличить от x3 на мобилке.
-jpeg is in scrset="" by defaul as fallback
----------------------------------------------------------------------------------------------------------
+ модалке x3 и x4 на выбор.
 -->
 
       <!-- Список карточек "Більше Фото" -->
@@ -44,10 +35,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 406px, 28vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
-                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
-                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.webp 1218w,
-                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.webp 1624w
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp    406w,
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp 812w
                   "
                 />
                 <!-- 1440px - 406x260 jpeg -->
@@ -56,10 +45,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 406px, 28vw"
                   type="image/jpeg"
                   srcset="
-                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.jpg      406w,
-                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.jpg   812w,
-                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg 1218w,
-                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg 1624w
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.jpg    406w,
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.jpg 812w
                   "
                 />
 
@@ -70,9 +57,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-496@2x.webp 496w,
-                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-744@3x.webp 744w,
-                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-991@4x.webp 991w
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-496@2x.webp 496w
                   "
                 />
 
@@ -83,9 +68,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-248.jpg    248w,
-                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-496@2x.jpg 496w,
-                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-744@3x.jpg 744w,
-                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-991@4x.jpg 991w
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-496@2x.jpg 496w
                   "
                 />
 
@@ -95,10 +78,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(max-width: 767px) 280px, 88vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.webp      280w,
-                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.webp   560w,
-                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.webp   840w,
-                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.webp 1120w
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.webp    280w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.webp 560w
                   "
                 />
 
@@ -108,14 +89,31 @@ jpeg is in scrset="" by defaul as fallback
                   data-photos-lazy
                   sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
                   srcset="
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg    280w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.jpg 560w
+                  "
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                  tabindex="-1"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280x179 jpg - fallback 1st image -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
                     ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg      280w,
                     ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.jpg   560w,
                     ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.jpg   840w,
                     ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg 1120w
                   "
+                  src="./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
@@ -131,10 +129,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 378px, 26vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/desktop/more-02/architectural-model-378.webp      378w,
-                    ./images/main/more-photos/desktop/more-02/architectural-model-756@2x.webp   756w,
-                    ./images/main/more-photos/desktop/more-02/architectural-model-1134@3x.webp 1134w,
-                    ./images/main/more-photos/desktop/more-02/architectural-model-1512@4x.webp 1512w
+                    ./images/main/more-photos/desktop/more-02/architectural-model-378.webp    378w,
+                    ./images/main/more-photos/desktop/more-02/architectural-model-756@2x.webp 756w
                   "
                 />
 
@@ -144,10 +140,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 378px, 26vw"
                   type="image/jpeg"
                   srcset="
-                    ./images/main/more-photos/desktop/more-02/architectural-model-378.jpg      378w,
-                    ./images/main/more-photos/desktop/more-02/architectural-model-756@2x.jpg   756w,
-                    ./images/main/more-photos/desktop/more-02/architectural-model-1134@3x.jpg 1134w,
-                    ./images/main/more-photos/desktop/more-02/architectural-model-1512@4x.jpg 1512w
+                    ./images/main/more-photos/desktop/more-02/architectural-model-378.jpg    378w,
+                    ./images/main/more-photos/desktop/more-02/architectural-model-756@2x.jpg 756w
                   "
                 />
 
@@ -158,9 +152,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-231.webp    231w,
-                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-462@2x.webp 462w,
-                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-693@3x.webp 693w,
-                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-923@4x.webp 923w
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-462@2x.webp 462w
                   "
                 />
 
@@ -171,9 +163,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-231.jpg    231w,
-                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-462@2x.jpg 462w,
-                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-693@3x.jpg 693w,
-                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-923@4x.jpg 923w
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-462@2x.jpg 462w
                   "
                 />
 
@@ -183,10 +173,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(max-width: 767px) 280px, 88vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.webp      280w,
-                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-560@2x.webp   560w,
-                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-840@3x.webp   840w,
-                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-1120@4x.webp 1120w
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.webp    280w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-560@2x.webp 560w
                   "
                 />
 
@@ -196,15 +184,32 @@ jpeg is in scrset="" by defaul as fallback
                   data-photos-lazy
                   sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
                   srcset="
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.jpg    280w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-560@2x.jpg 560w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280x193 jpg - fallback 2nd image -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
                     ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.jpg      280w,
                     ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-560@2x.jpg   560w,
                     ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-840@3x.jpg   840w,
                     ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-1120@4x.jpg 1120w
                   "
+                  src="./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
@@ -221,9 +226,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/desktop/more-03/wall-e-214.webp    214w,
-                    ./images/main/more-photos/desktop/more-03/wall-e-428@2x.webp 428w,
-                    ./images/main/more-photos/desktop/more-03/wall-e-642@3x.webp 642w,
-                    ./images/main/more-photos/desktop/more-03/wall-e-856@4x.webp 856w
+                    ./images/main/more-photos/desktop/more-03/wall-e-428@2x.webp 428w
                   "
                 />
 
@@ -234,9 +237,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/desktop/more-03/wall-e-214.jpg    214w,
-                    ./images/main/more-photos/desktop/more-03/wall-e-428@2x.jpg 428w,
-                    ./images/main/more-photos/desktop/more-03/wall-e-642@3x.jpg 642w,
-                    ./images/main/more-photos/desktop/more-03/wall-e-856@4x.jpg 856w
+                    ./images/main/more-photos/desktop/more-03/wall-e-428@2x.jpg 428w
                   "
                 />
 
@@ -247,9 +248,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-03/wall-e-131.webp    131w,
-                    ./images/main/more-photos/tablet/more-03/wall-e-262@2x.webp 262w,
-                    ./images/main/more-photos/tablet/more-03/wall-e-392@3x.webp 392w,
-                    ./images/main/more-photos/tablet/more-03/wall-e-523@4x.webp 523w
+                    ./images/main/more-photos/tablet/more-03/wall-e-262@2x.webp 262w
                   "
                 />
 
@@ -260,9 +259,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-03/wall-e-131.jpg    131w,
-                    ./images/main/more-photos/tablet/more-03/wall-e-262@2x.jpg 262w,
-                    ./images/main/more-photos/tablet/more-03/wall-e-392@3x.jpg 392w,
-                    ./images/main/more-photos/tablet/more-03/wall-e-523@4x.jpg 523w
+                    ./images/main/more-photos/tablet/more-03/wall-e-262@2x.jpg 262w
                   "
                 />
 
@@ -272,33 +269,46 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(max-width: 767px) 280px, 88vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/mobile/more-03/wall-e-280.webp      280w,
-                    ./images/main/more-photos/mobile/more-03/wall-e-560@2x.webp   560w,
-                    ./images/main/more-photos/mobile/more-03/wall-e-840@3x.webp   840w,
-                    ./images/main/more-photos/mobile/more-03/wall-e-1120@4x.webp 1120w
+                    ./images/main/more-photos/mobile/more-03/wall-e-280.webp    280w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-560@2x.webp 560w
                   "
                 />
 
-                <!-- 320px - 280x340 jpeg - default 3rd image  -->
+                <!-- 320px - 280x340 jpeg - default 3rd image -->
                 <img
                   class="photos-card__image image"
                   data-photos-lazy
                   sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
                   srcset="
-                    ./images/main/more-photos/mobile/more-03/wall-e-280.jpg      280w,
-                    ./images/main/more-photos/mobile/more-03/wall-e-560@2x.jpg   560w,
-                    ./images/main/more-photos/mobile/more-03/wall-e-840@3x.jpg   840w,
-                    ./images/main/more-photos/mobile/more-03/wall-e-1120@4x.jpg 1120w
+                    ./images/main/more-photos/mobile/more-03/wall-e-280.jpg    280w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-560@2x.jpg 560w
                   "
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
               </picture>
+
+              <noscript>
+                <!-- 320px - 280x340 jpeg - fallback 3rd image -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-03/wall-e-280.jpg    280w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-560@2x.jpg 560w
+                  "
+                  src="./images/main/more-photos/mobile/more-03/wall-e-280.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 04 214x271 | 131x165 -->
@@ -310,9 +320,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/desktop/more-04/skull-214.webp    214w,
-                    ./images/main/more-photos/desktop/more-04/skull-428@2x.webp 428w,
-                    ./images/main/more-photos/desktop/more-04/skull-642@3x.webp 642w,
-                    ./images/main/more-photos/desktop/more-04/skull-856@4x.webp 856w
+                    ./images/main/more-photos/desktop/more-04/skull-428@2x.webp 428w
                   "
                 />
 
@@ -323,22 +331,18 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/desktop/more-04/skull-214.jpg    214w,
-                    ./images/main/more-photos/desktop/more-04/skull-428@2x.jpg 428w,
-                    ./images/main/more-photos/desktop/more-04/skull-642@3x.jpg 642w,
-                    ./images/main/more-photos/desktop/more-04/skull-856@4x.jpg 856w
+                    ./images/main/more-photos/desktop/more-04/skull-428@2x.jpg 428w
                   "
                 />
 
-                <!-- 768px - 130x165 webp -->
+                <!-- 768px - 131x165 webp -->
                 <source
                   media="(min-width: 768px)"
                   sizes="(min-width: 768px) 131px, 17vw"
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-04/skull-model-131.webp    131w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.webp 262w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-392@3x.webp 392w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-523@4x.webp 523w
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.webp 262w
                   "
                 />
 
@@ -349,9 +353,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-04/skull-model-131.jpg    131w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.jpg 262w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-392@3x.jpg 392w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-523@4x.jpg 523w
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.jpg 262w
                   "
                 />
 
@@ -362,16 +364,30 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-04/skull-model-131.webp    131w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.webp 262w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-392@3x.webp 392w,
-                    ./images/main/more-photos/tablet/more-04/skull-model-523@4x.webp 523w
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.webp 262w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 4th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-04/skull-model-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.jpg 262w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 4th image  -->
+                <img
+                  class="photos-card__image image"
                   sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-04/skull-model-131.jpg    131w,
@@ -379,15 +395,17 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/tablet/more-04/skull-model-392@3x.jpg 392w,
                     ./images/main/more-photos/tablet/more-04/skull-model-523@4x.jpg 523w
                   "
+                  src="./images/main/more-photos/tablet/more-04/skull-model-131.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 05 378x271 | 231x165 -->
@@ -398,10 +416,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 378px, 26vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-378.webp      378w,
-                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-756@2x.webp   756w,
-                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-1134@3x.webp 1134w,
-                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-1512@4x.webp 1512w
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-378.webp    378w,
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-756@2x.webp 756w
                   "
                 />
 
@@ -411,10 +427,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 378px, 26vw"
                   type="image/jpeg"
                   srcset="
-                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-378.jpg      378w,
-                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-756@2x.jpg   756w,
-                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-1134@3x.jpg 1134w,
-                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-1512@4x.jpg 1512w
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-378.jpg    378w,
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-756@2x.jpg 756w
                   "
                 />
 
@@ -425,9 +439,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.webp    231w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.webp 462w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.webp 693w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.webp 923w
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.webp 462w
                   "
                 />
 
@@ -438,9 +450,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg    231w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.jpg 693w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.jpg 923w
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w
                   "
                 />
 
@@ -451,16 +461,30 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg    231w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.jpg 693w,
-                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.jpg 923w
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 5th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 5th image  -->
+                <img
+                  class="photos-card__image image"
                   sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg    231w,
@@ -468,15 +492,17 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.jpg 693w,
                     ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.jpg 923w
                   "
+                  src="./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 06 406x271 | 248x165 -->
@@ -487,10 +513,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 406px, 28vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/desktop/more-06/lamps-406.webp      406w,
-                    ./images/main/more-photos/desktop/more-06/lamps-812@2x.webp   812w,
-                    ./images/main/more-photos/desktop/more-06/lamps-1218@3x.webp 1218w,
-                    ./images/main/more-photos/desktop/more-06/lamps-1624@4x.webp 1624w
+                    ./images/main/more-photos/desktop/more-06/lamps-406.webp    406w,
+                    ./images/main/more-photos/desktop/more-06/lamps-812@2x.webp 812w
                   "
                 />
 
@@ -500,10 +524,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 406px, 28vw"
                   type="image/jpeg"
                   srcset="
-                    ./images/main/more-photos/desktop/more-06/lamps-406.jpg      406w,
-                    ./images/main/more-photos/desktop/more-06/lamps-812@2x.jpg   812w,
-                    ./images/main/more-photos/desktop/more-06/lamps-1218@3x.jpg 1218w,
-                    ./images/main/more-photos/desktop/more-06/lamps-1624@4x.jpg 1624w
+                    ./images/main/more-photos/desktop/more-06/lamps-406.jpg    406w,
+                    ./images/main/more-photos/desktop/more-06/lamps-812@2x.jpg 812w
                   "
                 />
 
@@ -514,9 +536,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-06/two-lamps-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.webp 496w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-744@3x.webp 744w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-991@4x.webp 991w
+                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.webp 496w
                   "
                 />
 
@@ -527,9 +547,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-06/two-lamps-248.jpg    248w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.jpg 496w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-744@3x.jpg 744w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-991@4x.jpg 991w
+                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.jpg 496w
                   "
                 />
 
@@ -540,32 +558,46 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-06/two-lamps-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.webp 496w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-744@3x.webp 744w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-991@4x.webp 991w
+                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.webp 496w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 6th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
                   sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-06/two-lamps-248.jpg    248w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.jpg 496w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-744@3x.jpg 744w,
-                    ./images/main/more-photos/tablet/more-06/two-lamps-991@4x.jpg 991w
+                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.jpg 496w
                   "
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
               </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 6th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-06/two-lamps-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-06/two-lamps-496@2x.jpg 496w
+                  "
+                  src="./images/main/more-photos/tablet/more-06/two-lamps-248.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 07 406x203 | 248x123 -->
@@ -576,10 +608,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 406px, 28vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/desktop/more-07/sportcar-406.webp      406w,
-                    ./images/main/more-photos/desktop/more-07/sportcar-812@2x.webp   812w,
-                    ./images/main/more-photos/desktop/more-07/sportcar-1218@3x.webp 1218w,
-                    ./images/main/more-photos/desktop/more-07/sportcar-1624@4x.webp 1624w
+                    ./images/main/more-photos/desktop/more-07/sportcar-406.webp    406w,
+                    ./images/main/more-photos/desktop/more-07/sportcar-812@2x.webp 812w
                   "
                 />
 
@@ -589,10 +619,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 406px, 28vw"
                   type="image/jpeg"
                   srcset="
-                    ./images/main/more-photos/desktop/more-07/sportcar-406.jpg      406w,
-                    ./images/main/more-photos/desktop/more-07/sportcar-812@2x.jpg   812w,
-                    ./images/main/more-photos/desktop/more-07/sportcar-1218@3x.jpg 1218w,
-                    ./images/main/more-photos/desktop/more-07/sportcar-1624@4x.jpg 1624w
+                    ./images/main/more-photos/desktop/more-07/sportcar-406.jpg    406w,
+                    ./images/main/more-photos/desktop/more-07/sportcar-812@2x.jpg 812w
                   "
                 />
 
@@ -603,9 +631,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-07/sportcar-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.webp 496w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-744@3x.webp 744w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-991@4x.webp 991w
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.webp 496w
                   "
                 />
 
@@ -616,9 +642,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-07/sportcar-248.jpg    248w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.jpg 496w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-744@3x.jpg 744w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-991@4x.jpg 991w
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.jpg 496w
                   "
                 />
 
@@ -629,16 +653,30 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-07/sportcar-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.webp 496w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-744@3x.webp 744w,
-                    ./images/main/more-photos/tablet/more-07/sportcar-991@4x.webp 991w
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.webp 496w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 7th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-07/sportcar-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.jpg 496w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 7th image  -->
+                <img
+                  class="photos-card__image image"
                   sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-07/sportcar-248.jpg    248w,
@@ -646,15 +684,17 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/tablet/more-07/sportcar-744@3x.jpg 744w,
                     ./images/main/more-photos/tablet/more-07/sportcar-991@4x.jpg 991w
                   "
+                  src="./images/main/more-photos/tablet/more-07/sportcar-248.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 08 405x203 | 248x123 -->
@@ -665,10 +705,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 405px, 28vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/desktop/more-08/round-building-405.webp      405w,
-                    ./images/main/more-photos/desktop/more-08/round-building-810@2x.webp   810w,
-                    ./images/main/more-photos/desktop/more-08/round-building-1215@3x.webp 1215w,
-                    ./images/main/more-photos/desktop/more-08/round-building-1620@4x.webp 1620w
+                    ./images/main/more-photos/desktop/more-08/round-building-405.webp    405w,
+                    ./images/main/more-photos/desktop/more-08/round-building-810@2x.webp 810w
                   "
                 />
 
@@ -678,10 +716,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 405px, 28vw"
                   type="image/jpeg"
                   srcset="
-                    ./images/main/more-photos/desktop/more-08/round-building-405.jpg      405w,
-                    ./images/main/more-photos/desktop/more-08/round-building-810@2x.jpg   810w,
-                    ./images/main/more-photos/desktop/more-08/round-building-1215@3x.jpg 1215w,
-                    ./images/main/more-photos/desktop/more-08/round-building-1620@4x.jpg 1620w
+                    ./images/main/more-photos/desktop/more-08/round-building-405.jpg    405w,
+                    ./images/main/more-photos/desktop/more-08/round-building-810@2x.jpg 810w
                   "
                 />
 
@@ -692,9 +728,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-08/round-building-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.webp 495w,
-                    ./images/main/more-photos/tablet/more-08/round-building-743@3x.webp 743w,
-                    ./images/main/more-photos/tablet/more-08/round-building-989@4x.webp 989w
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.webp 495w
                   "
                 />
 
@@ -705,9 +739,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-08/round-building-248.jpg    248w,
-                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.jpg 495w,
-                    ./images/main/more-photos/tablet/more-08/round-building-743@3x.jpg 743w,
-                    ./images/main/more-photos/tablet/more-08/round-building-989@4x.jpg 989w
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.jpg 495w
                   "
                 />
 
@@ -718,16 +750,30 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-08/round-building-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.webp 495w,
-                    ./images/main/more-photos/tablet/more-08/round-building-743@3x.webp 743w,
-                    ./images/main/more-photos/tablet/more-08/round-building-989@4x.webp 989w
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.webp 495w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 8th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
+                  sizes="(min-width: 1440px) 405px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-08/round-building-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.jpg 495w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 8th image  -->
+                <img
+                  class="photos-card__image image"
                   sizes="(min-width: 1440px) 405px, (min-width: 768px) 248px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-08/round-building-248.jpg    248w,
@@ -735,15 +781,17 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/tablet/more-08/round-building-743@3x.jpg 743w,
                     ./images/main/more-photos/tablet/more-08/round-building-989@4x.jpg 989w
                   "
+                  src="./images/main/more-photos/tablet/more-08/round-building-248.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 09 187x203 | 115x123 -->
@@ -755,9 +803,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/desktop/more-09/mushroom-lamp-187.webp    187w,
-                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-374@2x.webp 374w,
-                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-561@3x.webp 561w,
-                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-748@4x.webp 748w
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-374@2x.webp 374w
                   "
                 />
 
@@ -768,9 +814,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/desktop/more-09/mushroom-lamp-187.jpg    187w,
-                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-374@2x.jpg 374w,
-                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-561@3x.jpg 561w,
-                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-748@4x.jpg 748w
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-374@2x.jpg 374w
                   "
                 />
 
@@ -781,9 +825,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.webp    115w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.webp 229w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.webp 343w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.webp 457w
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.webp 229w
                   "
                 />
 
@@ -794,9 +836,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg    115w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.jpg 229w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.jpg 343w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.jpg 457w
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.jpg 229w
                   "
                 />
 
@@ -807,16 +847,30 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.webp    115w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.webp 229w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.webp 343w,
-                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.webp 457w
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.webp 229w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 9th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
+                  sizes="(min-width: 1440px) 187px, (min-width: 768px) 115px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg    115w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.jpg 229w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 9th image  -->
+                <img
+                  class="photos-card__image image"
                   sizes="(min-width: 1440px) 187px, (min-width: 768px) 115px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg    115w,
@@ -824,15 +878,17 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.jpg 343w,
                     ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.jpg 457w
                   "
+                  src="./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 10 214x250 | 131x158 -->
@@ -844,9 +900,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/desktop/more-10/speakers-214.webp    214w,
-                    ./images/main/more-photos/desktop/more-10/speakers-428@2x.webp 428w,
-                    ./images/main/more-photos/desktop/more-10/speakers-642@3x.webp 642w,
-                    ./images/main/more-photos/desktop/more-10/speakers-856@4x.webp 856w
+                    ./images/main/more-photos/desktop/more-10/speakers-428@2x.webp 428w
                   "
                 />
 
@@ -857,9 +911,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/desktop/more-10/speakers-214.jpg    214w,
-                    ./images/main/more-photos/desktop/more-10/speakers-428@2x.jpg 428w,
-                    ./images/main/more-photos/desktop/more-10/speakers-642@3x.jpg 642w,
-                    ./images/main/more-photos/desktop/more-10/speakers-856@4x.jpg 856w
+                    ./images/main/more-photos/desktop/more-10/speakers-428@2x.jpg 428w
                   "
                 />
 
@@ -870,9 +922,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-10/speakers-131.webp    131w,
-                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.webp 262w,
-                    ./images/main/more-photos/tablet/more-10/speakers-392@3x.webp 392w,
-                    ./images/main/more-photos/tablet/more-10/speakers-523@4x.webp 523w
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.webp 262w
                   "
                 />
 
@@ -883,9 +933,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-10/speakers-131.jpg    131w,
-                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.jpg 262w,
-                    ./images/main/more-photos/tablet/more-10/speakers-392@3x.jpg 392w,
-                    ./images/main/more-photos/tablet/more-10/speakers-523@4x.jpg 523w
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.jpg 262w
                   "
                 />
 
@@ -896,16 +944,30 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-10/speakers-131.webp    131w,
-                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.webp 262w,
-                    ./images/main/more-photos/tablet/more-10/speakers-392@3x.webp 392w,
-                    ./images/main/more-photos/tablet/more-10/speakers-523@4x.webp 523w
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.webp 262w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 10th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-10/speakers-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.jpg 262w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 10th image  -->
+                <img
+                  class="photos-card__image image"
                   sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-10/speakers-131.jpg    131w,
@@ -913,15 +975,17 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/tablet/more-10/speakers-392@3x.jpg 392w,
                     ./images/main/more-photos/tablet/more-10/speakers-523@4x.jpg 523w
                   "
+                  src="./images/main/more-photos/tablet/more-10/speakers-131.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 11 378x260 | 231x158 -->
@@ -932,10 +996,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 378px, 26vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/desktop/more-11/сybertruck-378.webp      378w,
-                    ./images/main/more-photos/desktop/more-11/сybertruck-756@2x.webp   756w,
-                    ./images/main/more-photos/desktop/more-11/сybertruck-1134@3x.webp 1134w,
-                    ./images/main/more-photos/desktop/more-11/сybertruck-1512@4x.webp 1512w
+                    ./images/main/more-photos/desktop/more-11/сybertruck-378.webp    378w,
+                    ./images/main/more-photos/desktop/more-11/сybertruck-756@2x.webp 756w
                   "
                 />
 
@@ -945,10 +1007,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 378px, 26vw"
                   type="image/jpeg"
                   srcset="
-                    ./images/main/more-photos/desktop/more-11/сybertruck-378.jpg      378w,
-                    ./images/main/more-photos/desktop/more-11/сybertruck-756@2x.jpg   756w,
-                    ./images/main/more-photos/desktop/more-11/сybertruck-1134@3x.jpg 1134w,
-                    ./images/main/more-photos/desktop/more-11/сybertruck-1512@4x.jpg 1512w
+                    ./images/main/more-photos/desktop/more-11/сybertruck-378.jpg    378w,
+                    ./images/main/more-photos/desktop/more-11/сybertruck-756@2x.jpg 756w
                   "
                 />
 
@@ -959,9 +1019,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-11/cybertruck-231.webp    231w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.webp 462w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.webp 693w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.webp 923w
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.webp 462w
                   "
                 />
 
@@ -972,9 +1030,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-11/cybertruck-231.jpg    231w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.jpg 462w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.jpg 693w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.jpg 923w
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.jpg 462w
                   "
                 />
 
@@ -985,16 +1041,30 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-11/cybertruck-231.webp    231w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.webp 462w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.webp 693w,
-                    ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.webp 923w
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.webp 462w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 11th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-11/cybertruck-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.jpg 462w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 11th image  -->
+                <img
+                  class="photos-card__image image"
                   sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-11/cybertruck-231.jpg    231w,
@@ -1002,15 +1072,17 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.jpg 693w,
                     ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.jpg 923w
                   "
+                  src="./images/main/more-photos/tablet/more-11/cybertruck-231.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
 
-        <li class="more-photos__item">
+        <li class="more-photos__item is-hidden" data-li-below-fold>
           <div class="photos-card">
             <div class="photos-card__thumb">
               <!-- 12 406x260 | 248x158 -->
@@ -1021,10 +1093,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 406px, 28vw"
                   type="image/webp"
                   srcset="
-                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-406.webp      406w,
-                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-812@2x.webp   812w,
-                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-1218@3x.webp 1218w,
-                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-1624@4x.webp 1624w
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-406.webp    406w,
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-812@2x.webp 812w
                   "
                 />
 
@@ -1034,10 +1104,8 @@ jpeg is in scrset="" by defaul as fallback
                   sizes="(min-width: 1440px) 406px, 28vw"
                   type="image/jpeg"
                   srcset="
-                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-406.jpg      406w,
-                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-812@2x.jpg   812w,
-                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-1218@3x.jpg 1218w,
-                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-1624@4x.jpg 1624w
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-406.jpg    406w,
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-812@2x.jpg 812w
                   "
                 />
 
@@ -1048,9 +1116,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.webp 496w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.webp 744w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.webp 991w
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.webp 496w
                   "
                 />
 
@@ -1061,9 +1127,7 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/jpeg"
                   srcset="
                     ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg    248w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.jpg 496w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.jpg 744w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.jpg 991w
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.jpg 496w
                   "
                 />
 
@@ -1074,16 +1138,30 @@ jpeg is in scrset="" by defaul as fallback
                   type="image/webp"
                   srcset="
                     ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.webp    248w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.webp 496w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.webp 744w,
-                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.webp 991w
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.webp 496w
                   "
                 />
 
                 <!-- 320px - 280xauto jpeg - default 12th image  -->
                 <img
                   class="photos-card__image image"
+                  data-photos-below-fold
                   data-photos-lazy
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.jpg 496w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 12th image  -->
+                <img
+                  class="photos-card__image image"
                   sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
                   srcset="
                     ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg    248w,
@@ -1091,16 +1169,19 @@ jpeg is in scrset="" by defaul as fallback
                     ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.jpg 744w,
                     ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.jpg 991w
                   "
+                  src="./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg"
                   loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
+                  decoding="async"
                 />
-              </picture>
+              </noscript>
             </div>
           </div>
         </li>
       </ul>
     </div>
-    <div class="more-photos__svg-wrapper">
+
+    <div class="more-photos__svg-wrapper" data-photos-loader>
       <svg class="more-photos__icon-loader system-uicons-loader svg" width="45" height="45">
         <use
           class="more-photos__icon-loader-use"

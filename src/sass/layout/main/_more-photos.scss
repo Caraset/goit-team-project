@@ -13,13 +13,19 @@
 //                 <img class="photos-card__image image transition"/>
 
 .more-photos__container {
+  // 768px = container max-width = 688px;
   padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
-  @include mq($tablet, $pb: 26px); // 26px =  tablet  mb52 - section pb26
+
+  @include mq($tablet, $desktop, $pb: 26px) {
+    max-width: 768px; // 26px =  tablet  mb52 - section pb26
+  }
+
   @include mq($desktop, $pb: 74px);
 }
 
 .more-photos__wrapper {
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
+
   @include mq($desktop, $mb: 56px);
 }
 
@@ -30,23 +36,47 @@
 }
 
 .more-photos__list {
+  position: relative;
   @extend %list;
 
-  outline: 1px solid red;
-  @include mq($tablet, null, calc(-1 * var(--gap-t)), 0, 0, calc(-1 * var(--gap-t))) {
+  $margin-top-tablet: calc(-1 * var(--gap-t-v));
+  $margin-left-tablet: calc(-1 * var(--gap-t-h));
+
+  @include mq($tablet, $mt: $margin-top-tablet, $ml: $margin-left-tablet) {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  @include mq($desktop, $mt: calc(-1 * var(--gap)), $ml: calc(-1 * var(--gap)));
+  // --gap: 32px;
+  // --gap-t-v: 19px;
+  // --gap-t-h: 14px;
+
+  $margin-top-desktop: calc(-1 * var(--gap));
+  $margin-left-desktop: $margin-top-desktop;
+
+  @include mq($desktop, $mt: $margin-top-desktop, $ml: $margin-left-desktop);
 }
 
 /* photos */
 .more-photos__item {
-  outline: 1px solid gold;
   cursor: pointer;
 
-  @include mq($tablet, $mt: var(--gap-t), $ml: var(--gap-t));
+  object-fit: cover;
+
+  &.is-hidden {
+    @include mq($end: $tablet) {
+      position: absolute;
+      opacity: 0;
+      transform: translateX(50%) scaleX(0);
+    }
+
+    visibility: visible;
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  @include mq($tablet, $mt: var(--gap-t-v), $ml: var(--gap-t-h));
   @include mq($desktop, $mt: var(--gap), $ml: var(--gap));
 
   &:not(:last-child) {
@@ -57,46 +87,22 @@
 // .photos-card__thumb {}
 // .photos-card { }
 
-.photos-card__image:not([src]):not([srcset]) {
-  visibility: hidden;
-}
-
 .photos-card__image {
-  object-fit: cover;
+  object-fit: contain;
   margin: 0 auto;
-  border-radius: 5px;
 }
 
-// more-photos sizes: desktop
-//   406x260 378x260 214x260
-//   214x271 378x271 406x271
-//   406x203 405x203 187x203
-//   214x250 378x260 406x260
-
-//more-photos sizes: tablet
-// 247.73x158.64 230.64x158.64 130.58x158.64
-// 130.58x165.36 230.64x165.36 247.73x165.36
-// 247.73x123.86 247.12x123.86 114.10x123.86
-// 130.58x158.64 230.64x158.64 247.73x158.64
-//
-// 0.3822993827	0.2171751412	0.2015123457
-// 0.2015123457	0.2171751412	0.3822993827
-// 0.3822993827	0.2326930320  0.1760802469
-// 0.2015123457	0.2171751412	0.3822993827
-//
-// more-photos sizes: mobile
-//     mobile sizes
-//     280x179
-//     280x193
-//     280x340
-
-// .to-be-loaded-images { @include mq($end: $mobile) { opacity: 0; transform: translateX(50%) scaleX(0); } }
+.gallery-card__image {
+  @extend .photos-card__image;
+  width: 100%;
+  max-height: 85vh;
+}
 
 .appear {
-  @extend .transition;
-  opacity: 1;
   transition-property: transform, opacity;
+  opacity: 1;
   transform: translateX(0) scaleX(1);
+  @include animation;
 }
 
 .more-photos__svg-wrapper {
@@ -104,6 +110,7 @@
 }
 
 .system-uicons-loader {
+  cursor: pointer;
   transition-timing-function: var(--cubic);
 
   &:hover,
@@ -116,43 +123,32 @@
 /* Overlay - Rectangle 80 */
 .gallery-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  z-index: 210;
+  contain: strict;
 
   display: flex;
-
+  width: 100%;
+  height: 100vh;
   overflow-y: scroll;
 
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: transform var(--time) var(--cubic), opacity var(--time) var(--cubic),
-    visibility var(--time) var(--cubic), background-color var(--time) var(--cubic);
-  /* Fading is smooth after deleting excessive is-hidden parts. */
+  transition-property: opacity, visibility;
+  @include animation; // Fading is smooth
+
+  background-color: rgba(#2b2b2b, 0.8);
+  backdrop-filter: blur(4px);
+  /* Note: backdrop-filter has minimal browser support */
 
   &.is-hidden {
     overflow: hidden;
   }
 
   &__container {
-    position: relative;
-
-    top: 44.6%; // 1168px
-    min-width: 648px;
-
-    @include mq($tablet) {
-      top: 55.8%; // 1193px
-      min-width: 648px;
-    }
-
-    @include mq($desktop) {
-      /* TODO: Kostiantyn Ochenash: check mockup sizes for container of modal window.
-      Finish html and css for gallery-overlay__container till EBD 2021-08-16 */
-      top: 59.8%; // 1924px
-      min-width: 1062px;
-    }
+    margin: auto;
+    padding: 20px 0;
+    max-height: 100vh;
   }
-
-  background: rgba(#2b2b2b, 0.8);
-  backdrop-filter: blur(4px);
-  /* Note: backdrop-filter has minimal browser support */
 }
 
 // ------------------------------------------------------
@@ -161,7 +157,14 @@
 
 // Modal window
 .gallery-modal {
-  @extend .transition;
+  position: relative;
+
+  max-height: 80vh;
+
+  // @include mq($tablet) {    max-height: 75vh;}
+
+  // @include mq($desktop) {    max-height: 75vh;}
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -172,9 +175,29 @@
   border-radius: 4px;
 
   transition-property: transform, opacity;
+  @include animation;
 
   .gallery-overlay.is-hidden > & {
     transform: scale(1.21);
+  }
+
+  &__list {
+    @extend %list;
+    display: flex;
+  }
+
+  &__item.is-hidden {
+    position: absolute;
+  }
+
+  &__thumb {
+    min-width: 236px;
+    @include mq($tablet) {
+      min-width: 554px;
+    }
+    @include mq($desktop) {
+      min-width: 906px;
+    }
   }
 
   &__btn-back {
@@ -185,18 +208,18 @@
     color: var(--main-color);
 
     @include mq($end: $tablet, $mr: 9px) {
-      width: 11px;
-      height: 10px;
+      min-width: 11px;
+      min-height: 10px;
     }
 
     @include mq($tablet, $mr: 21px) {
-      width: 26px;
-      height: 26px;
+      min-width: 26px;
+      min-height: 26px;
     }
 
     @include mq($desktop, $mr: 47px) {
-      width: 42px;
-      height: 42px;
+      min-width: 42px;
+      min-height: 42px;
     }
 
     padding: 0;
@@ -217,6 +240,8 @@
 
   &__btn-next {
     @extend .gallery-modal__btn-back;
+
+    height: 100vh;
 
     @include mq($end: $tablet, $mr: 0, $ml: 9px);
     @include mq($tablet, $mr: 0, $ml: 21px);
