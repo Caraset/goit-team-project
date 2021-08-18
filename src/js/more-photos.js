@@ -48,7 +48,7 @@
 
   // carousel for refs.targetsBigImages
 
-  // change class for listItem without is-hidden forwards
+  // toggle classes for next listItem without 'is-hidden' = slide forwards
   refs.galleryNextBtn.addEventListener('click', () => {
     for (let i = 0; i < refs.galleryModalItems.length; i++) {
       const element = refs.galleryModalItems[i];
@@ -70,7 +70,7 @@
     }
   });
 
-  // change class for listItem without is-hidden backwards
+  // toggle classes for back listItem without 'is-hidden' = slide backwards
   refs.galleryBackBtn.addEventListener('click', () => {
     for (let i = refs.galleryModalItems.length - 1; i >= 0; i--) {
       const element = refs.galleryModalItems[i];
@@ -91,4 +91,19 @@
       }
     }
   });
+
+  function mq(w) {
+    if (w.matches) {
+      //do stuff;
+      // like what do i need ?
+      // to hide below the fold photos on mobile.
+      // apply to them is-hidden and do not load them
+      // until user had scrolled down to download more photos.
+    } else {
+      document.body.backgroundColor = 'pink';
+    }
+  }
+
+  let tablet = window.matchMedia('(min-width: 768px)');
+  tablet.addEventListener(mq(tablet));
 })();
