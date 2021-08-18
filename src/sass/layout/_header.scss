@@ -44,11 +44,11 @@
   align-items: center;
   justify-content: space-between;
   @media screen and (min-width: $second-bp) {
-    padding: 20px 60px 20px 69px;
+    padding: 20px 60px 12px 69px;
   }
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: $third-bp) {
     max-width: 1321px;
-    padding: 40px 20px 60px 20px;
+    padding: 40px 20px 62px 20px;
   }
 }
 header a {
@@ -170,7 +170,7 @@ header a:focus {
   appearance: none;
   border: none;
   cursor: pointer;
-
+  background-color: none;
   @include font($fs: 14px, $fw: bold, $lh: 1.29, $ls: 0.01em);
   font-family: var(--secondary-font);
   font-style: normal;
