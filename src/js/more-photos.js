@@ -3,6 +3,7 @@
   const refs = {
     openModalList: document.querySelector('[data-photos-list]'),
     modal: document.querySelector('[data-gallery-modal]'),
+    galleryList: document.querySelector('[data-gallery-list]'),
     targetsBigImages: document.querySelectorAll('[data-gallery-image]'),
     targets: document.querySelectorAll('[data-photos-lazy]'),
   };
@@ -15,7 +16,9 @@
 
           img.setAttribute('src', '#'); //img starts to load after scr is set to "#".
 
-          img.classList.add('appear');
+          entry.target.closest('[data-gallery-list]') !== refs.galleryList &&
+            img.classList.add('appear');
+
           console.log('imageLoaded');
           observer.disconnect(); // after loading the img - remove the observer from the main thread.
         }
