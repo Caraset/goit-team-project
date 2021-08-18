@@ -1,9 +1,9 @@
 // position section (title&content-box)
 .to {
   &__section {
-    padding-top: 11px;
+    padding-top: 0px;
     padding-bottom: 52px;
-
+    @include mq($tablet, $pt: 24px);
     @include mq($desktop, $pb: 100px);
   }
 
