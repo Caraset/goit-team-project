@@ -48,9 +48,8 @@
 
   // carousel for refs.targetsBigImages
 
+  // change class for listItem without is-hidden forwards
   refs.galleryNextBtn.addEventListener('click', () => {
-    // change class for image without is-hidden
-
     for (let i = 0; i < refs.galleryModalItems.length; i++) {
       const element = refs.galleryModalItems[i];
 
@@ -66,6 +65,28 @@
         }
 
         nextElem.classList.toggle('is-hidden'), nextElem.classList.toggle('current-slide');
+        return;
+      }
+    }
+  });
+
+  // change class for listItem without is-hidden backwards
+  refs.galleryBackBtn.addEventListener('click', () => {
+    for (let i = refs.galleryModalItems.length - 1; i >= 0; i--) {
+      const element = refs.galleryModalItems[i];
+
+      if (element.classList.contains('current-slide')) {
+        console.log(element.className);
+        element.classList.toggle('current-slide'), element.classList.toggle('is-hidden');
+
+        let backElem = 0;
+        if (i === 0) {
+          backElem = refs.galleryModalItems[refs.galleryModalItems.length - 1];
+        } else {
+          backElem = refs.galleryModalItems[i - 1];
+        }
+
+        backElem.classList.toggle('is-hidden'), backElem.classList.toggle('current-slide');
         return;
       }
     }
