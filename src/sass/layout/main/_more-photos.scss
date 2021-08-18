@@ -147,7 +147,7 @@
   background-color: rgba(#2b2b2b, 0.8);
   backdrop-filter: blur(4px);
   /* Note: backdrop-filter has minimal browser support */
-  z-index: 500;
+  z-index: 200;
 
   &.is-hidden {
     overflow: hidden;
@@ -156,6 +156,7 @@
   &__container {
     margin: auto;
     padding: 0;
+    overflow-x: hidden;
   }
 }
 
@@ -165,19 +166,10 @@
 
 // Modal window
 .gallery-modal {
-  position: absolute;
-  top: 50%;
-  left: 0;
-
-  overflow-x: hidden;
-  transform: translateY(-50%);
+  position: relative;
 
   display: flex;
-  contain: content;
-  max-width: none;
-  min-width: 500%;
-  height: 100vh;
-
+  justify-content: center;
   align-items: center;
 
   overflow: hidden;
@@ -197,8 +189,8 @@
     display: flex;
   }
 
-  &__item:not(.current) {
-    transform: translateX(100%);
+  &__item.is-hidden {
+    position: absolute;
   }
 
   &__btn-back {
