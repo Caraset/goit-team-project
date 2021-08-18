@@ -1,6 +1,10 @@
 // style for sections positioning
 
 .contact {
+  &__section {
+    position: relative;
+  }
+
   &__info {
     display: flex;
     flex-direction: column;
@@ -22,9 +26,9 @@
     display: none;
     width: 598px;
     height: 455px;
-    position: relative;
+    position: absolute;
     right: -100px;
-    bottom: -8px;
+    bottom: -100px;
 
     @include mq($desktop) {
       display: block;

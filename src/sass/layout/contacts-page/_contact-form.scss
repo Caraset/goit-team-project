@@ -83,7 +83,8 @@
     }
 
     &:hover ~ .contact-form__label,
-    &:focus ~ .contact-form__label {
+    &:focus ~ .contact-form__label,
+    &:not(:placeholder-shown) ~ .contact-form__label {
       transform: translateY(-150%);
     }
   }
