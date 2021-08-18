@@ -31,10 +31,14 @@
 //video
 .contact-hero__video {
   flex-shrink: 0;
-  border-radius: 30px;
+  border-radius: 15px;
   max-width: 480px;
-  height: 250px;
+  height: 171px;
   overflow: hidden;
+
+  @media screen and (min-width: 425px) {
+    height: 250px;
+  }
 
   @include mq($end: tablet, $mb: 16px) {
     margin-left: auto;
