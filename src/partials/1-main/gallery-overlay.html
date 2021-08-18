@@ -34,67 +34,1281 @@
         </svg>
       </button>
 
+      <!-- Список карточек "Більше Фото" -->
+      <ul
+        class="more-photos__list"
+        data-photos-list
+        data-placeholder="Заполнитель"
+        aria-controls="gallery-overlay-id"
+        aria-expanded="false"
+        tabindex="-1"
+      >
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 01 406x260 | 248x158 | 280x179 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 406x260 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 406px, 28vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.webp      406w,
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.webp   812w,
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.webp 1218w,
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.webp 1624w
+                  "
+                />
+                <!-- 1440px - 406x260 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 406px, 28vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-406.jpg      406w,
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-812@2x.jpg   812w,
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1218@3x.jpg 1218w,
+                    ./images/main/more-photos/desktop/more-01/design-hq-3d-models-1624@4x.jpg 1624w
+                  "
+                />
+
+                <!-- 768px - 248x158 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 248px, 32vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-248.webp    248w,
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-496@2x.webp 496w,
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-744@3x.webp 744w,
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-991@4x.webp 991w
+                  "
+                />
+
+                <!-- 768px - 248x158 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 248px, 32vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-496@2x.jpg 496w,
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-744@3x.jpg 744w,
+                    ./images/main/more-photos/tablet/more-01/design-3d-printed-hq-models-991@4x.jpg 991w
+                  "
+                />
+
+                <!-- 320px - 280x179 webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.webp      280w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.webp   560w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.webp   840w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.webp 1120w
+                  "
+                />
+
+                <!-- 320px - 280x179 jpg - default 1st image -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg      280w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.jpg   560w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.jpg   840w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg 1120w
+                  "
+                  alt="3D моделі виготовлені на 3D принтері"
+                  tabindex="-1"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280x179 jpg - fallback 1st image -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg      280w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.jpg   560w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.jpg   840w,
+                    ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg 1120w
+                  "
+                  src="./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 02 378x260 | 231x158 | 280x193 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 378x260 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 378px, 26vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-02/architectural-model-378.webp      378w,
+                    ./images/main/more-photos/desktop/more-02/architectural-model-756@2x.webp   756w,
+                    ./images/main/more-photos/desktop/more-02/architectural-model-1134@3x.webp 1134w,
+                    ./images/main/more-photos/desktop/more-02/architectural-model-1512@4x.webp 1512w
+                  "
+                />
+
+                <!-- 1440px - 378x260 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 378px, 26vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-02/architectural-model-378.jpg      378w,
+                    ./images/main/more-photos/desktop/more-02/architectural-model-756@2x.jpg   756w,
+                    ./images/main/more-photos/desktop/more-02/architectural-model-1134@3x.jpg 1134w,
+                    ./images/main/more-photos/desktop/more-02/architectural-model-1512@4x.jpg 1512w
+                  "
+                />
+
+                <!-- 768px - 231x158 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 231px, 30vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-231.webp    231w,
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-462@2x.webp 462w,
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-693@3x.webp 693w,
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-923@4x.webp 923w
+                  "
+                />
+
+                <!-- 768px - 231x158 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 231px, 30vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-462@2x.jpg 462w,
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-693@3x.jpg 693w,
+                    ./images/main/more-photos/tablet/more-02/3d-printed-architectural-model-923@4x.jpg 923w
+                  "
+                />
+
+                <!-- 320px - 280x193 webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.webp      280w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-560@2x.webp   560w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-840@3x.webp   840w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-1120@4x.webp 1120w
+                  "
+                />
+
+                <!-- 320px - 280x193 jpg - default 2nd image -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.jpg      280w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-560@2x.jpg   560w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-840@3x.jpg   840w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-1120@4x.jpg 1120w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280x193 jpg - fallback 2nd image -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.jpg      280w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-560@2x.jpg   560w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-840@3x.jpg   840w,
+                    ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-1120@4x.jpg 1120w
+                  "
+                  src="./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 03 214x260 | 131x158 | 280x340 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 214x260 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 214px, 15vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-03/wall-e-214.webp    214w,
+                    ./images/main/more-photos/desktop/more-03/wall-e-428@2x.webp 428w,
+                    ./images/main/more-photos/desktop/more-03/wall-e-642@3x.webp 642w,
+                    ./images/main/more-photos/desktop/more-03/wall-e-856@4x.webp 856w
+                  "
+                />
+
+                <!-- 1440px - 214x260 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 214px, 15vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-03/wall-e-214.jpg    214w,
+                    ./images/main/more-photos/desktop/more-03/wall-e-428@2x.jpg 428w,
+                    ./images/main/more-photos/desktop/more-03/wall-e-642@3x.jpg 642w,
+                    ./images/main/more-photos/desktop/more-03/wall-e-856@4x.jpg 856w
+                  "
+                />
+
+                <!-- 768px - 131x158 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 131px, 17vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-03/wall-e-131.webp    131w,
+                    ./images/main/more-photos/tablet/more-03/wall-e-262@2x.webp 262w,
+                    ./images/main/more-photos/tablet/more-03/wall-e-392@3x.webp 392w,
+                    ./images/main/more-photos/tablet/more-03/wall-e-523@4x.webp 523w
+                  "
+                />
+
+                <!-- 768px - 131x158 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 131px, 17vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-03/wall-e-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-03/wall-e-262@2x.jpg 262w,
+                    ./images/main/more-photos/tablet/more-03/wall-e-392@3x.jpg 392w,
+                    ./images/main/more-photos/tablet/more-03/wall-e-523@4x.jpg 523w
+                  "
+                />
+
+                <!-- 320px - 280x340 webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-03/wall-e-280.webp      280w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-560@2x.webp   560w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-840@3x.webp   840w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-1120@4x.webp 1120w
+                  "
+                />
+
+                <!-- 320px - 280x340 jpeg - default 3rd image -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-03/wall-e-280.jpg      280w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-560@2x.jpg   560w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-840@3x.jpg   840w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-1120@4x.jpg 1120w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280x340 jpeg - fallback 3rd image -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/more-03/wall-e-280.jpg      280w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-560@2x.jpg   560w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-840@3x.jpg   840w,
+                    ./images/main/more-photos/mobile/more-03/wall-e-1120@4x.jpg 1120w
+                  "
+                  src="./images/main/more-photos/mobile/more-03/wall-e-280.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 04 214x271 | 131x165 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 214x271 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 214px, 15vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-04/skull-214.webp    214w,
+                    ./images/main/more-photos/desktop/more-04/skull-428@2x.webp 428w,
+                    ./images/main/more-photos/desktop/more-04/skull-642@3x.webp 642w,
+                    ./images/main/more-photos/desktop/more-04/skull-856@4x.webp 856w
+                  "
+                />
+
+                <!-- 1440px - 214x271 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 214px, 15vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-04/skull-214.jpg    214w,
+                    ./images/main/more-photos/desktop/more-04/skull-428@2x.jpg 428w,
+                    ./images/main/more-photos/desktop/more-04/skull-642@3x.jpg 642w,
+                    ./images/main/more-photos/desktop/more-04/skull-856@4x.jpg 856w
+                  "
+                />
+
+                <!-- 768px - 131x165 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 131px, 17vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-04/skull-model-131.webp    131w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.webp 262w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-392@3x.webp 392w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-523@4x.webp 523w
+                  "
+                />
+
+                <!-- 768px - 130x165 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 131px, 17vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-04/skull-model-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.jpg 262w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-392@3x.jpg 392w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-523@4x.jpg 523w
+                  "
+                />
+
+                <!-- 320px - 280xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-04/skull-model-131.webp    131w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.webp 262w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-392@3x.webp 392w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-523@4x.webp 523w
+                  "
+                />
+
+                <!-- 320px - 280xauto jpeg - default 4th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-04/skull-model-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.jpg 262w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-392@3x.jpg 392w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-523@4x.jpg 523w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 4th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-04/skull-model-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-262@2x.jpg 262w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-392@3x.jpg 392w,
+                    ./images/main/more-photos/tablet/more-04/skull-model-523@4x.jpg 523w
+                  "
+                  src="./images/main/more-photos/tablet/more-04/skull-model-131.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 05 378x271 | 231x165 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 378x271 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 378px, 26vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-378.webp      378w,
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-756@2x.webp   756w,
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-1134@3x.webp 1134w,
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-1512@4x.webp 1512w
+                  "
+                />
+
+                <!-- 1440px - 378x271 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 378px, 26vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-378.jpg      378w,
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-756@2x.jpg   756w,
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-1134@3x.jpg 1134w,
+                    ./images/main/more-photos/desktop/more-05/T-29-tank-3d-model-1512@4x.jpg 1512w
+                  "
+                />
+
+                <!-- 768px - 231x165 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 231px, 30vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.webp    231w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.webp 462w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.webp 693w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.webp 923w
+                  "
+                />
+
+                <!-- 768px - 231x165 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 231px, 30vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.jpg 693w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.jpg 923w
+                  "
+                />
+
+                <!-- 320px - 280xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.jpg 693w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.jpg 923w
+                  "
+                />
+
+                <!-- 320px - 280xauto jpeg - default 5th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.jpg 693w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.jpg 923w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 5th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-462@2x.jpg 462w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.jpg 693w,
+                    ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.jpg 923w
+                  "
+                  src="./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 06 906 | 554 | 236  -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 906 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 906px, 62vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/modal/lamps-enlarged-906.webp       906w,
+                    ./images/main/more-photos/desktop/modal/lamps-enlarged-1812-@2x.webp 1812w,
+                    ./images/main/more-photos/desktop/modal/lamps-enlarged-2718-@3x.webp 2718w
+                  "
+                />
+
+                <!-- 1440px - 906 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 906px, 62vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/modal/lamps-enlarged-906.jpg       906w,
+                    ./images/main/more-photos/desktop/modal/lamps-enlarged-1812-@2x.jpg 1812w,
+                    ./images/main/more-photos/desktop/modal/lamps-enlarged-2718-@3x.jpg 2718w
+                  "
+                />
+
+                <!-- 768px - 554 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 554px, 72vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/modal/two-lamps-enlarged-554.webp      554w,
+                    ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1108@2x.webp 1108w,
+                    ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1662@3x.webp 1662w
+                  "
+                />
+
+                <!-- 768px - 554 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 554px, 72vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/modal/two-lamps-enlarged-554.jpg      554w,
+                    ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1108@2x.jpg 1108w,
+                    ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1662@3x.jpg 1662w
+                  "
+                />
+
+                <!-- 320px - 236xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 236px, 73vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-236.webp    236w,
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-472@2x.webp 472w,
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-708@3x.webp 708w
+                  "
+                />
+
+                <!-- 320px - 236xauto jpeg - default 6th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 906px, (min-width: 768px) 554px, (max-width: 767px) 236px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-236.jpg    236w,
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-472@2x.jpg 472w,
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-708@3x.jpg 708w
+                  "
+                  loading="lazy"
+                  alt="Двi лампи зроблені на 3D-принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 6th image  -->
+                <img
+                  class="photos-card__image image gallery-modal__image"
+                  sizes="(min-width: 1440px) 906px, (min-width: 768px) 554px, (max-width: 767px) 236px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-236.jpg    236w,
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-472@2x.jpg 472w,
+                    ./images/main/more-photos/mobile/modal/two-lamps-enlarged-708@3x.jpg 708w
+                  "
+                  src="./images/main/more-photos/mobile/modal/two-lamps-enlarged-236.jpg"
+                  loading="lazy"
+                  alt="Двi лампи зроблені на 3D-принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 07 406x203 | 248x123 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 406x203 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 406px, 28vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-07/sportcar-406.webp      406w,
+                    ./images/main/more-photos/desktop/more-07/sportcar-812@2x.webp   812w,
+                    ./images/main/more-photos/desktop/more-07/sportcar-1218@3x.webp 1218w,
+                    ./images/main/more-photos/desktop/more-07/sportcar-1624@4x.webp 1624w
+                  "
+                />
+
+                <!-- 1440px - 406x203 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 406px, 28vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-07/sportcar-406.jpg      406w,
+                    ./images/main/more-photos/desktop/more-07/sportcar-812@2x.jpg   812w,
+                    ./images/main/more-photos/desktop/more-07/sportcar-1218@3x.jpg 1218w,
+                    ./images/main/more-photos/desktop/more-07/sportcar-1624@4x.jpg 1624w
+                  "
+                />
+
+                <!-- 768px - 248x123 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 248px, 32vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-07/sportcar-248.webp    248w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.webp 496w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-744@3x.webp 744w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-991@4x.webp 991w
+                  "
+                />
+
+                <!-- 768px - 248x123 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 248px, 32vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-07/sportcar-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.jpg 496w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-744@3x.jpg 744w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-991@4x.jpg 991w
+                  "
+                />
+
+                <!-- 320px - 280xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-07/sportcar-248.webp    248w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.webp 496w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-744@3x.webp 744w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-991@4x.webp 991w
+                  "
+                />
+
+                <!-- 320px - 280xauto jpeg - default 7th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-07/sportcar-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.jpg 496w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-744@3x.jpg 744w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-991@4x.jpg 991w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 7th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-07/sportcar-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-496@2x.jpg 496w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-744@3x.jpg 744w,
+                    ./images/main/more-photos/tablet/more-07/sportcar-991@4x.jpg 991w
+                  "
+                  src="./images/main/more-photos/tablet/more-07/sportcar-248.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 08 405x203 | 248x123 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 405x203 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 405px, 28vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-08/round-building-405.webp      405w,
+                    ./images/main/more-photos/desktop/more-08/round-building-810@2x.webp   810w,
+                    ./images/main/more-photos/desktop/more-08/round-building-1215@3x.webp 1215w,
+                    ./images/main/more-photos/desktop/more-08/round-building-1620@4x.webp 1620w
+                  "
+                />
+
+                <!-- 1440px - 405x203 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 405px, 28vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-08/round-building-405.jpg      405w,
+                    ./images/main/more-photos/desktop/more-08/round-building-810@2x.jpg   810w,
+                    ./images/main/more-photos/desktop/more-08/round-building-1215@3x.jpg 1215w,
+                    ./images/main/more-photos/desktop/more-08/round-building-1620@4x.jpg 1620w
+                  "
+                />
+
+                <!-- 768px - 248x123 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 248px, 32vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-08/round-building-248.webp    248w,
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.webp 495w,
+                    ./images/main/more-photos/tablet/more-08/round-building-743@3x.webp 743w,
+                    ./images/main/more-photos/tablet/more-08/round-building-989@4x.webp 989w
+                  "
+                />
+
+                <!-- 768px - 248x123 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 248px, 32vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-08/round-building-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.jpg 495w,
+                    ./images/main/more-photos/tablet/more-08/round-building-743@3x.jpg 743w,
+                    ./images/main/more-photos/tablet/more-08/round-building-989@4x.jpg 989w
+                  "
+                />
+
+                <!-- 320px - 280xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-08/round-building-248.webp    248w,
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.webp 495w,
+                    ./images/main/more-photos/tablet/more-08/round-building-743@3x.webp 743w,
+                    ./images/main/more-photos/tablet/more-08/round-building-989@4x.webp 989w
+                  "
+                />
+
+                <!-- 320px - 280xauto jpeg - default 8th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 405px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-08/round-building-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.jpg 495w,
+                    ./images/main/more-photos/tablet/more-08/round-building-743@3x.jpg 743w,
+                    ./images/main/more-photos/tablet/more-08/round-building-989@4x.jpg 989w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 8th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 405px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-08/round-building-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-08/round-building-495@2x.jpg 495w,
+                    ./images/main/more-photos/tablet/more-08/round-building-743@3x.jpg 743w,
+                    ./images/main/more-photos/tablet/more-08/round-building-989@4x.jpg 989w
+                  "
+                  src="./images/main/more-photos/tablet/more-08/round-building-248.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 09 187x203 | 115x123 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 187x203 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 187px, 13vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-187.webp    187w,
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-374@2x.webp 374w,
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-561@3x.webp 561w,
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-748@4x.webp 748w
+                  "
+                />
+
+                <!-- 1440px - 187x203 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 187px, 13vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-187.jpg    187w,
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-374@2x.jpg 374w,
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-561@3x.jpg 561w,
+                    ./images/main/more-photos/desktop/more-09/mushroom-lamp-748@4x.jpg 748w
+                  "
+                />
+
+                <!-- 768px - 115x123 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 115px, 15vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.webp    115w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.webp 229w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.webp 343w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.webp 457w
+                  "
+                />
+
+                <!-- 768px - 115x123 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 115px, 15vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg    115w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.jpg 229w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.jpg 343w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.jpg 457w
+                  "
+                />
+
+                <!-- 320px - 280xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.webp    115w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.webp 229w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.webp 343w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.webp 457w
+                  "
+                />
+
+                <!-- 320px - 280xauto jpeg - default 9th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 187px, (min-width: 768px) 115px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg    115w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.jpg 229w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.jpg 343w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.jpg 457w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 9th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 187px, (min-width: 768px) 115px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg    115w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-229@2x.jpg 229w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.jpg 343w,
+                    ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.jpg 457w
+                  "
+                  src="./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 10 214x250 | 131x158 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 214x250 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 214px, 15vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-10/speakers-214.webp    214w,
+                    ./images/main/more-photos/desktop/more-10/speakers-428@2x.webp 428w,
+                    ./images/main/more-photos/desktop/more-10/speakers-642@3x.webp 642w,
+                    ./images/main/more-photos/desktop/more-10/speakers-856@4x.webp 856w
+                  "
+                />
+
+                <!-- 1440px - 214x250 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 214px, 15vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-10/speakers-214.jpg    214w,
+                    ./images/main/more-photos/desktop/more-10/speakers-428@2x.jpg 428w,
+                    ./images/main/more-photos/desktop/more-10/speakers-642@3x.jpg 642w,
+                    ./images/main/more-photos/desktop/more-10/speakers-856@4x.jpg 856w
+                  "
+                />
+
+                <!-- 768px - 131x158 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 131px, 17vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-10/speakers-131.webp    131w,
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.webp 262w,
+                    ./images/main/more-photos/tablet/more-10/speakers-392@3x.webp 392w,
+                    ./images/main/more-photos/tablet/more-10/speakers-523@4x.webp 523w
+                  "
+                />
+
+                <!-- 768px - 131x158 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 131px, 17vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-10/speakers-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.jpg 262w,
+                    ./images/main/more-photos/tablet/more-10/speakers-392@3x.jpg 392w,
+                    ./images/main/more-photos/tablet/more-10/speakers-523@4x.jpg 523w
+                  "
+                />
+
+                <!-- 320px - 280xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-10/speakers-131.webp    131w,
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.webp 262w,
+                    ./images/main/more-photos/tablet/more-10/speakers-392@3x.webp 392w,
+                    ./images/main/more-photos/tablet/more-10/speakers-523@4x.webp 523w
+                  "
+                />
+
+                <!-- 320px - 280xauto jpeg - default 10th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-10/speakers-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.jpg 262w,
+                    ./images/main/more-photos/tablet/more-10/speakers-392@3x.jpg 392w,
+                    ./images/main/more-photos/tablet/more-10/speakers-523@4x.jpg 523w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 10th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-10/speakers-131.jpg    131w,
+                    ./images/main/more-photos/tablet/more-10/speakers-262@2x.jpg 262w,
+                    ./images/main/more-photos/tablet/more-10/speakers-392@3x.jpg 392w,
+                    ./images/main/more-photos/tablet/more-10/speakers-523@4x.jpg 523w
+                  "
+                  src="./images/main/more-photos/tablet/more-10/speakers-131.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 11 378x260 | 231x158 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 378x260 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 378px, 26vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-11/сybertruck-378.webp      378w,
+                    ./images/main/more-photos/desktop/more-11/сybertruck-756@2x.webp   756w,
+                    ./images/main/more-photos/desktop/more-11/сybertruck-1134@3x.webp 1134w,
+                    ./images/main/more-photos/desktop/more-11/сybertruck-1512@4x.webp 1512w
+                  "
+                />
+
+                <!-- 1440px - 378x260 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 378px, 26vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-11/сybertruck-378.jpg      378w,
+                    ./images/main/more-photos/desktop/more-11/сybertruck-756@2x.jpg   756w,
+                    ./images/main/more-photos/desktop/more-11/сybertruck-1134@3x.jpg 1134w,
+                    ./images/main/more-photos/desktop/more-11/сybertruck-1512@4x.jpg 1512w
+                  "
+                />
+
+                <!-- 768px - 231x158 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 231px, 30vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-11/cybertruck-231.webp    231w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.webp 462w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.webp 693w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.webp 923w
+                  "
+                />
+
+                <!-- 768px - 231x158 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 231px, 30vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-11/cybertruck-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.jpg 462w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.jpg 693w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.jpg 923w
+                  "
+                />
+
+                <!-- 320px - 280xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-11/cybertruck-231.webp    231w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.webp 462w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.webp 693w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.webp 923w
+                  "
+                />
+
+                <!-- 320px - 280xauto jpeg - default 11th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-11/cybertruck-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.jpg 462w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.jpg 693w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.jpg 923w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 11th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-11/cybertruck-231.jpg    231w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-462@2x.jpg 462w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.jpg 693w,
+                    ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.jpg 923w
+                  "
+                  src="./images/main/more-photos/tablet/more-11/cybertruck-231.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+
+        <li class="more-photos__item">
+          <div class="photos-card">
+            <div class="photos-card__thumb">
+              <!-- 12 406x260 | 248x158 -->
+              <picture class="photos-card__picture">
+                <!-- 1440px - 406x260 webp -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 406px, 28vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-406.webp      406w,
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-812@2x.webp   812w,
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-1218@3x.webp 1218w,
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-1624@4x.webp 1624w
+                  "
+                />
+
+                <!-- 1440px - 406x260 jpeg -->
+                <source
+                  media="(min-width: 1440px)"
+                  sizes="(min-width: 1440px) 406px, 28vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-406.jpg      406w,
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-812@2x.jpg   812w,
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-1218@3x.jpg 1218w,
+                    ./images/main/more-photos/desktop/more-12/3d-hexagon-for-plants-1624@4x.jpg 1624w
+                  "
+                />
+
+                <!-- 768px - 248x158 webp -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 248px, 32vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.webp    248w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.webp 496w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.webp 744w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.webp 991w
+                  "
+                />
+
+                <!-- 768px - 248x158 jpeg -->
+                <source
+                  media="(min-width: 768px)"
+                  sizes="(min-width: 768px) 248px, 32vw"
+                  type="image/jpeg"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.jpg 496w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.jpg 744w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.jpg 991w
+                  "
+                />
+
+                <!-- 320px - 280xauto webp -->
+                <source
+                  media="(max-width: 767px)"
+                  sizes="(max-width: 767px) 280px, 88vw"
+                  type="image/webp"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.webp    248w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.webp 496w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.webp 744w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.webp 991w
+                  "
+                />
+
+                <!-- 320px - 280xauto jpeg - default 12th image  -->
+                <img
+                  class="photos-card__image image"
+                  data-photos-lazy
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.jpg 496w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.jpg 744w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.jpg 991w
+                  "
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </picture>
+
+              <noscript>
+                <!-- 320px - 280xauto jpeg - fallback 12th image  -->
+                <img
+                  class="photos-card__image image"
+                  sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
+                  srcset="
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg    248w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-496@2x.jpg 496w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.jpg 744w,
+                    ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.jpg 991w
+                  "
+                  src="./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg"
+                  loading="lazy"
+                  alt="3D моделі виготовлені на 3D принтері"
+                />
+              </noscript>
+            </div>
+          </div>
+        </li>
+      </ul>
+
       <div class="gallery-carousel" data-gallery-carousel>
-        <div class="gallery-modal__thumb">
-          <picture>
-            <!-- 1440px  webp -->
-            <source
-              media="(min-width: 768px)"
-              sizes="(min-width: 768px) 906px, 85vw"
-              srcset="
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-906.webp       906w,
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-1812-@2x.webp 1812w,
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-2718-@3x.webp 2718w
-              "
-              type="image/webp"
-            />
-
-            <!-- 1440px jpeg -->
-            <source
-              media="(min-width: 768px)"
-              srcset="
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-906.jpg       906w,
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-1812-@2x.jpg 1812w,
-                ./images/main/more-photos/desktop/modal/lamps-enlarged-2718-@3x.jpg 2718w
-              "
-              sizes="(min-width: 768px) 906px, 85vw"
-              type="image/jpeg"
-            />
-
-            <!-- 768px  webp -->
-            <source
-              media="(min-width: 768px)"
-              sizes="(min-width: 768px) 554px, 85vw"
-              srcset="
-                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-554.webp      554w,
-                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1108@2x.webp 1108w,
-                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1662@3x.webp 1108w
-              "
-              type="image/webp"
-            />
-
-            <!-- 768px jpeg -->
-            <source
-              media="(min-width: 768px)"
-              srcset="
-                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-554.jpg      554w,
-                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1108@2x.jpg 1108w,
-                ./images/main/more-photos/tablet/modal/two-lamps-enlarged-1662@3x.jpg 1108w
-              "
-              sizes="(min-width: 768px) 554px, 85vw"
-              type="image/jpeg"
-            />
-
-            <img
-              class="gallery-modal__image"
-              data-photos-lazy
-              data-gallery-image
-              sizes="(min-width: 1440px) 906px, (min-width: 768px) 554px, (max-width: 767px) 236px, 88vw"
-              srcset=""
-              alt="Двi лампи зроблені на 3D-принтері"
-            />
-          </picture>
-        </div>
+        <div class="gallery-modal__thumb"></div>
       </div>
 
       <!-- Кнопка "Наступний слайд" (next) -->

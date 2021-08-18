@@ -4,7 +4,6 @@
     openModalList: document.querySelector('[data-photos-list]'),
     modal: document.querySelector('[data-gallery-modal]'),
     modalNextBtn: document.querySelector('[data-gallery-next]'),
-    modalImage: document.querySelectorAll('[data-gallery-image]'),
     htmlAndBody: document.querySelectorAll('[data-no-scroll]'),
   };
 
