@@ -44,7 +44,7 @@ body {
   overflow-y: scroll;
 
   &.no-scroll {
-    overflow-y: hidden; /* STOP MOVING AROUND! */
+    overflow-y: hidden; // STOP MOVING AROUND!
   }
 }
 

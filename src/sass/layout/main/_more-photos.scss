@@ -58,7 +58,7 @@
   @include mq($desktop, $mt: $margin-top-desktop, $ml: $margin-left-desktop);
 }
 
-/* photos */
+// photos
 .more-photos__item {
   cursor: pointer;
 
@@ -120,7 +120,7 @@
   }
 }
 
-/* Overlay - Rectangle 80 */
+// Overlay - Rectangle 80
 .gallery-overlay {
   position: fixed;
   top: 0;
@@ -131,14 +131,14 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   transition-property: opacity, visibility;
   @include animation; // Fading is smooth
 
   background-color: rgba(#2b2b2b, 0.8);
   backdrop-filter: blur(4px);
-  /* Note: backdrop-filter has minimal browser support */
+  // Note: backdrop-filter has minimal browser support
 
   &.is-hidden {
     overflow: hidden;
@@ -248,7 +248,7 @@
     @include mq($desktop, $mr: 0, $ml: 47px);
   }
 
-  /* topcoat:next-light right */
+  // topcoat:next-light right
   &__next-icon {
     @extend %svg;
     @extend .transition;
@@ -256,7 +256,7 @@
     fill: currentColor;
   }
 
-  /* topcoat:next-light left */
+  // topcoat:next-light left
   &__back-icon {
     @extend .gallery-modal__next-icon;
     transform: rotate(180deg);

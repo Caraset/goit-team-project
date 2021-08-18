@@ -19,7 +19,7 @@
 }
 
 // Media Query + Margins + Paddings
-/* prettier-ignore */
+// prettier-ignore
 @mixin mq(
   $start: null, $end: null,
   $mt: null, $mr: null, $mb: null, $ml: null,
@@ -77,9 +77,9 @@
     {
       padding: $pt $pr $pb $pl;
     } @else {
-      /* prettier-ignore */
+      // prettier-ignore
       $paddings: ('top': $pt, 'right': $pr, 'bottom': $pb, 'left': $pl,);
-      /* prettier-ignore */
+      // prettier-ignore
       @each $side, $direction in $paddings { @if map-get($paddings, $side) {
         #{padding-#{$side}}: map-get($paddings, $side); }}
     }
@@ -107,9 +107,9 @@
     {
       margin: $mt $mr $mb $ml;
     } @else {
-      /* prettier-ignore */
+      // prettier-ignore
       $margins: ('top': $mt, 'right': $mr, 'bottom': $mb, 'left': $ml,);
-      /* prettier-ignore */
+      // prettier-ignore
       @each $side, $direction in $margins { @if map-get($margins, $side) {
         #{margin-#{$side}}: map-get($margins, $side); }}
     }
@@ -126,7 +126,5 @@
 //using
 //transition-property: анимир.свойства;
 //@include animation;
-
-
 
 /* -------------------------- END 'MIXINS' -------------------------- */

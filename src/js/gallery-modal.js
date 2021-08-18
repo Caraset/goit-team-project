@@ -17,7 +17,7 @@
 
   var isFocused = 0;
   function focusLog(targetElem) {
-    /* Чарівництво */
+    // Чарівництво
     setTimeout(() => {
       if (targetElem == null) {
         return;
