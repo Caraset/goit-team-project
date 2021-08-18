@@ -80,6 +80,7 @@
 
 .photos-card__image {
   object-fit: contain;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -193,6 +194,16 @@
     position: absolute;
   }
 
+  &__thumb {
+    min-width: 236px;
+    @include mq($tablet) {
+      min-width: 554px;
+    }
+    @include mq($desktop) {
+      min-width: 906px;
+    }
+  }
+
   &__btn-back {
     display: inline-flex;
     align-items: center;
@@ -233,6 +244,8 @@
 
   &__btn-next {
     @extend .gallery-modal__btn-back;
+
+    height: 100vh;
 
     @include mq($end: $tablet, $mr: 0, $ml: 9px);
     @include mq($tablet, $mr: 0, $ml: 21px);

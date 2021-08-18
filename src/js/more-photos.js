@@ -5,7 +5,10 @@
     modal: document.querySelector('[data-gallery-modal]'),
     galleryList: document.querySelector('[data-gallery-list]'),
     targetsBigImages: document.querySelectorAll('[data-gallery-image]'),
+    galleryModalItems: document.querySelectorAll('[data-gallery-item]'),
     targets: document.querySelectorAll('[data-photos-lazy]'),
+    galleryNextBtn: document.querySelector('[data-gallery-next]'),
+    galleryBackBtn: document.querySelector('[data-gallery-back]'),
   };
 
   const lazyLoad = target => {
@@ -42,4 +45,29 @@
   };
 
   refs.openModalList.addEventListener('click', listIsClicked);
+
+  // carousel for refs.targetsBigImages
+
+  refs.galleryNextBtn.addEventListener('click', () => {
+    // change class for image without is-hidden
+
+    for (let i = 0; i < refs.galleryModalItems.length; i++) {
+      const element = refs.galleryModalItems[i];
+
+      if (element.classList.contains('current-slide')) {
+        console.log(element.className);
+        element.classList.toggle('current-slide'), element.classList.toggle('is-hidden');
+
+        let nextElem = 0;
+        if (i === refs.galleryModalItems.length - 1) {
+          nextElem = refs.galleryModalItems[0];
+        } else {
+          nextElem = refs.galleryModalItems[i + 1];
+        }
+
+        nextElem.classList.toggle('is-hidden'), nextElem.classList.toggle('current-slide');
+        return;
+      }
+    }
+  });
 })();
