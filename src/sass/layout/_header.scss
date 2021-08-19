@@ -172,7 +172,7 @@ header a:focus {
   appearance: none;
   border: none;
   cursor: pointer;
-  background-color: none;
+  background-color: transparent;
   @include font($fs: 14px, $fw: bold, $lh: 1.29, $ls: 0.01em);
   font-family: var(--secondary-font);
   font-style: normal;
