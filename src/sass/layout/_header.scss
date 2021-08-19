@@ -100,9 +100,12 @@ header a:focus {
   }
   &__item {
     position: relative;
+    z-index: 1;
   }
   &__item &__list-sub-menu {
-    visibility: hidden;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
     position: absolute;
     z-index: -1;
     top: -4px;
@@ -122,12 +125,14 @@ header a:focus {
     padding: 33px 6px 9px 7px;
   }
 }
-.header-nav__item:focus ul.header-nav__list-sub-menu,
-.header-nav__item .header-nav__link:focus + ul.header-nav__list-sub-menu,
-.header-nav__item:hover ul.header-nav__item-sub-menu,
-.header-nav__item .header-nav__link:hover + ul.header-nav__list-sub-menu {
-  visibility: visible;
+.header-nav__item:hover .header-nav__list-sub-menu,
+.header-nav__item:focus .header-nav__list-sub-menu,
+.header-nav__item .header-nav__link:hover + ul.header-nav__list-sub-menu,
+.header-nav__item .header-nav__link:focus + ul.header-nav__list-sub-menu {
   transform: translate(-50%, 0px);
+  opacity: 1;
+  overflow: visible;
+  pointer-events: auto;
 }
 
 .header-nav__item-active::after {
@@ -140,7 +145,10 @@ header a:focus {
   background-image: url(../images/header-triangle/triangle.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  z-index: 2;
 }
+.header-nav__item:hover .header-nav__item-active::after,
+.header-nav__item:focus .header-nav__item-active::after,
 .header-nav__item-active:hover::after,
 .header-nav__item-active:focus::after {
   transform: translateX(5px) rotate(0deg);
