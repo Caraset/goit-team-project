@@ -92,13 +92,14 @@ $team-title-map: (
   &.is-hidden {
     @include mq($end: $tablet) {
       position: absolute;
-      opacity: 0;
       transform: translateX(50%) scaleX(0);
     }
 
-    visibility: visible;
-    opacity: 1;
-    pointer-events: initial;
+    @include mq($tablet) {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: initial;
+    }
   }
 
   @include mq($tablet, $mt: var(--gap-t-v), $ml: var(--gap-t-h));
@@ -192,7 +193,7 @@ $team-title-map: (
 .gallery-modal {
   position: relative;
 
-  max-height: 80vh;
+  max-height: fit-content;
 
   // @include mq($tablet) {    max-height: 75vh;}
 
