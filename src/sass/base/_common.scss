@@ -52,7 +52,7 @@ body {
   position: relative;
 
   min-height: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
 
   &.no-scroll {
     overflow-y: scroll;

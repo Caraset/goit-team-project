@@ -275,7 +275,20 @@ $team-title-map: (
   &__btn-next {
     @extend .gallery-modal__btn-back;
 
-    height: 100vh;
+    @include mq($end: $tablet) {
+      min-width: 11px;
+      min-height: 10px;
+    }
+
+    @include mq($tablet) {
+      min-width: 26px;
+      min-height: 26px;
+    }
+
+    @include mq($desktop) {
+      min-width: 42px;
+      min-height: 42px;
+    }
 
     @include mq($end: $tablet, $mr: 0, $ml: 9px);
     @include mq($tablet, $mr: 0, $ml: 21px);

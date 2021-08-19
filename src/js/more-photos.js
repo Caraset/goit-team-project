@@ -103,16 +103,22 @@
     if (!w.matches) return;
     else {
       refs.svgLoaderWrapper.addEventListener('click', event => {
-        if (!event.target == svgLoaderWrapper) return;
+        if (event.target !== svgLoaderWrapper) return;
         else {
           for (let i = 2; i >= 0; i--) {
-            if (refs.belowFoldItems[i].classList.contains('below-fold')) {
-              refs.belowFoldImages[i](lazyLoad); // change to download 3 items per 1 time.
+            const li = refs.belowFoldItems[i];
+            const img = refs.belowFoldImages[i];
 
-              refs.belowFoldItems[i].removeAttribute('data-photos-below-fold');
+            if (li.classList.contains('is-hidden')) {
+              img(lazyLoad); // change to download 3 items per 1 time.
+
+              if (li.hasAttribute('data-li-below-fold')) {
+                li.removeAttribute('data-li-below-fold');
+              }
+              console.log(`${li.className} is shown`);
             }
 
-            refs.belowFoldItems.classList.remove('is-hidden');
+            li.classList.remove('is-hidden');
           }
         }
       });
