@@ -1,3 +1,28 @@
+$team-title: null;
+
+$team-title-map: (
+  1: 'Orange Heart',
+  2: 'Discovery',
+  3: '',
+  4: '',
+  5: '',
+  6: '',
+  7: '',
+  8: '',
+  9: '',
+  10: '',
+);
+
+@mixin team-title($team-title: null, $key: null) {
+  @if $team-title == null {
+    $team-title: map-get($team-title-map, $key);
+  }
+}
+
+.team-title {
+  @include team-title(null, random(10));
+}
+
 // html structure reference
 //<section class="more-photos section">
 //  <div class="more-photos__container">
@@ -17,7 +42,7 @@
   padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
 
   @include mq($tablet, $desktop, $pb: 26px) {
-    max-width: 768px; // 26px =  tablet  mb52 - section pb26
+    // 26px =  tablet  mb52 - section pb26
   }
 
   @include mq($desktop, $pb: 74px);
@@ -87,13 +112,21 @@
 // .photos-card__thumb {}
 // .photos-card { }
 
-.photos-card__image {
+.photos-card__image,
+.gallery-card__image {
   object-fit: contain;
   margin: 0 auto;
+
+  transition-property: transform, opacity;
+  @include animation;
+}
+
+.photos-card__image {
+  opacity: 0;
+  transform: translateX(50%) scaleX(0);
 }
 
 .gallery-card__image {
-  @extend .photos-card__image;
   width: 100%;
   max-height: 85vh;
 }
@@ -254,13 +287,27 @@
     @extend .transition;
 
     fill: currentColor;
+
+    @include mq($end: $tablet) {
+      min-width: 11px;
+      min-height: 10px;
+    }
+
+    @include mq($tablet) {
+      min-width: 26px;
+      min-height: 26px;
+    }
+
+    @include mq($desktop) {
+      min-width: 42px;
+      min-height: 42px;
+    }
   }
 
   // topcoat:next-light left
   &__back-icon {
     @extend .gallery-modal__next-icon;
     transform: rotate(180deg);
-    fill: currentColor;
   }
 }
 
