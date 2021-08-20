@@ -37,15 +37,32 @@ $team-title-map: (
 //                <picture class="photos-card__picture">
 //                 <img class="photos-card__image image transition"/>
 
-.more-photos__container {
-  // 768px = container max-width = 688px;
-  padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
-
-  @include mq($tablet, $desktop, $pb: 26px) {
-    // 26px =  tablet  mb52 - section pb26
+.gallery-overlay__container {
+  margin: auto;
+  @include paddings($pr: 20px, $pl: 20px);
+  @include mq($mobile) {
+    max-width: 320px;
   }
+  @include mq($tablet) {
+    max-width: map-get($breakpoints, $tablet) - (60px * 2) + (20px * 2);
+  }
+  @include mq($desktop) {
+    max-width: map-get($breakpoints, $desktop) - (189px * 2) + (20px * 2);
+  }
+}
 
-  @include mq($desktop, $pb: 74px);
+.more-photos__container {
+  @include paddings(null, 20px, 50px, 20px); // 50px = mobile mb76 - section pb26
+  @include mq($mobile, $mr: auto, $ml: auto) {
+    max-width: map-get($breakpoints, $mobile) + (20px * 2);
+  }
+  @include mq($tablet) {
+    max-width: map-get($breakpoints, $tablet) - (60px * 2) + (20px * 2);
+  }
+  @include mq($tablet, $desktop, $pb: 26px); // 26px = tablet mb52 - section pb26
+  @include mq($desktop, $pb: 74px) {
+    max-width: map-get($breakpoints, $desktop) - (189px * 2) + (20px * 2);
+  }
 }
 
 .more-photos__wrapper {
@@ -178,13 +195,8 @@ $team-title-map: (
     overflow: hidden;
   }
 
-  &__container {
-    margin: auto;
-    padding: 20px 0;
-    max-height: 100vh;
-  }
+  // .gallery-overlay__container {}
 }
-
 // ------------------------------------------------------
 /* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
 // ------------------------------------------------------
@@ -234,6 +246,7 @@ $team-title-map: (
     }
   }
 
+  // prettier-ignore
   &__btn-back {
     display: inline-flex;
     align-items: center;
@@ -241,22 +254,10 @@ $team-title-map: (
 
     color: var(--main-color);
 
-    @include mq($end: $tablet, $mr: 9px) {
-      min-width: 11px;
-      min-height: 10px;
-    }
+    @include mq($end: $tablet, $mr:  9px, $pt: 16px, $pb: 16px) { min-width: 11px; min-height: 10px; }
+    @include mq($tablet,       $mr: 21px, $pt: 16px, $pb: 16px) { min-width: 26px; min-height: 26px; }
+    @include mq($desktop,      $mr: 47px, $pt: 16px, $pb: 16px) { min-width: 42px; min-height: 42px; }
 
-    @include mq($tablet, $mr: 21px) {
-      min-width: 26px;
-      min-height: 26px;
-    }
-
-    @include mq($desktop, $mr: 47px) {
-      min-width: 42px;
-      min-height: 42px;
-    }
-
-    padding: 0;
     background-color: transparent;
     border: none;
     border-radius: 50%;
@@ -272,50 +273,24 @@ $team-title-map: (
     }
   }
 
+  //prettier-ignore
   &__btn-next {
     @extend .gallery-modal__btn-back;
 
-    @include mq($end: $tablet) {
-      min-width: 11px;
-      min-height: 10px;
-    }
-
-    @include mq($tablet) {
-      min-width: 26px;
-      min-height: 26px;
-    }
-
-    @include mq($desktop) {
-      min-width: 42px;
-      min-height: 42px;
-    }
-
-    @include mq($end: $tablet, $mr: 0, $ml: 9px);
-    @include mq($tablet, $mr: 0, $ml: 21px);
-    @include mq($desktop, $mr: 0, $ml: 47px);
+    @include mq($end: $tablet, $mr: 0, $ml:  9px);
+    @include mq($tablet,       $mr: 0, $ml: 21px);
+    @include mq($desktop,      $mr: 0, $ml: 47px);
   }
 
   // topcoat:next-light right
+  //prettier-ignore
   &__next-icon {
     @extend %svg;
-    @extend .transition;
-
+    @include animation;
+    @include mq($end: $tablet) { min-width: 11px; min-height: 10px; }
+    @include mq($tablet)       { min-width: 26px; min-height: 26px; }
+    @include mq($desktop)      { min-width: 42px; min-height: 42px; }
     fill: currentColor;
-
-    @include mq($end: $tablet) {
-      min-width: 11px;
-      min-height: 10px;
-    }
-
-    @include mq($tablet) {
-      min-width: 26px;
-      min-height: 26px;
-    }
-
-    @include mq($desktop) {
-      min-width: 42px;
-      min-height: 42px;
-    }
   }
 
   // topcoat:next-light left
