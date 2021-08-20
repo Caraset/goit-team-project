@@ -14,6 +14,26 @@
     svgLoaderWrapper: document.querySelector('[data-photos-loader]'),
   };
 
+  const galleryInitiatorList = document.querySelector('.more-photos__list');
+  galleryInitiatorList.addEventListener('click', event => {
+    console.dir(event.target.parentElement.children[0].attributes);
+  });
+
+  const listItems = galleryInitiatorList.childNodes;
+  console.log(listItems);
+
+  const list = listItems.map(num => {
+    return num;
+  });
+  console.log(list);
+  // // filter get element
+  // map
+  // find    // find 'cat' return list.       elem = 0,     if 0 return elem;
+  // reduce
+  // array.forEach(element => { });
+  //
+  // event is an argument. Current element
+
   // lets use one intersection observer
   // var io = new IntersectionObserver(
   // entries => {
@@ -70,7 +90,6 @@
             img.removeAttribute('data-photos-below-fold');
           }
 
-          console.log('imageLoaded');
           observer.disconnect(); // after loading the img - it removes the observer from the main thread.
         }
       });
@@ -115,7 +134,6 @@
               if (li.hasAttribute('data-li-below-fold')) {
                 li.removeAttribute('data-li-below-fold');
               }
-              console.log(`${li.className} is shown`);
             }
 
             li.classList.remove('is-hidden');
@@ -163,7 +181,6 @@
       const element = refs.galleryModalItems[i];
 
       if (element.classList.contains('current-slide')) {
-        console.log(element.className);
         element.classList.toggle('current-slide'), element.classList.toggle('is-hidden');
 
         let backElem = 0;
