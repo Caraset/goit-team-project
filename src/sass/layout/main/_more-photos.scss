@@ -1,28 +1,3 @@
-$team-title: null;
-
-$team-title-map: (
-  1: 'Orange Heart',
-  2: 'Discovery',
-  3: '',
-  4: '',
-  5: '',
-  6: '',
-  7: '',
-  8: '',
-  9: '',
-  10: '',
-);
-
-@mixin team-title($team-title: null, $key: null) {
-  @if $team-title == null {
-    $team-title: map-get($team-title-map, $key);
-  }
-}
-
-.team-title {
-  @include team-title(null, random(10));
-}
-
 // html structure reference
 //<section class="more-photos section">
 //  <div class="more-photos__container">
@@ -35,6 +10,7 @@ $team-title-map: (
 //            <a class="photos-card__link links"
 //              <div class="photos-card__thumb">
 //                <picture class="photos-card__picture">
+//                 <source type='webp'><source type='jpeg'>
 //                 <img class="photos-card__image image transition"/>
 
 .gallery-overlay__container {
@@ -140,8 +116,8 @@ $team-title-map: (
 }
 
 .photos-card__image {
-  opacity: 0;
-  transform: translateX(50%) scaleX(0);
+  // opacity: 0;
+  // transform: translateX(50%) scaleX(0);
 }
 
 .gallery-card__image {

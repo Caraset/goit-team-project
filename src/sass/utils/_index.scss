@@ -1,14 +1,17 @@
 /* || ------------------ START "UTILS" ------------------ */
 @import './variables';
-@import './breakpoints';
+@import './breakpoints'; // dependency
 @import './functions';
-@import './mixins';
-@import './placeholders';
+@import './mixins'; // dependency
+@import './placeholders'; // dependency
 @import './titles';
 
+@import './is-hidden'; // dependency
 @import './sr-only';
-@import './is-hidden';
 @import './transition';
 @import './text';
 @import './visually-hidden';
 /* || ------------------- END "UTILS" ------------------- */
+
+// Section 'More Photos depends on'
+// './_breakpoints.scss', './_mixins.scss', './_placeholders.scss', './_is-hidden.scss'
