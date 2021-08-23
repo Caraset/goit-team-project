@@ -17,14 +17,13 @@
 
   var isFocused = 0;
   function focusLog(targetElem) {
-    /* Чарівництво */
+    // Чарівництво
     setTimeout(() => {
       if (targetElem == null) {
         return;
       } else {
         targetElem.focus();
         isFocused = document.activeElement === targetElem;
-        console.log(`${targetElem.className} isFocused: ${isFocused}`);
       }
     }, 250);
   }
@@ -40,7 +39,6 @@
   // Сделать проверку if(event.target !== img) {return}
   refs.openModalList.addEventListener('click', event => {
     if (event.currentTarget == refs.openModalList) {
-      console.log('list is clicked upon ');
     }
     refs.modal.classList.contains('is-hidden') && openModal();
   });

@@ -10,17 +10,35 @@
 //            <a class="photos-card__link links"
 //              <div class="photos-card__thumb">
 //                <picture class="photos-card__picture">
+//                 <source type='webp'><source type='jpeg'>
 //                 <img class="photos-card__image image transition"/>
 
-.more-photos__container {
-  // 768px = container max-width = 688px;
-  padding-bottom: 50px; // 50px =  mobile  mb76 - section pb26
-
-  @include mq($tablet, $desktop, $pb: 26px) {
-    max-width: 768px; // 26px =  tablet  mb52 - section pb26
+.gallery-overlay__container {
+  margin: auto;
+  @include paddings($pr: 20px, $pl: 20px);
+  @include mq($mobile) {
+    max-width: 320px;
   }
+  @include mq($tablet) {
+    max-width: map-get($breakpoints, $tablet) - (60px * 2) + (20px * 2);
+  }
+  @include mq($desktop) {
+    max-width: map-get($breakpoints, $desktop) - (189px * 2) + (20px * 2);
+  }
+}
 
-  @include mq($desktop, $pb: 74px);
+.more-photos__container {
+  @include paddings(null, 20px, 50px, 20px); // 50px = mobile mb76 - section pb26
+  @include mq($mobile, $mr: auto, $ml: auto) {
+    max-width: map-get($breakpoints, $mobile) + (20px * 2);
+  }
+  @include mq($tablet) {
+    max-width: map-get($breakpoints, $tablet) - (60px * 2) + (20px * 2);
+  }
+  @include mq($tablet, $desktop, $pb: 26px); // 26px = tablet mb52 - section pb26
+  @include mq($desktop, $pb: 74px) {
+    max-width: map-get($breakpoints, $desktop) - (189px * 2) + (20px * 2);
+  }
 }
 
 .more-photos__wrapper {
@@ -58,7 +76,7 @@
   @include mq($desktop, $mt: $margin-top-desktop, $ml: $margin-left-desktop);
 }
 
-/* photos */
+// photos
 .more-photos__item {
   cursor: pointer;
 
@@ -67,13 +85,14 @@
   &.is-hidden {
     @include mq($end: $tablet) {
       position: absolute;
-      opacity: 0;
       transform: translateX(50%) scaleX(0);
     }
 
-    visibility: visible;
-    opacity: 1;
-    pointer-events: initial;
+    @include mq($tablet) {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: initial;
+    }
   }
 
   @include mq($tablet, $mt: var(--gap-t-v), $ml: var(--gap-t-h));
@@ -87,13 +106,21 @@
 // .photos-card__thumb {}
 // .photos-card { }
 
-.photos-card__image {
+.photos-card__image,
+.gallery-card__image {
   object-fit: contain;
   margin: 0 auto;
+
+  transition-property: transform, opacity;
+  @include animation;
+}
+
+.photos-card__image {
+  // opacity: 0;
+  // transform: translateX(50%) scaleX(0);
 }
 
 .gallery-card__image {
-  @extend .photos-card__image;
   width: 100%;
   max-height: 85vh;
 }
@@ -120,7 +147,7 @@
   }
 }
 
-/* Overlay - Rectangle 80 */
+// Overlay - Rectangle 80
 .gallery-overlay {
   position: fixed;
   top: 0;
@@ -131,26 +158,21 @@
   display: flex;
   width: 100%;
   height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   transition-property: opacity, visibility;
   @include animation; // Fading is smooth
 
   background-color: rgba(#2b2b2b, 0.8);
   backdrop-filter: blur(4px);
-  /* Note: backdrop-filter has minimal browser support */
+  // Note: backdrop-filter has minimal browser support
 
   &.is-hidden {
     overflow: hidden;
   }
 
-  &__container {
-    margin: auto;
-    padding: 20px 0;
-    max-height: 100vh;
-  }
+  // .gallery-overlay__container {}
 }
-
 // ------------------------------------------------------
 /* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
 // ------------------------------------------------------
@@ -159,7 +181,7 @@
 .gallery-modal {
   position: relative;
 
-  max-height: 80vh;
+  max-height: fit-content;
 
   // @include mq($tablet) {    max-height: 75vh;}
 
@@ -200,6 +222,7 @@
     }
   }
 
+  // prettier-ignore
   &__btn-back {
     display: inline-flex;
     align-items: center;
@@ -207,22 +230,10 @@
 
     color: var(--main-color);
 
-    @include mq($end: $tablet, $mr: 9px) {
-      min-width: 11px;
-      min-height: 10px;
-    }
+    @include mq($end: $tablet, $mr:  9px, $pt: 16px, $pb: 16px) { min-width: 11px; min-height: 10px; }
+    @include mq($tablet,       $mr: 21px, $pt: 16px, $pb: 16px) { min-width: 26px; min-height: 26px; }
+    @include mq($desktop,      $mr: 47px, $pt: 16px, $pb: 16px) { min-width: 42px; min-height: 42px; }
 
-    @include mq($tablet, $mr: 21px) {
-      min-width: 26px;
-      min-height: 26px;
-    }
-
-    @include mq($desktop, $mr: 47px) {
-      min-width: 42px;
-      min-height: 42px;
-    }
-
-    padding: 0;
     background-color: transparent;
     border: none;
     border-radius: 50%;
@@ -238,29 +249,30 @@
     }
   }
 
+  //prettier-ignore
   &__btn-next {
     @extend .gallery-modal__btn-back;
 
-    height: 100vh;
-
-    @include mq($end: $tablet, $mr: 0, $ml: 9px);
-    @include mq($tablet, $mr: 0, $ml: 21px);
-    @include mq($desktop, $mr: 0, $ml: 47px);
+    @include mq($end: $tablet, $mr: 0, $ml:  9px);
+    @include mq($tablet,       $mr: 0, $ml: 21px);
+    @include mq($desktop,      $mr: 0, $ml: 47px);
   }
 
-  /* topcoat:next-light right */
+  // topcoat:next-light right
+  //prettier-ignore
   &__next-icon {
     @extend %svg;
-    @extend .transition;
-
+    @include animation;
+    @include mq($end: $tablet) { min-width: 11px; min-height: 10px; }
+    @include mq($tablet)       { min-width: 26px; min-height: 26px; }
+    @include mq($desktop)      { min-width: 42px; min-height: 42px; }
     fill: currentColor;
   }
 
-  /* topcoat:next-light left */
+  // topcoat:next-light left
   &__back-icon {
     @extend .gallery-modal__next-icon;
     transform: rotate(180deg);
-    fill: currentColor;
   }
 }
 

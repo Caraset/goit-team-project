@@ -33,6 +33,7 @@ a {
 }
 
 body {
+  margin: 0;
   font-family: var(--main-font), sans-serif;
   color: var(--third-color);
 
@@ -44,16 +45,15 @@ body {
   overflow-y: scroll;
 
   &.no-scroll {
-    overflow-y: hidden; /* STOP MOVING AROUND! */
+    overflow-y: hidden; // STOP MOVING AROUND!
   }
 }
 
 .index-body {
   position: relative;
 
-  width: 100%;
   min-height: 100%;
-  overflow-y: hidden;
+  overflow: hidden;
 
   &.no-scroll {
     overflow-y: scroll;

@@ -3,7 +3,7 @@
   const refs = {
     openModalList: document.querySelector('[data-photos-list]'),
     modal: document.querySelector('[data-gallery-modal]'),
-    galleryList: document.querySelector('[data-gallery-list]'),
+    modalGalleryList: document.querySelector('[data-gallery-list]'),
     targetsBigImages: document.querySelectorAll('[data-gallery-image]'),
     belowFoldItems: document.querySelectorAll('[data-li-below-fold]'),
     belowFoldImages: document.querySelectorAll('[data-photos-below-fold]'),
@@ -14,6 +14,67 @@
     svgLoaderWrapper: document.querySelector('[data-photos-loader]'),
   };
 
+  const galleryInitiatorList = document.querySelector('.more-photos__list');
+  galleryInitiatorList.addEventListener('click', event => {
+    console.dir(event.target.parentElement.children[0].attributes);
+  });
+
+  const listItems = galleryInitiatorList.childNodes;
+  console.log(listItems);
+
+  const list = listItems.map(num => {
+    return num;
+  });
+  console.log(list);
+  // // filter get element
+  // map
+  // find    // find 'cat' return list.       elem = 0,     if 0 return elem;
+  // reduce
+  // array.forEach(element => { });
+  //
+  // event is an argument. Current element
+
+  // lets use one intersection observer
+  // var io = new IntersectionObserver(
+  // entries => {
+  // console.log.(entries);
+  // }, {
+  // Using default options. Details below.
+  // }
+  // );
+  // Start observing an element
+  // io.observe(element);
+
+  // Stop observing an element
+  // io.unobserve(element);
+
+  //Disable entire IntersectionObserver
+  //io.disconnect();
+
+  /* document.addEventListener("DOMContentLoaded", function() {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.srcset = lazyImage.dataset.srcset;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+
+    lazyImages.forEach(function(lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  } else {
+    // Possibly fall back to event handlers here
+  }
+}); */
+
   const lazyLoad = target => {
     const io = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -22,10 +83,13 @@
 
           img.setAttribute('src', '#'); //img starts to load after scr is set to "#".
 
-          entry.target.closest('[data-gallery-list]') !== refs.galleryList &&
+          entry.target.closest('[data-gallery-list]') !== refs.modalGalleryList &&
             img.classList.add('appear');
 
-          console.log('imageLoaded');
+          if (img.hasAttribute('data-photos-below-fold')) {
+            img.removeAttribute('data-photos-below-fold');
+          }
+
           observer.disconnect(); // after loading the img - it removes the observer from the main thread.
         }
       });
@@ -50,18 +114,38 @@
 
   refs.openModalList.addEventListener('click', listIsClicked);
 
+  // media query js
+  const belowTablet = window.matchMedia('(max-width: 767px)');
+
+  // function runs at specific viewport width.
   function mq(w) {
     if (!w.matches) return;
-    refs.svgLoaderWrapper.addEventListener('click', () => {
-      refs.belowFoldImages.forEach(lazyLoad); // change to download 3 items per 1 time.
-      refs.belowFoldItems.classList.remove('is-hidden');
-    });
+    else {
+      refs.svgLoaderWrapper.addEventListener('click', event => {
+        if (event.target !== svgLoaderWrapper) return;
+        else {
+          for (let i = 2; i >= 0; i--) {
+            const li = refs.belowFoldItems[i];
+            const img = refs.belowFoldImages[i];
+
+            if (li.classList.contains('is-hidden')) {
+              img(lazyLoad); // change to download 3 items per 1 time.
+
+              if (li.hasAttribute('data-li-below-fold')) {
+                li.removeAttribute('data-li-below-fold');
+              }
+            }
+
+            li.classList.remove('is-hidden');
+          }
+        }
+      });
+    }
   }
 
-  let tablet = window.matchMedia('(min-width: 768px)');
-  tablet.addEventListener('change', mq(tablet));
+  mq(belowTablet);
 
-  // closes mobile window on screen rotation. Use if need. Delete if not.
+  // closes mobile window on screen rotation. Use if need. Delete this if not need.
   // tablet.addEventListener('change', e => {
   //   if (!e.matches) return;
   //   (!refsMobile.menu.classList.contains('is-hidden') ||
@@ -76,7 +160,6 @@
       const element = refs.galleryModalItems[i];
 
       if (element.classList.contains('current-slide')) {
-        console.log(element.className);
         element.classList.toggle('current-slide'), element.classList.toggle('is-hidden');
 
         let nextElem = 0;
@@ -98,7 +181,6 @@
       const element = refs.galleryModalItems[i];
 
       if (element.classList.contains('current-slide')) {
-        console.log(element.className);
         element.classList.toggle('current-slide'), element.classList.toggle('is-hidden');
 
         let backElem = 0;

@@ -1,17 +1,10 @@
 .bg-elements-container {
-  min-width: 320px;
-  width: 100%;
-  height: 100%;
-
   position: absolute;
-  top: 0;
-  left: 50%;
-
-  transform: translateX(-50%);
+  inset: 0;
+  z-index: 12;
+  contain: strict;
 
   overflow: hidden;
-  z-index: 12;
-
   pointer-events: none;
 
   // @include mq($tablet) {
@@ -42,17 +35,28 @@
   }
 }
 
-.element-1 {
+%bg-box-1 {
   position: absolute;
   width: 74px;
   height: 74px;
+}
 
+%bg-box-2 {
+  display: none;
+  @extend %bg-box-1;
+}
+
+%bg-box-shadow {
+  background-color: var(--main-color);
+  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+}
+
+.element-1 {
+  @extend %bg-box-1;
   top: 8px;
   left: 1px;
 
-  background-color: var(--main-color);
-
-  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+  @extend %bg-box-shadow;
 
   border-radius: 0 72px 72px 0;
 
@@ -65,17 +69,12 @@
 }
 
 .element-2 {
-  position: absolute;
-  width: 74px;
-  height: 74px;
+  @extend %bg-box-1;
 
   top: 8px;
   right: 1px;
 
-  background-color: var(--main-color);
-
-  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
-
+  @extend %bg-box-shadow;
   border-radius: 72px 0 0 72px;
 
   z-index: 13;
@@ -87,17 +86,12 @@
 }
 
 .element-3 {
-  position: absolute;
-  width: 74px;
-  height: 74px;
+  @extend %bg-box-1;
 
   top: 302px;
   left: -29px;
 
-  background-color: var(--main-color);
-
-  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
-
+  @extend %bg-box-shadow;
   border-radius: 0 0 35px 0;
 
   @include mq($tablet) {
@@ -117,17 +111,12 @@
 }
 
 .element-4 {
-  position: absolute;
-  width: 74px;
-  height: 74px;
+  @extend %bg-box-1;
 
   top: 589px;
   right: -15px;
 
-  background-color: var(--main-color);
-
-  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
-
+  @extend %bg-box-shadow;
   // border-radius: 50px 50px 50px 50px;
 
   border-radius: 50%;
@@ -151,17 +140,12 @@
 }
 
 .element-5 {
-  position: absolute;
-  width: 74px;
-  height: 74px;
+  @extend %bg-box-1;
 
   top: 650px;
   left: -29px;
 
-  background-color: var(--main-color);
-
-  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
-
+  @extend %bg-box-shadow;
   border-radius: 0 0 35px 0;
 
   @include mq($tablet) {
@@ -183,17 +167,12 @@
 }
 
 .element-6 {
-  position: absolute;
-  width: 74px;
-  height: 74px;
+  @extend %bg-box-1;
 
   top: 1033px;
   right: -21px;
 
-  background-color: var(--main-color);
-
-  box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
-
+  @extend %bg-box-shadow;
   border-radius: 0 25px;
 
   @include mq($tablet) {

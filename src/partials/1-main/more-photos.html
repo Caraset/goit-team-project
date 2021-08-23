@@ -1,19 +1,8 @@
-<!--
--В бекдропе - ставлю 12 копий одного большого качественного изображения с макета (2 лампы)- потому что нет других больших изображений от дизайнера, только 1.
-- Сделать слайдер на Slick (jquery).
-- Развешать доп классы, как требуется для плавной прокрутки галереи от slick.
-- Скачать иконки для кнопок, оптимизировать и добавить в спрайт.
- -->
-
 <!-- More photos -->
 <section class="more-photos section">
-  <div class="container more-photos__container">
+  <div class="more-photos__container">
     <div class="more-photos__wrapper" aria-labelledby="more-photos__title-id">
       <h2 class="title-v1 more-photos__title" id="more-photos__title-id">Більше Фото</h2>
-
-      <!-- path
- модалке x3 и x4 на выбор.
--->
 
       <!-- Список карточек "Більше Фото" -->
       <ul
@@ -92,6 +81,7 @@
                     ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg    280w,
                     ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-560@2x.jpg 560w
                   "
+                  loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
                   decoding="async"
                   tabindex="-1"
@@ -110,6 +100,7 @@
                     ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg 1120w
                   "
                   src="./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg"
+                  loading="lazy"
                   alt="3D моделі виготовлені на 3D принтері"
                   decoding="async"
                 />
@@ -1183,10 +1174,7 @@
 
     <div class="more-photos__svg-wrapper" data-photos-loader>
       <svg class="more-photos__icon-loader system-uicons-loader svg" width="45" height="45">
-        <use
-          class="more-photos__icon-loader-use"
-          xlink:href="./images/svg-sprite.svg#loading-icon"
-        ></use>
+        <use class="more-photos__icon-loader-use" href="./images/svg-sprite.svg#loading-icon"></use>
       </svg>
     </div>
   </div>

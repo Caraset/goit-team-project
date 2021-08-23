@@ -1,26 +1,12 @@
 .container {
-  margin-left: auto;
-  margin-right: auto;
-
-  padding-left: 20px;
-  padding-right: 20px;
-  max-width: 320px;
-
-  @include mq($mobile) {
-    max-width: map-get($breakpoints, 'tablet-container');
+  @include paddings($pr: 20px, $pl: 20px);
+  @include mq($mobile, $mr: auto, $ml: auto) {
+    max-width: map-get($breakpoints, $mobile);
   }
-
-  @include mq($tablet, $pr: 60px, $pl: 60px) {
-    max-width: map-get($breakpoints, 'desktop-container');
-    width: 768px;
+  @include mq($tablet, $desktop) {
+    max-width: map-get($breakpoints, $tablet) - (60px * 2) + (20px * 2);
   }
-
   @include mq($desktop) {
-    width: initial;
+    max-width: map-get($breakpoints, $desktop) - (189px * 2) + (20px * 2);
   }
 }
-
-// Экран                 Контейнер
-// [0..319px]      | сам контейнер = 320px  | ( 280px + 20px падинги с каждой стороны)
-// [320px..767px]  | сам контейнер = 688px  | ( 648px + 20px падинги с каждой стороны)
-// [768px..100vw]  | сам контейнер = 1182px | (1062px + 60px падинги с каждой стороны)
