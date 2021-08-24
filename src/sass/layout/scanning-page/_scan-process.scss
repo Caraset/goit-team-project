@@ -5,16 +5,24 @@
 .scan-process__desc {
   @include font(14px, 400, 18px, 0.03em);
   text-align: center;
-  color: #487996;
+  color: var(--scanning-desc);
+
+  @include mq($tablet) {
+    padding: 0 21px 0;
+    margin-bottom: 26px;
+
+    & .next-line {
+      white-space: nowrap;
+    }
+  }
 }
 .scan-process__list {
   display: flex;
   flex-wrap: wrap;
   @extend %list;
   margin-bottom: 52px;
-  @media screen and (min-width: $third-bp) {
-    margin-bottom: 100px;
-  }
+
+  @include mq($desktop, $mb: 100px);
 }
 
 .scan-process__item {
@@ -25,6 +33,15 @@
   box-shadow: inset 1px 1px 16px rgba(203, 203, 203, 0.8), inset -1px -1px 16px #ffffff;
   border-radius: 50px 0px;
 
+  &--scan-process-1::before,
+  &--scan-process-2::before,
+  &--scan-process-3::before,
+  &--scan-process-4::before {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   &--scan-process-1::before {
     display: block;
     content: '';
@@ -34,12 +51,9 @@
       only screen and (-moz-min-device-pixel-ratio: 1.5),
       only screen and (-o-min-device-pixel-ratio: 3/2),
       only screen and (min-device-pixel-ratio: 1.5) {
-      &--scan-process-1::before {
-        background-image: url(../images/scanning-page/retina/mobile/scan_process_mobile@2x.png);
-      }
+      background-image: url(../images/scanning-page/retina/mobile/scan_process_mobile@2x.png);
     }
-    background-repeat: no-repeat;
-    background-position: center;
+
     height: 93px;
     margin-top: 15px;
   }
@@ -48,17 +62,14 @@
     display: block;
     content: '';
     background-image: url(../images/scanning-page/scan-process/mobile/scan_process_2.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+
     height: 93px;
     margin-top: 15px;
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
       only screen and (-moz-min-device-pixel-ratio: 1.5),
       only screen and (-o-min-device-pixel-ratio: 3/2),
       only screen and (min-device-pixel-ratio: 1.5) {
-      &--scan-process-1::before {
-        background-image: url(../images/scanning-page/retina/mobile/scan_process_2_mobile@2x.jpg);
-      }
+      background-image: url(../images/scanning-page/retina/mobile/scan_process_2_mobile@2x.jpg);
     }
   }
 
@@ -66,17 +77,14 @@
     display: block;
     content: '';
     background-image: url(../images/scanning-page/scan-process/mobile/scan_process_3.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+
     height: 93px;
     margin-top: 15px;
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
       only screen and (-moz-min-device-pixel-ratio: 1.5),
       only screen and (-o-min-device-pixel-ratio: 3/2),
       only screen and (min-device-pixel-ratio: 1.5) {
-      &--scan-process-1::before {
-        background-image: url(../images/scanning-page/retina/mobile/scan_process_3_mobile@2x.jpg);
-      }
+      background-image: url(../images/scanning-page/retina/mobile/scan_process_3_mobile@2x.jpg);
     }
   }
 
@@ -84,28 +92,22 @@
     display: block;
     content: '';
     background-image: url(../images/scanning-page/scan-process/mobile/scan_process_4.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
+
     height: 93px;
     margin-top: 15px;
     @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
       only screen and (-moz-min-device-pixel-ratio: 1.5),
       only screen and (-o-min-device-pixel-ratio: 3/2),
       only screen and (min-device-pixel-ratio: 1.5) {
-      &--scan-process-1::before {
-        background-image: url(../images/scanning-page/retina/mobile/scan_process_4_mobile@2x.jpg);
-      }
+      background-image: url(../images/scanning-page/retina/mobile/scan_process_4_mobile@2x.jpg);
     }
   }
 }
 
-@media screen and (min-width: 768px) {
+@include mq($tablet) {
   .scan-process__title {
     font-size: 24px;
     margin-bottom: 24px;
-  }
-  .scan-process__desc {
-    margin-top: 15px;
   }
 
   .scan-process__item {
@@ -114,65 +116,66 @@
 
     &--scan-process-1::before {
       background-image: url(../images/scanning-page/scan-process/tablet/scan_process_tablet_1.jpg);
+      width: 108px;
       height: 94px;
+      margin: 17px auto 21px;
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (-moz-min-device-pixel-ratio: 1.5),
         only screen and (-o-min-device-pixel-ratio: 3/2),
         only screen and (min-device-pixel-ratio: 1.5) {
-        &--scan-process-1::before {
-          background-image: url(../images/scanning-page/retina/tablet/scan_process_1_tablet@2x.jpg);
-        }
+        background-image: url(../images/scanning-page/retina/tablet/scan_process_1_tablet@2x.jpg);
       }
     }
 
     &--scan-process-2::before {
       background-image: url(../images/scanning-page/scan-process/tablet/scan_process_tablet_2.jpg);
-      height: 94px;
+      width: 107px;
+      height: 96px;
+      margin: 21px auto 16px;
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (-moz-min-device-pixel-ratio: 1.5),
         only screen and (-o-min-device-pixel-ratio: 3/2),
         only screen and (min-device-pixel-ratio: 1.5) {
-        &--scan-process-1::before {
-          background-image: url(../images/scanning-page/retina/tablet/scan_process_2_tablet@2x.jpg);
-        }
+        background-image: url(../images/scanning-page/retina/tablet/scan_process_2_tablet@2x.jpg);
       }
     }
 
     &--scan-process-3::before {
       background-image: url(../images/scanning-page/scan-process/tablet/scan_process_tablet_3.jpg);
-      height: 94px;
+      width: 107px;
+      height: 95px;
+      margin: 21px auto 16px;
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (-moz-min-device-pixel-ratio: 1.5),
         only screen and (-o-min-device-pixel-ratio: 3/2),
         only screen and (min-device-pixel-ratio: 1.5) {
-        &--scan-process-1::before {
-          background-image: url(../images/scanning-page/retina/tablet/scan_process_3_tablet@2x.jpg);
-        }
+        background-image: url(../images/scanning-page/retina/tablet/scan_process_3_tablet@2x.jpg);
       }
     }
 
     &--scan-process-4::before {
       background-image: url(../images/scanning-page/scan-process/tablet/scan_process_tablet_4.jpg);
-      height: 94px;
+      width: 108px;
+      height: 93px;
+      margin: 26px auto 13px;
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (-moz-min-device-pixel-ratio: 1.5),
         only screen and (-o-min-device-pixel-ratio: 3/2),
         only screen and (min-device-pixel-ratio: 1.5) {
-        &--scan-process-1::before {
-          background-image: url(../images/scanning-page/retina/tablet/scan_process_4_tablet@2x.jpg);
-        }
+        background-image: url(../images/scanning-page/retina/tablet/scan_process_4_tablet@2x.jpg);
       }
     }
   }
 }
 
-@media screen and (min-width: 1440px) {
+@include mq($desktop) {
   .scan-process {
     padding-bottom: 100px;
   }
 
   .scan-process__desc {
-    font-size: 18px;
+    @include font(18px, 300, 23px);
+    padding: 0 36px 0;
     // margin-top: 230px;
     margin-bottom: 22px;
   }
@@ -181,67 +184,71 @@
     width: 250px;
     height: 298px;
 
+    &:first-child .scan-process__desc {
+      padding: 0 40px 0;
+    }
+
+    &:nth-child(2) .scan-process__desc {
+      padding: 0 42px 0;
+    }
+
     &--scan-process-1::before {
       background-image: url(../images/scanning-page/scan-process/desktop/scan_process_desktop_1.jpg);
-      height: 157px;
+      width: 177px;
+      height: 154px;
+      margin: 49px auto 27px;
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (-moz-min-device-pixel-ratio: 1.5),
         only screen and (-o-min-device-pixel-ratio: 3/2),
         only screen and (min-device-pixel-ratio: 1.5) {
-        &--scan-process-1::before {
-          background-image: url(../images/scanning-page/retina/desktop/scan_process_1_desktop@2x.jpg);
-        }
+        background-image: url(../images/scanning-page/retina/desktop/scan_process_1_desktop@2x.jpg);
       }
     }
 
     &--scan-process-2::before {
       background-image: url(../images/scanning-page/scan-process/desktop/scan_process_desktop_2.jpg);
+      width: 175px; /* Scan_process 2 */
       height: 157px;
+      margin: 55px auto 18px;
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (-moz-min-device-pixel-ratio: 1.5),
         only screen and (-o-min-device-pixel-ratio: 3/2),
         only screen and (min-device-pixel-ratio: 1.5) {
-        &--scan-process-1::before {
-          background-image: url(../images/scanning-page/retina/desktop/scan_process_2_desktop@2x.jpg);
-        }
+        background-image: url(../images/scanning-page/retina/desktop/scan_process_2_desktop@2x.jpg);
       }
     }
 
     &--scan-process-3::before {
       background-image: url(../images/scanning-page/scan-process/desktop/scan_process_desktop_3.jpg);
-      height: 157px;
+      width: 176px;
+      height: 156px;
+      margin: 55px auto 19px;
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (-moz-min-device-pixel-ratio: 1.5),
         only screen and (-o-min-device-pixel-ratio: 3/2),
         only screen and (min-device-pixel-ratio: 1.5) {
-        &--scan-process-1::before {
-          background-image: url(../images/scanning-page/retina/desktop/scan_process_3_desktop@2x.jpg);
-        }
+        background-image: url(../images/scanning-page/retina/desktop/scan_process_3_desktop@2x.jpg);
       }
     }
 
     &--scan-process-4::before {
       background-image: url(../images/scanning-page/scan-process/desktop/scan_process_desktop_4.jpg);
-      height: 157px;
+      width: 177px;
+      height: 152px;
+      margin: 64px auto 14px;
       @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
         only screen and (-moz-min-device-pixel-ratio: 1.5),
         only screen and (-o-min-device-pixel-ratio: 3/2),
         only screen and (min-device-pixel-ratio: 1.5) {
-        &--scan-process-1::before {
-          background-image: url(../images/scanning-page/retina/desktop/scan_process_4_desktop@2x.jpg);
-        }
+        background-image: url(../images/scanning-page/retina/desktop/scan_process_4_desktop@2x.jpg);
       }
     }
   }
 }
 
 .scan-container {
-  @media screen and (min-width: $second-bp) {
-    max-width: $second-bp;
-  }
-  @media screen and (min-width: $third-bp) {
-    max-width: 1182px;
-  }
+  // @media screen and (min-width: $second-bp) { max-width: $second-bp; }
+  // @media screen and (min-width: $third-bp) { max-width: 1182px;}
   .title-v2 {
     margin-bottom: 16px;
     @media screen and (min-width: $second-bp) {
@@ -257,35 +264,28 @@
   justify-content: center;
 }
 .scan-process__list {
+  @extend %list;
+
   display: flex;
   flex-wrap: wrap;
-  margin-left: -15px;
-  margin-top: -15px;
-  @extend %list;
-  margin-bottom: 52px;
   justify-content: center;
-  @media screen and (min-width: $second-bp) {
-    margin-left: -12px;
-    margin-top: -12px;
-  }
-  @media screen and (min-width: $third-bp) {
-    margin-left: -21px;
-    margin-top: -21px;
-  }
+  margin-top: -15px;
+  margin-bottom: 52px;
+  margin-left: -15px;
+  @include mq($tablet, $mt: -12px, $ml: -12px);
+  @include mq($desktop, $mt: -21px, $mb: 100px, $ml: -21px);
 }
 .scan-process__item {
-  text-align: center;
   flex-basis: calc(100% / 2 - 15px);
   margin-top: 15px;
   margin-left: 15px;
-  @media screen and (min-width: $second-bp) {
+  text-align: center;
+
+  @include mq($tablet, $mt: 12px, $ml: 12px) {
     flex-basis: calc(100% / 4 - 12px);
-    margin-top: 12px;
-    margin-left: 12px;
   }
-  @media screen and (min-width: $third-bp) {
+
+  @include mq($desktop, $mt: 21px, $ml: 21px) {
     flex-basis: calc(100% / 4 - 21px);
-    margin-top: 21px;
-    margin-left: 21px;
   }
 }
