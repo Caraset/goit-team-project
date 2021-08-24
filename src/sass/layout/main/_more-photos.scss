@@ -13,32 +13,10 @@
 //                 <source type='webp'><source type='jpeg'>
 //                 <img class="photos-card__image image transition"/>
 
-.gallery-overlay__container {
-  margin: auto;
-  @include paddings($pr: 20px, $pl: 20px);
-  @include mq($mobile) {
-    max-width: 320px;
-  }
-  @include mq($tablet) {
-    max-width: map-get($breakpoints, $tablet) - (60px * 2) + (20px * 2);
-  }
-  @include mq($desktop) {
-    max-width: map-get($breakpoints, $desktop) - (189px * 2) + (20px * 2);
-  }
-}
-
 .more-photos__container {
-  @include paddings(null, 20px, 50px, 20px); // 50px = mobile mb76 - section pb26
-  @include mq($mobile, $mr: auto, $ml: auto) {
-    max-width: map-get($breakpoints, $mobile) + (20px * 2);
-  }
-  @include mq($tablet) {
-    max-width: map-get($breakpoints, $tablet) - (60px * 2) + (20px * 2);
-  }
+  @include paddings($pb: 50px); // 50px = mobile mb76 - section pb26
   @include mq($tablet, $desktop, $pb: 26px); // 26px = tablet mb52 - section pb26
-  @include mq($desktop, $pb: 74px) {
-    max-width: map-get($breakpoints, $desktop) - (189px * 2) + (20px * 2);
-  }
+  @include mq($desktop, $pb: 74px);
 }
 
 .more-photos__wrapper {
@@ -80,12 +58,10 @@
 .more-photos__item {
   cursor: pointer;
 
-  object-fit: cover;
-
   &.is-hidden {
     @include mq($end: $tablet) {
       position: absolute;
-      transform: translateX(50%) scaleX(0);
+      transform: translateX(210%);
     }
 
     @include mq($tablet) {
@@ -101,6 +77,9 @@
   &:not(:last-child) {
     @include mq($end: $tablet, $mb: 16px);
   }
+
+  transition-property: transform, opacity;
+  @include animation;
 }
 
 // .photos-card__thumb {}
@@ -115,25 +94,16 @@
   @include animation;
 }
 
-.photos-card__image {
-  // opacity: 0;
-  // transform: translateX(50%) scaleX(0);
-}
-
 .gallery-card__image {
   width: 100%;
   max-height: 85vh;
 }
 
-.appear {
-  transition-property: transform, opacity;
-  opacity: 1;
-  transform: translateX(0) scaleX(1);
-  @include animation;
-}
-
-.more-photos__svg-wrapper {
-  text-align: center;
+.more-photos__btn {
+  display: block;
+  margin: 0 auto;
+  background-color: transparent;
+  border: none;
 }
 
 .system-uicons-loader {
@@ -141,7 +111,8 @@
   transition-timing-function: var(--cubic);
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
     transform: rotateZ(360deg);
     transition-duration: calc(var(--time) * 4);
   }
@@ -156,8 +127,9 @@
   contain: strict;
 
   display: flex;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
   overflow-y: auto;
 
   transition-property: opacity, visibility;
@@ -171,7 +143,12 @@
     overflow: hidden;
   }
 
-  // .gallery-overlay__container {}
+  &__container {
+    position: relative;
+    padding: 0;
+    margin: auto;
+    max-width: 906px;
+  }
 }
 // ------------------------------------------------------
 /* || ------------- START "МОДАЛЬНОЕ ОКНО" -------------- */
@@ -180,12 +157,6 @@
 // Modal window
 .gallery-modal {
   position: relative;
-
-  max-height: fit-content;
-
-  // @include mq($tablet) {    max-height: 75vh;}
-
-  // @include mq($desktop) {    max-height: 75vh;}
 
   display: flex;
   justify-content: center;
@@ -199,8 +170,15 @@
   transition-property: transform, opacity;
   @include animation;
 
-  .gallery-overlay.is-hidden > & {
-    transform: scale(1.21);
+  @include mq('mobile-l') {
+    &:hover,
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+
+  .gallery-overlay.is-hidden & {
+    transform: scale(1.1);
   }
 
   &__list {
@@ -208,8 +186,22 @@
     display: flex;
   }
 
-  &__item.is-hidden {
-    position: absolute;
+  &__item {
+    left: 210%;
+
+    &.is-hidden {
+      position: absolute;
+    }
+
+    // &.current-slide {  }
+    &.current-slide ~ &.is-hidden {
+      left: unset;
+      right: 210%;
+    }
+
+    &.current-slide + &.is-hidden {
+      transform: translateX(100%);
+    }
   }
 
   &__thumb {
@@ -222,57 +214,56 @@
     }
   }
 
-  // prettier-ignore
-  &__btn-back {
+  //prettier-ignore
+  &__btn-next,  &__btn-back {
+    position: absolute;
+    top: 50%;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    color: var(--main-color);
+    @include mq($end: $tablet, $pt: 21px, $pb: 21px) { min-width: 11px; min-height: 10px; }
+    @include mq($tablet,       $pt: 42px, $pb: 42px) { min-width: 26px; min-height: 26px; }
+    @include mq($desktop,      $pt: 60px, $pb: 60px) { min-width: 42px; min-height: 42px; }
 
-    @include mq($end: $tablet, $mr:  9px, $pt: 16px, $pb: 16px) { min-width: 11px; min-height: 10px; }
-    @include mq($tablet,       $mr: 21px, $pt: 16px, $pb: 16px) { min-width: 26px; min-height: 26px; }
-    @include mq($desktop,      $mr: 47px, $pt: 16px, $pb: 16px) { min-width: 42px; min-height: 42px; }
+    color: var(--main-color); background-color: transparent;
+    border: none; border-radius: 50%;
+    &:hover, &:focus { color: var(--second-accent-color); background-color: transparent; }
+    &:focus { box-shadow: 0 0 3px 2px rgba(var(--third-color), 0.5); }
 
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-
-    &:hover,
-    &:focus {
-      color: var(--second-accent-color);
-      background-color: transparent;
-    }
-
-    &:focus {
-      box-shadow: 0 0 3px 2px rgba(var(--third-color), 0.5);
-    }
+    transform: translateY(-50%);
   }
 
-  //prettier-ignore
   &__btn-next {
-    @extend .gallery-modal__btn-back;
-
-    @include mq($end: $tablet, $mr: 0, $ml:  9px);
-    @include mq($tablet,       $mr: 0, $ml: 21px);
-    @include mq($desktop,      $mr: 0, $ml: 47px);
+    left: 100%;
+    @include mq($end: $tablet, $pr: 22px, $pl: 9px);
+    @include mq($tablet, $pr: 42px, $pl: 21px);
+    @include mq($desktop, $pr: 80px, $pl: 36px);
   }
 
-  // topcoat:next-light right
-  //prettier-ignore
-  &__next-icon {
-    @extend %svg;
-    @include animation;
-    @include mq($end: $tablet) { min-width: 11px; min-height: 10px; }
-    @include mq($tablet)       { min-width: 26px; min-height: 26px; }
-    @include mq($desktop)      { min-width: 42px; min-height: 42px; }
-    fill: currentColor;
+  &__btn-back {
+    right: 100%;
+    @include mq($end: $tablet, $pr: 9px, $pl: 22px);
+    @include mq($tablet, $pr: 21px, $pl: 42px);
+    @include mq($desktop, $pr: 36px, $pl: 70px);
   }
 
   // topcoat:next-light left
+  //prettier-ignore
+  &__next-icon, &__back-icon {
+    @extend %svg;
+
+    @include mq($end: $tablet) { min-width: 11px; min-height: 10px; }
+    @include mq($tablet)       { min-width: 26px; min-height: 26px; }
+    @include mq($desktop)      { min-width: 42px; min-height: 42px; }
+    @include animation;
+    fill: currentColor;
+  }
+
+  // topcoat:next-light right
   &__back-icon {
-    @extend .gallery-modal__next-icon;
-    transform: rotate(180deg);
+    transform: rotateZ(180deg);
   }
 }
 
