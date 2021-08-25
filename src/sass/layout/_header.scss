@@ -44,7 +44,6 @@
   align-items: center;
   justify-content: space-between;
   @media screen and (min-width: $second-bp) {
-    // padding: 20px 60px 12px 69px;
     padding: 20px 60px 20px 69px;
     max-width: 768px;
   }
@@ -80,10 +79,15 @@ header a:focus {
       display: flex;
     }
   }
+  &__item {
+    position: relative;
+    cursor: pointer;
+  }
   &__item:not(:last-child) {
     margin-right: 54px;
   }
   &__link {
+    display: block;
     font-family: 'Caviar Dreams', sans-serif;
     @include font(18px, 400, 1.17, 0.01em);
     color: var(--third-color);
@@ -98,41 +102,30 @@ header a:focus {
     font-family: var(--secondary-font);
     color: var(--third-color);
   }
-  &__item {
-    position: relative;
-    z-index: 1;
-  }
-  &__item &__list-sub-menu {
-    overflow: hidden;
+
+  &__list-sub-menu {
     opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
+    @extend%list;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
     position: absolute;
-    z-index: -1;
     top: -4px;
     left: 50%;
-    transform: translate(-50%, -1px);
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
-    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -10px);
+    width: 144px;
+    padding: 33px 6px 9px 7px;
+    text-align: center;
     border-bottom-left-radius: 50%;
     border-bottom-right-radius: 50%;
-    background-color: rgb(255, 255, 255);
-    @extend%list;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 144px;
-    height: 111px;
-    padding: 33px 6px 9px 7px;
+    box-shadow: 20px 20px 80px rgba(0, 0, 0, 0.1);
   }
 }
-.header-nav__item:hover .header-nav__list-sub-menu,
-.header-nav__item:focus .header-nav__list-sub-menu,
-.header-nav__item .header-nav__link:hover + ul.header-nav__list-sub-menu,
-.header-nav__item .header-nav__link:focus + ul.header-nav__list-sub-menu {
-  transform: translate(-50%, 0px);
+
+.header-nav__item:hover > .header-nav__list-sub-menu,
+.header-nav__item:focus-within > .header-nav__list-sub-menu {
   opacity: 1;
-  overflow: visible;
-  pointer-events: auto;
+  visibility: visible;
+  transform: translate(-50%, 0px);
 }
 
 .header-nav__item-active::after {
@@ -148,9 +141,9 @@ header a:focus {
   z-index: 2;
 }
 .header-nav__item:hover .header-nav__item-active::after,
-.header-nav__item:focus .header-nav__item-active::after,
+.header-nav__item:focus-within .header-nav__item-active::after,
 .header-nav__item-active:hover::after,
-.header-nav__item-active:focus::after {
+.header-nav__item-active:focus-within::after {
   transform: translateX(5px) rotate(0deg);
 }
 
@@ -287,6 +280,4 @@ header a:focus {
   position: fixed;
 
   width: 100vw;
-
-  // overflow: hidden;
 }
