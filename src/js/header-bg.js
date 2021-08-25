@@ -18,7 +18,7 @@ function onScroll() {
     hideBurgerBtn: document.querySelector('.js-hide-modal-btn'),
     modal: document.querySelector('[data-modal]'),
     hideCloseIcon: document.querySelector('.js-hide-close-btn'),
-    body: document.querySelector('body'),
+    htmlAndBody: document.querySelectorAll('[data-no-scroll]'),
 
     bg: document.querySelector('.bg-elements-container'),
     menuDecor: document.querySelector('.hidden-element'),
@@ -34,7 +34,8 @@ function onScroll() {
     refs.modal.classList.toggle('is-hidden');
     refs.hideBurgerBtn.classList.toggle('is-hidden');
     refs.hideCloseIcon.classList.toggle('is-hidden');
-    refs.body.classList.toggle('scroll-disabled');
+    refs.htmlAndBody[0].classList.toggle('no-scroll');
+    refs.htmlAndBody[1].classList.toggle('no-scroll');
     isCurrent();
 
     refs.bg.classList.toggle('menu-bg');

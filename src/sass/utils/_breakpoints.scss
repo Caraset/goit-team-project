@@ -4,8 +4,10 @@ $desktop: 'desktop';
 
 $breakpoints: (
   'mobile': 320px,
+  'mobile-l': 480px,
   'tablet-container': 688px,
   'tablet': 768px,
+  'desktop-container-20p': 1102px,
   'desktop-container': 1182px,
   'desktop': 1440px,
 );

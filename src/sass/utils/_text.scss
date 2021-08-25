@@ -2,7 +2,7 @@
   @include font(16px, 300, 1.25);
 
   @media screen and (min-width: $third-bp) {
-    font-size: 18px;
+    @include font(18px, null, 23px);
   }
 }
 

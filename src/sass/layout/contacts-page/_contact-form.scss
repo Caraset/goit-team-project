@@ -122,7 +122,7 @@
 
     &::placeholder {
       @include font(16px, 400, 1.25);
-      color: #cdcdcd;
+      color: var(--attach-icon-color);
     }
 
     &:hover,
@@ -140,27 +140,28 @@
     bottom: 18px;
     right: 21px;
     cursor: pointer;
-    fill: #cdcdcd;
-    transition-property: fill;
+    color: var(--attach-icon-color);
+    transition-property: color;
     @include animation;
 
     &:hover,
     &:focus {
-      fill: var(--accent-color);
+      color: var(--accent-color);
     }
 
     &.active {
-      fill: #d6a12f;
+      color: var(--attach-icon-active);
     }
   }
 
   &__file-icon {
     width: 22px;
     height: 20px;
+    fill: currentColor;
   }
 
   &__info {
-    color: #cdcdcd;
+    color: var(--attach-icon-color);
   }
 }
 

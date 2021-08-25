@@ -8,7 +8,7 @@
   }
 
   //container
-  &__conteiner {
+  &__container {
     @include mq($start: $tablet, $end: $desktop) {
       max-width: 1000px;
     }
@@ -21,7 +21,7 @@
     @include mq($tablet, $mb: 24px);
   }
 
-  //main conteiner of section
+  //main container of section
   &__wrap {
     @include mq($tablet) {
       display: flex;
@@ -108,17 +108,17 @@
 
     &_left {
       background-image: url('../../src/images/take-order/hero/car.jpg');
-      border-radius: 72px 0px 0px 72px;
+      border-radius: 0 72px 72px 0; /* Rectangle 63 */
       @include bg-retina('../../src/images/take-order/hero/car@2x.jpg');
     }
     &_center {
       background-image: url('../../src/images/take-order/hero/cube.jpg');
-      border-radius: 72px 0px;
+      border-radius: 72px 0;
       @include bg-retina('../../src/images/take-order/hero/cube@2x.jpg');
     }
     &_right {
       background-image: url('../../src/images/take-order/hero/lamp.jpg');
-      border-radius: 0px 0px 72px 0px;
+      border-radius: 0 0 72px 0;
       @include bg-retina('../../src/images/take-order/hero/lamp@2x.jpg');
     }
   }

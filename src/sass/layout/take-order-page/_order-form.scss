@@ -6,7 +6,7 @@
     max-width: 1000px;
   }
 
-  @include mq($desktop, $pb: 100px) {
+  @include mq($desktop, $pb: 85px) {
     @include font(18px, 400, 1.11);
     display: flex;
     justify-content: space-between;
@@ -34,7 +34,7 @@
   &__title {
     margin-bottom: 28px;
 
-    @include mq($tablet, $mb: 35px) {
+    @include mq($tablet, $desktop, $mb: 35px) {
       text-align: center;
     }
     @include mq($desktop, $mb: 44px) {
