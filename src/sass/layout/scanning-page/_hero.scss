@@ -1,6 +1,7 @@
 .scanning-page {
   padding-top: 0;
-
+  background-repeat: no-repeat;
+  padding-bottom: 220px;
   @media screen and (min-width: $second-bp) {
     padding-top: 24px;
     width: 768px;
