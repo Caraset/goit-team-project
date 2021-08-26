@@ -111,6 +111,8 @@ header a:focus {
     position: absolute;
     top: -4px;
     left: 50%;
+    transition-property: transform, opacity;
+    @include animation;
     transform: translate(-50%, -10px);
     width: 144px;
     padding: 33px 6px 9px 7px;
@@ -276,8 +278,10 @@ header a:focus {
   }
 }
 
-.scroll-disabled {
-  position: fixed;
+// .scroll-disabled {
+//   position: fixed;
 
-  width: 100vw;
-}
+//   width: 100vw;
+//   width: 100%;
+//   overflow: hidden;
+// }

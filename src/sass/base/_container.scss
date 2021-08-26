@@ -1,12 +1,15 @@
 .container {
   @include paddings($pr: 20px, $pl: 20px);
   @include mq($mobile, $mr: auto, $ml: auto) {
-    max-width: map-get($breakpoints, $mobile);
+    max-width: map-get($breakpoints, tablet-container);
   }
-  @include mq($tablet, $desktop) {
-    max-width: map-get($breakpoints, $tablet) - (60px * 2) + (20px * 2);
-  }
+
   @include mq($desktop) {
-    max-width: map-get($breakpoints, $desktop) - (189px * 2) + (20px * 2);
+    max-width: map-get($breakpoints, 'desktop-container-20p');
   }
 }
+
+//       Gallery  header
+// 1440  1062     1280
+// 768   648      648-9=639
+// 320   280      278 pl20 pr22

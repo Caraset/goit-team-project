@@ -1,39 +1,57 @@
-<!-- Backdrop (Overlay) -->
+<!-- Gallery overlay -->
 <div
   class="gallery-overlay is-hidden"
   id="gallery-overlay-id"
-  data-gallery-modal
+  data-gallery-overlay
   role="dialog"
   aria-label="Фон галереї"
   tabindex="-1"
+  aria-modal="true"
 >
-  <div class="gallery-overlay__container">
+  <div class="container gallery-overlay__container">
+    <!-- Кнопка "Попередній слайд" (back) -->
+    <button
+      class="gallery-modal__btn-back"
+      data-gallery-back
+      type="button"
+      aria-label="Попередній слайд"
+    >
+      <!-- m11x10, t26x26, d42x42 -->
+      <svg
+        class="gallery-modal__back-icon svg"
+        aria-hidden="true"
+        width="11"
+        height="10"
+        tabindex="-1"
+      >
+        <use href="./images/svg-sprite.svg#next-icon"></use>
+      </svg>
+    </button>
+
+    <!-- Кнопка "Наступний слайд" (next) -->
+    <button
+      class="gallery-modal__btn-next"
+      data-gallery-next
+      type="button"
+      aria-label="Наступний слайд"
+    >
+      <!-- m11x10, t26x26, d42x42 -->
+      <svg
+        class="gallery-modal__next-icon svg"
+        aria-hidden="true"
+        width="11"
+        height="10"
+        tabindex="-1"
+      >
+        <use href="./images/svg-sprite.svg#next-icon"></use>
+      </svg>
+    </button>
     <!-- Модальное окно -->
     <div
       class="gallery-modal gallery-overlay__gallery-modal"
       role="document"
       aria-label="Модальне вікно з галереєю фото 3D моделей"
-      aria-modal="true"
     >
-      <!-- Кнопка "Попередній слайд" (back) -->
-      <button
-        class="gallery-modal__btn-back"
-        data-gallery-back
-        type="button"
-        aria-label="Попередній слайд"
-      >
-        <!-- m11x10, t26x26, d42x42 -->
-        <svg
-          class="gallery-modal__back-icon svg"
-          aria-hidden="true"
-          width="11"
-          height="10"
-          tabindex="-1"
-        >
-          <use href="./images/svg-sprite.svg#next-icon"></use>
-        </svg>
-      </button>
-
       <!-- "Більше Фото" - Зум -->
       <div class="gallery-wrapper">
         <!-- Список карточек "Більше Фото" -->
@@ -114,25 +132,8 @@
                     loading="lazy"
                     alt="3D моделі виготовлені на 3D принтері"
                     decoding="async"
-                    tabindex="-1"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280x179 jpg - fallback 1st image -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-840@3x.jpg   840w,
-                      ./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-1120@4x.jpg 1120w
-                    "
-                    src="./images/main/more-photos/mobile/more-01/design-hq-3d-model-for-3d-printer-280.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -211,22 +212,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280x193 jpg - fallback 2nd image -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-840@3x.jpg   840w,
-                      ./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-1120@4x.jpg 1120w
-                    "
-                    src="./images/main/more-photos/mobile/more-02/3d-printed-architectural-model-280.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -305,22 +290,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280x340 jpeg - fallback 3rd image -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/mobile/more-03/wall-e-840@3x.jpg   840w,
-                      ./images/main/more-photos/mobile/more-03/wall-e-1120@4x.jpg 1120w
-                    "
-                    src="./images/main/more-photos/mobile/more-03/wall-e-280.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -399,22 +368,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 4th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-04/skull-model-392@3x.jpg 392w,
-                      ./images/main/more-photos/tablet/more-04/skull-model-523@4x.jpg 523w
-                    "
-                    src="./images/main/more-photos/tablet/more-04/skull-model-131.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -493,22 +446,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 5th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-693@3x.jpg 693w,
-                      ./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-923@4x.jpg 923w
-                    "
-                    src="./images/main/more-photos/tablet/more-05/T-29-tank-3d-model-231.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -587,22 +524,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 6th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-06/two-lamps-744@3x.jpg 744w,
-                      ./images/main/more-photos/tablet/more-06/two-lamps-991@4x.jpg 991w
-                    "
-                    src="./images/main/more-photos/tablet/more-06/two-lamps-248.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -681,22 +602,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 7th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-07/sportcar-744@3x.jpg 744w,
-                      ./images/main/more-photos/tablet/more-07/sportcar-991@4x.jpg 991w
-                    "
-                    src="./images/main/more-photos/tablet/more-07/sportcar-248.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -775,22 +680,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 8th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 405px, (min-width: 768px) 248px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-08/round-building-743@3x.jpg 743w,
-                      ./images/main/more-photos/tablet/more-08/round-building-989@4x.jpg 989w
-                    "
-                    src="./images/main/more-photos/tablet/more-08/round-building-248.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -869,22 +758,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 9th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 187px, (min-width: 768px) 115px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-09/mushroom-lamp-343@3x.jpg 343w,
-                      ./images/main/more-photos/tablet/more-09/mushroom-lamp-457@4x.jpg 457w
-                    "
-                    src="./images/main/more-photos/tablet/more-09/mushroom-lamp-115.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -963,22 +836,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 10th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 214px, (min-width: 768px) 131px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-10/speakers-392@3x.jpg 392w,
-                      ./images/main/more-photos/tablet/more-10/speakers-523@4x.jpg 523w
-                    "
-                    src="./images/main/more-photos/tablet/more-10/speakers-131.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -1057,22 +914,6 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 11th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 378px, (min-width: 768px) 231px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-11/cybertruck-693@3x.jpg 693w,
-                      ./images/main/more-photos/tablet/more-11/cybertruck-923@4x.jpg 923w
-                    "
-                    src="./images/main/more-photos/tablet/more-11/cybertruck-231.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
@@ -1151,46 +992,11 @@
                     decoding="async"
                   />
                 </picture>
-
-                <noscript>
-                  <!-- 320px - 280xauto jpeg - fallback 12th image  -->
-                  <img
-                    class="gallery-card__image image"
-                    sizes="(min-width: 1440px) 406px, (min-width: 768px) 248px, 88vw"
-                    srcset="
-                      ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-744@3x.jpg 744w,
-                      ./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-991@4x.jpg 991w
-                    "
-                    src="./images/main/more-photos/tablet/more-12/3d-hexagon-for-plants-248.jpg"
-                    loading="lazy"
-                    alt="3D моделі виготовлені на 3D принтері"
-                    decoding="async"
-                  />
-                </noscript>
               </div>
             </div>
           </li>
         </ul>
       </div>
-
-      <!-- Кнопка "Наступний слайд" (next) -->
-      <button
-        class="gallery-modal__btn-next"
-        data-gallery-next
-        type="button"
-        aria-label="Наступний слайд"
-      >
-        <!-- m11x10, t26x26, d42x42 -->
-        <svg
-          class="gallery-modal__next-icon svg"
-          aria-hidden="true"
-          width="11"
-          height="10"
-          tabindex="-1"
-        >
-          <use href="./images/svg-sprite.svg#next-icon"></use>
-        </svg>
-      </button>
     </div>
   </div>
 </div>

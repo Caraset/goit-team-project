@@ -1,55 +1,43 @@
 (() => {
-  const refs = {
-    openModalImg: document.querySelectorAll('[data-photos-lazy]'),
-    openModalList: document.querySelector('[data-photos-list]'),
-    modal: document.querySelector('[data-gallery-modal]'),
-    modalNextBtn: document.querySelector('[data-gallery-next]'),
-    htmlAndBody: document.querySelectorAll('[data-no-scroll]'),
+  const openModalImg = document.querySelectorAll('[data-preview-photo-lazy]');
+  const previewList = document.querySelector('[data-preview-list]');
+  const overlay = document.querySelector('[data-gallery-overlay]');
+  const modalNextBtn = document.querySelector('[data-gallery-next]');
+  const htmlAndBody = document.querySelectorAll('[data-no-scroll]');
+
+  const toggleOverlay = () => {
+    const isModalOpen = previewList.getAttribute('aria-expanded') === 'true';
+    previewList.setAttribute('aria-expanded', !isModalOpen),
+      overlay.classList.toggle('is-hidden'), // MUST HAVE
+      htmlAndBody[0].classList.toggle('no-scroll'),
+      htmlAndBody[1].classList.toggle('no-scroll');
   };
 
-  function toggleModal() {
-    const isModalOpen = refs.openModalList.getAttribute('aria-expanded') === 'true' || false;
-    refs.openModalList.setAttribute('aria-expanded', !isModalOpen),
-      refs.modal.classList.toggle('is-hidden'), // MUST HAVE
-      refs.htmlAndBody[0].classList.toggle('no-scroll'),
-      refs.htmlAndBody[1].classList.toggle('no-scroll');
-  }
-
-  var isFocused = 0;
-  function focusLog(targetElem) {
+  const focusLog = targetElem => {
     // Чарівництво
     setTimeout(() => {
-      if (targetElem == null) {
-        return;
-      } else {
-        targetElem.focus();
-        isFocused = document.activeElement === targetElem;
-      }
+      if (targetElem !== null) targetElem.focus();
     }, 250);
-  }
+  };
 
-  function openModal(targetOnOpen = refs.modalNextBtn) {
-    toggleModal(), focusLog(targetOnOpen);
-  }
+  const closeOverlay = e => {
+    (((e.which === 27 || e.key === 'Escape') && !overlay.classList.contains('is-hidden')) ||
+      e.target.matches('[data-gallery-overlay]')) &&
+      (toggleOverlay(),
+      focusLog,
+      overlay.removeEventListener('keyup', closeOverlay),
+      overlay.removeEventListener('mousedown', closeOverlay));
+  };
 
-  function closeModal() {
-    toggleModal(), focusLog();
-  }
-  // по event.target будет картинка а срабатывание произойдет на event.currentTarget
-  // Сделать проверку if(event.target !== img) {return}
-  refs.openModalList.addEventListener('click', event => {
-    if (event.currentTarget == refs.openModalList) {
-    }
-    refs.modal.classList.contains('is-hidden') && openModal();
-  });
+  const openOverlay = e => {
+    e.currentTarget === previewList &&
+      overlay.classList.contains('is-hidden') &&
+      ((toggleOverlay(), focusLog(modalNextBtn)),
+      overlay.addEventListener('keyup', closeOverlay),
+      overlay.addEventListener('mousedown', closeOverlay));
+  };
 
-  refs.modal.addEventListener('keyup', event => {
-    (event.which === 27 || event.key === 'Escape') &&
-      !refs.modal.classList.contains('is-hidden') &&
-      closeModal();
-  });
-
-  refs.modal.addEventListener('mousedown', event => {
-    event.target.matches('[data-gallery-modal]') && closeModal();
-  });
+  // event.target = картинка.    if (e.target.nodeName !== 'IMG') return;
+  // event.currentTarget = previewList.
+  previewList.addEventListener('click', openOverlay);
 })();

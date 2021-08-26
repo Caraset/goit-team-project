@@ -1,8 +1,56 @@
+'use strict';
+// self envoking arrow function
+(() => {
+  console.log('1. self envoking in script');
+})();
+console.log('2.' + document.readyState); // logs "loading" first
+window.onload = function () {
+  console.log('onload'); // I fire later
+};
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOMContentLoaded');
+});
+document.addEventListener('readystatechange', function () {
+  if (document.readyState == 'loading') {
+    //document is loading, does not fire here since no change from "loading" to "loading"
+  }
+  if (document.readyState == 'interactive') {
+    //document fully read. fires before DOMContentLoaded
+  }
+  if (document.readyState == 'complete') {
+    //document fully read and all resources (like images) loaded. fires after DOMContentLoaded
+  }
+  console.log(document.readyState);
+});
+
+(() => {
+  const previewList = document.querySelector('[data-preview-list]');
+  const photosLoaderBtn = document.querySelector('[data-photos-loader]');
+  const liBelowFold = document.querySelectorAll('[data-li-below-fold]');
+  const photosBelowFold = document.querySelectorAll('[data-photos-below-fold]');
+  const liBelowFoldCount = liBelowFold.length - 1;
+
+  let photosHaveSrc = 0;
+  const loadPhotos = () => {
+    for (let i = 0; i <= 2; ++i) {
+      liBelowFold[photosHaveSrc].classList.remove('is-hidden');
+      photosBelowFold[photosHaveSrc].setAttribute('src', '#');
+      // console.log(`Attribute 'src' has been set ${photosHaveSrc + 1} times`);
+      photosBelowFold[photosHaveSrc].removeAttribute('data-photos-below-fold');
+      if (photosHaveSrc < liBelowFoldCount) ++photosHaveSrc;
+    }
+
+    photosHaveSrc === liBelowFoldCount && photosLoaderBtn.removeEventListener('click', loadPhotos);
+  };
+
+  photosLoaderBtn.addEventListener('click', loadPhotos);
+})();
+
 (() => {
   // Image src replace (for lazy-loading)
   const refs = {
     openModalList: document.querySelector('[data-photos-list]'),
-    modal: document.querySelector('[data-gallery-modal]'),
+    modal: document.querySelector('[data-gallery-overlay]'),
     modalGalleryList: document.querySelector('[data-gallery-list]'),
     targetsBigImages: document.querySelectorAll('[data-gallery-image]'),
     belowFoldItems: document.querySelectorAll('[data-li-below-fold]'),
@@ -13,145 +61,6 @@
     galleryBackBtn: document.querySelector('[data-gallery-back]'),
     svgLoaderWrapper: document.querySelector('[data-photos-loader]'),
   };
-
-  const galleryInitiatorList = document.querySelector('.more-photos__list');
-  galleryInitiatorList.addEventListener('click', event => {
-    console.dir(event.target.parentElement.children[0].attributes);
-  });
-
-  const listItems = galleryInitiatorList.childNodes;
-  console.log(listItems);
-
-  const list = listItems.map(num => {
-    return num;
-  });
-  console.log(list);
-  // // filter get element
-  // map
-  // find    // find 'cat' return list.       elem = 0,     if 0 return elem;
-  // reduce
-  // array.forEach(element => { });
-  //
-  // event is an argument. Current element
-
-  // lets use one intersection observer
-  // var io = new IntersectionObserver(
-  // entries => {
-  // console.log.(entries);
-  // }, {
-  // Using default options. Details below.
-  // }
-  // );
-  // Start observing an element
-  // io.observe(element);
-
-  // Stop observing an element
-  // io.unobserve(element);
-
-  //Disable entire IntersectionObserver
-  //io.disconnect();
-
-  /* document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
-        }
-      });
-    });
-
-    lazyImages.forEach(function(lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
-  } else {
-    // Possibly fall back to event handlers here
-  }
-}); */
-
-  const lazyLoad = target => {
-    const io = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-
-          img.setAttribute('src', '#'); //img starts to load after scr is set to "#".
-
-          entry.target.closest('[data-gallery-list]') !== refs.modalGalleryList &&
-            img.classList.add('appear');
-
-          if (img.hasAttribute('data-photos-below-fold')) {
-            img.removeAttribute('data-photos-below-fold');
-          }
-
-          observer.disconnect(); // after loading the img - it removes the observer from the main thread.
-        }
-      });
-    });
-
-    io.observe(target);
-  };
-
-  setTimeout(() => {
-    // change to = onReadystatechange or smth similar - instead of timeout.
-    refs.targets.forEach(lazyLoad);
-  }, 250);
-
-  const listIsClicked = event => {
-    event.currentTarget == refs.openModalList &&
-      refs.modal.classList.contains('is-hidden') &&
-      refs.targetsBigImages.forEach(lazyLoad);
-    setTimeout(() => {
-      refs.openModalList.removeEventListener('click', listIsClicked);
-    }, 250);
-  };
-
-  refs.openModalList.addEventListener('click', listIsClicked);
-
-  // media query js
-  const belowTablet = window.matchMedia('(max-width: 767px)');
-
-  // function runs at specific viewport width.
-  function mq(w) {
-    if (!w.matches) return;
-    else {
-      refs.svgLoaderWrapper.addEventListener('click', event => {
-        if (event.target !== svgLoaderWrapper) return;
-        else {
-          for (let i = 2; i >= 0; i--) {
-            const li = refs.belowFoldItems[i];
-            const img = refs.belowFoldImages[i];
-
-            if (li.classList.contains('is-hidden')) {
-              img(lazyLoad); // change to download 3 items per 1 time.
-
-              if (li.hasAttribute('data-li-below-fold')) {
-                li.removeAttribute('data-li-below-fold');
-              }
-            }
-
-            li.classList.remove('is-hidden');
-          }
-        }
-      });
-    }
-  }
-
-  mq(belowTablet);
-
-  // closes mobile window on screen rotation. Use if need. Delete this if not need.
-  // tablet.addEventListener('change', e => {
-  //   if (!e.matches) return;
-  //   (!refsMobile.menu.classList.contains('is-hidden') ||
-  //     refsMobile.openMenuBtn.getAttribute('aria-expanded') === 'true') &&
-  //     closeMenuAndFocusLog(refsMobile.focusTarget);
-  // });
 
   // carousel for refs.targetsBigImages
   // toggle classes for next listItem without 'is-hidden' = slide forwards

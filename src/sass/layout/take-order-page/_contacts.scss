@@ -28,7 +28,7 @@
     height: 455px;
     position: absolute;
     right: -100px;
-    bottom: -100px;
+    bottom: -85px;
 
     @include mq($desktop) {
       display: block;
@@ -52,7 +52,7 @@
     }
     @include mq($desktop, $mb: 30px) {
       &:last-child {
-        margin-bottom: 76px;
+        margin-bottom: 60px;
       }
     }
   }
@@ -74,6 +74,9 @@
   // item
   &__item {
     margin-bottom: 8px;
+
+    @include mq($desktop, $mb: 18px);
+
     &:last-child {
       margin-bottom: 0;
     }

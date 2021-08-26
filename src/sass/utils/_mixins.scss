@@ -1,9 +1,10 @@
-@mixin font($fs: 14px, $fw: 400, $lh: 1.71, $ls: 0.03em) {
-  font-size: $fs;
-  font-weight: $fw;
-  line-height: $lh;
-  // letter-spacing: $ls;
-}
+// prettier-ignore
+@mixin font($fs: null, $fw: null, $lh: null, $ls: null) {
+  @if ($fs) { font-size:      $fs; }
+  @if ($fw) { font-weight:    $fw; }
+  @if ($lh) { line-height:    $lh; }
+  @if ($ls) { letter-spacing: $ls; }
+} //14px, 400, 1.71, 0.03em default
 // ------------------------- START 'MIXINS' -------------------------
 
 // .box { @include bg-retina('./image.jpg'); }
@@ -50,8 +51,8 @@
     $minWidth: map_get($breakpoints, $start);
 
     @media screen and (min-width: $minWidth) {
-      @include paddings($pt, $pr, $pb, $pl);
-      @include margins($mt, $mr, $mb, $ml);
+        @include paddings($pt, $pr, $pb, $pl);
+        @include margins($mt, $mr, $mb, $ml);
 
       @content;
     }
@@ -61,9 +62,11 @@
 // Padding converter
 @mixin paddings($pt: null, $pr: null, $pb: null, $pl: null) {
   @if ($pt or $pr or $pb or $pl) {
-    @if (($pt == $pb) and ($pb == $pr) and ($pr == $pl) and ($pt != null)) {
+    @if (
+      ($pt == $pr) and ($pt == $pb) and ($pt == $pl) and (($pt and $pr and $pb and $pl) != null)
+    ) {
       padding: $pt;
-    } @else if (($pt == $pb) and ($pr == $pl) and ($pt != null)) {
+    } @else if (($pt == $pb) and ($pr == $pl) and (($pt and $pr) != null)) {
       padding: $pt $pr;
     } @else if
       (
@@ -91,9 +94,11 @@
 // Margin converter
 @mixin margins($mt: null, $mr: null, $mb: null, $ml: null) {
   @if ($mt or $mr or $mb or $ml) {
-    @if (($mt == $mb) and ($mb == $mr) and ($mr == $ml) and ($mt != null)) {
+    @if (
+      ($mt == $mr) and ($mr == $mb) and ($mb == $ml) and (($mt and $mr and $mb and $ml) != null)
+    ) {
       margin: $mt;
-    } @else if (($mt == $mb) and ($mr == $ml) and ($mt != null)) {
+    } @else if (($mt == $mb) and ($mr == $ml) and (($mt and $mr) != null)) {
       margin: $mt $mr;
     } @else if
       (

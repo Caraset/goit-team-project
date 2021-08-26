@@ -1,5 +1,6 @@
 .scanning-page {
   padding-top: 0;
+
   @media screen and (min-width: $second-bp) {
     padding-top: 24px;
     width: 768px;
@@ -9,6 +10,7 @@
   @media screen and (min-width: $third-bp) {
     width: 1440px;
   }
+
   .title-v1 {
     margin-bottom: 16px;
   }
@@ -26,7 +28,7 @@
   }
   &__desc-text {
     @media screen and (min-width: $second-bp) {
-      width: 515px;
+      min-width: 515px;
     }
   }
   &__block {
@@ -34,36 +36,41 @@
       display: flex;
     }
   }
-}
 
-.container-scanning {
-  padding-bottom: 224px;
-  background-size: 280px 200px;
-  background-repeat: no-repeat;
-  background-position: bottom 0 left 20px;
-  background-image: url(../images/scanning-page/scanning_photo_mobile.jpg);
-  @media screen and (min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2dppx) {
-    background-image: url(../images/scanning-page/retina/mobile/scanning_photo_mobile@2x.jpg);
+  @include mq($end: $tablet) {
+    background-image: url(../images/scanning-page/scanning_photo_mobile.jpg);
+    @media screen and (min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2dppx) {
+      background-image: url(../images/scanning-page/retina/mobile/scanning_photo_mobile@2x.jpg);
+    }
+    background-position: bottom 24px right 40px;
+    background-size: 280px 200px;
   }
-  @media screen and (min-width: $second-bp) {
-    padding-bottom: 52px;
-    padding-right: 135px;
-    max-width: $second-bp;
+
+  @include mq($tablet, $desktop, $pr: 116px, $pb: 52px) {
+    // max-width: $second-bp;
     background-image: url(../images/scanning-page/scanning_photo_tablet.jpg);
     @media screen and (min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2dppx) {
       background-image: url(../images/scanning-page/retina/tablet/scanning_photo_tablet@2x.jpg);
     }
+    background-position: bottom 76px right -4px;
     background-size: 241px 172px;
-    background-position: bottom 77px right 0;
   }
-  @media screen and (min-width: $third-bp) {
-    padding: 35px 0 73px 0;
-    max-width: 1068px;
+}
+
+.container-scanning {
+  background-repeat: no-repeat;
+
+  @include mq($tablet, $desktop, $pr: 0, $pl: 0) {
+    max-width: 515px;
+  }
+
+  @include mq($desktop, $pt: 35px, $pb: 100px) {
+    // max-width: 1068px;
     background-image: url(../images/scanning-page/scanning_photo_desktop.jpg);
     @media screen and (min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2dppx) {
       background-image: url(../images/scanning-page/retina/desktop/scanning_photo_desktop@2x.jpg);
     }
+    background-position: bottom -9px right 21px;
     background-size: 515px 368px;
-    background-position: bottom -45px right 0;
   }
 }
