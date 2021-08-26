@@ -1,9 +1,15 @@
 .scanning-page {
   padding-top: 0;
-  background-repeat: no-repeat;
 
-  @include mq($end: $tablet, $pb: 247px);
-  @include mq($tablet, $pt: 24px);
+  @media screen and (min-width: $second-bp) {
+    padding-top: 24px;
+    width: 768px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: $third-bp) {
+    width: 1440px;
+  }
 
   .title-v1 {
     margin-bottom: 16px;

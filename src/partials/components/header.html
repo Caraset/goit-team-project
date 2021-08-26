@@ -1,6 +1,8 @@
 <header>
   <div class="container header-conteiner">
+    <!-- ===============Навігація=============== -->
     <nav class="header-nav">
+      <!-- ===============Логотип=============== -->
       <a class="header-nav__logo" href="../index.html">
         <picture>
           <source
@@ -42,14 +44,14 @@
           <img src="../images/logo/logo-101.png" alt="logo" />
         </picture>
       </a>
-
+      <!-- ===============Кінець Логотипа=============== -->
       <ul class="header-nav__list">
         <li class="header-nav__item">
           <a class="header-nav__link" href="../index.html">Головна</a>
         </li>
-        <li tabindex="1" class="header-nav__item">
+        <li class="header-nav__item pagination__item-servises">
           <a class="header-nav__link header-nav__item-active" href="#">Послуги</a>
-          <!-- <div class="header-nav__box-sub-menu"> -->
+
           <ul class="header-nav__list-sub-menu">
             <li class="header-nav__item-sub-menu">
               <a class="header-nav__link-sub-menu" href="./modeling-page.html"> 3D Моделювання </a>
@@ -61,7 +63,6 @@
               <a class="header-nav__link-sub-menu" href="./printing-page.html">3D Друк</a>
             </li>
           </ul>
-          <!-- </div> -->
         </li>
         <li class="header-nav__item">
           <a class="header-nav__link" href="./take-order-page.html">Замовити</a>
@@ -71,12 +72,14 @@
         </li>
       </ul>
     </nav>
+    <!-- ===============Кінець Навігації=============== -->
+    <!-- ===============Кнопка бургер-меню=============== -->
     <button class="burger-btn js-hide-modal-btn" type="button" data-modal-open aria-label="Меню">
       <svg width="32" height="32" class="burger-btn__icon">
         <use href="../images/svg-sprite.svg#burger-menu"></use>
       </svg>
     </button>
-
+    <!-- ===============Кнопка закриття мобільного-меню=============== -->
     <button
       class="burger-btn burger-close-btn is-hidden js-hide-close-btn"
       type="button"
@@ -88,6 +91,7 @@
       </svg>
     </button>
     <div class="language-contact-position">
+      <!-- ===============Кнопка мобільного зв'язку=============== -->
       <div class="connect-mobile">
         <button class="connect-mobile__btn" type="button">
           <svg width="24" height="24" class="connect-mobile__icon">
@@ -107,6 +111,7 @@
           </ul>
         </div>
       </div>
+      <!-- ===============Змінна Мови=============== -->
       <select id="selectID" class="select-language">
         <option value="”ENG”">ENG</option>
 
@@ -114,7 +119,7 @@
 
         <option value="”UKR”">UKR</option>
       </select>
-
+      <!-- ===============Мобільні номера=============== -->
       <ul class="menu-connect">
         <li class="menu-connect__list">
           <a class="link menu-connect__link" href="tel:+380936432288">
