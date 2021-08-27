@@ -43,13 +43,19 @@ body {
 .page-html {
   min-height: 100%;
   overflow-y: scroll;
+  scroll-behavior: smooth;
 
   &.no-scroll {
     overflow-y: hidden; // STOP MOVING AROUND!
   }
 }
 
-.index-body {
+.index-body,
+.modeling-body,
+.scanning-body,
+.printing-body,
+.order-body,
+.contacts-body {
   position: relative;
 
   min-height: 100%;

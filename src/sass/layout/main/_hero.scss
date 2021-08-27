@@ -248,6 +248,12 @@
   display: none;
   z-index: 50;
 
+  &:target {
+    transform: translateY(-500px);
+    transition-property: transform;
+    @include animation;
+  }
+
   @media screen and (min-width: 768px) {
     position: absolute;
     top: 217px;
