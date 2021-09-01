@@ -49,7 +49,12 @@ body {
   }
 }
 
-.index-body {
+.index-body,
+.modeling-body,
+.scanning-body,
+.printing-body,
+.order-body,
+.contacts-body {
   position: relative;
 
   min-height: 100%;
